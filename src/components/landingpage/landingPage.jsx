@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Tractor } from 'lucide-react';
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
@@ -70,6 +70,13 @@ const LandingPage = () => {
       description: "Craft compelling brand stories that resonate with India's diverse and dynamic market.",
       icon: <Trophy className="w-8 h-8" />,
       gradient: "from-pink-500 to-rose-600"
+    },
+    {
+      id: 6,
+      title: "Agriculture and Agritech",
+      description: "Empower Indian agriculture with smart agritech solutions that boost productivity and drive sustainable growth.",
+      icon: <Tractor className="w-8 h-8" />,
+      gradient: "from-lime-400 to-green-700"
     }
   ];
 
@@ -120,7 +127,10 @@ const LandingPage = () => {
     // Only navigate to advertisement.jsx when clicking the Advertisement card
     if (card.id === 'advertisement') {
       navigate('/advertisement');
-    } else {
+    }
+    if (card.title === 'Agriculture and Agritech') {
+      navigate('/agriculture');
+    }else {
       // For other cards, you can add different navigation logic
       console.log(`Clicked on ${card.title} card`);
       // navigate(card.path); // Uncomment to navigate to other paths
