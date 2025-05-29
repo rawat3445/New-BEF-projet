@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star} from 'lucide-react';
+
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor} from 'lucide-react';
+
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
@@ -66,8 +68,8 @@ const LandingPage = () => {
       gradient: "from-orange-500 to-red-600"
     },
     {
-      id: 4,
-      title: "Media & Broadcasting",
+      id: 'media',
+      title: "Media & Entertainment",
       description: "Revolutionize content creation and distribution across traditional and new media platforms.",
       icon: <TrendingUp className="w-8 h-8" />,
       gradient: "from-indigo-500 to-blue-600"
@@ -78,6 +80,13 @@ const LandingPage = () => {
       description: "Craft compelling brand stories that resonate with India's diverse and dynamic market.",
       icon: <Trophy className="w-8 h-8" />,
       gradient: "from-pink-500 to-rose-600"
+    },
+    {
+      id: 6,
+      title: "Agriculture and Agritech",
+      description: "Empower Indian agriculture with smart agritech solutions that boost productivity and drive sustainable growth.",
+      icon: <Tractor className="w-8 h-8" />,
+      gradient: "from-lime-400 to-green-700"
     }
   ];
 
@@ -123,21 +132,28 @@ const LandingPage = () => {
       setTimeout(() => setIsSubscribed(false), 3000);
     }
   };
-  const handleCardClick = (card) => {
-    // You guys can use switch case or whatever suits you.
-    // Only navigate to advertisement.jsx when clicking the Advertisement card
-    if (card.id === 'advertisement') {
+ const handleCardClick = (card) => {
+  switch (card.id) {
+    case 'advertisement':
       navigate('/advertisement');
-    } 
-    else if(card.id === 'beauty-wellness'){
-      navigate('/industries/beauty-wellness');
-    }
-    else {
-      // For other cards, you can add different navigation logic
+      break;
+    case 'beauty-wellness':
+      navigate('/beauty-wellness');
+      break;
+    case 'media':
+      navigate('/media-entertainment');
+      break;
+    case 'agriculture':
+      navigate('/agriculture');
+      break;
+    default:
       console.log(`Clicked on ${card.title} card`);
-      // navigate(card.path); // Uncomment to navigate to other paths
-    }
-  };
+      alert(`Navigate to ${card.title} page`);
+      break;
+  }
+};
+
+
 
   return (
     <div className="min-h-screen bg-white">
