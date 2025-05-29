@@ -58,8 +58,8 @@ const LandingPage = () => {
       gradient: "from-orange-500 to-red-600"
     },
     {
-      id: 4,
-      title: "Media & Broadcasting",
+      id: 'media',
+      title: "Media & Entertainment",
       description: "Revolutionize content creation and distribution across traditional and new media platforms.",
       icon: <TrendingUp className="w-8 h-8" />,
       gradient: "from-indigo-500 to-blue-600"
@@ -116,16 +116,19 @@ const LandingPage = () => {
     }
   };
   const handleCardClick = (card) => {
-    // You guys can use switch case or whatever suits you.
-    // Only navigate to advertisement.jsx when clicking the Advertisement card
-    if (card.id === 'advertisement') {
-      navigate('/advertisement');
-    } else {
-      // For other cards, you can add different navigation logic
-      console.log(`Clicked on ${card.title} card`);
-      // navigate(card.path); // Uncomment to navigate to other paths
-    }
+    switch (card.id) {
+      case 'advertisement':
+        navigate(`/advertisement`);
+        break;
+        case 'media':
+        navigate(`/media-entertainment`);
+        break;
+        default:
+        alert(`Navigate to ${card.title} page`);
+        break;
+
   };
+}
 
   return (
     <div className="min-h-screen bg-white">
