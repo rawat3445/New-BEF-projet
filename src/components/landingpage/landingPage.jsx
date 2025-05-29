@@ -82,7 +82,7 @@ const LandingPage = () => {
       gradient: "from-pink-500 to-rose-600"
     },
     {
-      id: 6,
+      id: 'agriculture',
       title: "Agriculture and Agritech",
       description: "Empower Indian agriculture with smart agritech solutions that boost productivity and drive sustainable growth.",
       icon: <Tractor className="w-8 h-8" />,
@@ -314,18 +314,7 @@ const LandingPage = () => {
             ))}
           </div>
 
-          {/* Instructions for implementation */}
-          <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Implementation Notes:</h4>
-            <p className="text-sm text-gray-600 mb-3">
-              This demo shows alerts when clicking cards. To implement real navigation:
-            </p>
-            <div className="space-y-2 text-sm text-gray-600">
-              <p><strong>React Router:</strong> Import useNavigate and use navigate(card.path)</p>
-              <p><strong>Next.js:</strong> Import useRouter and use router.push(card.path)</p>
-              <p><strong>Vanilla JS:</strong> Use window.location.href = card.path</p>
-            </div>
-          </div>
+         
         </div>
       </section>
 
