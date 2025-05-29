@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star} from 'lucide-react';
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
@@ -42,6 +42,14 @@ const LandingPage = () => {
       icon: <Target className="w-8 h-8" />,
       gradient: "from-blue-600 to-purple-600",
       path: `/industries/advertisement`
+    },
+    {
+      id: 'beauty-wellness',
+      title: "Beauty And Wellness",
+      description: "Discover innovative beauty and wellness solutions shaping Viksit Bharat’s vibrant future.",
+      icon: <Star className="w-8 h-8" />,
+      gradient: "from-pink-500 to-purple-600",
+      path: `/industries/beauty-wellness`
     },
     {
       id: 2,
@@ -120,7 +128,11 @@ const LandingPage = () => {
     // Only navigate to advertisement.jsx when clicking the Advertisement card
     if (card.id === 'advertisement') {
       navigate('/advertisement');
-    } else {
+    } 
+    else if(card.id === 'beauty-wellness'){
+      navigate('/industries/beauty-wellness');
+    }
+    else {
       // For other cards, you can add different navigation logic
       console.log(`Clicked on ${card.title} card`);
       // navigate(card.path); // Uncomment to navigate to other paths
