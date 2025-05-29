@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Tractor } from 'lucide-react';
+
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor} from 'lucide-react';
+
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
@@ -42,6 +44,14 @@ const LandingPage = () => {
       icon: <Target className="w-8 h-8" />,
       gradient: "from-blue-600 to-purple-600",
       path: `/industries/advertisement`
+    },
+    {
+      id: 'beauty-wellness',
+      title: "Beauty And Wellness",
+      description: "Discover innovative beauty and wellness solutions shaping Viksit Bharat’s vibrant future.",
+      icon: <Star className="w-8 h-8" />,
+      gradient: "from-pink-500 to-purple-600",
+      path: `/industries/beauty-wellness`
     },
     {
       id: 2,
@@ -123,10 +133,12 @@ const LandingPage = () => {
     }
   };
  const handleCardClick = (card) => {
-   // You guys can use switch case or whatever suits you. This one’s scalable
   switch (card.id) {
     case 'advertisement':
       navigate('/advertisement');
+      break;
+    case 'beauty-wellness':
+      navigate('/beauty-wellness');
       break;
     case 'media':
       navigate('/media-entertainment');
@@ -140,6 +152,7 @@ const LandingPage = () => {
       break;
   }
 };
+
 
 
   return (

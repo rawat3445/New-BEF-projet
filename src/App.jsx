@@ -4,6 +4,7 @@ import AdvertisementIndustry from './industries/advertisement/advertisement';
 import AgricultureIndustry from './industries/agriculture/agriculture';
 import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
 import './App.css';
+import BeautyWellnessIndustry from './industries/beauty';
 
 function App() {
   return (
@@ -15,9 +16,14 @@ function App() {
      
         <Route path="/advertisement" element={<AdvertisementIndustry />} />
         <Route path="/agriculture" element={<AgricultureIndustry />} />
-
-    
+        <Route path="/beauty-wellness" element={<BeautyWellnessIndustry />} />
         <Route path="/media-entertainment" element={<MediaEntertainmentIndustry />} />
+
+
+        {/* Example Placeholder for future industries */}
+        {/*DO NOT TOUCH THIS CODE BELOW IT'S JUST AN EXAMPLE!*/}
+        {/* <Route path="/education" element={<EducationIndustry />} /> */}
+
 
       </Routes>
     </Router>
