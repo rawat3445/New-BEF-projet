@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Tractor } from 'lucide-react';
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
@@ -70,6 +70,13 @@ const LandingPage = () => {
       description: "Craft compelling brand stories that resonate with India's diverse and dynamic market.",
       icon: <Trophy className="w-8 h-8" />,
       gradient: "from-pink-500 to-rose-600"
+    },
+    {
+      id: 6,
+      title: "Agriculture and Agritech",
+      description: "Empower Indian agriculture with smart agritech solutions that boost productivity and drive sustainable growth.",
+      icon: <Tractor className="w-8 h-8" />,
+      gradient: "from-lime-400 to-green-700"
     }
   ];
 
@@ -115,20 +122,25 @@ const LandingPage = () => {
       setTimeout(() => setIsSubscribed(false), 3000);
     }
   };
-  const handleCardClick = (card) => {
-    switch (card.id) {
-      case 'advertisement':
-        navigate(`/advertisement`);
-        break;
-        case 'media':
-        navigate(`/media-entertainment`);
-        break;
-        default:
-        alert(`Navigate to ${card.title} page`);
-        break;
+ const handleCardClick = (card) => {
+   // You guys can use switch case or whatever suits you. This one’s scalable
+  switch (card.id) {
+    case 'advertisement':
+      navigate('/advertisement');
+      break;
+    case 'media':
+      navigate('/media-entertainment');
+      break;
+    case 'agriculture':
+      navigate('/agriculture');
+      break;
+    default:
+      console.log(`Clicked on ${card.title} card`);
+      alert(`Navigate to ${card.title} page`);
+      break;
+  }
+};
 
-  };
-}
 
   return (
     <div className="min-h-screen bg-white">
