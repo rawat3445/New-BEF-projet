@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Play, ArrowRight, Pause, Home, Wifi, School, HeartPulse, Sun } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, ArrowRight, Pause, Home, Wifi, Sun } from 'lucide-react';
 import './carousel.css';
 
 const RuralDevelopmentCarousel = () => {
@@ -10,9 +10,9 @@ const RuralDevelopmentCarousel = () => {
   const slides = [
     {
       id: 1,
-      title: "Bridging the Urban-Rural Divide",
-      subtitle: "Infrastructure & Opportunities",
-      description: "Join the discussion on developing sustainable infrastructure and creating equal opportunities across rural India as part of Viksit Bharat 2047 vision.",
+      title: "Rural Infrastructure Development",
+      subtitle: "Bridging the Urban-Rural Divide",
+      description: "Join policymakers and industry leaders to discuss sustainable infrastructure solutions for rural India as part of Viksit Bharat 2047 vision.",
       buttonText: "Join the Dialogue",
       icon: <Home className="h-16 w-16" />,
       background: "from-green-700 via-emerald-600 to-green-600",
@@ -20,9 +20,9 @@ const RuralDevelopmentCarousel = () => {
     },
     {
       id: 2,
-      title: "Digital Empowerment",
-      subtitle: "Connecting Rural India",
-      description: "Explore how digital technologies and connectivity can transform rural economies and improve quality of life.",
+      title: "Digital Rural Transformation",
+      subtitle: "Connecting Villages to Opportunities",
+      description: "Explore how digital technologies can revolutionize rural economies and improve quality of life across India's villages.",
       buttonText: "Learn More",
       icon: <Wifi className="h-16 w-16" />,
       background: "from-amber-700 via-yellow-600 to-amber-600",
@@ -30,33 +30,13 @@ const RuralDevelopmentCarousel = () => {
     },
     {
       id: 3,
-      title: "Education & Skill Development",
-      subtitle: "Building Future-Ready Villages",
-      description: "Discover innovative approaches to rural education and vocational training that align with India's development goals.",
-      buttonText: "Explore Programs",
-      icon: <School className="h-16 w-16" />,
+      title: "Clean Energy for Villages",
+      subtitle: "Sustainable Power Solutions",
+      description: "Discover renewable energy innovations that are electrifying rural India while creating sustainable livelihoods.",
+      buttonText: "Explore Solutions",
+      icon: <Sun className="h-16 w-16" />,
       background: "from-blue-700 via-indigo-600 to-blue-600",
       accent: "from-indigo-400 to-blue-400",
-    },
-    {
-      id: 4,
-      title: "Sustainable Rural Healthcare",
-      subtitle: "Wellness for All",
-      description: "Learn about initiatives bringing quality healthcare to remote areas through technology and community programs.",
-      buttonText: "See Initiatives",
-      icon: <HeartPulse className="h-16 w-16" />,
-      background: "from-red-700 via-pink-600 to-red-600",
-      accent: "from-pink-400 to-red-400",
-    },
-    {
-      id: 5,
-      title: "Renewable Energy Solutions",
-      subtitle: "Powering Rural Progress",
-      description: "Explore clean energy innovations that are electrifying rural India while creating sustainable livelihoods.",
-      buttonText: "Discover Solutions",
-      icon: <Sun className="h-16 w-16" />,
-      background: "from-purple-700 via-violet-600 to-purple-600",
-      accent: "from-violet-400 to-purple-400",
     }
   ];
 
@@ -111,14 +91,10 @@ const RuralDevelopmentCarousel = () => {
 
       {/* Background with smooth transition */}
       <div className={`absolute inset-0 bg-gradient-to-br ${currentSlideData.background} transition-all duration-1000 ease-in-out`}>
-        {/* Animated background elements - rural themed */}
+        {/* Subtle animated elements */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-32 h-32 border-2 border-white rounded-full animate-pulse-slow"></div>
-          <div className="absolute top-60 right-32 w-24 h-24 border border-white rounded-full animate-float delay-200"></div>
-          <div className="absolute bottom-32 left-1/4 w-16 h-16 border border-white rounded-full animate-pulse-slow delay-300"></div>
-          <div className="absolute bottom-60 right-1/3 w-20 h-20 border-2 border-white rounded-full animate-float delay-100"></div>
-          <div className="absolute top-1/2 left-10 w-12 h-12 bg-white rounded-full opacity-30 animate-float delay-400"></div>
-          <div className="absolute top-1/3 right-20 w-8 h-8 bg-white rounded-full opacity-40 animate-pulse-slow delay-500"></div>
+          <div className="absolute bottom-32 right-32 w-24 h-24 border border-white rounded-full animate-float delay-200"></div>
         </div>
         
         {/* Gradient overlay */}
@@ -135,14 +111,14 @@ const RuralDevelopmentCarousel = () => {
                 {currentSlideData.icon}
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-black mb-6 text-shadow animate-slide-up opacity-0">
+              <h1 className="text-5xl md:text-6xl font-black mb-6 text-shadow animate-slide-up opacity-0">
                 {currentSlideData.title}
               </h1>
               <div className={`w-24 h-1 bg-gradient-to-r ${currentSlideData.accent} mx-auto animate-fade-in opacity-0 delay-200`}></div>
               <h2 className="text-2xl md:text-3xl font-light mb-8 text-shadow animate-slide-up opacity-0 delay-100">
                 {currentSlideData.subtitle}
               </h2>
-              <p className="text-xl md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-shadow animate-slide-up opacity-0 delay-200">
+              <p className="text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-shadow animate-slide-up opacity-0 delay-200">
                 {currentSlideData.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-right opacity-0 delay-300">
@@ -218,11 +194,6 @@ const RuralDevelopmentCarousel = () => {
             )}
           </button>
         ))}
-      </div>
-
-      {/* Slide counter */}
-      <div className="absolute bottom-8 left-8 glass-effect text-white px-4 py-2 rounded-full text-sm font-medium z-20">
-        {currentSlide + 1} / {slides.length}
       </div>
 
       {/* Event info overlay */}

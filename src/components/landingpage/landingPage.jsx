@@ -65,9 +65,9 @@ const LandingPage = () => {
       gradient: "from-indigo-500 to-blue-600"
     },
     {
-      id: 5,
-      title: "Brand Strategy",
-      description: "Craft compelling brand stories that resonate with India's diverse and dynamic market.",
+      id: 'rural',
+      title: "Rural Development",
+      description: "Building sustainable, self-reliant villages through technology, community participation, and innovative solutions",
       icon: <Trophy className="w-8 h-8" />,
       gradient: "from-pink-500 to-rose-600"
     }
@@ -122,6 +122,9 @@ const LandingPage = () => {
         break;
         case 'media':
         navigate(`/media-entertainment`);
+        break;
+        case 'rural':
+        navigate(`/rural-development`);
         break;
         default:
         alert(`Navigate to ${card.title} page`);

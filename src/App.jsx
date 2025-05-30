@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/landingpage/landingPage';
 import AdvertisementIndustry from './industries/advertisement/advertisement';
 import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
+import RuralDevelopmentIndustry from './industries/ruraldevelopment/RuralDevelopmentIndustry';
 import './App.css';
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
 
     
         <Route path="/media-entertainment" element={<MediaEntertainmentIndustry />} />
+
+
+        <Route path="/rural-development" element={<RuralDevelopmentIndustry />} />
 
       </Routes>
     </Router>
