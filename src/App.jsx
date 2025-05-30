@@ -5,6 +5,7 @@ import AgricultureIndustry from './industries/agriculture/agriculture';
 import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
 import './App.css';
 import BeautyWellnessIndustry from './industries/beauty';
+import WomenEntrepreneurship from './industries/women-entrepreneurship';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/agriculture" element={<AgricultureIndustry />} />
         <Route path="/beauty-wellness" element={<BeautyWellnessIndustry />} />
         <Route path="/media-entertainment" element={<MediaEntertainmentIndustry />} />
+        <Route path="/women-entrepreneurship" element={<WomenEntrepreneurship />} />
 
 
         {/* Example Placeholder for future industries */}
