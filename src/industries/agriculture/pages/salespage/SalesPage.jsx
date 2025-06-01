@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle, Quote } from 'lucide-react';
-import SalesSection from '../components/salessection/salessection';
-import Navbar from '../components/navbar/navbar';
-import Footer from '../components/footer/footer';
+import SalesSection from '../../components/salessection/salessection';
+import Navbar from '../../components/navbar/navbar';
+import Footer from '../../components/footer/footer';
 
 const SalesPage = () => {
     const benefits = [
@@ -38,10 +38,10 @@ const SalesPage = () => {
     return (
         <div className="agriculture-industry">
             {/* Navigation */}
-            <Navbar />
+            {/* <Navbar /> */}
 
             {/* Breadcrumb */}
-            <div className="breadcrumb">
+            {/* <div className="breadcrumb">
                 <div className="breadcrumb-container">
                     <Link to="/agriculture" className="breadcrumb-back">
                         <ArrowLeft size={16} />
@@ -50,7 +50,7 @@ const SalesPage = () => {
                     <div className="breadcrumb-separator">/</div>
                     <div className="breadcrumb-current">Pricing</div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Main Content */}
             <main className="main-content">
@@ -125,7 +125,7 @@ const SalesPage = () => {
                             href="mailto:sales@agrinxt.com"
                             className="inline-block bg-white text-green-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
                         >
-                            
+
                             Talk to Sales
                         </a>
                     </div>
@@ -133,7 +133,7 @@ const SalesPage = () => {
             </main>
 
             {/* Footer */}
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

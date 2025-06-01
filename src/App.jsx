@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/landingpage/landingPage';
 import AdvertisementIndustry from './industries/advertisement/advertisement';
 import AgricultureIndustry from './industries/agriculture/agriculture';
-import AgricultureSalesPage from './industries/agriculture/pages/SalesPage';
+import AgricultureSalesPage from './industries/agriculture/pages/salespage/SalesPage';
 import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
 import './App.css';
 
