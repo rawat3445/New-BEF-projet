@@ -72,7 +72,7 @@ const LandingPage = () => {
       gradient: "from-pink-500 to-rose-600"
     },
     {
-      id: 6,
+      id: 'agriculture',
       title: "Agriculture and Agritech",
       description: "Empower Indian agriculture with smart agritech solutions that boost productivity and drive sustainable growth.",
       icon: <Tractor className="w-8 h-8" />,
