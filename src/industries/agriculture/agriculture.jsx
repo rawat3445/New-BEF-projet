@@ -1,4 +1,3 @@
-// src/industries/agriculture/agriculture.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { DollarSign, Info } from 'lucide-react';
