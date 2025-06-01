@@ -28,13 +28,14 @@ const Footer = () => {
   ];
 
   const services = [
-    { name: 'Digital Marketing', href: '#digital' },
-    { name: 'Creative Design', href: '#creative' },
-    { name: 'Brand Strategy', href: '#strategy' },
-    { name: 'Web Development', href: '#development' },
-    { name: 'Social Media', href: '#social' },
-    { name: 'Analytics', href: '#analytics' }
+  { name: 'Precision Farming', href: '#precision' },
+  { name: 'Smart Irrigation', href: '#irrigation' },
+  { name: 'Soil Health Monitoring', href: '#soil' },
+  { name: 'Agri Drones', href: '#drones' },
+  { name: 'Supply Chain Optimization', href: '#supplychain' },
+  { name: 'Farm Management Software', href: '#farmsoftware' }
   ];
+
 
   const socialLinks = [
     { icon: <Facebook className="h-5 w-5" />, href: '#', name: 'Facebook' },
@@ -82,7 +83,7 @@ const Footer = () => {
                 <li key={index}>
                   <a 
                     href={link.href} 
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300"
+                    className="text-gray-300 hover:text-green-500 transition-colors duration-300"
                   >
                     {link.name}
                   </a>
@@ -99,7 +100,7 @@ const Footer = () => {
                 <li key={index}>
                   <a 
                     href={service.href} 
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300"
+                    className="text-gray-300 hover:text-green-500 transition-colors duration-300"
                   >
                     {service.name}
                   </a>

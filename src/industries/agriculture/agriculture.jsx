@@ -9,7 +9,7 @@ import AboutSection from './components/aboutsection/aboutsection';
 import Footer from './components/footer/footer';
 
 // Import pages
-import AboutPage from './pages/aboutPage/aboutPage';
+import AboutPage from './pages/aboutpage/aboutPage';
 // import SalesPage from './pages/salesPage/salesPage';
 
 import './agriculture.css';

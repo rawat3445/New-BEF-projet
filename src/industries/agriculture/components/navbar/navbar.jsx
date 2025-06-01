@@ -40,10 +40,26 @@ const Navbar = () => {
   ];
 
   const solutionsItems = [
-    { name: 'Digital Marketing', href: '#digital', icon: '📱', description: 'Social media & online campaigns' },
-    { name: 'Creative Design', href: '#creative', icon: '🎨', description: 'Visual branding & graphics' },
-    { name: 'Strategy & Consulting', href: '#strategy', icon: '💡', description: 'Business growth strategies' }
-  ];
+  {
+    name: 'Precision Farming',
+    href: '#precision',
+    icon: '🌾',
+    description: 'Optimize yields with data-driven decisions'
+  },
+  {
+    name: 'AgriTech Consulting',
+    href: '#consulting',
+    icon: '🧠',
+    description: 'Tailored tech strategies for agri-businesses'
+  },
+  {
+    name: 'Sustainable Solutions',
+    href: '#sustainability',
+    icon: '🌱',
+    description: 'Eco-friendly practices & resource management'
+  }
+];
+
 
   return (
  
