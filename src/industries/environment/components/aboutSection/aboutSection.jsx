@@ -90,7 +90,7 @@ const AboutSection = () => {
               <p className="text-lg leading-relaxed mb-6">
                 To empower businesses with innovative advertising solutions that create meaningful connections between brands and their audiences, driving sustainable growth and success.
               </p>
-              <div className="bg-white bg-opacity-20 rounded-2xl p-6">
+              <div className="bg-white bg-opacity-20 rounded-2xl p-6 text-gray-600">
                 <h4 className="text-xl font-semibold mb-3">Why Choose Us?</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center">
