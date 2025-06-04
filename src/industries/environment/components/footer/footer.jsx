@@ -20,20 +20,20 @@ const Footer = () => {
 
   const quickLinks = [
     { name: 'About Us', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Initiatives', href: '#initiatives' },
+    { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
     { name: 'Blog', href: '#blog' },
     { name: 'Careers', href: '#careers' }
   ];
 
   const services = [
-    { name: 'Digital Marketing', href: '#digital' },
-    { name: 'Creative Design', href: '#creative' },
-    { name: 'Brand Strategy', href: '#strategy' },
-    { name: 'Web Development', href: '#development' },
-    { name: 'Social Media', href: '#social' },
-    { name: 'Analytics', href: '#analytics' }
+    { name: 'Eco Consulting', href: '#eco-consulting' },
+    { name: 'Waste Management', href: '#waste-management' },
+    { name: 'Carbon Offset Planning', href: '#carbon-planning' },
+    { name: 'Renewable Solutions', href: '#renewable-solutions' },
+    { name: 'Sustainable Packaging', href: '#sustainable-packaging' },
+    { name: 'Green Certifications', href: '#green-certifications' }
   ];
 
   const socialLinks = [
@@ -50,26 +50,26 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-              AdVantage
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-lime-400 to-green-400 bg-clip-text text-transparent mb-4">
+              GreenSphere
             </h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Empowering businesses with innovative advertising solutions that drive growth and create lasting impact in the digital world.
+              Fostering a greener tomorrow through sustainable solutions, innovation, and community-driven initiatives.
             </p>
             
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center">
-                <MapPin className="h-5 w-5 text-blue-400 mr-3" />
+                <MapPin className="h-5 w-5 text-lime-400 mr-3" />
                 <span className="text-gray-300">123 Business Ave, City, State 12345</span>
               </div>
               <div className="flex items-center">
-                <Phone className="h-5 w-5 text-blue-400 mr-3" />
+                <Phone className="h-5 w-5 text-lime-400 mr-3" />
                 <span className="text-gray-300">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center">
-                <Mail className="h-5 w-5 text-blue-400 mr-3" />
-                <span className="text-gray-300">hello@advantage.com</span>
+                <Mail className="h-5 w-5 text-lime-400 mr-3" />
+                <span className="text-gray-300">contact@greensphere.com</span>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@ const Footer = () => {
                 <li key={index}>
                   <a 
                     href={link.href} 
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300"
+                    className="text-gray-300 hover:text-lime-400 transition-colors duration-300"
                   >
                     {link.name}
                   </a>
@@ -99,7 +99,7 @@ const Footer = () => {
                 <li key={index}>
                   <a 
                     href={service.href} 
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-300"
+                    className="text-gray-300 hover:text-lime-400 transition-colors duration-300"
                   >
                     {service.name}
                   </a>
@@ -112,7 +112,7 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-semibold mb-6">Stay Connected</h4>
             <p className="text-gray-300 mb-4">
-              Subscribe to our newsletter for the latest updates and marketing insights.
+              Subscribe to our newsletter for the latest updates on sustainabilityand eco-friendly practices.
             </p>
             
             {/* Newsletter Form */}
@@ -122,7 +122,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:border-blue-400 text-white"
               />
-              <button className="bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-3 rounded-r-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300">
+              <button className="bg-gradient-to-r from-lime-500 to-green-500 px-4 py-3 rounded-r-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300">
                 <Send className="h-5 w-5" />
               </button>
             </div>
@@ -135,7 +135,7 @@ const Footer = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className="bg-gray-800 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-600 p-3 rounded-lg transition-all duration-300 transform hover:scale-110"
+                    className="bg-gray-800 hover:bg-gradient-to-r hover:from-lime-500 hover:to-green-600 p-3 rounded-lg transition-all duration-300 transform hover:scale-110"
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -173,7 +173,7 @@ const Footer = () => {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="absolute bottom-6 right-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-3 rounded-full shadow-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-110"
+        className="absolute bottom-6 right-6 bg-gradient-to-r from-lime-500 to-green-500 text-white p-3 rounded-full shadow-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-110"
         aria-label="Scroll to top"
       >
         <ArrowUp className="h-5 w-5" />

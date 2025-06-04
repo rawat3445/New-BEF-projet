@@ -242,15 +242,16 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.fab-primary {
-  background: linear-gradient(45deg, #667eea, #764ba2);
+/* .fab-primary {
+  background: linear-gradient(45deg, #84cc16, #22c55e);
   color: white;
-}
+  /* /// */
+/* } */
 
-.fab-secondary {
+/* .fab-secondary {
   background: linear-gradient(45deg, #ff6b6b, #feca57);
   color: white;
-}
+} */ */
 
 .fab-primary:hover,
 .fab-secondary:hover {
@@ -355,14 +356,14 @@
 }
 
 .fab-primary {
-  background: linear-gradient(45deg, #667eea, #764ba2);
+  background: linear-gradient(45deg, #84cc16, #22c55e);
   color: white;
 }
 
 .fab-secondary {
   background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: #84cc16;
+  border: 2px solid #84cc16;
 }
 
 .fab-primary:hover,
@@ -372,7 +373,7 @@
 }
 
 .fab-primary:hover {
-  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 30px rgba(54, 222, 66, 0.889);
 }
 
 /* Page Transitions */
