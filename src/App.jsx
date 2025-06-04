@@ -6,6 +6,7 @@ import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
 import './App.css';
 import BeautyWellnessIndustry from './industries/beauty';
 import WomenEntrepreneurship from './industries/women-entrepreneurship';
+import Finance from './industries/finance-investment/finance';
 import RealEstateIndustry from './industries/real-estate-and-urban-planning';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/beauty-wellness" element={<BeautyWellnessIndustry />} />
         <Route path="/media-entertainment" element={<MediaEntertainmentIndustry />} />
         <Route path="/women-entrepreneurship" element={<WomenEntrepreneurship />} />
+        <Route path="/finance" element={<Finance />} />
         <Route path="/real-estate" element={<RealEstateIndustry/>} />
 
 
