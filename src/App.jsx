@@ -7,6 +7,9 @@ import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
 import './App.css';
 import BeautyWellnessIndustry from './industries/beauty';
 import WomenEntrepreneurship from './industries/women-entrepreneurship';
+import Web3AI from './industries/web3_ai/landingpage/LandingPage'
+import Web3AISales from './industries/web3_ai/salespage/components/homepage';
+
 
 import AutomobileIndustry from './industries/Automobile & mobility/automobile';
 
@@ -28,9 +31,12 @@ function App() {
         <Route path="/beauty-wellness" element={<BeautyWellnessIndustry />} />
         <Route path="/media-entertainment" element={<MediaEntertainmentIndustry />} />
         <Route path="/women-entrepreneurship" element={<WomenEntrepreneurship />} />
+        <Route path="/web_ai" element={<Web3AI />} />
+        <Route path="/web_ai/salespage" element={<Web3AISales />} />
         <Route path="/automobile" element={<AutomobileIndustry />} />
         <Route path="/finance" element={<Finance />} />
         <Route path="/real-estate" element={<RealEstateIndustry/>} />
+
 
 
 
