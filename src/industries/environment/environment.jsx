@@ -57,7 +57,7 @@ const EnvironmentIndustry = () => {
               <div className="logo-icon">B</div>
               <div className="brand-text">
                 <h1>Bhartiya Economic Forum</h1>
-                <span className="brand-tagline">Transform Your Advertising</span>
+                <span className="brand-tagline">Transform Your Environment</span>
               </div>
             </div>
           </div>
