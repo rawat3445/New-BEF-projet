@@ -2,10 +2,11 @@
 
 /* Glass Effect */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 0.75rem;
+  box-shadow: none;
 }
 
 /* Logo Glow on hover */

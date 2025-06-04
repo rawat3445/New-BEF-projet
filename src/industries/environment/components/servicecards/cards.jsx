@@ -50,7 +50,7 @@ const SponsorshipBenefits = () => {
       ],
       price: "₹3,50,000",
       popular: false,
-      color: "from-yellow-500 to-green-600"
+      color: "from-cyan-500 to-green-600"
     },
     {
       id: 3,
@@ -243,7 +243,7 @@ const SponsorshipBenefits = () => {
             Want to leave a lasting environmental legacy? Let’s tailor a partnership for your sustainability mission.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:from-green-700 hover:to-emerald-700 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
+            <button className="bg-gradient-to-r from-lime-500 to-green-500 text-white hover:from-lime-600 hover:to-green-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
               Book Sustainability Call
             </button>
             <button className="bg-white/80 backdrop-blur-sm text-gray-800 hover:bg-white border-2 border-gray-200 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">

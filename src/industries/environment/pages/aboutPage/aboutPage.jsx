@@ -83,7 +83,7 @@ const AboutPage = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-600 via-teal-600 to-blue-700 text-white py-20">
+      <section className="bg-gradient-to-br from-lime-500 via-green-500 to-teal-500 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             About EcoSphere
@@ -118,7 +118,7 @@ const AboutPage = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-br from-lime-500 via-green-500 to-teal-500 rounded-3xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">Our Mission & Vision</h3>
               <div className="space-y-6">
                 <div>
@@ -232,7 +232,7 @@ const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-teal-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-lime-500 via-green-500 to-teal-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Join Us in Creating a Sustainable Future</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">

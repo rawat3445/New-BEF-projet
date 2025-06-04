@@ -78,14 +78,14 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+            <button className="bg-gradient-to-r from-lime-500 to-green-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-lime-600 hover:to-green-600 transition-all duration-300 transform hover:scale-105">
               Join Our Movement
             </button>
           </div>
 
           {/* Visual Content */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-green-500 to-blue-600 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-br from-lime-500 to-green-600 rounded-3xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
               <p className="text-lg leading-relaxed mb-6">
                 To inspire, educate, and mobilize people worldwide to protect nature and combat climate change through sustainable practices and collective action.
@@ -123,7 +123,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="bg-gradient-to-br from-green-500 to-blue-600 text-white p-4 rounded-2xl w-fit mx-auto mb-4">
+              <div className="bg-gradient-to-br from-lime-500 to-green-600 text-white p-4 rounded-2xl w-fit mx-auto mb-4">
                 {stat.icon}
               </div>
               <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
@@ -150,7 +150,7 @@ const AboutSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, index) => (
               <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
-                <div className="bg-gradient-to-br from-green-500 to-blue-600 text-white p-3 rounded-xl w-fit mb-4">
+                <div className="bg-gradient-to-br from-lime-500 to-green-500 text-white p-3 rounded-xl w-fit mb-4">
                   {value.icon}
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 mb-3">
