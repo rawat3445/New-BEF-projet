@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import {
   Award,
   Users,
@@ -11,199 +12,202 @@ import {
 } from "lucide-react";
 
 const AboutSection = () => {
-const stats = [
-  {
-    icon: <Users className="h-8 w-8" />,
-    number: "100K+",
-    label: "Satisfied Drivers",
-  },
-  {
-    icon: <Award className="h-8 w-8" />,
-    number: "15+",
-    label: "Years Innovating Mobility",
-  },
-  {
-    icon: <TrendingUp className="h-8 w-8" />,
-    number: "98%",
-    label: "Customer Satisfaction",
-  },
-  {
-    icon: <Clock className="h-8 w-8" />,
-    number: "24/7",
-    label: "On-Road Assistance",
-  },
-];
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const controls = useAnimation();
 
+  useEffect(() => {
+    if (isInView) controls.start("visible");
+  }, [isInView, controls]);
 
-const values = [
-  {
-    icon: <Lightbulb className="h-6 w-6" />,
-    title: "Innovation",
-    description:
-      "We drive the future of mobility by embracing smart technologies and sustainable transportation solutions.",
-  },
-  {
-    icon: <Target className="h-6 w-6" />,
-    title: "Performance Focused",
-    description:
-      "Our commitment is to enhance vehicle performance and user experience through cutting-edge automotive advancements.",
-  },
-  {
-    icon: <Heart className="h-6 w-6" />,
-    title: "Customer First",
-    description:
-      "We prioritize your journey by providing reliable, user-centric mobility solutions tailored to your needs.",
-  },
-  {
-    icon: <CheckCircle className="h-6 w-6" />,
-    title: "Safety & Quality",
-    description:
-      "Ensuring the highest safety standards and quality in every vehicle and mobility service we promote.",
-  },
-];
+  const stats = [
+    {
+      icon: <Users className="h-8 w-8" />,
+      number: "100K+",
+      label: "Happy Drivers",
+    },
+    {
+      icon: <Award className="h-8 w-8" />,
+      number: "15+",
+      label: "Years of Innovation",
+    },
+    {
+      icon: <TrendingUp className="h-8 w-8" />,
+      number: "98%",
+      label: "Customer Satisfaction",
+    },
+    { icon: <Clock className="h-8 w-8" />, number: "24/7", label: "Support" },
+  ];
 
+  const values = [
+    {
+      icon: <Lightbulb className="h-6 w-6" />,
+      title: "Innovation",
+      description: "Embracing smart technologies and sustainable mobility.",
+    },
+    {
+      icon: <Target className="h-6 w-6" />,
+      title: "Performance",
+      description: "Enhancing vehicle efficiency and user experience.",
+    },
+    {
+      icon: <Heart className="h-6 w-6" />,
+      title: "Customer First",
+      description: "Delivering solutions tailored to your journey.",
+    },
+    {
+      icon: <CheckCircle className="h-6 w-6" />,
+      title: "Safety & Quality",
+      description: "Promoting top-tier safety and product standards.",
+    },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.2 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
+  };
 
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        {/* Main About Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          {/* Text Content */}
+    <section
+      ref={ref}
+      id="about"
+      className="py-20 px-6 bg-gradient-to-br from-[#edf2fb] via-[#e2e0f9] to-[#f5e6f7] relative overflow-hidden"
+    >
+      {/* Decorative background grid - muted */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none -z-10">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage: `
+              linear-gradient(45deg, #dbeafe 1px, transparent 1px),
+              linear-gradient(-45deg, #f3e8ff 1px, transparent 1px)
+            `,
+            backgroundSize: "70px 70px",
+          }}
+        />
+      </div>
+
+      <motion.div
+        className="max-w-7xl mx-auto space-y-20"
+        variants={containerVariants}
+        initial="hidden"
+        animate={controls}
+      >
+        {/* Introduction */}
+        <motion.div
+          variants={itemVariants}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+        >
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-indigo-800 mb-6">
               About AutoMobility
             </h2>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              We are a next-generation mobility platform dedicated to redefining
-              transportation through cutting-edge automotive solutions and
-              sustainable innovations. Our mission is to bridge technology with
-              mobility, making travel smarter, safer, and more efficient for
-              everyone.
+            <p className="text-gray-700 mb-4">
+              We're transforming how people move by delivering smarter, cleaner,
+              and more enjoyable transportation experiences.
             </p>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Since our inception, we’ve been committed to showcasing the latest
-              trends in smart vehicles, electric mobility, and future-forward
-              automotive technologies.
+            <p className="text-gray-700 mb-6">
+              Discover innovation in electric vehicles, AI-driven platforms, and
+              next-gen transportation.
             </p>
-
-            {/* Key Points */}
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">
-                  A Smart and connected vehicle solutions
-                </span>
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">
-                  Focus on electric and sustainable mobility
-                </span>
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">
-                  User-focused platform with expert analysis
-                </span>
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">
-                  In-depth insights into the future of transportation
-                </span>
-              </div>
-            </div>
-
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
-              Learn More About Us
+            <ul className="space-y-3 mb-8">
+              {[
+                "Smart and connected mobility",
+                "Eco-conscious and electric-first solutions",
+                "User-centric features and insights",
+                "Cutting-edge transport intelligence",
+              ].map((item, i) => (
+                <li key={i} className="flex items-center">
+                  <CheckCircle className="text-purple-500 w-5 h-5 mr-2" />
+                  <span className="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <button className="bg-indigo-500 text-white px-6 py-3 rounded-full hover:bg-indigo-600 transition">
+              Learn More
             </button>
           </div>
 
-          {/* Visual Content */}
-          <div className="relative">
-            <div className="bg-gradient-to-br from-blue-900 via-blue-600 to-purple-600 rounded-3xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
-              <p className="text-lg leading-relaxed mb-6">
-                 To revolutionize mobility by delivering innovative, sustainable,
-      and smart automotive solutions that enhance travel experiences and
-      drive the future of transportation.
-              </p>
-              <div className="bg-blue-400  bg-opacity-20 rounded-2xl p-6">
-                <h4 className="text-xl font-semibold mb-3">Why Choose Us?</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-300  rounded-full mr-3"></div>
-                  Industry-leading expertise in smart vehicle technologies
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-300  rounded-full mr-3"></div>
-                     Commitment to eco-friendly and sustainable mobility solutions.
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-300  rounded-full mr-3"></div>
-                     Dedicated team passionate about innovation and safety
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-300 rounded-full mr-3 "></div>
-                    Customized mobility solutions tailored to your lifestyle
-                  </li>
-                </ul>
-              </div>
+          <div className="bg-white/90 rounded-3xl shadow-lg p-8 space-y-6">
+            <h3 className="text-2xl font-semibold text-indigo-700">
+              Our Mission
+            </h3>
+            <p className="text-gray-700">
+              We aim to accelerate the global shift to sustainable mobility
+              through smart and personalized transport systems.
+            </p>
+            <div className="bg-indigo-100 p-5 rounded-2xl space-y-3">
+              <h4 className="font-semibold text-gray-800">Why Choose Us?</h4>
+              <ul className="space-y-2 text-gray-700 text-sm">
+                <li>✓ Proven expertise in automotive innovation</li>
+                <li>✓ Commitment to clean, future-ready mobility</li>
+                <li>✓ Passionate, safety-focused team</li>
+                <li>✓ Tailored transport for modern lifestyles</li>
+              </ul>
             </div>
-
-            {/* Decorative Elements */}
-  <div className="absolute -top-4 -right-4 w-24 h-24 bg-yellow-600 rounded-full opacity-20"></div>
-  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-pink-600 rounded-full opacity-20"></div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="bg-gradient-to-br from-blue-800 via-blue-600 to-purple-600 text-white p-4 rounded-2xl w-fit mx-auto mb-4">
+        {/* Stats */}
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          variants={containerVariants}
+        >
+          {stats.map((stat, i) => (
+            <motion.div
+              key={i}
+              variants={itemVariants}
+              className="bg-white/90 backdrop-blur-md p-6 rounded-xl text-center shadow-md hover:shadow-lg transition"
+            >
+              <div className="bg-gradient-to-tr from-indigo-400 to-pink-400 text-white p-3 rounded-full w-fit mx-auto mb-4">
                 {stat.icon}
               </div>
-              <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+              <div className="text-3xl font-bold text-gray-800">
                 {stat.number}
               </div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
-            </div>
+              <p className="text-gray-600">{stat.label}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Values Section */}
-        <div>
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        {/* Values */}
+        <motion.div variants={containerVariants}>
+          <motion.div className="text-center mb-12" variants={itemVariants}>
+            <h3 className="text-3xl font-bold text-indigo-800">
               Our Core Values
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              These fundamental principles guide everything we do and define who
-              we are as a company.
+            <p className="text-gray-600 max-w-xl mx-auto mt-2">
+              The pillars that guide every solution we deliver.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300"
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {values.map((val, i) => (
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/90 rounded-xl p-6 shadow-md hover:shadow-lg transition"
               >
-                <div className="bg-gradient-to-br from-blue-800 via-blue-600 to-purple-600 text-white p-3 rounded-xl w-fit mb-4">
-                  {value.icon}
+                <div className="bg-gradient-to-br from-indigo-500 to-purple-400 text-white p-2 rounded-full w-fit mb-3">
+                  {val.icon}
                 </div>
-                <h4 className="text-xl font-bold text-gray-800 mb-3">
-                  {value.title}
+                <h4 className="text-lg font-semibold text-gray-800">
+                  {val.title}
                 </h4>
-                <p className="text-gray-600 leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
+                <p className="text-gray-600 mt-2">{val.description}</p>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

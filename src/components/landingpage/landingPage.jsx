@@ -98,8 +98,8 @@ const LandingPage = () => {
     },
      {
       id: 'automobile',
-      title: "Automobile & Mobilty",
-      description: "Shape the future of brand communication and digital marketing strategies for Viksit Bharat.",
+      title: "Automobile & Mobility",
+      description:"Explore the world of smart vehicles, sustainable transport, and the future of mobility.",
       icon: <Target className="w-8 h-8" />,
       gradient: "from-blue-600 to-purple-600",
       path: `/industries/Automobile & mobilty/automobile`

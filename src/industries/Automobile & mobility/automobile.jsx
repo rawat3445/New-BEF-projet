@@ -3,16 +3,17 @@ import { ArrowLeft, Menu, X, Home, Info, DollarSign } from 'lucide-react';
 
 // Import all components
 import Navbar from './components/navbar/Navbar';
-import HeroCarousel from './components/herosection/HeroSection';
-// import ServiceCards from './components/servicecards/cards';
+// import HeroCarousel from './components/herosection/HeroSection';
+import ServiceCards from './servicesCard/Card';
 import AboutSection from './components/aboutsection/About';
 import Footer from './components/footer/Footer';
 
 // Import pages
 import AboutPage from './pages/Aboutpage';
-// import SalesPage from './pages/salesPage/salesPage';
+import SalesPage from './pages/SalesPage';
 
 import './automobile.css';
+import AutoMobilityHero from './components/herosection/Hero';
 
 const AutomobileIndustry = () => {
   const [currentView, setCurrentView] = useState('home');
@@ -39,9 +40,11 @@ const AutomobileIndustry = () => {
       default:
         return (
           <>
-            <HeroCarousel />
-            {/* <ServiceCards /> */}
+            {/* <HeroCarousel /> */}
+            <AutoMobilityHero/>
             <AboutSection />
+             <ServiceCards />
+            <SalesPage />
           </>
         );
     }
@@ -56,8 +59,8 @@ const AutomobileIndustry = () => {
             <div className="brand-logo">
               <div className="logo-icon">B</div>
               <div className="brand-text">
-                <h1>Bhartiya Economic Forum</h1>
-                <span className="brand-tagline">Transform Your Advertising</span>
+                <h1>Bharat Economic Forum</h1>
+                <span className="brand-tagline">Transform Your Innovation</span>
               </div>
             </div>
           </div>

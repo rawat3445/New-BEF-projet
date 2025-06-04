@@ -1,9 +1,9 @@
-import React from 'react';
-import { 
-  Crown, 
-  Users, 
-  Mic, 
-  Camera, 
+import React from "react";
+import {
+  Crown,
+  Users,
+  Mic,
+  Camera,
   Trophy,
   Network,
   ArrowRight,
@@ -11,136 +11,149 @@ import {
   Target,
   Award,
   Briefcase,
-  Globe
-} from 'lucide-react';
+  Globe,
+} from "lucide-react";
 
 const SponsorshipBenefits = () => {
   const sponsorshipTiers = [
     {
       id: 1,
       icon: <Trophy className="h-8 w-8" />,
-      title: "Title Sponsor",
-      subtitle: "Platinum Partnership",
-      description: "Maximum visibility and exclusive branding opportunities at India's premier development conclave.",
+      title: "Lead Mobility Partner",
+      subtitle: "Platinum Tier",
+      description:
+        "Gain maximum exposure and exclusive access at India’s leading automobile and mobility innovation platform.",
       features: [
-        "Logo on all official materials & banners",
-        "Prime speaking slot (30 minutes)",
-        "Dedicated exhibition booth (100 sq ft)",
-        "VIP networking dinner access",
-        "Media interview opportunities",
-        "LinkedIn & social media promotion"
+        "Logo on all official collaterals & stage branding",
+        "Opening keynote session (30 minutes)",
+        "Exclusive EV test drive booth (100 sq ft)",
+        "Access to VIP industry roundtable",
+        "Feature in automotive media interviews",
+        "Promotion across LinkedIn and event platforms",
       ],
       price: "₹5,00,000",
       popular: true,
-      color: "from-yellow-400 to-orange-500"
+      color: "from-yellow-400 to-orange-500",
     },
     {
       id: 2,
       icon: <Crown className="h-8 w-8" />,
-      title: "Keynote Sponsor",
-      subtitle: "Gold Partnership",
-      description: "Establish thought leadership while connecting with key stakeholders and decision makers.",
+      title: "Smart Tech Sponsor",
+      subtitle: "Gold Tier",
+      description:
+        "Showcase your smart mobility solutions and connect with automotive leaders and policymakers.",
       features: [
-        "Keynote speaking opportunity (20 minutes)",
-        "Logo placement on stage backdrop",
-        "Exhibition space (50 sq ft)",
-        "Welcome reception access",
-        "Digital marketing campaign inclusion",
-        "Post-event networking directory"
+        "Thought leadership session (20 minutes)",
+        "Logo on tech stage backdrop",
+        "EV & IoT exhibition space (50 sq ft)",
+        "Access to networking lunch with OEMs",
+        "Featured in digital mobility campaign",
+        "Listing in post-event industry brief",
       ],
       price: "₹3,50,000",
       popular: false,
-      color: "from-blue-500 to-purple-600"
+      color: "from-blue-500 to-purple-600",
     },
     {
       id: 3,
       icon: <Mic className="h-8 w-8" />,
-      title: "Panel Sponsor",
-      subtitle: "Silver Partnership",
-      description: "Engage in meaningful discussions and showcase expertise in specialized sessions.",
+      title: "Panel Discussion Partner",
+      subtitle: "Silver Tier",
+      description:
+        "Join leading voices in automotive innovation and contribute to industry-wide dialogues.",
       features: [
-        "Panel discussion participation",
-        "Logo on session materials",
-        "Booth space (25 sq ft)",
-        "Lunch networking access",
-        "Speaker bio in official program",
-        "Event photography rights"
+        "Panelist spot in expert sessions",
+        "Logo in session-specific promotions",
+        "Product booth (25 sq ft)",
+        "Networking lunch inclusion",
+        "Company profile in event brochure",
+        "Access to event photography",
       ],
       price: "₹2,50,000",
       popular: false,
-      color: "from-green-500 to-teal-600"
+      color: "from-green-500 to-teal-600",
     },
     {
       id: 4,
       icon: <Network className="h-8 w-8" />,
-      title: "Innovation Sponsor",
-      subtitle: "Startup Catalyst",
-      description: "Support emerging entrepreneurs while showcasing your commitment to innovation.",
+      title: "Startup Mobility Sponsor",
+      subtitle: "Innovation Booster",
+      description:
+        "Empower emerging mobility startups and highlight your innovation leadership.",
       features: [
-        "Startup pitch session hosting",
-        "Mentorship roundtable access",
-        "Innovation zone branding",
-        "Coffee break sponsorship",
-        "Young entrepreneur networking",
-        "Tech showcase participation"
+        "Host a mobility startup pitch",
+        "Mentorship panel participation",
+        "Branding in innovation showcase zone",
+        "Sponsor refreshment zone for startups",
+        "Access to young innovator networking",
+        "Showcase tech prototypes",
       ],
       price: "₹2,00,000",
       popular: false,
-      color: "from-pink-500 to-rose-600"
+      color: "from-pink-500 to-rose-600",
     },
     {
       id: 5,
       icon: <Users className="h-8 w-8" />,
-      title: "Networking Sponsor",
-      subtitle: "Community Builder",
-      description: "Facilitate meaningful connections and build lasting business relationships.",
+      title: "Mobility Connect Sponsor",
+      subtitle: "Networking Enabler",
+      description:
+        "Build deep business relationships through curated networking experiences.",
       features: [
-        "Networking session hosting",
-        "Welcome desk branding",
-        "Business card exchange app",
-        "Evening reception access",
-        "Delegate contact database",
-        "Follow-up meeting facilitation"
+        "Host a mobility networking mixer",
+        "Logo on registration & help desk",
+        "QR business card exchange integration",
+        "Evening drinks reception branding",
+        "Access to attendee contact list",
+        "Facilitated B2B meetings",
       ],
       price: "₹1,50,000",
       popular: false,
-      color: "from-indigo-500 to-blue-600"
+      color: "from-indigo-500 to-blue-600",
     },
     {
       id: 6,
       icon: <Camera className="h-8 w-8" />,
-      title: "Media Sponsor",
-      subtitle: "Digital Amplifier",
-      description: "Maximize reach through comprehensive media coverage and digital presence.",
+      title: "Media & Content Sponsor",
+      subtitle: "Visibility Driver",
+      description:
+        "Amplify your automotive brand presence through extensive digital and media exposure.",
       features: [
-        "Live streaming co-branding",
-        "Social media content creation",
-        "Press release mentions",
-        "Event documentation rights",
-        "Podcast episode sponsorship",
-        "Digital asset library access"
+        "Co-branding on live streams & reels",
+        "Featured mobility video content",
+        "Brand mention in official press releases",
+        "Rights to publish event highlights",
+        "Podcast sponsorship on smart mobility",
+        "Access to video & photo library",
       ],
       price: "₹1,00,000",
       popular: false,
-      color: "from-cyan-500 to-blue-500"
-    }
+      color: "from-cyan-500 to-blue-500",
+    },
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <section
+      id="services"
+      className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50"
+    >
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-200 mb-6">
             <Globe className="h-5 w-5 text-blue-600 mr-2" />
-            <span className="text-blue-700 font-semibold">Viksit Bharat Conclave 2025</span>
+            <span className="text-blue-700 font-semibold">
+              Viksit Bharat Conclave 2025
+            </span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-800 via-purple-700 to-blue-900 bg-clip-text text-transparent mb-6">
             Partnership Opportunities
           </h2>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            Join India's most influential gathering of visionaries, policymakers, and innovators. 
-            Showcase your commitment to building a developed India while unlocking unprecedented business opportunities.
+            Join India's most influential gathering of visionaries,
+            policymakers, and innovators. Showcase your commitment to building a
+            developed India while unlocking unprecedented business
+            opportunities.
           </p>
         </div>
 
@@ -148,20 +161,22 @@ const SponsorshipBenefits = () => {
         <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 mb-16 border border-white/20 shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-blue-700">500+</div>
-              <div className="text-gray-600">Industry Leaders</div>
+              <div className="text-3xl font-bold text-blue-700">200+</div>
+              <div className="text-gray-600">Automobile Brands & OEMs</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-purple-700">50+</div>
-              <div className="text-gray-600">Speakers & Panels</div>
+              <div className="text-3xl font-bold text-purple-700">70+</div>
+              <div className="text-gray-600">Tech & Mobility Experts</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-green-700">25+</div>
-              <div className="text-gray-600">Media Partners</div>
+              <div className="text-3xl font-bold text-green-700">40+</div>
+              <div className="text-gray-600">Startup Exhibitors</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-orange-700">10M+</div>
-              <div className="text-gray-600">Digital Reach</div>
+              <div className="text-3xl font-bold text-orange-700">15M+</div>
+              <div className="text-gray-600">
+                Online & On-ground Impressions
+              </div>
             </div>
           </div>
         </div>
@@ -172,7 +187,7 @@ const SponsorshipBenefits = () => {
             <div
               key={tier.id}
               className={`relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden border border-white/20 ${
-                tier.popular ? 'ring-2 ring-yellow-400 scale-105' : ''
+                tier.popular ? "ring-2 ring-yellow-400 scale-105" : ""
               }`}
             >
               {tier.popular && (
@@ -183,10 +198,12 @@ const SponsorshipBenefits = () => {
                   </div>
                 </div>
               )}
-              
+
               <div className="p-8">
                 {/* Icon */}
-                <div className={`bg-gradient-to-br ${tier.color} text-white p-4 rounded-2xl w-fit mb-6 shadow-lg`}>
+                <div
+                  className={`bg-gradient-to-br ${tier.color} text-white p-4 rounded-2xl w-fit mb-6 shadow-lg`}
+                >
                   {tier.icon}
                 </div>
 
@@ -208,8 +225,13 @@ const SponsorshipBenefits = () => {
                 {/* Features */}
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature, index) => (
-                    <li key={index} className="flex items-start text-sm text-gray-700">
-                      <div className={`w-2 h-2 bg-gradient-to-r ${tier.color} rounded-full mr-3 mt-2 flex-shrink-0`}></div>
+                    <li
+                      key={index}
+                      className="flex items-start text-sm text-gray-700"
+                    >
+                      <div
+                        className={`w-2 h-2 bg-gradient-to-r ${tier.color} rounded-full mr-3 mt-2 flex-shrink-0`}
+                      ></div>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -218,19 +240,27 @@ const SponsorshipBenefits = () => {
                 {/* Price */}
                 <div className="text-3xl font-bold text-gray-800 mb-8 text-center">
                   {tier.price}
-                  <div className="text-sm font-normal text-gray-500 mt-1">Investment Amount</div>
+                  <div className="text-sm font-normal text-gray-500 mt-1">
+                    Investment Amount
+                  </div>
                 </div>
 
                 {/* CTA Button */}
-                <button className={`w-full bg-gradient-to-r ${tier.color} text-white py-4 px-6 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center group transform hover:scale-105`}>
+                <button
+                  className={`w-full bg-gradient-to-r ${tier.color} text-white py-4 px-6 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center group transform hover:scale-105`}
+                >
                   Become a Partner
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
 
               {/* Decorative Elements */}
-              <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${tier.color}`}></div>
-              <div className={`absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl ${tier.color} opacity-10 rounded-tl-full`}></div>
+              <div
+                className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${tier.color}`}
+              ></div>
+              <div
+                className={`absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl ${tier.color} opacity-10 rounded-tl-full`}
+              ></div>
             </div>
           ))}
         </div>
@@ -243,18 +273,30 @@ const SponsorshipBenefits = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center space-y-4">
               <Award className="h-12 w-12 text-blue-600 mx-auto" />
-              <h4 className="text-xl font-semibold text-gray-800">Recognition & Awards</h4>
-              <p className="text-gray-600">Special recognition ceremony and partnership certificates</p>
+              <h4 className="text-xl font-semibold text-gray-800">
+                Recognition & Awards
+              </h4>
+              <p className="text-gray-600">
+                Special recognition ceremony and partnership certificates
+              </p>
             </div>
             <div className="text-center space-y-4">
               <Briefcase className="h-12 w-12 text-purple-600 mx-auto" />
-              <h4 className="text-xl font-semibold text-gray-800">Business Opportunities</h4>
-              <p className="text-gray-600">Access to exclusive business development sessions</p>
+              <h4 className="text-xl font-semibold text-gray-800">
+                Business Opportunities
+              </h4>
+              <p className="text-gray-600">
+                Access to exclusive business development sessions
+              </p>
             </div>
             <div className="text-center space-y-4">
               <Target className="h-12 w-12 text-green-600 mx-auto" />
-              <h4 className="text-xl font-semibold text-gray-800">Strategic Positioning</h4>
-              <p className="text-gray-600">Position your brand at the forefront of India's development</p>
+              <h4 className="text-xl font-semibold text-gray-800">
+                Strategic Positioning
+              </h4>
+              <p className="text-gray-600">
+                Position your brand at the forefront of India's development
+              </p>
             </div>
           </div>
         </div>
@@ -262,7 +304,8 @@ const SponsorshipBenefits = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-            Ready to be part of India's transformation story? Let's discuss a custom partnership package tailored to your objectives.
+            Ready to be part of India's transformation story? Let's discuss a
+            custom partnership package tailored to your objectives.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">

@@ -27,14 +27,15 @@ const Footer = () => {
     { name: 'Careers', href: '#careers' }
   ];
 
-  const services = [
-    { name: 'Digital Marketing', href: '#digital' },
-    { name: 'Creative Design', href: '#creative' },
-    { name: 'Brand Strategy', href: '#strategy' },
-    { name: 'Web Development', href: '#development' },
-    { name: 'Social Media', href: '#social' },
-    { name: 'Analytics', href: '#analytics' }
-  ];
+const services = [
+  { name: 'EV Consultation & Transition Planning', href: '#ev-consultation' },
+  { name: 'Fleet Management Solutions', href: '#fleet-management' },
+  { name: 'Smart Mobility Analytics', href: '#mobility-analytics' },
+  { name: 'IoT-based Vehicle Monitoring', href: '#iot-monitoring' },
+  { name: 'Route Optimization & Logistics', href: '#route-optimization' },
+  { name: 'Charging Infrastructure Planning', href: '#charging-planning' }
+];
+
 
   const socialLinks = [
     { icon: <Facebook className="h-5 w-5" />, href: '#', name: 'Facebook' },

@@ -52,10 +52,10 @@ const Navbar = () => {
 
       <nav className={`sticky top-0 z-50 transition-all duration-500 ${scrolled
           ? 'glass-effect shadow-xl'
-          : 'bg-white/95 backdrop-blur-sm shadow-lg'
+          : ' backdrop-blur-lg shadow-lg'
         }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-16">
             {/* Enhanced Logo */}
             <div className="flex-shrink-0 group">
               <h1 className="text-2xl lg:text-3xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent hover:scale-105 transition-all duration-300 logo-glow cursor-pointer">

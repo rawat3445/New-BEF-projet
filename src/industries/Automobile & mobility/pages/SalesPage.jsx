@@ -1,145 +1,163 @@
-import React, { useState } from 'react';
-import { Check, Star, ArrowRight, Users, Award, TrendingUp } from 'lucide-react';
-import './salesPage.css';
+import React, { useState } from "react";
+import {
+  Check,
+  Star,
+  ArrowRight,
+  Users,
+  Award,
+  TrendingUp,
+} from "lucide-react";
+import "./salesPages.css";
 
 const SalesPage = () => {
-  const [selectedPlan, setSelectedPlan] = useState('pro');
+  const [selectedPlan, setSelectedPlan] = useState("pro");
 
-  const plans = [
-    {
-      id: 'starter',
-      name: 'Starter',
-      price: '$99',
-      period: '/month',
-      description: 'Perfect for small businesses getting started',
-      features: [
-        'Up to 5 ad campaigns',
-        'Basic analytics dashboard',
-        'Email support',
-        'Social media integration',
-        '1 landing page'
-      ],
-      cta: 'Start Free Trial',
-      popular: false
-    },
-    {
-      id: 'pro',
-      name: 'Professional',
-      price: '$299',
-      period: '/month',
-      description: 'Best for growing businesses and agencies',
-      features: [
-        'Unlimited ad campaigns',
-        'Advanced analytics & reporting',
-        'Priority phone & email support',
-        'Multi-platform integration',
-        '5 custom landing pages',
-        'A/B testing tools',
-        'Team collaboration features'
-      ],
-      cta: 'Get Started Now',
-      popular: true
-    },
-    {
-      id: 'enterprise',
-      name: 'Enterprise',
-      price: '$599',
-      period: '/month',
-      description: 'Complete solution for large organizations',
-      features: [
-        'Everything in Professional',
-        'Dedicated account manager',
-        'Custom integration support',
-        'Unlimited landing pages',
-        'White-label solutions',
-        'Advanced security features',
-        'Custom reporting & insights'
-      ],
-      cta: 'Contact Sales',
-      popular: false
-    }
-  ];
+const plans = [
+  {
+    id: "starter",
+    name: "Startup Mobility",
+    price: "₹0.00",
+    period: "/month",
+    description: "Ideal for startups and small automotive service providers",
+    features: [
+      "EV consultation (up to 2 vehicles)",
+      "Basic route optimization tools",
+      "Email support",
+      "Vehicle diagnostics dashboard",
+      "Access to industry insights newsletter",
+    ],
+    cta: "Start Free Trial",
+    popular: false,
+  },
+  {
+    id: "pro",
+    name: "FleetPro",
+    price: "₹45,000",
+    period: "/month",
+    description: "Perfect for growing logistics and ride-sharing businesses",
+    features: [
+      "Fleet analytics and reporting",
+      "Advanced route & fuel optimization",
+      "Phone & priority email support",
+      "IoT-based maintenance alerts",
+      "5 smart dashboards for teams",
+      "API access for ERP/CRM integration",
+      "Driver behavior tracking tools",
+    ],
+    cta: "Subscribe Now",
+    popular: true,
+  },
+  {
+    id: "enterprise",
+    name: "Mobility Enterprise",
+    price: "₹95,000",
+    period: "/month",
+    description: "End-to-end mobility solutions for OEMs and large enterprises",
+    features: [
+      "All features in FleetPro",
+      "Dedicated mobility consultant",
+      "Custom EV/charging infrastructure planning",
+      "Smart city integration support",
+      "White-label mobility app",
+      "On-site team training",
+      "Custom analytics and reporting suite",
+    ],
+    cta: "Request Demo",
+    popular: false,
+  },
+];
 
-  const testimonials = [
-    {
-      id: 1,
-      name: 'Sarah Johnson',
-      company: 'TechStart Inc.',
-      role: 'Marketing Director',
-      content: 'Our ROI increased by 340% within the first quarter. The platform is incredibly intuitive and the results speak for themselves.',
-      rating: 5,
-      avatar: '👩‍💼'
-    },
-    {
-      id: 2,
-      name: 'Michael Chen',
-      company: 'GrowthCo',
-      role: 'CEO',
-      content: 'The best advertising platform we\'ve used. The analytics are detailed and the campaign management is seamless.',
-      rating: 5,
-      avatar: '👨‍💼'
-    },
-    {
-      id: 3,
-      name: 'Emily Rodriguez',
-      company: 'BrandBoost Agency',
-      role: 'Creative Director',
-      content: 'Client satisfaction has never been higher. The white-label features are exactly what our agency needed.',
-      rating: 5,
-      avatar: '👩‍🎨'
-    }
-  ];
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Rajiv Mehta",
+    company: "AutoNova",
+    role: "Head of Strategy",
+    content:
+      "Participating in this platform has been a game-changer. We've connected with top-tier EV startups and mobility innovators.",
+    rating: 5,
+    avatar: "🚗",
+  },
+  {
+    id: 2,
+    name: "Sneha Kulkarni",
+    company: "MobilityNext",
+    role: "Founder & CEO",
+    content:
+      "The exposure and networking opportunities were exceptional. It’s the perfect launchpad for future-focused mobility solutions.",
+    rating: 5,
+    avatar: "🚀",
+  },
+  {
+    id: 3,
+    name: "Arun Verma",
+    company: "GreenTorque",
+    role: "CTO",
+    content:
+      "From investor meetings to showcasing our latest EV prototype, this initiative truly drives innovation at scale.",
+    rating: 5,
+    avatar: "🔋",
+  },
+];
+
 
   const stats = [
-    { icon: Users, value: '10,000+', label: 'Active Clients' },
-    { icon: TrendingUp, value: '450%', label: 'Average ROI Increase' },
-    { icon: Award, value: '99.9%', label: 'Uptime Guarantee' }
+    { icon: Users,value: "200+",  label: "Leading Auto Brands" },
+    { icon: TrendingUp, value: "10K+",label: "EV & Clean-Tech Startups"},
+    { icon: Award, value: "99.9%", label: "Attendees & Delegates" },
   ];
 
-  const clientLogos = [
-    'TechCorp', 'InnovateLab', 'GrowthHub', 'BrandForce', 'MarketPro', 'AdVantage'
-  ];
+
+const clientLogos = [
+  "AutoNova",
+  "EVolve Motors",
+  "MobilityNext",
+  "GreenTorque",
+  "UrbanDrive",
+  "TranspoTech",
+];
+
 
   return (
     <div className="sales-page">
       {/* Hero Section */}
-      <section className="sales-hero">
-        <div className="sales-container">
-          <div className="hero-content">
-            <div className="hero-badge">
-              <span>🚀 Trusted by 10,000+ businesses worldwide</span>
-            </div>
-            <h1 className="hero-title">
-              Transform Your Advertising ROI with 
-              <span className="gradient-text"> Data-Driven Insights</span>
-            </h1>
-            <p className="hero-description">
-              Join thousands of successful businesses using our platform to create, 
-              manage, and optimize high-converting advertising campaigns across all channels.
-            </p>
-            <div className="hero-cta">
-              <button className="cta-primary">
-                Start Your Free Trial
-                <ArrowRight className="cta-icon" />
-              </button>
-              <button className="cta-secondary">
-                Watch Demo
-              </button>
-            </div>
-            <div className="hero-stats">
-              {stats.map((stat, index) => (
-                <div key={index} className="stat-item">
-                  <stat.icon className="stat-icon" />
-                  <div className="stat-content">
-                    <div className="stat-value">{stat.value}</div>
-                    <div className="stat-label">{stat.label}</div>
-                  </div>
-                </div>
-              ))}
+   <section className="sales-hero">
+  <div className="sales-container">
+    <div className="hero-content">
+      <div className="hero-badge">
+        <span>🚗 Empowering the Future of Mobility in India</span>
+      </div>
+      <h1 className="hero-title">
+        Accelerate Innovation with
+        <span className="gradient-text"> Sustainable & Smart Mobility</span>
+      </h1>
+      <p className="hero-description">
+        Join the nation’s leading auto brands, startups, and visionaries shaping
+        the future of transportation. From EVs to AI-driven mobility — explore, connect, and grow.
+      </p>
+      <div className="hero-cta">
+        <button className="cta-primary">
+          Register as a Partner
+          <ArrowRight className="cta-icon" />
+        </button>
+        <button className="cta-secondary">Explore Event Highlights</button>
+      </div>
+      <div className="hero-stats">
+        {stats.map((stat, index) => (
+          <div key={index} className="stat-item">
+            <stat.icon className="stat-icon" />
+            <div className="stat-content">
+              <div className="stat-value">{stat.value}</div>
+              <div className="stat-label">{stat.label}</div>
             </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Pricing Section */}
       <section className="pricing-section">
@@ -147,19 +165,24 @@ const SalesPage = () => {
           <div className="section-header">
             <h2 className="section-title">Choose Your Growth Plan</h2>
             <p className="section-description">
-              Flexible pricing that scales with your business. Start free, upgrade anytime.
+              Flexible pricing that scales with your business. Start free,
+              upgrade anytime.
             </p>
           </div>
-          
+
           <div className="pricing-grid">
             {plans.map((plan) => (
-              <div 
-                key={plan.id} 
-                className={`pricing-card ${plan.popular ? 'popular' : ''} ${selectedPlan === plan.id ? 'selected' : ''}`}
+              <div
+                key={plan.id}
+                className={`pricing-card ${plan.popular ? "popular" : ""} ${
+                  selectedPlan === plan.id ? "selected" : ""
+                }`}
                 onClick={() => setSelectedPlan(plan.id)}
               >
-                {plan.popular && <div className="popular-badge">Most Popular</div>}
-                
+                {plan.popular && (
+                  <div className="popular-badge">Most Popular</div>
+                )}
+
                 <div className="plan-header">
                   <h3 className="plan-name">{plan.name}</h3>
                   <div className="plan-price">
@@ -178,7 +201,11 @@ const SalesPage = () => {
                   ))}
                 </div>
 
-                <button className={`plan-cta ${plan.popular ? 'primary' : 'secondary'}`}>
+                <button
+                  className={`plan-cta ${
+                    plan.popular ? "primary" : "secondary"
+                  }`}
+                >
                   {plan.cta}
                 </button>
               </div>
@@ -188,38 +215,39 @@ const SalesPage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="testimonials-section">
-        <div className="sales-container">
-          <div className="section-header">
-            <h2 className="section-title">What Our Clients Say</h2>
-            <p className="section-description">
-              Don't just take our word for it. See what industry leaders are saying about our platform.
-            </p>
-          </div>
+   <section className="testimonials-section">
+  <div className="sales-container">
+    <div className="section-header">
+      <h2 className="section-title">Voices from the Mobility Ecosystem</h2>
+      <p className="section-description">
+        Hear what leading automotive innovators, startups, and partners are saying about our mobility initiative.
+      </p>
+    </div>
 
-          <div className="testimonials-grid">
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="testimonial-card">
-                <div className="testimonial-rating">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="star-icon filled" />
-                  ))}
-                </div>
-                <p className="testimonial-content">"{testimonial.content}"</p>
-                <div className="testimonial-author">
-                  <div className="author-avatar">{testimonial.avatar}</div>
-                  <div className="author-info">
-                    <div className="author-name">{testimonial.name}</div>
-                    <div className="author-role">
-                      {testimonial.role}, {testimonial.company}
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <div className="testimonials-grid">
+      {testimonials.map((testimonial) => (
+        <div key={testimonial.id} className="testimonial-card">
+          <div className="testimonial-rating">
+            {[...Array(testimonial.rating)].map((_, i) => (
+              <Star key={i} className="star-icon filled" />
             ))}
           </div>
+          <p className="testimonial-content">"{testimonial.content}"</p>
+          <div className="testimonial-author">
+            <div className="author-avatar">{testimonial.avatar}</div>
+            <div className="author-info">
+              <div className="author-name">{testimonial.name}</div>
+              <div className="author-role">
+                {testimonial.role}, {testimonial.company}
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Client Logos Section */}
       <section className="clients-section">
@@ -235,32 +263,34 @@ const SalesPage = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="final-cta-section">
-        <div className="sales-container">
-          <div className="final-cta-content">
-            <h2 className="final-cta-title">
-              Ready to Transform Your Advertising Strategy?
-            </h2>
-            <p className="final-cta-description">
-              Join thousands of successful businesses. Start your free trial today and see results in 30 days or your money back.
-            </p>
-            <div className="final-cta-buttons">
-              <button className="cta-primary large">
-                Start Free Trial - No Credit Card Required
-                <ArrowRight className="cta-icon" />
-              </button>
-              <div className="cta-guarantee">
-                <span>✅ 30-day money-back guarantee</span>
-                <span>✅ No setup fees</span>
-                <span>✅ Cancel anytime</span>
-              </div>
-            </div>
-          </div>
+    {/* Final CTA Section */}
+<section className="final-cta-section">
+  <div className="sales-container">
+    <div className="final-cta-content">
+      <h2 className="final-cta-title">
+        Ready to Drive the Future of Mobility?
+      </h2>
+      <p className="final-cta-description">
+        Be part of India's leading platform for automotive innovation, electric vehicles, and smart mobility solutions.
+        Reserve your spot now and accelerate your impact.
+      </p>
+      <div className="final-cta-buttons">
+        <button className="cta-primary large">
+          Become a Sponsor
+          <ArrowRight className="cta-icon" />
+        </button>
+        <div className="cta-guarantee">
+          <span>✅ Limited early-bird slots available</span>
+          <span>✅ Maximum brand visibility</span>
+          <span>✅ Connect with 500+ industry leaders</span>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
-};
+}
 
 export default SalesPage;
