@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Menu, X, Home, Info, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 // Import all components
 import Navbar from './components/navbar/navbar';
 import HeroCarousel from './components/herocarousel/carousel';
@@ -14,7 +15,7 @@ import SalesPage from './pages/salesPage/salesPage';
 
 import "./index.css";
 
-const BeautyWellnessIndustry = () => {
+const WomenEntrepreneurship = () => {
   const [currentView, setCurrentView] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -48,20 +49,20 @@ const BeautyWellnessIndustry = () => {
   };
 
   return (
-    <div className="beautywellness-industry">
+    <div className="women-entrepreneurship">
       {/* Navigation Header */}
       <div className="industry-nav">
         <div className="nav-container">
           <div className="nav-brand">
-           <Link to={'/'}>
-             <div className="brand-logo">
-              <div className="logo-icon">B</div>
-              <div className="brand-text">
-                <h1>Bhartiya Economic Forum</h1>
-                <span className="brand-tagline">Elevate Your Wellness Journey</span>
+            <Link to={'/'}>
+              <div className="brand-logo">
+                <div className="logo-icon">W</div>
+                <div className="brand-text">
+                  <h1>Bharat Economic Forum</h1>
+                  <span className="brand-tagline">Empowering Women Entrepreneurs Nationwide</span>
+                </div>
               </div>
-            </div>
-           </Link>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -113,7 +114,7 @@ const BeautyWellnessIndustry = () => {
         )}
       </div>
 
-      {/* Breadcrumb for non-home views */}
+      {/* Breadcrumb */}
       {currentView !== 'home' && (
         <div className="breadcrumb">
           <div className="breadcrumb-container">
@@ -134,23 +135,20 @@ const BeautyWellnessIndustry = () => {
 
       {/* Main Content */}
       <main className="main-content">
-        {/* Render Navbar only on home page */}
         {currentView === 'home' && <Navbar />}
-        
-        {/* Render appropriate content */}
         {renderContent()}
       </main>
 
       {/* Footer */}
       <Footer />
 
-      {/* Floating Action Button for Quick Access */}
+      {/* Floating Action Button */}
       {currentView === 'home' && (
         <div className="floating-actions">
           <button
             onClick={() => setCurrentView('sales')}
             className="fab-primary"
-            title="View Pricing"
+            title="Explore Opportunities"
           >
             <DollarSign size={20} />
           </button>
@@ -167,4 +165,4 @@ const BeautyWellnessIndustry = () => {
   );
 };
 
-export default BeautyWellnessIndustry;
+export default WomenEntrepreneurship;

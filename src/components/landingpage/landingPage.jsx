@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Tractor } from 'lucide-react';
+
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Star, Tractor, UserCheck } from 'lucide-react';
+
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
@@ -43,6 +45,32 @@ const LandingPage = () => {
       gradient: "from-blue-600 to-purple-600",
       path: `/industries/advertisement`
     },
+    {
+      id: 'beauty-wellness',
+      title: "Beauty And Wellness",
+      description: "Discover innovative beauty and wellness solutions shaping Viksit Bharat’s vibrant future.",
+      icon: <Star className="w-8 h-8" />,
+      gradient: "from-pink-500 to-purple-600",
+      path: `/industries/beauty-wellness`
+    },
+    {
+      id: 'women-entrepreneurship',
+      title: "Empowering Women Entrepreneurs",
+      description: "Explore inspiring stories, resources, and opportunities fueling women-led businesses and innovation.",
+      icon: <UserCheck className="w-8 h-8" />,
+      gradient: "from-pink-600 to-purple-700",
+      path: `/industries/women-entrepreneurship`
+    },
+
+    {
+      id: 'real-estate',
+      title: "Real Estate and Urban Planning",
+      description: "Explore inspiring stories, resources, and opportunities fueling women-led businesses and innovation.",
+      icon: <UserCheck className="w-8 h-8" />,
+      gradient: "from-pink-600 to-purple-700",
+      path: `/industries/women-entrepreneurship`
+    },
+
     {
       id: 2,
       title: "Public Relations",
@@ -122,24 +150,33 @@ const LandingPage = () => {
       setTimeout(() => setIsSubscribed(false), 3000);
     }
   };
- const handleCardClick = (card) => {
-   // You guys can use switch case or whatever suits you. This one’s scalable
-  switch (card.id) {
-    case 'advertisement':
-      navigate('/advertisement');
-      break;
-    case 'media':
-      navigate('/media-entertainment');
-      break;
-    case 'agriculture':
-      navigate('/agriculture');
-      break;
-    default:
-      console.log(`Clicked on ${card.title} card`);
-      alert(`Navigate to ${card.title} page`);
-      break;
-  }
-};
+  const handleCardClick = (card) => {
+    switch (card.id) {
+      case 'advertisement':
+        navigate('/advertisement');
+        break;
+      case 'real-estate':
+        navigate('/real-estate');
+        break;
+      case 'beauty-wellness':
+        navigate('/beauty-wellness');
+        break;
+      case 'women-entrepreneurship':
+        navigate('/women-entrepreneurship');
+        break;
+      case 'media':
+        navigate('/media-entertainment');
+        break;
+      case 'agriculture':
+        navigate('/agriculture');
+        break;
+      default:
+        console.log(`Clicked on ${card.title} card`);
+        alert(`Navigate to ${card.title} page`);
+        break;
+    }
+  };
+
 
 
   return (
@@ -301,18 +338,7 @@ const LandingPage = () => {
             ))}
           </div>
 
-          {/* Instructions for implementation */}
-          <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Implementation Notes:</h4>
-            <p className="text-sm text-gray-600 mb-3">
-              This demo shows alerts when clicking cards. To implement real navigation:
-            </p>
-            <div className="space-y-2 text-sm text-gray-600">
-              <p><strong>React Router:</strong> Import useNavigate and use navigate(card.path)</p>
-              <p><strong>Next.js:</strong> Import useRouter and use router.push(card.path)</p>
-              <p><strong>Vanilla JS:</strong> Use window.location.href = card.path</p>
-            </div>
-          </div>
+
         </div>
       </section>
 
