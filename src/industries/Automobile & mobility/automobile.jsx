@@ -2,19 +2,20 @@ import React, { useState } from 'react';
 import { ArrowLeft, Menu, X, Home, Info, DollarSign } from 'lucide-react';
 
 // Import all components
-import Navbar from './components/navbar/navbar';
-import HeroCarousel from './components/herocarousel/herocarousel';
-import SalesSection from './components/salessection/salessection';
-import AboutSection from './components/aboutsection/aboutsection';
-import Footer from './components/footer/footer';
+import Navbar from './components/navbar/Navbar';
+// import HeroCarousel from './components/herosection/HeroSection';
+import ServiceCards from './servicesCard/Card';
+import AboutSection from './components/aboutsection/About';
+import Footer from './components/footer/Footer';
 
 // Import pages
-import AboutPage from './pages/aboutpage/aboutPage';
-import SalesPage from './pages/salespage/SalesPage';
+import AboutPage from './pages/Aboutpage';
+import SalesPage from './pages/SalesPage';
 
-import './agriculture.css';
+import './automobile.css';
+import AutoMobilityHero from './components/herosection/Hero';
 
-const AgricultureIndustry = () => {
+const AutomobileIndustry = () => {
   const [currentView, setCurrentView] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -39,9 +40,11 @@ const AgricultureIndustry = () => {
       default:
         return (
           <>
-            <HeroCarousel />
-            <SalesSection />
+            {/* <HeroCarousel /> */}
+            <AutoMobilityHero/>
             <AboutSection />
+             <ServiceCards />
+            <SalesPage />
           </>
         );
     }
@@ -56,8 +59,8 @@ const AgricultureIndustry = () => {
             <div className="brand-logo">
               <div className="logo-icon">B</div>
               <div className="brand-text">
-                <h1>Bhartiya Economic Forum</h1>
-                <span className="brand-tagline">Transform Your Advertising</span>
+                <h1>Bharat Economic Forum</h1>
+                <span className="brand-tagline">Transform Your Innovation</span>
               </div>
             </div>
           </div>
@@ -167,43 +170,4 @@ const AgricultureIndustry = () => {
   );
 };
 
-export default AgricultureIndustry;
-
-
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { DollarSign, Info } from 'lucide-react';
-// import HeroCarousel from './components/herocarousel/herocarousel';
-// import AboutSection from './components/aboutsection/aboutsection';
-// import SalesSection from './components/salessection/salessection';
-// import Footer from './components/footer/footer';
-// import Navbar from './components/navbar/navbar';
-// import './agriculture.css';
-
-// const AgricultureIndustry = () => {
-//   return (
-//     <div className="agriculture-industry">
-//       <Navbar />
-//       <main className="main-content">
-//         <HeroCarousel />
-//         <AboutSection />
-//         <SalesSection />
-//       </main>
-//       <Footer />
-//       <div className="floating-actions">
-//         <Link to="/agriculture/sales" className="fab-primary" title="View Pricing">
-//           <DollarSign size={20} />
-//         </Link>
-//         <button
-//           onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-//           className="fab-secondary"
-//           title="Learn More"
-//         >
-//           <Info size={20} />
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AgricultureIndustry;
+export default AutomobileIndustry;

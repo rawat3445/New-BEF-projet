@@ -1,27 +1,29 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Menu, X, Home, Info, DollarSign } from 'lucide-react';
+import { ArrowLeft, Menu, X, Home, Info, BarChart2, PieChart, TrendingUp } from 'lucide-react';
 
 // Import all components
 import Navbar from './components/navbar/navbar';
-import HeroCarousel from './components/herocarousel/herocarousel';
-import SalesSection from './components/salessection/salessection';
-import AboutSection from './components/aboutsection/aboutsection';
+import HeroCarousel from './components/herocarousel/carousel';
+import ServiceCards from './components/servicecards/cards';
+import AboutSection from './components/aboutsection/aboutsec';
 import Footer from './components/footer/footer';
 
 // Import pages
-import AboutPage from './pages/aboutpage/aboutPage';
-import SalesPage from './pages/salespage/SalesPage';
+import AboutPage from './pages/aboutPage/aboutPage';
+import InvestmentPlansPage from './pages/salesPage/salesPage';
 
-import './agriculture.css';
 
-const AgricultureIndustry = () => {
+import './finance.css';
+
+const Finance = () => {
   const [currentView, setCurrentView] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Navigation items with finance-appropriate icons and labels
   const navigationItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'about', label: 'About', icon: Info },
-    { id: 'sales', label: 'Pricing', icon: DollarSign }
+    { id: 'home', label: 'Dashboard', icon: Home },
+    { id: 'about', label: 'About Us', icon: Info },
+    { id: 'plans', label: 'Investment Plans', icon: BarChart2 },
   ];
 
   const handleNavigation = (view) => {
@@ -33,14 +35,29 @@ const AgricultureIndustry = () => {
     switch (currentView) {
       case 'about':
         return <AboutPage onBack={() => setCurrentView('home')} />;
-      case 'sales':
-        return <SalesPage />;
+      case 'plans':
+        return <InvestmentPlansPage />;
+      case 'market':
+        return (
+          <div>
+            {/* You can create a MarketInsightsPage or inline content here */}
+            <h2>Market Insights</h2>
+            <p>Latest trends, analysis, and forecasts to help you invest wisely.</p>
+          </div>
+        );
+      case 'performance':
+        return (
+          <div>
+            <h2>Portfolio Performance</h2>
+            <p>Track your investment growth and returns over time.</p>
+          </div>
+        );
       case 'home':
       default:
         return (
           <>
             <HeroCarousel />
-            <SalesSection />
+            <ServiceCards />
             <AboutSection />
           </>
         );
@@ -48,7 +65,7 @@ const AgricultureIndustry = () => {
   };
 
   return (
-    <div className="advertisement-industry">
+    <div className="finance-industry">
       {/* Navigation Header */}
       <div className="industry-nav">
         <div className="nav-container">
@@ -57,7 +74,7 @@ const AgricultureIndustry = () => {
               <div className="logo-icon">B</div>
               <div className="brand-text">
                 <h1>Bhartiya Economic Forum</h1>
-                <span className="brand-tagline">Transform Your Advertising</span>
+                <span className="brand-tagline">Grow Your Wealth Intelligently</span>
               </div>
             </div>
           </div>
@@ -120,7 +137,7 @@ const AgricultureIndustry = () => {
               className="breadcrumb-back"
             >
               <ArrowLeft size={16} />
-              <span>Back to Home</span>
+              <span>Back to Dashboard</span>
             </button>
             <div className="breadcrumb-separator">/</div>
             <div className="breadcrumb-current">
@@ -132,7 +149,7 @@ const AgricultureIndustry = () => {
 
       {/* Main Content */}
       <main className="main-content">
-        {/* Render Navbar only on home page */}
+        {/* Render Navbar only on dashboard */}
         {currentView === 'home' && <Navbar />}
         
         {/* Render appropriate content */}
@@ -146,64 +163,23 @@ const AgricultureIndustry = () => {
       {currentView === 'home' && (
         <div className="floating-actions">
           <button
-            onClick={() => setCurrentView('sales')}
+            onClick={() => setCurrentView('plans')}
             className="fab-primary"
-            title="View Pricing"
+            title="View Investment Plans"
           >
-            <DollarSign size={20} />
+            <BarChart2 size={20} />
           </button>
           <button
             onClick={() => setCurrentView('about')}
             className="fab-secondary"
-            title="Learn More"
+            title="About Us"
           >
             <Info size={20} />
           </button>
         </div>
       )}
-
-     
     </div>
   );
 };
 
-export default AgricultureIndustry;
-
-
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { DollarSign, Info } from 'lucide-react';
-// import HeroCarousel from './components/herocarousel/herocarousel';
-// import AboutSection from './components/aboutsection/aboutsection';
-// import SalesSection from './components/salessection/salessection';
-// import Footer from './components/footer/footer';
-// import Navbar from './components/navbar/navbar';
-// import './agriculture.css';
-
-// const AgricultureIndustry = () => {
-//   return (
-//     <div className="agriculture-industry">
-//       <Navbar />
-//       <main className="main-content">
-//         <HeroCarousel />
-//         <AboutSection />
-//         <SalesSection />
-//       </main>
-//       <Footer />
-//       <div className="floating-actions">
-//         <Link to="/agriculture/sales" className="fab-primary" title="View Pricing">
-//           <DollarSign size={20} />
-//         </Link>
-//         <button
-//           onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-//           className="fab-secondary"
-//           title="Learn More"
-//         >
-//           <Info size={20} />
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AgricultureIndustry;
+export default Finance;
