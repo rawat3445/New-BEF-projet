@@ -2,26 +2,35 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/landingpage/landingPage';
 import AdvertisementIndustry from './industries/advertisement/advertisement';
 import AgricultureIndustry from './industries/agriculture/agriculture';
+import AgricultureSalesPage from './industries/agriculture/pages/salespage/SalesPage';
 import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
 import './App.css';
 import BeautyWellnessIndustry from './industries/beauty';
 import WomenEntrepreneurship from './industries/women-entrepreneurship';
+
 import AutomobileIndustry from './industries/Automobile & mobility/automobile';
+
+import Finance from './industries/finance-investment/finance';
+import RealEstateIndustry from './industries/real-estate-and-urban-planning';
+
 
 function App() {
   return (
     <Router>
       <Routes>
-      
+
         <Route path="/" element={<LandingPage />} />
 
-     
+
         <Route path="/advertisement" element={<AdvertisementIndustry />} />
         <Route path="/agriculture" element={<AgricultureIndustry />} />
+        <Route path="/agriculture/sales" element={<AgricultureSalesPage />} />
         <Route path="/beauty-wellness" element={<BeautyWellnessIndustry />} />
         <Route path="/media-entertainment" element={<MediaEntertainmentIndustry />} />
         <Route path="/women-entrepreneurship" element={<WomenEntrepreneurship />} />
         <Route path="/automobile" element={<AutomobileIndustry />} />
+        <Route path="/finance" element={<Finance />} />
+        <Route path="/real-estate" element={<RealEstateIndustry/>} />
 
 
 
