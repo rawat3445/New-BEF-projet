@@ -7,34 +7,35 @@ const HeroCarousel = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const slides = [
-    {
-      id: 1,
-      title: "Elevate Your Brand",
-      subtitle: "Creative Advertising Solutions",
-      description: "Transform your business with cutting-edge advertising strategies that drive results and boost your market presence.",
-      buttonText: "Get Started",
-      background: "from-blue-600 via-purple-600 to-indigo-700",
-      accent: "from-blue-400 to-purple-400"
-    },
-    {
-      id: 2,
-      title: "Digital Marketing Excellence",
-      subtitle: "Data-Driven Campaigns",
-      description: "Leverage the power of digital platforms with our comprehensive marketing solutions tailored to your audience.",
-      buttonText: "Learn More",
-      background: "from-purple-600 via-pink-600 to-red-600",
-      accent: "from-purple-400 to-pink-400"
-    },
-    {
-      id: 3,
-      title: "Creative Design Studio",
-      subtitle: "Visual Storytelling",
-      description: "Bring your brand to life with stunning visuals and compelling narratives that resonate with your customers.",
-      buttonText: "View Portfolio",
-      background: "from-emerald-600 via-teal-600 to-cyan-600",
-      accent: "from-emerald-400 to-teal-400"
-    }
-  ];
+  {
+    id: 1,
+    title: "Protect Our Planet",
+    subtitle: "Sustainable Living for a Better Tomorrow",
+    description: "Join hands to promote eco-friendly practices that reduce waste, conserve resources, and build a greener future.",
+    buttonText: "Take Action",
+    background: "from-green-600 via-lime-600 to-emerald-700",
+    accent: "from-green-400 to-lime-400"
+  },
+  {
+    id: 2,
+    title: "Clean Energy Revolution",
+    subtitle: "Powering Progress Responsibly",
+    description: "Support the shift to renewable energy solutions that minimize carbon footprints and ensure long-term environmental health.",
+    buttonText: "Explore Solutions",
+    background: "from-yellow-600 via-orange-500 to-rose-500",
+    accent: "from-yellow-300 to-orange-300"
+  },
+  {
+    id: 3,
+    title: "Nature in Balance",
+    subtitle: "Conservation & Biodiversity",
+    description: "Preserve wildlife, protect ecosystems, and embrace biodiversity to maintain the delicate balance of nature.",
+    buttonText: "Learn More",
+    background: "from-sky-600 via-blue-600 to-teal-600",
+    accent: "from-sky-400 to-blue-400"
+  }
+];
+
 
   const nextSlide = useCallback(() => {
     if (isTransitioning) return;

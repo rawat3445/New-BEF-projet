@@ -11,15 +11,15 @@ const SalesPage = () => {
       name: 'Starter',
       price: '$99',
       period: '/month',
-      description: 'Perfect for small businesses getting started',
+      description: 'Ideal for startups focusing on sustainable growth',
       features: [
-        'Up to 5 ad campaigns',
-        'Basic analytics dashboard',
-        'Email support',
-        'Social media integration',
-        '1 landing page'
+        'Up to 5 eco-friendly campaigns',
+        'Basic sustainability analytics',
+        'Email support with green tips',
+        'Social media eco-integration',
+        '1 green landing page'
       ],
-      cta: 'Start Free Trial',
+      cta: 'Start Your Green Journey',
       popular: false
     },
     {
@@ -27,17 +27,17 @@ const SalesPage = () => {
       name: 'Professional',
       price: '$299',
       period: '/month',
-      description: 'Best for growing businesses and agencies',
+      description: 'Perfect for growing businesses committed to sustainability',
       features: [
-        'Unlimited ad campaigns',
-        'Advanced analytics & reporting',
+        'Unlimited eco-conscious campaigns',
+        'Advanced green analytics & reporting',
         'Priority phone & email support',
-        'Multi-platform integration',
-        '5 custom landing pages',
-        'A/B testing tools',
-        'Team collaboration features'
+        'Multi-platform green integration',
+        '5 custom sustainable landing pages',
+        'A/B testing for eco-optimized content',
+        'Team collaboration with eco goals'
       ],
-      cta: 'Get Started Now',
+      cta: 'Go Green Now',
       popular: true
     },
     {
@@ -45,17 +45,17 @@ const SalesPage = () => {
       name: 'Enterprise',
       price: '$599',
       period: '/month',
-      description: 'Complete solution for large organizations',
+      description: 'Complete sustainable marketing solution for large organizations',
       features: [
-        'Everything in Professional',
-        'Dedicated account manager',
-        'Custom integration support',
-        'Unlimited landing pages',
-        'White-label solutions',
-        'Advanced security features',
-        'Custom reporting & insights'
+        'All Professional features included',
+        'Dedicated green account manager',
+        'Custom eco-integration support',
+        'Unlimited sustainable landing pages',
+        'White-label eco-solutions',
+        'Advanced green security features',
+        'Custom green reporting & insights'
       ],
-      cta: 'Contact Sales',
+      cta: 'Contact Green Sales',
       popular: false
     }
   ];
@@ -64,66 +64,66 @@ const SalesPage = () => {
     {
       id: 1,
       name: 'Sarah Johnson',
-      company: 'TechStart Inc.',
-      role: 'Marketing Director',
-      content: 'Our ROI increased by 340% within the first quarter. The platform is incredibly intuitive and the results speak for themselves.',
+      company: 'EcoTech Inc.',
+      role: 'Sustainability Director',
+      content: 'Our eco-campaigns saw a 340% increase in impact in just three months. The platform makes sustainable marketing simple and effective.',
       rating: 5,
-      avatar: '👩‍💼'
+      avatar: '🌿'
     },
     {
       id: 2,
       name: 'Michael Chen',
-      company: 'GrowthCo',
+      company: 'GreenGrowth Co.',
       role: 'CEO',
-      content: 'The best advertising platform we\'ve used. The analytics are detailed and the campaign management is seamless.',
+      content: 'The best green advertising platform we\'ve used. The detailed analytics and campaign tools helped us reduce our carbon footprint.',
       rating: 5,
-      avatar: '👨‍💼'
+      avatar: '🌱'
     },
     {
       id: 3,
       name: 'Emily Rodriguez',
-      company: 'BrandBoost Agency',
+      company: 'SustainBoost Agency',
       role: 'Creative Director',
-      content: 'Client satisfaction has never been higher. The white-label features are exactly what our agency needed.',
+      content: 'Our clients love the white-label eco features. This platform helps us deliver campaigns that make a real environmental difference.',
       rating: 5,
-      avatar: '👩‍🎨'
+      avatar: '🍃'
     }
   ];
 
   const stats = [
-    { icon: Users, value: '10,000+', label: 'Active Clients' },
-    { icon: TrendingUp, value: '450%', label: 'Average ROI Increase' },
-    { icon: Award, value: '99.9%', label: 'Uptime Guarantee' }
+    { icon: Users, value: '10,000+', label: 'Eco-Conscious Clients' },
+    { icon: TrendingUp, value: '450%', label: 'Average Impact Increase' },
+    { icon: Award, value: '99.9%', label: 'Sustainability Uptime Guarantee' }
   ];
 
   const clientLogos = [
-    'TechCorp', 'InnovateLab', 'GrowthHub', 'BrandForce', 'MarketPro', 'AdVantage'
+    'EcoCorp', 'GreenInnovate', 'SustainHub', 'LeafForce', 'MarketGreen', 'EcoVantage'
   ];
 
   return (
-    <div className="sales-page">
+    <div className="sales-page green-theme">
       {/* Hero Section */}
       <section className="sales-hero">
         <div className="sales-container">
           <div className="hero-content">
             <div className="hero-badge">
-              <span>🚀 Trusted by 10,000+ businesses worldwide</span>
+              <span>🌍 Trusted by 10,000+ green businesses worldwide</span>
             </div>
             <h1 className="hero-title">
-              Transform Your Advertising ROI with 
-              <span className="gradient-text"> Data-Driven Insights</span>
+              Boost Your Environmental Impact with 
+              <span className="gradient-text"> Data-Driven Green Marketing</span>
             </h1>
             <p className="hero-description">
-              Join thousands of successful businesses using our platform to create, 
-              manage, and optimize high-converting advertising campaigns across all channels.
+              Join thousands of eco-conscious businesses using our platform to create, 
+              manage, and optimize sustainable advertising campaigns that protect our planet.
             </p>
             <div className="hero-cta">
               <button className="cta-primary">
-                Start Your Free Trial
+                Start Your Green Journey
                 <ArrowRight className="cta-icon" />
               </button>
               <button className="cta-secondary">
-                Watch Demo
+                Watch Our Green Demo
               </button>
             </div>
             <div className="hero-stats">
@@ -145,9 +145,9 @@ const SalesPage = () => {
       <section className="pricing-section">
         <div className="sales-container">
           <div className="section-header">
-            <h2 className="section-title">Choose Your Growth Plan</h2>
+            <h2 className="section-title">Choose Your Green Growth Plan</h2>
             <p className="section-description">
-              Flexible pricing that scales with your business. Start free, upgrade anytime.
+              Flexible, sustainable pricing that scales with your eco goals. Start free, upgrade anytime.
             </p>
           </div>
           
@@ -191,9 +191,9 @@ const SalesPage = () => {
       <section className="testimonials-section">
         <div className="sales-container">
           <div className="section-header">
-            <h2 className="section-title">What Our Clients Say</h2>
+            <h2 className="section-title">What Our Eco Clients Say</h2>
             <p className="section-description">
-              Don't just take our word for it. See what industry leaders are saying about our platform.
+              Don’t just take our word for it. See how industry leaders are making a green impact with us.
             </p>
           </div>
 
@@ -224,7 +224,7 @@ const SalesPage = () => {
       {/* Client Logos Section */}
       <section className="clients-section">
         <div className="sales-container">
-          <h3 className="clients-title">Trusted by Industry Leaders</h3>
+          <h3 className="clients-title">Trusted by Green Industry Leaders</h3>
           <div className="clients-grid">
             {clientLogos.map((logo, index) => (
               <div key={index} className="client-logo">
@@ -240,10 +240,10 @@ const SalesPage = () => {
         <div className="sales-container">
           <div className="final-cta-content">
             <h2 className="final-cta-title">
-              Ready to Transform Your Advertising Strategy?
+              Ready to Grow Your Sustainable Advertising Strategy?
             </h2>
             <p className="final-cta-description">
-              Join thousands of successful businesses. Start your free trial today and see results in 30 days or your money back.
+              Join thousands of eco-conscious businesses. Start your free trial today and see green results in 30 days or your money back.
             </p>
             <div className="final-cta-buttons">
               <button className="cta-primary large">

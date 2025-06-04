@@ -12,32 +12,32 @@ import {
 
 const AboutSection = () => {
   const stats = [
-    { icon: <Users className="h-8 w-8" />, number: "500+", label: "Happy Clients" },
-    { icon: <Award className="h-8 w-8" />, number: "12+", label: "Years Experience" },
-    { icon: <TrendingUp className="h-8 w-8" />, number: "95%", label: "Success Rate" },
-    { icon: <Clock className="h-8 w-8" />, number: "24/7", label: "Support" }
+    { icon: <Users className="h-8 w-8" />, number: "1000+", label: "Community Members" },
+    { icon: <Award className="h-8 w-8" />, number: "10+", label: "Years of Impact" },
+    { icon: <TrendingUp className="h-8 w-8" />, number: "80%", label: "Carbon Footprint Reduced" },
+    { icon: <Clock className="h-8 w-8" />, number: "24/7", label: "Volunteer Support" }
   ];
 
   const values = [
     {
       icon: <Lightbulb className="h-6 w-6" />,
-      title: "Innovation",
-      description: "We stay ahead of industry trends and leverage cutting-edge technologies to deliver innovative solutions."
+      title: "Sustainability",
+      description: "We champion long-term solutions that protect our planet for future generations."
     },
     {
       icon: <Target className="h-6 w-6" />,
-      title: "Results-Driven",
-      description: "Every campaign is meticulously planned and executed to achieve measurable results and exceed expectations."
+      title: "Action-Oriented",
+      description: "From planting trees to climate education, we take real-world action to drive change."
     },
     {
       icon: <Heart className="h-6 w-6" />,
-      title: "Client-Centric",
-      description: "Your success is our priority. We build lasting partnerships based on trust, transparency, and mutual growth."
+      title: "Community Focus",
+      description: "We empower local communities to lead environmental change through education and support."
     },
     {
       icon: <CheckCircle className="h-6 w-6" />,
-      title: "Quality Assurance",
-      description: "We maintain the highest standards of quality in every project, ensuring excellence in every detail."
+      title: "Transparency",
+      description: "We maintain open, honest communication and report our environmental progress clearly."
     }
   ];
 
@@ -49,73 +49,73 @@ const AboutSection = () => {
           {/* Text Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              About AdVantage
+              About Environment and Sustainability
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              We are a premier advertising agency dedicated to helping businesses grow through innovative marketing strategies and creative solutions. Our team of experts combines creativity with data-driven insights to deliver campaigns that resonate with your audience and drive real results.
+              Environment and Sustainability is a dedicated environmental organization working towards a greener, cleaner, and more sustainable world. We believe that small actions, when multiplied, can lead to powerful results.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Since our founding, we've helped hundreds of businesses across various industries achieve their marketing goals and establish strong brand presence in the digital landscape.
+              Through awareness programs, eco-projects, and collaborative initiatives, we aim to drive meaningful environmental impact and nurture a culture of sustainability across communities.
             </p>
             
             {/* Key Points */}
             <div className="space-y-4 mb-8">
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Award-winning creative campaigns</span>
+                <span className="text-gray-700">Grassroots environmental initiatives</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Data-driven marketing strategies</span>
+                <span className="text-gray-700">Eco-awareness and education programs</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Full-service advertising solutions</span>
+                <span className="text-gray-700">Tree planting & clean-up drives</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Dedicated account management</span>
+                <span className="text-gray-700">Global collaboration for climate action</span>
               </div>
             </div>
 
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
-              Learn More About Us
+            <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+              Join Our Movement
             </button>
           </div>
 
           {/* Visual Content */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-br from-green-500 to-blue-600 rounded-3xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
               <p className="text-lg leading-relaxed mb-6">
-                To empower businesses with innovative advertising solutions that create meaningful connections between brands and their audiences, driving sustainable growth and success.
+                To inspire, educate, and mobilize people worldwide to protect nature and combat climate change through sustainable practices and collective action.
               </p>
               <div className="bg-white bg-opacity-20 rounded-2xl p-6 text-gray-600">
-                <h4 className="text-xl font-semibold mb-3">Why Choose Us?</h4>
+                <h4 className="text-xl font-semibold mb-3">Why Support Us?</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Proven track record of success
+                    Impact-driven environmental programs
                   </li>
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Cutting-edge technology and tools
+                    Science-backed climate strategies
                   </li>
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Experienced team of professionals
+                    Community engagement and training
                   </li>
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
-                    Customized solutions for every client
+                    Transparent and sustainable operations
                   </li>
                 </ul>
               </div>
             </div>
-            
+
             {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full opacity-20"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-pink-400 rounded-full opacity-20"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-green-300 rounded-full opacity-20"></div>
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-300 rounded-full opacity-20"></div>
           </div>
         </div>
 
@@ -123,7 +123,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 text-white p-4 rounded-2xl w-fit mx-auto mb-4">
+              <div className="bg-gradient-to-br from-green-500 to-blue-600 text-white p-4 rounded-2xl w-fit mx-auto mb-4">
                 {stat.icon}
               </div>
               <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
@@ -143,14 +143,14 @@ const AboutSection = () => {
               Our Core Values
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              These fundamental principles guide everything we do and define who we are as a company.
+              These values shape our mission and guide every action we take to protect our planet.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, index) => (
               <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
-                <div className="bg-gradient-to-br from-blue-500 to-purple-600 text-white p-3 rounded-xl w-fit mb-4">
+                <div className="bg-gradient-to-br from-green-500 to-blue-600 text-white p-3 rounded-xl w-fit mb-4">
                   {value.icon}
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 mb-3">

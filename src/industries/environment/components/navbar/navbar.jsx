@@ -39,11 +39,12 @@ const Navbar = () => {
     { name: 'About', href: '#about', id: 'about' }
   ];
 
-  const solutionsItems = [
-    { name: 'Digital Marketing', href: '#digital', icon: '📱', description: 'Social media & online campaigns' },
-    { name: 'Creative Design', href: '#creative', icon: '🎨', description: 'Visual branding & graphics' },
-    { name: 'Strategy & Consulting', href: '#strategy', icon: '💡', description: 'Business growth strategies' }
-  ];
+ const solutionsItems = [
+  { name: 'Sustainable Farming', href: '#farming', icon: '🌾', description: 'Eco-friendly agricultural practices' },
+  { name: 'Green Energy', href: '#energy', icon: '🔋', description: 'Solar, wind, and renewable energy' },
+  { name: 'Waste Management', href: '#waste', icon: '♻️', description: 'Recycling and zero-waste solutions' }
+];
+
 
   return (
  
