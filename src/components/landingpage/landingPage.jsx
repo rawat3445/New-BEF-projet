@@ -172,7 +172,7 @@ const LandingPage = () => {
       navigate('/agriculture');
       break;
     case 'web3ai':
-      // navigate('https://web3-ai-deeptech-industry.github.io/landingpage/');
+
       // handleRedirect();
        navigate('/web_ai');
       break;
