@@ -105,7 +105,15 @@ const LandingPage = () => {
       description: "Empower Indian agriculture with smart agritech solutions that boost productivity and drive sustainable growth.",
       icon: <Tractor className="w-8 h-8" />,
       gradient: "from-lime-400 to-green-700"
-    }
+    },
+     {
+      id: 'automobile',
+      title: "Automobile & Mobility",
+      description:"Explore the world of smart vehicles, sustainable transport, and the future of mobility.",
+      icon: <Target className="w-8 h-8" />,
+      gradient: "from-blue-600 to-purple-600",
+      path: `/industries/Automobile & mobilty/automobile`
+    },
   ];
 
   // Auto-slide carousel
@@ -150,32 +158,36 @@ const LandingPage = () => {
       setTimeout(() => setIsSubscribed(false), 3000);
     }
   };
-  const handleCardClick = (card) => {
-    switch (card.id) {
-      case 'advertisement':
-        navigate('/advertisement');
-        break;
+
+ const handleCardClick = (card) => {
+  switch (card.id) {
+    case 'advertisement':
+      navigate('/advertisement');
+      break;
+    case 'beauty-wellness':
+      navigate('/beauty-wellness');
+      break;
+    case 'women-entrepreneurship':
+      navigate('/women-entrepreneurship');
+      break;
+    case 'media':
+      navigate('/media-entertainment');
+      break;
+    case 'agriculture':
+      navigate('/agriculture');
+      break;
+       case 'automobile':
+      navigate('/automobile');
+      break;
       case 'real-estate':
         navigate('/real-estate');
         break;
-      case 'beauty-wellness':
-        navigate('/beauty-wellness');
-        break;
-      case 'women-entrepreneurship':
-        navigate('/women-entrepreneurship');
-        break;
-      case 'media':
-        navigate('/media-entertainment');
-        break;
-      case 'agriculture':
-        navigate('/agriculture');
-        break;
-      default:
-        console.log(`Clicked on ${card.title} card`);
-        alert(`Navigate to ${card.title} page`);
-        break;
-    }
-  };
+    default:
+      console.log(`Clicked on ${card.title} card`);
+      alert(`Navigate to ${card.title} page`);
+      break;
+  }
+};
 
 
 
