@@ -6,6 +6,9 @@ import AgricultureSalesPage from './industries/agriculture/pages/salespage/Sales
 import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
 import './App.css';
 import BeautyWellnessIndustry from './industries/beauty';
+
+import EnvironmentIndustry from './industries/environment/environment';
+
 import WomenEntrepreneurship from './industries/women-entrepreneurship';
 import Web3AI from './industries/web3_ai/landingpage/LandingPage'
 import Web3AISales from './industries/web3_ai/salespage/components/homepage';
@@ -15,6 +18,7 @@ import AutomobileIndustry from './industries/Automobile & mobility/automobile';
 
 import Finance from './industries/finance-investment/finance';
 import RealEstateIndustry from './industries/real-estate-and-urban-planning';
+
 
 
 function App() {
@@ -30,12 +34,14 @@ function App() {
         <Route path="/agriculture/sales" element={<AgricultureSalesPage />} />
         <Route path="/beauty-wellness" element={<BeautyWellnessIndustry />} />
         <Route path="/media-entertainment" element={<MediaEntertainmentIndustry />} />
+        <Route path="/environment" element={<EnvironmentIndustry />} />
         <Route path="/women-entrepreneurship" element={<WomenEntrepreneurship />} />
         <Route path="/web_ai" element={<Web3AI />} />
         <Route path="/web_ai/salespage" element={<Web3AISales />} />
         <Route path="/automobile" element={<AutomobileIndustry />} />
         <Route path="/finance" element={<Finance />} />
         <Route path="/real-estate" element={<RealEstateIndustry/>} />
+
 
 
 

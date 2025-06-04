@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,ChevronsLeftRightEllipsis ,UserCheck} from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,ChevronsLeftRightEllipsis ,UserCheck, Sprout} from 'lucide-react';
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
@@ -97,6 +97,14 @@ const LandingPage = () => {
       gradient: "from-indigo-500 to-blue-600"
     },
     {
+      id: 'environment',
+      title: "Environment & Sustainability Tech",
+      description: "Shape the future of brand communication and digital marketing strategies for Viksit Bharat.",
+      icon: <Sprout className="w-8 h-8" />,
+      gradient: "from-lime-400 to-green-700",
+      path: `/industries/environment`
+    },
+    {
       id: 5,
       title: "Brand Strategy",
       description: "Craft compelling brand stories that resonate with India's diverse and dynamic market.",
@@ -110,6 +118,7 @@ const LandingPage = () => {
       icon: <Tractor className="w-8 h-8" />,
       gradient: "from-lime-400 to-green-700"
     },
+
 
       {
       id: 'web3ai',
@@ -186,6 +195,9 @@ const LandingPage = () => {
       break;
     case 'media':
       navigate('/media-entertainment');
+      break;
+    case 'environment':
+      navigate('/environment');
       break;
     case 'agriculture':
       navigate('/agriculture');
