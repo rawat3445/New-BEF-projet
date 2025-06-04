@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,UserCheck} from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,ChevronsLeftRightEllipsis ,UserCheck} from 'lucide-react';
 
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
@@ -10,6 +10,12 @@ const LandingPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+
+    const handleRedirect = () => {
+        // navigate('/newpage'); // Use a relative path if it is part of your React app
+        // OR
+        window.location.href = 'https://web3-ai-deeptech-industry.github.io/landingpage/'; // For external links
+    };
 
   // Carousel images data
   const carouselImages = [
@@ -95,6 +101,14 @@ const LandingPage = () => {
       description: "Empower Indian agriculture with smart agritech solutions that boost productivity and drive sustainable growth.",
       icon: <Tractor className="w-8 h-8" />,
       gradient: "from-lime-400 to-green-700"
+    },
+      {
+      id: 'web3ai',
+      title: "Web 3.0, AI and DeepTech",
+      description: "Future-Proofing India with Next-Gen Tech Discover how Web3, AI, and Quantum Computing are transforming industries.",
+      icon: <ChevronsLeftRightEllipsis  className="w-8 h-8" />,
+      gradient: "from-indigo-400 to-blue-700",
+        path: `/industries/web3_ai`
     }
   ];
 
@@ -156,6 +170,11 @@ const LandingPage = () => {
       break;
     case 'agriculture':
       navigate('/agriculture');
+      break;
+    case 'web3ai':
+      // navigate('https://web3-ai-deeptech-industry.github.io/landingpage/');
+      // handleRedirect();
+       navigate('/web_ai');
       break;
     default:
       console.log(`Clicked on ${card.title} card`);
