@@ -97,6 +97,11 @@ const LandingPage = () => {
       gradient: "from-indigo-500 to-blue-600"
     },
     {
+
+      id: 'rural',
+      title: "Rural Development",
+      description: "Building sustainable, self-reliant villages through technology, community participation, and innovative solutions",
+
       id: 'environment',
       title: "Environment & Sustainability Tech",
       description: "Shape the future of brand communication and digital marketing strategies for Viksit Bharat.",
@@ -108,6 +113,7 @@ const LandingPage = () => {
       id: 5,
       title: "Brand Strategy",
       description: "Craft compelling brand stories that resonate with India's diverse and dynamic market.",
+
       icon: <Trophy className="w-8 h-8" />,
       gradient: "from-pink-500 to-rose-600"
     },
@@ -181,7 +187,6 @@ const LandingPage = () => {
       setTimeout(() => setIsSubscribed(false), 3000);
     }
   };
-
  const handleCardClick = (card) => {
   switch (card.id) {
     case 'advertisement':
@@ -210,6 +215,13 @@ const LandingPage = () => {
       break;
       case 'real-estate':
         navigate('/real-estate');
+
+        break;
+      case 'rural':
+        navigate(`/rural-development`);
+        break;
+       case 'media':
+        navigate(`/media-entertainment`);
         break;
     default:
       console.log(`Clicked on ${card.title} card`);

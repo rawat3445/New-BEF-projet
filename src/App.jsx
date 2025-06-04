@@ -4,6 +4,7 @@ import AdvertisementIndustry from './industries/advertisement/advertisement';
 import AgricultureIndustry from './industries/agriculture/agriculture';
 import AgricultureSalesPage from './industries/agriculture/pages/salespage/SalesPage';
 import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
+import RuralDevelopmentIndustry from './industries/ruraldevelopment/RuralDevelopmentIndustry';
 import './App.css';
 import BeautyWellnessIndustry from './industries/beauty';
 
@@ -50,6 +51,9 @@ function App() {
         {/*DO NOT TOUCH THIS CODE BELOW IT'S JUST AN EXAMPLE!*/}
         {/* <Route path="/education" element={<EducationIndustry />} /> */}
 
+
+
+        <Route path="/rural-development" element={<RuralDevelopmentIndustry />} />
 
       </Routes>
     </Router>
