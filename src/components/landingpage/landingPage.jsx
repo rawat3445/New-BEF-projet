@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
-
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor, Sprout} from 'lucide-react';
-
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,ChevronsLeftRightEllipsis ,UserCheck, Sprout} from 'lucide-react';
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
@@ -10,6 +8,12 @@ const LandingPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+
+    const handleRedirect = () => {
+        // navigate('/newpage'); // Use a relative path if it is part of your React app
+        // OR
+        window.location.href = 'https://web3-ai-deeptech-industry.github.io/landingpage/'; // For external links
+    };
 
   // Carousel images data
   const carouselImages = [
@@ -54,6 +58,24 @@ const LandingPage = () => {
       path: `/industries/beauty-wellness`
     },
     {
+      id: 'women-entrepreneurship',
+      title: "Empowering Women Entrepreneurs",
+      description: "Explore inspiring stories, resources, and opportunities fueling women-led businesses and innovation.",
+      icon: <UserCheck className="w-8 h-8" />,
+      gradient: "from-pink-600 to-purple-700",
+      path: `/industries/women-entrepreneurship`
+    },
+
+    {
+      id: 'real-estate',
+      title: "Real Estate and Urban Planning",
+      description: "Explore inspiring stories, resources, and opportunities fueling women-led businesses and innovation.",
+      icon: <UserCheck className="w-8 h-8" />,
+      gradient: "from-pink-600 to-purple-700",
+      path: `/industries/women-entrepreneurship`
+    },
+
+    {
       id: 2,
       title: "Public Relations",
       description: "Build strategic communications that connect brands with India's evolving narrative.",
@@ -96,7 +118,25 @@ const LandingPage = () => {
       icon: <Tractor className="w-8 h-8" />,
       gradient: "from-lime-400 to-green-700"
     },
-    
+
+
+      {
+      id: 'web3ai',
+      title: "Web 3.0, AI and DeepTech",
+      description: "Future-Proofing India with Next-Gen Tech Discover how Web3, AI, and Quantum Computing are transforming industries.",
+      icon: <ChevronsLeftRightEllipsis  className="w-8 h-8" />,
+      gradient: "from-indigo-400 to-blue-700",
+        path: `/industries/web3_ai`
+    }
+
+     {
+      id: 'automobile',
+      title: "Automobile & Mobility",
+      description:"Explore the world of smart vehicles, sustainable transport, and the future of mobility.",
+      icon: <Target className="w-8 h-8" />,
+      gradient: "from-blue-600 to-purple-600",
+      path: `/industries/Automobile & mobilty/automobile`
+    },
   ];
 
   // Auto-slide carousel
@@ -141,6 +181,7 @@ const LandingPage = () => {
       setTimeout(() => setIsSubscribed(false), 3000);
     }
   };
+
  const handleCardClick = (card) => {
   switch (card.id) {
     case 'advertisement':
@@ -148,6 +189,9 @@ const LandingPage = () => {
       break;
     case 'beauty-wellness':
       navigate('/beauty-wellness');
+      break;
+    case 'women-entrepreneurship':
+      navigate('/women-entrepreneurship');
       break;
     case 'media':
       navigate('/media-entertainment');
@@ -158,9 +202,18 @@ const LandingPage = () => {
     case 'agriculture':
       navigate('/agriculture');
       break;
+    case 'web3ai':
+       navigate('/web_ai');
+      break;
+       case 'automobile':
+      navigate('/automobile');
+      break;
+      case 'real-estate':
+        navigate('/real-estate');
+        break;
     default:
       console.log(`Clicked on ${card.title} card`);
-      alert(`Navigate to ${card.title} page`);
+      alert(`This page ${card.title} is not assigned to any industry`);
       break;
   }
 };
@@ -326,7 +379,7 @@ const LandingPage = () => {
             ))}
           </div>
 
-         
+
         </div>
       </section>
 
