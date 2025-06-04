@@ -1,0 +1,79 @@
+/* navbar.css */
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(20, 40, 60, 0.8); /* Dark blue tinted glass */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(212, 175, 55, 0.3); /* subtle gold border */
+}
+
+/* Logo Glow on hover */
+.logo-glow:hover {
+  text-shadow: 
+    0 0 8px rgba(212, 175, 55, 0.9),   /* strong gold glow */
+    0 0 12px rgba(166, 134, 30, 0.7),
+    0 0 18px rgba(120, 100, 20, 0.5);
+}
+
+/* Active Nav Item (underline) */
+.nav-item-active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6px;
+  width: 50%;
+  height: 2px;
+  background-image: linear-gradient(to right, #0b3d91, #d4af37); /* blue to gold gradient */
+  border-radius: 1px;
+}
+
+/* Mobile menu animation */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.mobile-menu-slide {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Scale in dropdown */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.25s ease-out forwards;
+}
+
+/* Gradient Hover Utility (optional fallback) */
+.hover\:gradient-bg:hover {
+  background-image: linear-gradient(to right, #0b3d91, #205375, #2a7f62); /* finance blue-teal gradient */
+}
+
+/* Additional helpful utility classes if not using full Tailwind */
+.transition-transform {
+  transition: transform 0.3s ease;
+}
+.transition-opacity {
+  transition: opacity 0.3s ease;
+}
+.transition-all {
+  transition: all 0.3s ease;
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,ChevronsLeftRightEllipsis ,UserCheck, Sprout} from 'lucide-react';
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
@@ -8,6 +8,12 @@ const LandingPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+
+    const handleRedirect = () => {
+        // navigate('/newpage'); // Use a relative path if it is part of your React app
+        // OR
+        window.location.href = 'https://web3-ai-deeptech-industry.github.io/landingpage/'; // For external links
+    };
 
   // Carousel images data
   const carouselImages = [
@@ -44,6 +50,32 @@ const LandingPage = () => {
       path: `/industries/advertisement`
     },
     {
+      id: 'beauty-wellness',
+      title: "Beauty And Wellness",
+      description: "Discover innovative beauty and wellness solutions shaping Viksit Bharat’s vibrant future.",
+      icon: <Star className="w-8 h-8" />,
+      gradient: "from-pink-500 to-purple-600",
+      path: `/industries/beauty-wellness`
+    },
+    {
+      id: 'women-entrepreneurship',
+      title: "Empowering Women Entrepreneurs",
+      description: "Explore inspiring stories, resources, and opportunities fueling women-led businesses and innovation.",
+      icon: <UserCheck className="w-8 h-8" />,
+      gradient: "from-pink-600 to-purple-700",
+      path: `/industries/women-entrepreneurship`
+    },
+
+    {
+      id: 'real-estate',
+      title: "Real Estate and Urban Planning",
+      description: "Explore inspiring stories, resources, and opportunities fueling women-led businesses and innovation.",
+      icon: <UserCheck className="w-8 h-8" />,
+      gradient: "from-pink-600 to-purple-700",
+      path: `/industries/women-entrepreneurship`
+    },
+
+    {
       id: 2,
       title: "Public Relations",
       description: "Build strategic communications that connect brands with India's evolving narrative.",
@@ -65,12 +97,52 @@ const LandingPage = () => {
       gradient: "from-indigo-500 to-blue-600"
     },
     {
+
       id: 'rural',
       title: "Rural Development",
       description: "Building sustainable, self-reliant villages through technology, community participation, and innovative solutions",
+
+      id: 'environment',
+      title: "Environment & Sustainability Tech",
+      description: "Shape the future of brand communication and digital marketing strategies for Viksit Bharat.",
+      icon: <Sprout className="w-8 h-8" />,
+      gradient: "from-lime-400 to-green-700",
+      path: `/industries/environment`
+    },
+    {
+      id: 5,
+      title: "Brand Strategy",
+      description: "Craft compelling brand stories that resonate with India's diverse and dynamic market.",
+
       icon: <Trophy className="w-8 h-8" />,
       gradient: "from-pink-500 to-rose-600"
+    },
+    {
+      id: 'agriculture',
+      title: "Agriculture and Agritech",
+      description: "Empower Indian agriculture with smart agritech solutions that boost productivity and drive sustainable growth.",
+      icon: <Tractor className="w-8 h-8" />,
+      gradient: "from-lime-400 to-green-700"
+    },
+
+
+      {
+      id: 'web3ai',
+      title: "Web 3.0, AI and DeepTech",
+      description: "Future-Proofing India with Next-Gen Tech Discover how Web3, AI, and Quantum Computing are transforming industries.",
+      icon: <ChevronsLeftRightEllipsis  className="w-8 h-8" />,
+      gradient: "from-indigo-400 to-blue-700",
+        path: `/industries/web3_ai`
     }
+
+     {
+      id: 'automobile',
+      title: "Automobile & Mobility",
+      description:"Explore the world of smart vehicles, sustainable transport, and the future of mobility.",
+      icon: <Target className="w-8 h-8" />,
+      gradient: "from-blue-600 to-purple-600",
+      path: `/industries/Automobile & mobilty/automobile`
+    },
   ];
 
   // Auto-slide carousel
@@ -115,23 +187,50 @@ const LandingPage = () => {
       setTimeout(() => setIsSubscribed(false), 3000);
     }
   };
-  const handleCardClick = (card) => {
-    switch (card.id) {
-      case 'advertisement':
-        navigate(`/advertisement`);
+ const handleCardClick = (card) => {
+  switch (card.id) {
+    case 'advertisement':
+      navigate('/advertisement');
+      break;
+    case 'beauty-wellness':
+      navigate('/beauty-wellness');
+      break;
+    case 'women-entrepreneurship':
+      navigate('/women-entrepreneurship');
+      break;
+    case 'media':
+      navigate('/media-entertainment');
+      break;
+    case 'environment':
+      navigate('/environment');
+      break;
+    case 'agriculture':
+      navigate('/agriculture');
+      break;
+    case 'web3ai':
+       navigate('/web_ai');
+      break;
+       case 'automobile':
+      navigate('/automobile');
+      break;
+      case 'real-estate':
+        navigate('/real-estate');
+
         break;
-        case 'media':
-        navigate(`/media-entertainment`);
-        break;
-        case 'rural':
+      case 'rural':
         navigate(`/rural-development`);
         break;
-        default:
-        alert(`Navigate to ${card.title} page`);
+       case 'media':
+        navigate(`/media-entertainment`);
         break;
+    default:
+      console.log(`Clicked on ${card.title} card`);
+      alert(`This page ${card.title} is not assigned to any industry`);
+      break;
+  }
+};
 
-  };
-}
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -292,18 +391,7 @@ const LandingPage = () => {
             ))}
           </div>
 
-          {/* Instructions for implementation */}
-          <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Implementation Notes:</h4>
-            <p className="text-sm text-gray-600 mb-3">
-              This demo shows alerts when clicking cards. To implement real navigation:
-            </p>
-            <div className="space-y-2 text-sm text-gray-600">
-              <p><strong>React Router:</strong> Import useNavigate and use navigate(card.path)</p>
-              <p><strong>Next.js:</strong> Import useRouter and use router.push(card.path)</p>
-              <p><strong>Vanilla JS:</strong> Use window.location.href = card.path</p>
-            </div>
-          </div>
+
         </div>
       </section>
 

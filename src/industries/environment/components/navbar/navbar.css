@@ -1,0 +1,78 @@
+/* navbar.css */
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 0.75rem;
+  box-shadow: none;
+}
+
+/* Logo Glow on hover */
+.logo-glow:hover {
+text-shadow: 0 0 8px rgba(34, 197, 94, 0.8),
+             0 0 2px rgba(22, 163, 74, 0.6),
+             0 0 2px rgba(46, 171, 92, 0.4);
+}
+
+/* Active Nav Item (underline) */
+.nav-item-active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6px;
+  width: 50%;
+  height: 2px;
+  background-image: linear-gradient(to right, #84cc16, #22c55e);
+  border-radius: 1px;
+}
+
+/* Mobile menu animation */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.mobile-menu-slide {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Scale in dropdown */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.25s ease-out forwards;
+}
+
+/* Gradient Hover Utility (optional fallback) */
+.hover\:gradient-bg:hover {
+  background-image: linear-gradient(to right, #e0f2fe, #ede9fe);
+}
+
+/* Additional helpful utility classes if not using full Tailwind */
+.transition-transform {
+  transition: transform 0.3s ease;
+}
+.transition-opacity {
+  transition: opacity 0.3s ease;
+}
+.transition-all {
+  transition: all 0.3s ease;
+}
