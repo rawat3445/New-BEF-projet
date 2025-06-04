@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,UserCheck} from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Star, Tractor, UserCheck } from 'lucide-react';
 
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
@@ -61,6 +61,16 @@ const LandingPage = () => {
       gradient: "from-pink-600 to-purple-700",
       path: `/industries/women-entrepreneurship`
     },
+
+    {
+      id: 'real-estate',
+      title: "Real Estate and Urban Planning",
+      description: "Explore inspiring stories, resources, and opportunities fueling women-led businesses and innovation.",
+      icon: <UserCheck className="w-8 h-8" />,
+      gradient: "from-pink-600 to-purple-700",
+      path: `/industries/women-entrepreneurship`
+    },
+
     {
       id: 2,
       title: "Public Relations",
@@ -140,29 +150,32 @@ const LandingPage = () => {
       setTimeout(() => setIsSubscribed(false), 3000);
     }
   };
- const handleCardClick = (card) => {
-  switch (card.id) {
-    case 'advertisement':
-      navigate('/advertisement');
-      break;
-    case 'beauty-wellness':
-      navigate('/beauty-wellness');
-      break;
-    case 'women-entrepreneurship':
-      navigate('/women-entrepreneurship');
-      break;
-    case 'media':
-      navigate('/media-entertainment');
-      break;
-    case 'agriculture':
-      navigate('/agriculture');
-      break;
-    default:
-      console.log(`Clicked on ${card.title} card`);
-      alert(`Navigate to ${card.title} page`);
-      break;
-  }
-};
+  const handleCardClick = (card) => {
+    switch (card.id) {
+      case 'advertisement':
+        navigate('/advertisement');
+        break;
+      case 'real-estate':
+        navigate('/real-estate');
+        break;
+      case 'beauty-wellness':
+        navigate('/beauty-wellness');
+        break;
+      case 'women-entrepreneurship':
+        navigate('/women-entrepreneurship');
+        break;
+      case 'media':
+        navigate('/media-entertainment');
+        break;
+      case 'agriculture':
+        navigate('/agriculture');
+        break;
+      default:
+        console.log(`Clicked on ${card.title} card`);
+        alert(`Navigate to ${card.title} page`);
+        break;
+    }
+  };
 
 
 
@@ -325,7 +338,7 @@ const LandingPage = () => {
             ))}
           </div>
 
-         
+
         </div>
       </section>
 
