@@ -1,0 +1,37 @@
+/* Custom animations for rural development theme */
+@keyframes grow {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Component-specific styles */
+.rural-hero {
+  background-image: linear-gradient(135deg, rgba(16, 185, 129, 0.9), rgba(5, 150, 105, 0.95)), 
+                    url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2400&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.animate-grow {
+  animation: grow 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-float-up {
+  animation: floatUp 0.6s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .rural-hero {
+    background-position: 65% center;
+  }
+}
