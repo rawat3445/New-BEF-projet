@@ -1,30 +1,5 @@
 import { useState, useEffect } from 'react';
-import { 
-  ArrowRight, 
-  ChevronLeft, 
-  ChevronRight, 
-  ChevronsLeftRightEllipsis, 
-  Facebook, 
-  HeartPulse,      // from healthnpharma side, keep it since missing in main
-  Instagram, 
-  Linkedin, 
-  Mail, 
-  MapPin, 
-  Menu, 
-  Phone, 
-  Star, 
-  Target, 
-  Tractor, 
-  TrendingUp, 
-  Trophy, 
-  Twitter, 
-  UserCheck, 
-  Users, 
-  X, 
-  Zap, 
-  Sprout           // from main side, keep it
-} from 'lucide-react';
-
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,ChevronsLeftRightEllipsis ,UserCheck, Sprout,ShoppingCart, HeartPulse} from 'lucide-react';
 import './landingPage.css';
 
 import { useNavigate } from 'react-router-dom';
@@ -152,6 +127,17 @@ const LandingPage = () => {
       gradient: "from-lime-400 to-green-700"
     },
 
+    {
+      id: 'retail',
+      title: "Retail & E-Commerce",
+      description: "To empower emerging retail and e-commerce startups across Bharat by providing the tools, insights, and infrastructure.",
+      icon: <ShoppingCart className="w-8 h-8" />,
+      gradient: "from-cyan-600 to-blue-600",
+      path: `/industries/retail`
+    },
+    
+
+
 
       {
       id: 'web3ai',
@@ -222,6 +208,8 @@ const LandingPage = () => {
       setTimeout(() => setIsSubscribed(false), 3000);
     }
   };
+
+
  const handleCardClick = (card) => {
   switch (card.id) {
     case 'advertisement':
@@ -242,34 +230,27 @@ const LandingPage = () => {
     case 'agriculture':
       navigate('/agriculture');
       break;
-switch (industry) {
-  case 'web3ai':
-    navigate('/web_ai');
-    break;
-
-  case 'automobile':
-    navigate('/automobile');
-    break;
-
-  case 'real-estate':
-    navigate('/real-estate');
-    break;
-
   case 'health-pharma':
     navigate('/health-pharma');
     break;
-
-  case 'rural':
-    navigate('/rural-development');
-    break;
-
-  case 'media':
-    navigate('/media-entertainment');
-    break;
-
-  // add other cases as needed
-}
-
+    case 'retail':
+      navigate('/retail');
+      break;
+    case 'web3ai':
+       navigate('/web_ai');
+      break;
+       case 'automobile':
+      navigate('/automobile');
+      break;
+      case 'real-estate':
+        navigate('/real-estate');
+        break;
+      case 'rural':
+        navigate(`/rural-development`);
+        break;
+       case 'media':
+        navigate(`/media-entertainment`);
+        break;
     default:
       console.log(`Clicked on ${card.title} card`);
       alert(`This page ${card.title} is not assigned to any industry`);
