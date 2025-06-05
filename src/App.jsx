@@ -1,16 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import './App.css';
 import LandingPage from './components/landingpage/landingPage';
 import AdvertisementIndustry from './industries/advertisement/advertisement';
 import AgricultureIndustry from './industries/agriculture/agriculture';
 import AgricultureSalesPage from './industries/agriculture/pages/salespage/SalesPage';
-import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
-import './App.css';
 import BeautyWellnessIndustry from './industries/beauty';
+import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
 import WomenEntrepreneurship from './industries/women-entrepreneurship';
 
 import AutomobileIndustry from './industries/Automobile & mobility/automobile';
 
 import Finance from './industries/finance-investment/finance';
+import Healthnpharma from './industries/healthnpharma/Healthnpharma';
 import RealEstateIndustry from './industries/real-estate-and-urban-planning';
 
 
@@ -31,12 +32,14 @@ function App() {
         <Route path="/automobile" element={<AutomobileIndustry />} />
         <Route path="/finance" element={<Finance />} />
         <Route path="/real-estate" element={<RealEstateIndustry/>} />
+        <Route path="/health-pharma/*" element={<Navigate to="/healthnpharma" replace />} />
+        <Route path="/healthnpharma/*" element={<Healthnpharma />} />
 
 
 
         {/* Example Placeholder for future industries */}
         {/*DO NOT TOUCH THIS CODE BELOW IT'S JUST AN EXAMPLE!*/}
-        {/* <Route path="/education" element={<EducationIndustry />} /> */}
+        {/* <Route path="/education" element={<EducationIndustry />} */}
 
 
       </Routes>

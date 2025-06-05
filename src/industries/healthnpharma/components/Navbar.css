@@ -1,0 +1,213 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  z-index: 100;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none !important;
+}
+
+.logo-icon {
+  height: 32px;
+  width: 32px;
+  color: #2563eb;
+}
+
+.logo-name {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #2563eb;
+  text-decoration: none !important; /* Ensure no underline */
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link,
+.nav-link.pricing-btn {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-size: 1.08rem;
+}
+
+.nav-link {
+  color: #374151;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.18rem; /* Increased text size */
+  transition: color 0.2s, transform 0.2s;
+  padding: 0.35rem 0.9rem;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  color: #2563eb;
+  transform: translateY(-2px) scale(1.07);
+}
+
+/* Gradient Border Pricing Button */
+.nav-link.pricing-btn {
+  position: relative;
+  background: #1e293b;
+  color: #fff !important;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.7rem;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(56,189,248,0.13);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.nav-link.pricing-btn::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(45deg, #60a5fa, #a78bfa, #60a5fa);
+  border-radius: 10px;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  animation: borderRotate 4s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.nav-link.pricing-btn:hover {
+  color: #fff;
+  transform: translateY(-3px) scale(1.09);
+  box-shadow: 0 5px 15px rgba(96, 165, 250, 0.4);
+}
+
+/* Add to Navbar.css */
+.nav-link.active {
+  border-bottom: 2.5px solid #00b4d8;
+  color: #0077b6;
+  font-weight: 600;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 1002;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 28px;
+  margin: 4px 0;
+  background: #0077b6;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1002;
+  }
+  .navbar-container {
+    padding: 0 0.2rem;
+    min-width: 0;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .navbar-logo {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: 0.5rem;
+    margin-right: 0;
+    position: relative;
+    z-index: 1002;
+    right: 0;
+    left: auto;
+    align-self: center;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1.2rem 2rem 1.2rem;
+    box-shadow: 0 8px 32px rgba(0,180,216,0.09);
+    z-index: 1001;
+    display: none;
+    transition: all 0.3s;
+  }
+  .navbar-links.open {
+    display: flex;
+  }
+  .nav-link {
+    margin: 1rem 0;
+    font-size: 1.15rem;
+    width: 100%;
+  }
+}
+
+/* Optional: Hide menu when not open on mobile */
+@media (max-width: 800px) {
+  .navbar-links {
+    display: none;
+  }
+  .navbar-links.open {
+    display: flex;
+  }
+}
+
+/* Optionally, add this to your index.html <head> for Inter font: */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
