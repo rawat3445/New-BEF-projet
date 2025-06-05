@@ -6,6 +6,7 @@ import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
 import './App.css';
 import BeautyWellnessIndustry from './industries/beauty';
 import EnvironmentIndustry from './industries/environment/environment';
+import RetailIndustry from './industries/retail/retail';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/beauty-wellness" element={<BeautyWellnessIndustry />} />
         <Route path="/media-entertainment" element={<MediaEntertainmentIndustry />} />
         <Route path="/environment" element={<EnvironmentIndustry />} />
+        <Route path="/retail" element={<RetailIndustry />} />
 
 
         {/* Example Placeholder for future industries */}

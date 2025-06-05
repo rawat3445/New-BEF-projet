@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor, Sprout} from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor, Sprout, ShoppingCart} from 'lucide-react';
 
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
@@ -96,6 +96,14 @@ const LandingPage = () => {
       icon: <Tractor className="w-8 h-8" />,
       gradient: "from-lime-400 to-green-700"
     },
+    {
+      id: 'retail',
+      title: "Retail & E-Commerce",
+      description: "To empower emerging retail and e-commerce startups across Bharat by providing the tools, insights, and infrastructure.",
+      icon: <ShoppingCart className="w-8 h-8" />,
+      gradient: "from-cyan-600 to-blue-600",
+      path: `/industries/retail`
+    },
     
   ];
 
@@ -157,6 +165,9 @@ const LandingPage = () => {
       break;
     case 'agriculture':
       navigate('/agriculture');
+      break;
+    case 'retail':
+      navigate('/retail');
       break;
     default:
       console.log(`Clicked on ${card.title} card`);
