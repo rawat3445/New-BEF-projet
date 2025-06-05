@@ -11,12 +11,6 @@ const LandingPage = () => {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-    const handleRedirect = () => {
-        // navigate('/newpage'); // Use a relative path if it is part of your React app
-        // OR
-        window.location.href = 'https://web3-ai-deeptech-industry.github.io/landingpage/'; // For external links
-    };
-
   // Carousel images data
   const carouselImages = [
     {
@@ -100,9 +94,9 @@ const LandingPage = () => {
     },
     {
 
-      id: 'rural',
-      title: "Rural Development",
-      description: "Building sustainable, self-reliant villages through technology, community participation, and innovative solutions",
+      // id: 'rural',
+      // title: "Rural Development",
+      // description: "Building sustainable, self-reliant villages through technology, community participation, and innovative solutions",
 
       id: 'environment',
       title: "Environment & Sustainability Tech",
@@ -147,7 +141,7 @@ const LandingPage = () => {
       gradient: "from-indigo-400 to-blue-700",
         path: `/industries/web3_ai`
     }
-
+    ,
      {
       id: 'automobile',
       title: "Automobile & Mobility",
@@ -247,9 +241,6 @@ const LandingPage = () => {
         break;
       case 'rural':
         navigate(`/rural-development`);
-        break;
-       case 'media':
-        navigate(`/media-entertainment`);
         break;
     default:
       console.log(`Clicked on ${card.title} card`);
