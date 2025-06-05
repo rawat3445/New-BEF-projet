@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,ChevronsLeftRightEllipsis ,UserCheck, Sprout,ShoppingCart} from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,ChevronsLeftRightEllipsis ,UserCheck, Sprout,ShoppingCart, HeartPulse} from 'lucide-react';
 import './landingPage.css';
+
 import { useNavigate } from 'react-router-dom';
+import './landingPage.css';
 const LandingPage = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -154,7 +156,14 @@ const LandingPage = () => {
       gradient: "from-blue-600 to-purple-600",
       path: `/industries/Automobile & mobilty/automobile`
     },
-
+    {
+      id: 'health-pharma',
+      title: "Health & Pharma",
+      description: "Advance healthcare innovation and pharmaceutical excellence for a healthier, resilient Bharat.",
+      icon: <HeartPulse className="w-8 h-8" />,
+      gradient: "from-green-500 to-blue-600",
+      path: `/industries/health-pharma`
+    },
   ];
 
   // Auto-slide carousel
@@ -221,6 +230,9 @@ const LandingPage = () => {
     case 'agriculture':
       navigate('/agriculture');
       break;
+  case 'health-pharma':
+    navigate('/health-pharma');
+    break;
     case 'retail':
       navigate('/retail');
       break;
