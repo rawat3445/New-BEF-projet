@@ -9,6 +9,7 @@ import './App.css';
 import BeautyWellnessIndustry from './industries/beauty';
 
 import EnvironmentIndustry from './industries/environment/environment';
+import RetailIndustry from './industries/retail/retail';
 
 import WomenEntrepreneurship from './industries/women-entrepreneurship';
 import Web3AI from './industries/web3_ai/landingpage/LandingPage'
@@ -36,6 +37,9 @@ function App() {
         <Route path="/beauty-wellness" element={<BeautyWellnessIndustry />} />
         <Route path="/media-entertainment" element={<MediaEntertainmentIndustry />} />
         <Route path="/environment" element={<EnvironmentIndustry />} />
+
+        <Route path="/retail" element={<RetailIndustry />} />
+
         <Route path="/women-entrepreneurship" element={<WomenEntrepreneurship />} />
         <Route path="/web_ai" element={<Web3AI />} />
         <Route path="/web_ai/salespage" element={<Web3AISales />} />

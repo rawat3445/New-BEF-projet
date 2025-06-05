@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,ChevronsLeftRightEllipsis ,UserCheck, Sprout} from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,ChevronsLeftRightEllipsis ,UserCheck, Sprout,ShoppingCart} from 'lucide-react';
 import './landingPage.css';
 import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
@@ -125,6 +125,17 @@ const LandingPage = () => {
       gradient: "from-lime-400 to-green-700"
     },
 
+    {
+      id: 'retail',
+      title: "Retail & E-Commerce",
+      description: "To empower emerging retail and e-commerce startups across Bharat by providing the tools, insights, and infrastructure.",
+      icon: <ShoppingCart className="w-8 h-8" />,
+      gradient: "from-cyan-600 to-blue-600",
+      path: `/industries/retail`
+    },
+    
+
+
 
       {
       id: 'web3ai',
@@ -143,6 +154,7 @@ const LandingPage = () => {
       gradient: "from-blue-600 to-purple-600",
       path: `/industries/Automobile & mobilty/automobile`
     },
+
   ];
 
   // Auto-slide carousel
@@ -187,6 +199,8 @@ const LandingPage = () => {
       setTimeout(() => setIsSubscribed(false), 3000);
     }
   };
+
+
  const handleCardClick = (card) => {
   switch (card.id) {
     case 'advertisement':
@@ -207,6 +221,9 @@ const LandingPage = () => {
     case 'agriculture':
       navigate('/agriculture');
       break;
+    case 'retail':
+      navigate('/retail');
+      break;
     case 'web3ai':
        navigate('/web_ai');
       break;
@@ -215,7 +232,6 @@ const LandingPage = () => {
       break;
       case 'real-estate':
         navigate('/real-estate');
-
         break;
       case 'rural':
         navigate(`/rural-development`);
