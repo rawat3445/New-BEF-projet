@@ -1,17 +1,126 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp ,Star , Tractor,ChevronsLeftRightEllipsis ,UserCheck, Sprout,ShoppingCart, HeartPulse} from 'lucide-react';
+import { ChevronLeft, ChevronDown, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Star, Tractor, ChevronsLeftRightEllipsis, UserCheck, Sprout, ShoppingCart, HeartPulse } from 'lucide-react';
 import './landingPage.css';
 
 import { useNavigate } from 'react-router-dom';
 import './landingPage.css';
 const LandingPage = () => {
   const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const eventItems = [
+    {
+      title: "Industry Innovation Summit",
+      path: "/events/innovation-summit",
+      description: "Annual technology and innovation conference"
+    },
+    {
+      title: "Policy Makers Dialogue",
+      path: "/events/policy-dialogue",
+      description: "Strategic policy discussions"
+    },
+    {
+      title: "Technology Integration Forum",
+      path: "/events/tech-forum",
+      description: "Tech integration workshops"
+    },
+    {
+      title: "Leadership Excellence",
+      path: "/events/leadership",
+      description: "Leadership development programs"
+    },
+    {
+      title: "Startup Pitch Competition",
+      path: "/events/startup-pitch",
+      description: "Showcase innovative startups"
+    },
+    {
+      title: "Women in Business Conference",
+      path: "/events/women-business",
+      description: "Empowering women entrepreneurs"
+    }
+  ];
 
-  // Carousel images data
+  const handleNavigation = (path) => {
+    navigate(path);
+    setIsMobileMenuOpen(false);
+  };
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+
+
+  const industryItems = [
+    {
+      title: "Advertisement & Marketing",
+      path: "/advertisement",
+      description: "Shape the future of brand communication"
+    },
+    {
+      title: "Beauty & Wellness",
+      path: "/beauty-wellness",
+      description: "Innovative beauty and wellness solutions"
+    },
+    {
+      title: "Women Entrepreneurship",
+      path: "/women-entrepreneurship",
+      description: "Empowering women-led businesses"
+    },
+    {
+      title: "Real Estate & Urban Planning",
+      path: "/real-estate",
+      description: "Urban development and planning"
+    },
+    {
+      title: "Media & Entertainment",
+      path: "/media-entertainment",
+      description: "Content creation and distribution"
+    },
+    {
+      title: "Rural Development",
+      path: "/rural-development",
+      description: "Building sustainable villages"
+    },
+    {
+      title: "Environment & Sustainability",
+      path: "/environment",
+      description: "Green technology solutions"
+    },
+    {
+      title: "Agriculture & Agritech",
+      path: "/agriculture",
+      description: "Smart farming solutions"
+    },
+    {
+      title: "Retail & E-Commerce",
+      path: "/retail",
+      description: "Digital commerce innovation"
+    },
+    {
+      title: "Web 3.0, AI & DeepTech",
+      path: "/web_ai",
+      description: "Next-generation technologies"
+    },
+    {
+      title: "Automobile & Mobility",
+      path: "/automobile",
+      description: "Future of transportation"
+    },
+    {
+      title: "Health & Pharma",
+      path: "/health-pharma",
+      description: "Healthcare innovation"
+    }
+  ];
+
   const carouselImages = [
     {
       id: 1,
@@ -94,10 +203,14 @@ const LandingPage = () => {
     },
     {
 
-      // id: 'rural',
-      // title: "Rural Development",
-      // description: "Building sustainable, self-reliant villages through technology, community participation, and innovative solutions",
-
+      id: 'rural',
+      title: "Rural Development",
+      description: "Building sustainable, self-reliant villages through technology, community participation, and innovative solutions",
+      icon: <Sprout className="w-8 h-8" />,
+      gradient: "from-lime-400 to-green-700",
+      path: `/rural-development`
+    },
+    {
       id: 'environment',
       title: "Environment & Sustainability Tech",
       description: "Shape the future of brand communication and digital marketing strategies for Viksit Bharat.",
@@ -129,23 +242,23 @@ const LandingPage = () => {
       gradient: "from-cyan-600 to-blue-600",
       path: `/industries/retail`
     },
-    
 
 
 
-      {
+
+    {
       id: 'web3ai',
       title: "Web 3.0, AI and DeepTech",
       description: "Future-Proofing India with Next-Gen Tech Discover how Web3, AI, and Quantum Computing are transforming industries.",
-      icon: <ChevronsLeftRightEllipsis  className="w-8 h-8" />,
+      icon: <ChevronsLeftRightEllipsis className="w-8 h-8" />,
       gradient: "from-indigo-400 to-blue-700",
-        path: `/industries/web3_ai`
+      path: `/industries/web3_ai`
     }
     ,
-     {
+    {
       id: 'automobile',
       title: "Automobile & Mobility",
-      description:"Explore the world of smart vehicles, sustainable transport, and the future of mobility.",
+      description: "Explore the world of smart vehicles, sustainable transport, and the future of mobility.",
       icon: <Target className="w-8 h-8" />,
       gradient: "from-blue-600 to-purple-600",
       path: `/industries/Automobile & mobilty/automobile`
@@ -204,102 +317,254 @@ const LandingPage = () => {
   };
 
 
- const handleCardClick = (card) => {
-  switch (card.id) {
-    case 'advertisement':
-      navigate('/advertisement');
-      break;
-    case 'beauty-wellness':
-      navigate('/beauty-wellness');
-      break;
-    case 'women-entrepreneurship':
-      navigate('/women-entrepreneurship');
-      break;
-    case 'media':
-      navigate('/media-entertainment');
-      break;
-    case 'environment':
-      navigate('/environment');
-      break;
-    case 'agriculture':
-      navigate('/agriculture');
-      break;
-  case 'health-pharma':
-    navigate('/health-pharma');
-    break;
-    case 'retail':
-      navigate('/retail');
-      break;
-    case 'web3ai':
-       navigate('/web_ai');
-      break;
-       case 'automobile':
-      navigate('/automobile');
-      break;
+  const handleCardClick = (card) => {
+    switch (card.id) {
+      case 'advertisement':
+        navigate('/advertisement');
+        break;
+      case 'beauty-wellness':
+        navigate('/beauty-wellness');
+        break;
+      case 'women-entrepreneurship':
+        navigate('/women-entrepreneurship');
+        break;
+      case 'media':
+        navigate('/media-entertainment');
+        break;
+      case 'environment':
+        navigate('/environment');
+        break;
+      case 'agriculture':
+        navigate('/agriculture');
+        break;
+      case 'health-pharma':
+        navigate('/health-pharma');
+        break;
+      case 'retail':
+        navigate('/retail');
+        break;
+      case 'web3ai':
+        navigate('/web_ai');
+        break;
+      case 'automobile':
+        navigate('/automobile');
+        break;
       case 'real-estate':
         navigate('/real-estate');
         break;
       case 'rural':
         navigate(`/rural-development`);
         break;
-    default:
-      console.log(`Clicked on ${card.title} card`);
-      alert(`This page ${card.title} is not assigned to any industry`);
-      break;
-  }
-};
+      default:
+        console.log(`Clicked on ${card.title} card`);
+        alert(`This page ${card.title} is not assigned to any industry`);
+        break;
+    }
+  };
 
 
 
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                BEF
-              </div>
-            </div>
-
-            <div className="hidden md:block">
-              <div className="flex items-center space-x-8">
-                <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">Home</a>
-                <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">About</a>
-                <a href="#industries" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">Industries</a>
-                <a href="#gallery" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">Gallery</a>
-                <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors duration-200">Contact</a>
-                <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-200 transform hover:scale-105">
-                  Register Now
-                </button>
-              </div>
-            </div>
-
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
-              >
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
+      <nav className="navbar">
+        <div className="navbar-container">
+          {/* Logo */}
+          <div className="navbar-logo">
+            BEF
           </div>
+
+          {/* Desktop Menu */}
+          <ul className="navbar-menu">
+            <li className="navbar-item">
+              <a
+                href="#home"
+                className="navbar-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('home');
+                }}
+              >
+                Home
+              </a>
+            </li>
+
+            <li className="navbar-item">
+              <a
+                href="#about"
+                className="navbar-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('about');
+                }}
+              >
+                About
+              </a>
+            </li>
+
+            {/* Industries Dropdown */}
+            {/* Industries Dropdown */}
+            <li className="navbar-item dropdown">
+              <a href="#industries" className="navbar-link">
+                Initiatives
+                <ChevronDown className="dropdown-chevron w-4 h-4" />
+              </a>
+              <div className="dropdown-menu">
+                <div className="dropdown-header">Our Industries</div>
+                <div className="dropdown-content">
+                  {industryItems.map((item, index) => (
+                    <a
+                      key={index}
+                      href="#"
+                      className="dropdown-item"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavigation(item.path);
+                      }}
+                    >
+                      <div className="dropdown-item-title">{item.title}</div>
+                      <div className="dropdown-item-description">{item.description}</div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </li>
+
+            {/* Events Dropdown */}
+            <li className="navbar-item dropdown">
+              <a href="#events" className="navbar-link">
+                Events
+                <ChevronDown className="dropdown-chevron w-4 h-4" />
+              </a>
+              <div className="dropdown-menu">
+                <div className="dropdown-header">Upcoming Events</div>
+                <div className="dropdown-content">
+                  {eventItems.map((item, index) => (
+                    <a
+                      key={index}
+                      href="#"
+                      className="dropdown-item"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavigation(item.path);
+                      }}
+                    >
+                      <div className="dropdown-item-title">{item.title}</div>
+                      <div className="dropdown-item-description">{item.description}</div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </li>
+
+            <li className="navbar-item">
+              <a
+                href="#contact"
+                className="navbar-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('contact');
+                }}
+              >
+                Contact
+              </a>
+            </li>
+
+            <li className="navbar-item">
+              <button className="navbar-cta">
+                Join Our Movement
+              </button>
+            </li>
+          </ul>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </button>
         </div>
 
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 animate-slideDown">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#home" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
-              <a href="#about" className="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
-              <a href="#industries" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Industries</a>
-              <a href="#gallery" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Gallery</a>
-              <a href="#contact" className="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
-              <button className="w-full mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full">
-                Register Now
-              </button>
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="mobile-menu active">
+            <a
+              href="#home"
+              className="mobile-menu-item"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('home');
+              }}
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              className="mobile-menu-item"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('about');
+              }}
+            >
+              About
+            </a>
+
+            {/* Mobile Industries */}
+            <div style={{ borderBottom: '1px solid rgba(156, 163, 175, 0.1)' }}>
+              <div style={{ padding: '0.5rem 2rem', fontSize: '0.9rem', fontWeight: '600', color: '#9ca3af' }}>
+                INITIATIVES
+              </div>
+              {industryItems.slice(0, 6).map((item, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="mobile-menu-item"
+                  style={{ paddingLeft: '3rem' }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(item.path);
+                  }}
+                >
+                  {item.title}
+                </a>
+              ))}
             </div>
+
+            {/* Mobile Events */}
+            <div style={{ borderBottom: '1px solid rgba(156, 163, 175, 0.1)' }}>
+              <div style={{ padding: '0.5rem 2rem', fontSize: '0.9rem', fontWeight: '600', color: '#9ca3af' }}>
+                EVENTS
+              </div>
+              {eventItems.slice(0, 4).map((item, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="mobile-menu-item"
+                  style={{ paddingLeft: '3rem' }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(item.path);
+                  }}
+                >
+                  {item.title}
+                </a>
+              ))}
+            </div>
+
+            <a
+              href="#contact"
+              className="mobile-menu-item"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contact');
+              }}
+            >
+              Contact
+            </a>
+            <button className="mobile-menu-cta">
+              Join Our Movement
+            </button>
           </div>
         )}
       </nav>
@@ -309,21 +574,21 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 animate-fadeInUp">
-              Where Brands Meet{' '}
+              Independent Think Tank for{' '}
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Bharat's Vision
+                Viksit Bharat 2047
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto animate-fadeInUp animation-delay-200">
-              Step into the spotlight at the Bharat Economic Forum Industry Conclave 2025 — a one-day powerhouse event where creativity, policy, and innovation converge to shape India's journey to Viksit Bharat by 2047.
+              Standing as a beacon of innovation and national pride, The Bharat Economic Forum is a movement that embodies the spirit of a resilient and visionary India. We work on a human-centric development model by facilitating funding, collaboration, and innovation for self-economic development.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp animation-delay-400">
               <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
-                Become a Delegate
+                Join the Movement
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105">
-                Explore Sponsorships
+                Explore Our Initiatives
               </button>
             </div>
           </div>
@@ -334,16 +599,16 @@ const LandingPage = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-animate">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Join BEF Conclave 2025?</h2>
-            <p className="text-xl text-gray-600">Transform your agency into a national voice</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Partner with BEF?</h2>
+            <p className="text-xl text-gray-600">Building India's foundation for sustainable growth</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: "Category Leadership", desc: "Be seen as the voice of India's AdTech & PR industry", icon: <Trophy className="w-8 h-8" /> },
-              { title: "Massive Exposure", desc: "Real-time TV, print, podcast, and social coverage", icon: <TrendingUp className="w-8 h-8" /> },
-              { title: "Client Magnet", desc: "Network with decision-makers across 16 industries", icon: <Users className="w-8 h-8" /> },
-              { title: "Content Goldmine", desc: "Own the moment with branded assets from the event", icon: <Zap className="w-8 h-8" /> }
+              { title: "Thought Leadership", desc: "Delivering in-depth analysis and strategic insights on economic policies and trends that matter", icon: <Trophy className="w-8 h-8" /> },
+              { title: "Policy Advocacy", desc: "Partnering with government bodies to cultivate reforms that mirror the heart and soul of our nation", icon: <TrendingUp className="w-8 h-8" /> },
+              { title: "Networking & Mentorship", desc: "Connecting industry leaders, entrepreneurs, and policymakers to forge a robust ecosystem of progress", icon: <Users className="w-8 h-8" /> },
+              { title: "Capacity Building", desc: "Hosting seminars, workshops, and training programs that empower citizens with tools for positive change", icon: <Zap className="w-8 h-8" /> }
             ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 scroll-animate">
                 <div className="text-blue-600 mb-4">{item.icon}</div>
@@ -359,8 +624,8 @@ const LandingPage = () => {
       <section id="industries" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Industry Focus Areas</h2>
-            <p className="text-xl text-gray-600">Shaping the future across key sectors</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Strategic Initiatives</h2>
+            <p className="text-xl text-gray-600">Empowering change through strategic programs</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -418,8 +683,8 @@ const LandingPage = () => {
       <section id="gallery" className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-animate">
-            <h2 className="text-4xl font-bold text-white mb-4">Event Highlights</h2>
-            <p className="text-xl text-gray-300">Moments that define excellence</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Celebrating Milestones of Success</h2>
+            <p className="text-xl text-gray-300">Past events that have inspired change and brought together visionaries</p>
           </div>
 
           <div className="relative overflow-hidden rounded-2xl">
@@ -476,10 +741,10 @@ const LandingPage = () => {
             <div className="scroll-animate">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">The Think Tank Driving India's Future</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                The Bharat Economic Forum (BEF) is India's dynamic economic and policy think tank committed to building a sustainable, inclusive, and innovation-led Bharat. Much like NITI Aayog, BEF works at the intersection of policy, entrepreneurship, technology, and communication — bringing together minds that matter to co-create India's 2047 vision.
+                The Bharat Economic Forum (BEF) is India's dynamic economic and policy think tank committed to building a sustainable, inclusive, and innovation-led Bharat. We work at the intersection of policy, entrepreneurship, technology, and communication — bringing together minds that matter to co-create India's 2047 vision.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                With flagship initiatives like the Industry Sprint and the Viksit Bharat Dialogues, we connect leaders, creators, and changemakers to spark actionable ideas and strategic partnerships.
+                With a steadfast commitment to the dream of a developed nation by 2047, BEF instills the belief that every Indian's effort contributes to a bright, united future. Here, tradition meets modern excellence, a call to every citizen to be part of India's historic journey.
               </p>
               <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
                 Discover the BEF Vision
@@ -511,7 +776,7 @@ const LandingPage = () => {
                 Bharat Economic Forum
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Driving India's future through strategic partnerships, innovative dialogues, and transformative initiatives. Join us in shaping Viksit Bharat by 2047.
+                An Independent Think Tank for accelerating the vision of achieving Viksit Bharat by 2047. We facilitate funding, collaboration, and innovation for self-economic development of individuals to collectively drive India's development.
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
@@ -535,15 +800,15 @@ const LandingPage = () => {
               <ul className="space-y-2">
                 <li><a href="#home" className="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
                 <li><a href="#about" className="text-gray-300 hover:text-white transition-colors duration-200">About Us</a></li>
-                <li><a href="#industries" className="text-gray-300 hover:text-white transition-colors duration-200">Industries</a></li>
-                <li><a href="#gallery" className="text-gray-300 hover:text-white transition-colors duration-200">Gallery</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">Events</a></li>
+                <li><a href="#industries" className="text-gray-300 hover:text-white transition-colors duration-200">Initiatives</a></li>
+                <li><a href="#gallery" className="text-gray-300 hover:text-white transition-colors duration-200">Events</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">Leadership Awards</a></li>
               </ul>
             </div>
 
             {/* Contact Info */}
             <div>
-              <h3 className="text-xl font-semibold mb-4">Contact Info</h3>
+              <h3 className="text-xl font-semibold mb-4">Connect With Us</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-blue-400" />
@@ -564,8 +829,8 @@ const LandingPage = () => {
           {/* Email Subscription */}
           <div className="border-t border-gray-700 mt-12 pt-8">
             <div className="max-w-md mx-auto text-center">
-              <h3 className="text-xl font-semibold mb-4">Stay Updated</h3>
-              <p className="text-gray-300 mb-6">Subscribe to our newsletter for the latest updates on BEF initiatives and events.</p>
+              <h3 className="text-xl font-semibold mb-4">Join Our Movement</h3>
+              <p className="text-gray-300 mb-6">Subscribe to our newsletter for the latest updates on BEF initiatives and be part of India's historic journey.</p>
               <div className="flex gap-2">
                 <input
                   type="email"
@@ -582,7 +847,7 @@ const LandingPage = () => {
                 </button>
               </div>
               {isSubscribed && (
-                <p className="text-green-400 mt-2 animate-fadeIn">Thank you for subscribing!</p>
+                <p className="text-green-400 mt-2 animate-fadeIn">Welcome to the movement for Viksit Bharat!</p>
               )}
             </div>
           </div>
@@ -590,7 +855,7 @@ const LandingPage = () => {
           {/* Copyright */}
           <div className="border-t border-gray-700 mt-8 pt-8 text-center">
             <p className="text-gray-400">
-              © 2025 Bharat Economic Forum. All rights reserved. | Designed for Viksit Bharat 2047
+              © 2025 Bharat Economic Forum. All rights reserved. | Building a legacy of strength, unity, and sustainable progress
             </p>
           </div>
         </div>

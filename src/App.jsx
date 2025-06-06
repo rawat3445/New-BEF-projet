@@ -9,14 +9,10 @@ import MediaEntertainmentIndustry from './industries/media/mediaEntertainment';
 import RuralDevelopmentIndustry from './industries/ruraldevelopment/RuralDevelopmentIndustry';
 import EnvironmentIndustry from './industries/environment/environment';
 import RetailIndustry from './industries/retail/retail';
-
 import WomenEntrepreneurship from './industries/women-entrepreneurship';
 import Web3AI from './industries/web3_ai/landingpage/LandingPage'
 import Web3AISales from './industries/web3_ai/salespage/components/homepage';
-
-
 import AutomobileIndustry from './industries/Automobile & mobility/automobile';
-
 import Finance from './industries/finance-investment/finance';
 import Healthnpharma from './industries/healthnpharma/Healthnpharma';
 import RealEstateIndustry from './industries/real-estate-and-urban-planning';
@@ -37,9 +33,7 @@ function App() {
         <Route path="/beauty-wellness" element={<BeautyWellnessIndustry />} />
         <Route path="/media-entertainment" element={<MediaEntertainmentIndustry />} />
         <Route path="/environment" element={<EnvironmentIndustry />} />
-
         <Route path="/retail" element={<RetailIndustry />} />
-
         <Route path="/women-entrepreneurship" element={<WomenEntrepreneurship />} />
         <Route path="/web_ai" element={<Web3AI />} />
         <Route path="/web_ai/salespage" element={<Web3AISales />} />
@@ -48,7 +42,7 @@ function App() {
         <Route path="/real-estate" element={<RealEstateIndustry/>} />
         <Route path="/health-pharma/*" element={<Navigate to="/healthnpharma" replace />} />
         <Route path="/healthnpharma/*" element={<Healthnpharma />} />
-
+        <Route path="/rural-development" element={<RuralDevelopmentIndustry />} />
 
 
 
@@ -59,7 +53,6 @@ function App() {
 
 
 
-        <Route path="/rural-development" element={<RuralDevelopmentIndustry />} />
 
       </Routes>
     </Router>
