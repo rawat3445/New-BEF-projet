@@ -51,7 +51,6 @@ const AboutPage = () => {
 
       {/* Timeline */}
       <div className="relative">
-        {/* Vertical line for desktop */}
         <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-[#E5E7EB] z-0" />
 
         <div className="flex flex-col gap-10">
@@ -65,10 +64,10 @@ const AboutPage = () => {
                   ${isLeft ? "lg:flex-row-reverse lg:self-start" : "lg:self-end"}
                 `}
               >
-                {/* Dot */}
+                {/* Dots */}
                 <div className="hidden lg:flex items-center justify-center w-6 h-6 rounded-full bg-white border-4 border-[#1E3A8A] z-10" />
 
-                {/* Card */}
+                {/* Cards */}
                 <div
                   className={`w-full max-w-md lg:max-w-[360px] rounded-2xl shadow-xl p-6 text-white ${event.bgColor}`}
                 >
