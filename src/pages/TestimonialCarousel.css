@@ -1,0 +1,64 @@
+.testimonial-page {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #e6f0ff, #ffffff);
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #003366;
+  font-weight: 700;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0, 51, 102, 0.15);
+  padding: 30px 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 51, 102, 0.3);
+}
+
+.avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+  margin-bottom: 20px;
+}
+
+.quote {
+  font-style: italic;
+  color: #1a1a1a;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.author {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #003366;
+  margin-bottom: 6px;
+}
+
+.role {
+  font-size: 0.9rem;
+  color: #555;
+}
