@@ -16,16 +16,14 @@ import AutomobileIndustry from './industries/Automobile & mobility/automobile';
 import Finance from './industries/finance-investment/finance';
 import Healthnpharma from './industries/healthnpharma/Healthnpharma';
 import RealEstateIndustry from './industries/real-estate-and-urban-planning';
-
-
+import Home from './pages/home';
 
 function App() {
   return (
     <Router>
       <Routes>
-
         <Route path="/" element={<LandingPage />} />
-
+        <Route path="/home" element={<Home />} />
 
         <Route path="/advertisement" element={<AdvertisementIndustry />} />
         <Route path="/agriculture" element={<AgricultureIndustry />} />
@@ -44,16 +42,9 @@ function App() {
         <Route path="/healthnpharma/*" element={<Healthnpharma />} />
         <Route path="/rural-development" element={<RuralDevelopmentIndustry />} />
 
-
-
-
         {/* Example Placeholder for future industries */}
         {/*DO NOT TOUCH THIS CODE BELOW IT'S JUST AN EXAMPLE!*/}
         {/* <Route path="/education" element={<EducationIndustry />} */}
-
-
-
-
       </Routes>
     </Router>
   );

@@ -157,7 +157,7 @@ const LandingPage = () => {
     {
       id: 'beauty-wellness',
       title: "Beauty And Wellness",
-      description: "Discover innovative beauty and wellness solutions shaping Viksit Bharat’s vibrant future.",
+      description: "Discover innovative beauty and wellness solutions shaping Viksit Bharat's vibrant future.",
       icon: <Star className="w-8 h-8" />,
       gradient: "from-pink-500 to-purple-600",
       path: `/industries/beauty-wellness`
@@ -378,11 +378,11 @@ const LandingPage = () => {
           <ul className="navbar-menu">
             <li className="navbar-item">
               <a
-                href="#home"
+                href="/home"
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('home');
+                  handleNavigation('/home');
                 }}
               >
                 Home
@@ -490,11 +490,11 @@ const LandingPage = () => {
         {isMobileMenuOpen && (
           <div className="mobile-menu active">
             <a
-              href="#home"
+              href="/home"
               className="mobile-menu-item"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('home');
+                handleNavigation('/home');
               }}
             >
               Home
@@ -798,7 +798,7 @@ const LandingPage = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                <li><a href="#home" className="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
+                <li><a href="/home" className="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
                 <li><a href="#about" className="text-gray-300 hover:text-white transition-colors duration-200">About Us</a></li>
                 <li><a href="#industries" className="text-gray-300 hover:text-white transition-colors duration-200">Initiatives</a></li>
                 <li><a href="#gallery" className="text-gray-300 hover:text-white transition-colors duration-200">Events</a></li>
