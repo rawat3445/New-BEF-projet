@@ -16,7 +16,10 @@ import AutomobileIndustry from './industries/Automobile & mobility/automobile';
 import Finance from './industries/finance-investment/finance';
 import Healthnpharma from './industries/healthnpharma/Healthnpharma';
 import RealEstateIndustry from './industries/real-estate-and-urban-planning';
-import Contact from './pages/contact';
+import Contact from './pages/Contact';
+import About from './pages/About';
+import Event from './pages/Event';
+
 
 
 
@@ -47,6 +50,10 @@ function App() {
         <Route path="/rural-development" element={<RuralDevelopmentIndustry />} />
 
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/event" element={<Event />} />
+
+
 
 
 
