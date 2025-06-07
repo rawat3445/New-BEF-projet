@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronDown, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Star, Tractor, ChevronsLeftRightEllipsis, UserCheck, Sprout, ShoppingCart, HeartPulse } from 'lucide-react';
+import { ChevronLeft, ChevronDown, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Star, Tractor, ChevronsLeftRightEllipsis, UserCheck, Sprout, ShoppingCart, HeartPulse, Gamepad2, Sparkles } from 'lucide-react';
 import './landingPage.css';
 
 import { useNavigate } from 'react-router-dom';
@@ -93,6 +93,11 @@ const LandingPage = () => {
       title: "Environment & Sustainability",
       path: "/environment",
       description: "Green technology solutions"
+    },
+    {
+      title: "Gaming and eSports",
+      path: "/gaming-and-eSports",
+      description: "Explore Gaming Industries"
     },
     {
       title: "Agriculture & Agritech",
@@ -226,6 +231,20 @@ const LandingPage = () => {
       icon: <Trophy className="w-8 h-8" />,
       gradient: "from-pink-500 to-rose-600"
     },
+
+    {
+      id: 'gaming-and-eSports',
+      title: "Gaming And eSports",
+      description: "Gaming and eSports are fast emerging as powerful drivers of youth engagement, innovation, and digital growth. India is on its path to becoming a global leader in competitive gaming and interactive entertainment.",
+      icon: (
+        <div className="relative">
+          <Gamepad2 className="w-8 h-8 text-yellow-400" />
+          <Sparkles className="absolute -top-1 -right-1 w-3 h-3 text-white" />
+        </div>
+      ),
+      gradient: "from-purple-600 via-pink-500 to-blue-500",
+      path: `/industries/gaming-and-esports`
+    },
     {
       id: 'agriculture',
       title: "Agriculture and Agritech",
@@ -333,6 +352,9 @@ const LandingPage = () => {
         break;
       case 'environment':
         navigate('/environment');
+        break;
+      case 'gaming-and-eSports':
+        navigate('/gaming-and-eSports');
         break;
       case 'agriculture':
         navigate('/agriculture');

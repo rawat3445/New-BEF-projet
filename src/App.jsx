@@ -16,6 +16,7 @@ import AutomobileIndustry from './industries/Automobile & mobility/automobile';
 import Finance from './industries/finance-investment/finance';
 import Healthnpharma from './industries/healthnpharma/Healthnpharma';
 import RealEstateIndustry from './industries/real-estate-and-urban-planning';
+import GamingIndustry from './industries/Gaming-and-eSports/GamingIndustryRouter';
 
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/beauty-wellness" element={<BeautyWellnessIndustry />} />
         <Route path="/media-entertainment" element={<MediaEntertainmentIndustry />} />
         <Route path="/environment" element={<EnvironmentIndustry />} />
+        <Route path='/gaming-and-eSports/*' element={<GamingIndustry />} />
         <Route path="/retail" element={<RetailIndustry />} />
         <Route path="/women-entrepreneurship" element={<WomenEntrepreneurship />} />
         <Route path="/web_ai" element={<Web3AI />} />
