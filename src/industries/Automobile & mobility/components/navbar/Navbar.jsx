@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Phone, Mail, MapPin, CarFront } from 'lucide-react';
 
-import './navbar.css'
+import './Navbar.css'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);

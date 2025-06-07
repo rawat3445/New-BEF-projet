@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Menu, X, Home, Info, Users, Globe, Leaf, Wrench, Award, Book } from 'lucide-react';
-import Navbar from './components/navbar/navbar';
+import Navbar from './components/navbar/Navbar';
 import HeroCarousel from './components/herocarousel/HeroCarousel';
 import ServiceCards from './components/serviceCards/cards';
-import AboutSection from './components/aboutSection/aboutSection';
-import Footer from './components/footer/footer';
+import AboutSection from './components/aboutSection/AboutSection';
+import Footer from './components/footer/Footer';
 
 const RuralDevelopmentIndustry = () => {
   const [currentView, setCurrentView] = useState('home');
