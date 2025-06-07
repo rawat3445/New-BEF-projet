@@ -1,0 +1,118 @@
+/* Prepared by Riddhi Chakraborty */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap');
+
+.bef-footer {
+  background-color: #F9FAFB;
+  color: #111827;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  padding: 2.5rem 1rem;
+  border-top: 2px solid #E5E7EB;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 0.75rem;
+}
+
+.footer-taglines span {
+  display: block;
+  font-size: 0.9rem;
+  color: #1E3A8A;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-socials h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1E3A8A;
+}
+
+.footer-links button {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0.3rem 0;
+  color: #6B7280;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.footer-links button:hover:enabled {
+  color: #06B6D4;
+  text-decoration: underline;
+}
+
+.footer-links button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.footer-contact p {
+  font-size: 0.92rem;
+  color: #6B7280;
+  margin-bottom: 0.4rem;
+}
+
+.footer-contact a {
+  color: #06B6D4;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.footer-icons a {
+  color: #6B7280;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #06B6D4;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #E5E7EB;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #6B7280;
+}
+
+.footer-back-to-top {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #1E3A8A;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-back-to-top:hover {
+  color: #06B6D4;
+}
