@@ -18,22 +18,16 @@ import AutomobileIndustry from './industries/Automobile & mobility/automobile';
 import Finance from './industries/finance-investment/finance';
 import Healthnpharma from './industries/healthnpharma/Healthnpharma';
 import RealEstateIndustry from './industries/real-estate-and-urban-planning';
-import Home from './pages/home';
 import GamingIndustry from './industries/Gaming-and-eSports/GamingIndustryRouter';
+
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
-
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-
-        <Route path="/home" element={<Home />} />
-
-
-
         <Route path="/advertisement" element={<AdvertisementIndustry />} />
         <Route path="/agriculture" element={<AgricultureIndustry />} />
         <Route path="/agriculture/sales" element={<AgricultureSalesPage />} />
@@ -52,14 +46,9 @@ function App() {
         <Route path="/healthnpharma/*" element={<Healthnpharma />} />
         <Route path="/rural-development" element={<RuralDevelopmentIndustry />} />
 
-
-        {/* Example Placeholder for future industries */}
-        {/*DO NOT TOUCH THIS CODE BELOW IT'S JUST AN EXAMPLE!*/}
-
         {/* ✅ Legal pages for Footer */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
-
       </Routes>
     </Router>
   );
