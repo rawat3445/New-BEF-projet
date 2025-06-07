@@ -1,5 +1,7 @@
+// App.jsx
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
+
 import LandingPage from './components/landingpage/landingPage';
 import AdvertisementIndustry from './industries/advertisement/advertisement';
 import AgricultureIndustry from './industries/agriculture/agriculture';
@@ -10,20 +12,27 @@ import RuralDevelopmentIndustry from './industries/ruraldevelopment/RuralDevelop
 import EnvironmentIndustry from './industries/environment/environment';
 import RetailIndustry from './industries/retail/retail';
 import WomenEntrepreneurship from './industries/women-entrepreneurship';
-import Web3AI from './industries/web3_ai/landingpage/LandingPage'
+import Web3AI from './industries/web3_ai/landingpage/LandingPage';
 import Web3AISales from './industries/web3_ai/salespage/components/homepage';
 import AutomobileIndustry from './industries/Automobile & mobility/automobile';
 import Finance from './industries/finance-investment/finance';
 import Healthnpharma from './industries/healthnpharma/Healthnpharma';
 import RealEstateIndustry from './industries/real-estate-and-urban-planning';
 import Home from './pages/home';
+import GamingIndustry from './industries/Gaming-and-eSports/GamingIndustryRouter';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
+
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+
         <Route path="/home" element={<Home />} />
+
+
 
         <Route path="/advertisement" element={<AdvertisementIndustry />} />
         <Route path="/agriculture" element={<AgricultureIndustry />} />
@@ -31,20 +40,26 @@ function App() {
         <Route path="/beauty-wellness" element={<BeautyWellnessIndustry />} />
         <Route path="/media-entertainment" element={<MediaEntertainmentIndustry />} />
         <Route path="/environment" element={<EnvironmentIndustry />} />
+        <Route path='/gaming-and-eSports/*' element={<GamingIndustry />} />
         <Route path="/retail" element={<RetailIndustry />} />
         <Route path="/women-entrepreneurship" element={<WomenEntrepreneurship />} />
         <Route path="/web_ai" element={<Web3AI />} />
         <Route path="/web_ai/salespage" element={<Web3AISales />} />
         <Route path="/automobile" element={<AutomobileIndustry />} />
         <Route path="/finance" element={<Finance />} />
-        <Route path="/real-estate" element={<RealEstateIndustry/>} />
+        <Route path="/real-estate" element={<RealEstateIndustry />} />
         <Route path="/health-pharma/*" element={<Navigate to="/healthnpharma" replace />} />
         <Route path="/healthnpharma/*" element={<Healthnpharma />} />
         <Route path="/rural-development" element={<RuralDevelopmentIndustry />} />
 
+
         {/* Example Placeholder for future industries */}
         {/*DO NOT TOUCH THIS CODE BELOW IT'S JUST AN EXAMPLE!*/}
-        {/* <Route path="/education" element={<EducationIndustry />} */}
+
+        {/* ✅ Legal pages for Footer */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsConditions />} />
+
       </Routes>
     </Router>
   );

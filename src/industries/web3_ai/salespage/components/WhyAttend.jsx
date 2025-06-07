@@ -52,7 +52,7 @@ const WhyAttend = () => {
   return (
     <section className="py-10 bg-gray-50">
       <div className="text-center mb-6">
-        <h2 className="text-3xl font-bold">🔥 Why You Should Attend</h2>
+        <h2 className="text-3xl font-bold"> Why You Should Attend</h2>
       </div>
       <div
         ref={(node) => {
