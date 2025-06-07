@@ -352,7 +352,7 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <Navbar industryItems={industryItems} scrollToSection={scrollToSection} eventItems={eventItems} isMobileMenuOpen ={isMobileMenuOpen} />
+      <Navbar industryItems={industryItems} scrollToSection={scrollToSection} eventItems={eventItems} isMobileMenuOpen ={isMobileMenuOpen} handleNavigation = {handleNavigation} />
 
 
       {/* Hero Banner Section */}
@@ -362,7 +362,7 @@ const LandingPage = () => {
       <FeaturedSection/>
       {/* Industries Cards Section */}
      
-    <Industrycards  industryCards={industryCards}/>
+    <Industrycards  industryCards={industryCards} handleCardClick ={handleCardClick }/>
       {/* Carousel Section */}
       <Carouselgallery  carouselImages={carouselImages}/>
 

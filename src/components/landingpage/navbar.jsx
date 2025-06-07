@@ -14,6 +14,7 @@ const Navbar = ({
   isMobileMenuOpen,
   setIsMobileMenuOpen,
   handleNavigation,
+
 }) => {
   return (
     <>
