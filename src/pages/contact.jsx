@@ -68,236 +68,229 @@ const Contact = () => {
     ];
 
     return (
-        <div style={{ minHeight: '100vh', backgroundColor: '#F9FAFB' }}>
-            <nav style={{ backgroundColor: '#F9FAFB', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', position: 'fixed', top: 0, width: '100%', zIndex: 50 }}>
-                <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div style={{ fontSize: '1.875rem', fontWeight: 'bold', background: 'linear-gradient(to right, #1E3A8A, #06B6D4)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
+        <div className="min-h-screen bg-soft-white">
+            <nav className="bg-soft-white shadow-[0_4px_6px_rgba(0,0,0,0.1)] fixed top-0 w-full z-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+                    <div className="text-3xl font-bold bg-[linear-gradient(to_right,var(--primary-blue),var(--accent-cyan))] bg-clip-text text-transparent">
                         BEF
                     </div>
-                    <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }} className="hidden md:flex">
-                        <a href="#home" style={{ color: '#1E3A8A', textDecoration: 'none', transition: 'color 0.3s' }} onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#1E3A8A'}>Home</a>
-                        <a href="#about" style={{ color: '#1E3A8A', textDecoration: 'none', transition: 'color 0.3s' }} onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#1E3A8A'}>About</a>
-                        <div style={{ position: 'relative' }}>
-                            <a href="#industries" style={{ color: '#1E3A8A', textDecoration: 'none', display: 'flex', alignItems: 'center', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#1E3A8A'}>
+                    <div className="hidden md:flex space-x-6 items-center">
+                        <a href="#home" className="text-primary-blue hover:text-accent-cyan transition-colors duration-300" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a>
+                        <a href="#about" className="text-primary-blue hover:text-accent-cyan transition-colors duration-300" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a>
+                        <div className="relative group">
+                            <a href="#industries" className="text-primary-blue hover:text-accent-cyan flex items-center transition-colors duration-300">
                                 Initiatives
-                                <svg style={{ width: '16px', height: '16px', marginLeft: '4px', stroke: '#1E3A8A', transition: 'stroke 0.3s' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" onMouseOver={(e) => e.currentTarget.style.stroke = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.stroke = '#1E3A8A'}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                                <svg className="w-4 h-4 ml-1 stroke-[var(--primary-blue)] group-hover:stroke-[var(--accent-cyan)] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                </svg>
                             </a>
-                            <div style={{ display: 'none', position: 'absolute', backgroundColor: '#F9FAFB', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', borderRadius: '8px', marginTop: '8px', width: '256px' }} onMouseOver={(e) => e.currentTarget.style.display = 'block'} onMouseOut={(e) => e.currentTarget.style.display = 'none'} className="group-hover:block">
-                                <div style={{ padding: '8px 16px', fontSize: '0.875rem', fontWeight: '600', color: '#6B7280' }}>Our Industries</div>
+                            <div className="absolute hidden group-hover:block bg-soft-white shadow-[0_4px_6px_rgba(0,0,0,0.1)] rounded-lg mt-2 w-64">
+                                <div className="px-4 py-2 text-sm font-semibold text-neutral-gray">Our Industries</div>
                                 {industryItems.map((item, index) => (
                                     <a
                                         key={index}
                                         href={item.path}
-                                        style={{ display: 'block', padding: '8px 16px', color: '#1E3A8A', textDecoration: 'none', transition: 'background-color 0.3s, color 0.3s' }}
+                                        className="block px-4 py-2 text-primary-blue hover:bg-[#E6F0FA] hover:text-accent-cyan transition-colors duration-300"
                                         onClick={(e) => { e.preventDefault(); handleNavigation(item.path); }}
-                                        onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#E6F0FA'; e.currentTarget.style.color = '#06B6D4'; }}
-                                        onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#1E3A8A'; }}
                                     >
                                         {item.title}
                                     </a>
                                 ))}
                             </div>
                         </div>
-                        <div style={{ position: 'relative' }}>
-                            <a href="#events" style={{ color: '#1E3A8A', textDecoration: 'none', display: 'flex', alignItems: 'center', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#1E3A8A'}>
+                        <div className="relative group">
+                            <a href="#events" className="text-primary-blue hover:text-accent-cyan flex items-center transition-colors duration-300">
                                 Events
-                                <svg style={{ width: '16px', height: '16px', marginLeft: '4px', stroke: '#1E3A8A', transition: 'stroke 0.3s' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" onMouseOver={(e) => e.currentTarget.style.stroke = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.stroke = '#1E3A8A'}><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                                <svg className="w-4 h-4 ml-1 stroke-[var(--primary-blue)] group-hover:stroke-[var(--accent-cyan)] transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                </svg>
                             </a>
-                            <div style={{ display: 'none', position: 'absolute', backgroundColor: '#F9FAFB', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', borderRadius: '8px', marginTop: '8px', width: '256px' }} onMouseOver={(e) => e.currentTarget.style.display = 'block'} onMouseOut={(e) => e.currentTarget.style.display = 'none'} className="group-hover:block">
-                                <div style={{ padding: '8px 16px', fontSize: '0.875rem', fontWeight: '600', color: '#6B7280' }}>Upcoming Events</div>
+                            <div className="absolute hidden group-hover:block bg-soft-white shadow-[0_4px_6px_rgba(0,0,0,0.1)] rounded-lg mt-2 w-64">
+                                <div className="px-4 py-2 text-sm font-semibold text-neutral-gray">Upcoming Events</div>
                                 {eventItems.map((item, index) => (
                                     <a
                                         key={index}
                                         href={item.path}
-                                        style={{ display: 'block', padding: '8px 16px', color: '#1E3A8A', textDecoration: 'none', transition: 'background-color 0.3s, color 0.3s' }}
+                                        className="block px-4 py-2 text-primary-blue hover:bg-[#E6F0FA] hover:text-accent-cyan transition-colors duration-300"
                                         onClick={(e) => { e.preventDefault(); handleNavigation(item.path); }}
-                                        onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#E6F0FA'; e.currentTarget.style.color = '#06B6D4'; }}
-                                        onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#1E3A8A'; }}
                                     >
                                         {item.title}
                                     </a>
                                 ))}
                             </div>
                         </div>
-                        <a href="#contact" style={{ color: '#1E3A8A', textDecoration: 'none', fontWeight: '600', transition: 'color 0.3s' }} onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#1E3A8A'}>Contact</a>
-                        <button style={{ background: 'linear-gradient(to right, #1E3A8A, #06B6D4)', color: '#F9FAFB', padding: '8px 24px', borderRadius: '9999px', fontWeight: '600', transition: 'box-shadow 0.3s, transform 0.3s' }} onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.2)'} onMouseOut={(e) => e.currentTarget.style.boxShadow = 'none'}>Join Our Movement</button>
+                        <a href="#contact" className="text-primary-blue hover:text-accent-cyan font-semibold transition-colors duration-300" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
+                        <button className="bg-[linear-gradient(to_right,var(--primary-blue),var(--accent-cyan))] text-[var(--soft-white)] px-6 py-2 rounded-full font-semibold hover:shadow-[0_10px_15px_rgba(0,0,0,0.2)] transition-all duration-300 transform hover:scale-105">
+                            Join Our Movement
+                        </button>
                     </div>
-                    <button style={{ color: '#1E3A8A' }} className="md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-                        {isMobileMenuOpen ? <X style={{ width: '24px', height: '24px' }} /> : <Menu style={{ width: '24px', height: '24px' }} />}
+                    <button className="md:hidden text-primary-blue" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                        {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
                 </div>
                 {isMobileMenuOpen && (
-                    <div style={{ backgroundColor: '#F9FAFB', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }} className="md:hidden">
-                        <div style={{ padding: '8px 16px' }}>
-                            <a href="#home" style={{ display: 'block', padding: '8px 0', color: '#1E3A8A', textDecoration: 'none', transition: 'color 0.3s' }} onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#1E3A8A'}>Home</a>
-                            <a href="#about" style={{ display: 'block', padding: '8px 0', color: '#1E3A8A', textDecoration: 'none', transition: 'color 0.3s' }} onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#1E3A8A'}>About</a>
-                            <div style={{ padding: '8px 0' }}>
-                                <div style={{ fontSize: '0.875rem', fontWeight: '600', color: '#6B7280' }}>INITIATIVES</div>
+                    <div className="md:hidden bg-soft-white shadow-[0_4px_6px_rgba(0,0,0,0.1)]">
+                        <div className="px-4 py-2">
+                            <a href="#home" className="block py-2 text-primary-blue hover:text-accent-cyan transition-colors duration-300" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a>
+                            <a href="#about" className="block py-2 text-primary-blue hover:text-accent-cyan transition-colors duration-300" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a>
+                            <div className="py-2">
+                                <div className="text-sm font-semibold text-neutral-gray">INITIATIVES</div>
                                 {industryItems.slice(0, 6).map((item, index) => (
                                     <a
                                         key={index}
                                         href={item.path}
-                                        style={{ display: 'block', padding: '8px 16px', color: '#1E3A8A', textDecoration: 'none', transition: 'color 0.3s' }}
+                                        className="block py-2 pl-4 text-primary-blue hover:text-accent-cyan transition-colors duration-300"
                                         onClick={(e) => { e.preventDefault(); handleNavigation(item.path); }}
-                                        onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'}
-                                        onMouseOut={(e) => e.currentTarget.style.color = '#1E3A8A'}
                                     >
                                         {item.title}
                                     </a>
                                 ))}
                             </div>
-                            <div style={{ padding: '8px 0' }}>
-                                <div style={{ fontSize: '0.875rem', fontWeight: '600', color: '#6B7280' }}>EVENTS</div>
+                            <div className="py-2">
+                                <div className="text-sm font-semibold text-neutral-gray">EVENTS</div>
                                 {eventItems.slice(0, 4).map((item, index) => (
                                     <a
                                         key={index}
                                         href={item.path}
-                                        style={{ display: 'block', padding: '8px 16px', color: '#1E3A8A', textDecoration: 'none', transition: 'color 0.3s' }}
+                                        className="block py-2 pl-4 text-primary-blue hover:text-accent-cyan transition-colors duration-300"
                                         onClick={(e) => { e.preventDefault(); handleNavigation(item.path); }}
-                                        onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'}
-                                        onMouseOut={(e) => e.currentTarget.style.color = '#1E3A8A'}
                                     >
                                         {item.title}
                                     </a>
                                 ))}
                             </div>
-                            <a href="#contact" style={{ display: 'block', padding: '8px 0', color: '#1E3A8A', textDecoration: 'none', transition: 'color 0.3s' }} onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#1E3A8A'}>Contact</a>
-                            <button style={{ width: '100%', background: 'linear-gradient(to right, #1E3A8A, #06B6D4)', color: '#F9FAFB', padding: '8px 24px', borderRadius: '9999px', marginTop: '8px', fontWeight: '600', transition: 'box-shadow 0.3s, transform 0.3s' }} onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.2)'} onMouseOut={(e) => e.currentTarget.style.boxShadow = 'none'}>Join Our Movement</button>
+                            <a href="#contact" className="block py-2 text-primary-blue hover:text-accent-cyan transition-colors duration-300" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
+                            <button className="w-full bg-[linear-gradient(to_right,var(--primary-blue),var(--accent-cyan))] text-[var(--soft-white)] px-6 py-2 rounded-full mt-2 font-semibold hover:shadow-[0_10px_15px_rgba(0,0,0,0.2)] transition-all duration-300 transform hover:scale-105">
+                                Join Our Movement
+                            </button>
                         </div>
                     </div>
                 )}
             </nav>
 
-            <section id="contact" style={{ paddingTop: '96px', paddingBottom: '80px', background: 'linear-gradient(to bottom right, #E6F0FA, #F9FAFB, #E6F0FA)' }}>
-                <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', textAlign: 'center' }}>
-                    <h1 style={{ fontSize: '2.25rem', fontWeight: 'bold', color: '#111827', marginBottom: '24px' }}>
+            <section id="contact" className="pt-24 pb-20 bg-[linear-gradient(to_bottom_right,#E6F0FA,var(--soft-white),#E6F0FA)]">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h1 className="text-4xl md:text-5xl font-bold text-dark-charcoal mb-6">
                         Get in Touch with{' '}
-                        <span style={{ background: 'linear-gradient(to right, #1E3A8A, #06B6D4)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
+                        <span className="bg-[linear-gradient(to_right,var(--primary-blue),var(--accent-cyan))] bg-clip-text text-transparent">
                             Bharat Economic Forum
                         </span>
                     </h1>
-                    <p style={{ fontSize: '1.125rem', color: '#6B7280', maxWidth: '768px', margin: '0 auto', marginBottom: '32px' }}>
+                    <p className="text-lg md:text-xl text-neutral-gray max-w-3xl mx-auto mb-8">
                         We're here to answer your questions, explore collaboration opportunities, and support your journey toward Viksit Bharat 2047.
                     </p>
                 </div>
             </section>
 
-            <section style={{ padding: '80px 0', backgroundColor: '#E6F0FA' }}>
-                <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-                    <div style={{ display: 'grid', gap: '48px' }} className="md:grid-cols-2">
-                        <div style={{ backgroundColor: '#F9FAFB', padding: '32px', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
-                            <h2 style={{ fontSize: '1.875rem', fontWeight: 'bold', color: '#111827', marginBottom: '24px' }}>Send Us a Message</h2>
-                            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <section className="py-20 bg-[#E6F0FA]">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid md:grid-cols-2 gap-12">
+                        <div className="bg-soft-white p-8 rounded-2xl shadow-[0_4px_6px_rgba(0,0,0,0.1)]">
+                            <h2 className="text-3xl font-bold text-dark-charcoal mb-6">Send Us a Message</h2>
+                            <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
-                                    <label htmlFor="name" style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#111827' }}>Full Name</label>
+                                    <label htmlFor="name" className="block text-sm font-medium text-dark-charcoal">Full Name</label>
                                     <input
                                         type="text"
                                         name="name"
                                         value={formData.name}
                                         onChange={handleInputChange}
-                                        style={{ marginTop: '4px', width: '100%', padding: '12px 16px', borderRadius: '9999px', border: '1px solid #6B7280', outline: 'none', transition: 'border-color 0.3s', color: '#111827', backgroundColor: '#F9FAFB' }}
+                                        className="mt-1 block w-full px-4 py-3 rounded-full border-neutral-gray focus:outline-none focus:border-[var(--accent-cyan)] bg-soft-white text-dark-charcoal placeholder:text-neutral-gray"
                                         placeholder="Your Name"
                                         required
-                                        onFocus={(e) => e.currentTarget.style.borderColor = '#06B6D4'}
-                                        onBlur={(e) => e.currentTarget.style.borderColor = '#6B7280'}
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="email" style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#111827' }}>Email Address</label>
+                                    <label htmlFor="email" className="block text-sm font-medium text-dark-charcoal">Email Address</label>
                                     <input
                                         type="email"
                                         name="email"
                                         value={formData.email}
                                         onChange={handleInputChange}
-                                        style={{ marginTop: '4px', width: '100%', padding: '12px 16px', borderRadius: '9999px', border: '1px solid #6B7280', outline: 'none', transition: 'border-color 0.3s', color: '#111827', backgroundColor: '#F9FAFB' }}
+                                        className="mt-1 block w-full px-4 py-3 rounded-full border-neutral-gray focus:outline-none focus:border-[var(--accent-cyan)] bg-soft-white text-dark-charcoal placeholder:text-neutral-gray"
                                         placeholder="Your Email"
                                         required
-                                        onFocus={(e) => e.currentTarget.style.borderColor = '#06B6D4'}
-                                        onBlur={(e) => e.currentTarget.style.borderColor = '#6B7280'}
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="subject" style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#111827' }}>Subject</label>
+                                    <label htmlFor="subject" className="block text-sm font-medium text-dark-charcoal">Subject</label>
                                     <input
                                         type="text"
                                         name="subject"
                                         value={formData.subject}
                                         onChange={handleInputChange}
-                                        style={{ marginTop: '4px', width: '100%', padding: '12px 16px', borderRadius: '9999px', border: '1px solid #6B7280', outline: 'none', transition: 'border-color 0.3s', color: '#111827', backgroundColor: '#F9FAFB' }}
+                                        className="mt-1 block w-full px-4 py-3 rounded-full border-neutral-gray focus:outline-none focus:border-[var(--accent-cyan)] bg-soft-white text-dark-charcoal placeholder:text-neutral-gray"
                                         placeholder="Subject"
                                         required
-                                        onFocus={(e) => e.currentTarget.style.borderColor = '#06B6D4'}
-                                        onBlur={(e) => e.currentTarget.style.borderColor = '#6B7280'}
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="message" style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#111827' }}>Message</label>
+                                    <label htmlFor="message" className="block text-sm font-medium text-dark-charcoal">Message</label>
                                     <textarea
                                         name="message"
                                         value={formData.message}
                                         onChange={handleInputChange}
-                                        style={{ marginTop: '4px', width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid #6B7280', outline: 'none', transition: 'border-color 0.3s', color: '#111827', backgroundColor: '#F9FAFB', minHeight: '120px' }}
+                                        className="mt-1 block w-full px-4 py-3 rounded-lg border-neutral-gray focus:outline-none focus:border-[var(--accent-cyan)] bg-soft-white text-dark-charcoal placeholder:text-neutral-gray"
+                                        rows="5"
                                         placeholder="Your Message"
                                         required
-                                        onFocus={(e) => e.currentTarget.style.borderColor = '#06B6D4'}
-                                        onBlur={(e) => e.currentTarget.style.borderColor = '#6B7280'}
                                     ></textarea>
                                 </div>
                                 <button
                                     type="submit"
-                                    style={{ width: '100%', background: 'linear-gradient(to right, #1E3A8A, #06B6D4)', color: '#F9FAFB', padding: '12px 24px', borderRadius: '9999px', fontWeight: '600', transition: 'box-shadow 0.3s, transform 0.3s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
-                                    onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.2)'; e.currentTarget.style.transform = 'scale(1.05)'; }}
-                                    onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'scale(1)'; }}
+                                    className="w-full bg-[linear-gradient(to_right,var(--primary-blue),var(--accent-cyan))] text-[var(--soft-white)] px-6 py-3 rounded-full font-semibold hover:shadow-[0_10px_15px_rgba(0,0,0,0.2)] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
                                 >
                                     Send Message
-                                    <ArrowRight style={{ width: '20px', height: '20px' }} />
+                                    <ArrowRight className="w-5 h-5" />
                                 </button>
                                 {isSubmitted && (
-                                    <p style={{ color: '#10B981', textAlign: 'center', marginTop: '16px', animation: 'pulse 1.5s infinite' }}>
+                                    <p className="text-green-500 text-center mt-4 animate-pulse">
                                         Thank you for your message! We'll get back to you soon.
                                     </p>
                                 )}
                             </form>
                         </div>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+                        <div className="space-y-8">
                             <div>
-                                <h2 style={{ fontSize: '1.875rem', fontWeight: 'bold', color: '#111827', marginBottom: '24px' }}>Connect With Us</h2>
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                        <Mail style={{ width: '24px', height: '24px', color: '#06B6D4' }} />
-                                        <span style={{ color: '#6B7280' }}>info@bharateconomicforum.org</span>
+                                <h2 className="text-3xl font-bold text-dark-charcoal mb-6">Connect With Us</h2>
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-3">
+                                        <Mail className="w-6 h-6 text-accent-cyan" />
+                                        <span className="text-neutral-gray">info@bharateconomicforum.org</span>
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                        <Phone style={{ width: '24px', height: '24px', color: '#06B6D4' }} />
-                                        <span style={{ color: '#6B7280' }}>+91 98765 43210</span>
+                                    <div className="flex items-center gap-3">
+                                        <Phone className="w-6 h-6 text-accent-cyan" />
+                                        <span className="text-neutral-gray">+91 98765 43210</span>
                                     </div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                        <MapPin style={{ width: '24px', height: '24px', color: '#06B6D4' }} />
-                                        <span style={{ color: '#6B7280' }}>New Delhi, India</span>
+                                    <div className="flex items-center gap-3">
+                                        <MapPin className="w-6 h-6 text-accent-cyan" />
+                                        <span className="text-neutral-gray">New Delhi, India</span>
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#111827', marginBottom: '16px' }}>Follow Us</h3>
-                                <div style={{ display: 'flex', gap: '16px' }}>
-                                    <a href="#" style={{ color: '#6B7280', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#6B7280'}>
-                                        <Facebook style={{ width: '24px', height: '24px' }} />
+                                <h3 className="text-xl font-semibold text-dark-charcoal mb-4">Follow Us</h3>
+                                <div className="flex space-x-4">
+                                    <a href="#" className="text-neutral-gray hover:text-accent-cyan transition-colors duration-200">
+                                        <Facebook className="w-6 h-6" />
                                     </a>
-                                  
-                                    <a href="#" style={{ color: '#6B7280', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#6B7280'}>
-                                        <Linkedin style={{ width: '24px', height: '24px' }} />
+                                    <a href="#" className="text-neutral-gray hover:text-accent-cyan transition-colors duration-200">
+                                        <Twitter className="w-6 h-6" />
                                     </a>
-                                    <a href="#" style={{ color: '#6B7280', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#6B7280'}>
-                                        <Instagram style={{ width: '24px', height: '24px' }} />
+                                    <a href="#" className="text-neutral-gray hover:text-accent-cyan transition-colors duration-200">
+                                        <Linkedin className="w-6 h-6" />
+                                    </a>
+                                    <a href="#" className="text-neutral-gray hover:text-accent-cyan transition-colors duration-200">
+                                        <Instagram className="w-6 h-6" />
                                     </a>
                                 </div>
                             </div>
-                            <div style={{ borderRadius: '16px', overflow: 'hidden' }}>
+                            <div className="rounded-2xl overflow-hidden">
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112067.57931546033!2d77.1024901!3d28.6139391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2b2eac6e4c7%3A0x8b6f9731572a9b65!2sNew%20Delhi%2C%20Delhi%2C%20India!5e0!3m2!1sen!2sus!4v1686148055363!5m2!1sen!2sus"
                                     width="100%"
                                     height="256"
-                                    style={{ border: 0 }}
+                                    className="w-full h-64 border-0"
                                     allowFullScreen=""
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
@@ -308,74 +301,94 @@ const Contact = () => {
                 </div>
             </section>
 
-            <footer style={{ backgroundColor: '#111827', color: '#F9FAFB' }}>
-                <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '64px 24px' }}>
-                    <div style={{ display: 'grid', gap: '32px' }} className="md:grid-cols-2 lg:grid-cols-4">
-                        <div style={{ gridColumn: 'span 2' }} className="lg:col-span-2">
-                            <div style={{ fontSize: '1.875rem', fontWeight: 'bold', background: 'linear-gradient(to right, #1E3A8A, #06B6D4)', WebkitBackgroundClip: 'text', color: 'transparent', marginBottom: '16px' }}>
+            <footer className="bg-[var(--dark-charcoal)] text-[var(--soft-white)]">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div className="lg:col-span-2">
+                            <div className="text-3xl font-bold bg-[linear-gradient(to_right,var(--primary-blue),var(--accent-cyan))] bg-clip-text text-transparent mb-4">
                                 Bharat Economic Forum
                             </div>
-                            <p style={{ color: '#D1D5DB', marginBottom: '24px', lineHeight: '1.75' }}>
+                            <p className="text-gray-300 mb-6 leading-relaxed">
                                 An Independent Think Tank for accelerating the vision of achieving Viksit Bharat by 2047. We facilitate funding, collaboration, and innovation for self-economic development of individuals to collectively drive India's development.
                             </p>
-                            <div style={{ display: 'flex', gap: '16px' }}>
-                                <a href="#" style={{ color: '#D1D5DB', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                                    <Facebook style={{ width: '24px', height: '24px' }} />
+                            <div className="flex space-x-4">
+                                <a href="#" className="text-gray-400 hover:text-accent-cyan transition-colors duration-200">
+                                    <Facebook className="w-6 h-6" />
                                 </a>
-                                <a href="#" style={{ color: '#D1D5DB', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                                    <Linkedin style={{ width: '24px', height: '24px' }} />
+                                <a href="#" className="text-gray-400 hover:text-accent-cyan transition-colors duration-200">
+                                    <Linkedin className="w-6 h-6" />
                                 </a>
-                                <a href="#" style={{ color: '#D1D5DB', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#06B6D4'} onMouseOut={(e) => e.currentTarget.style.color = '#D1D5DB'}>
-                                    <Instagram style={{ width: '24px', height: '24px' }} />
+                                <a href="#" className="text-gray-400 hover:text-accent-cyan transition-colors duration-200">
+                                    <Instagram className="w-6 h-6" />
                                 </a>
                             </div>
                         </div>
                         <div>
-                            <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#F9FAFB', marginBottom: '16px' }}>Quick Links</h3>
-                            <ul style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                                <li><a href="#home" style={{ color: '#D1D5DB', textDecoration: 'none', transition: 'color 0.2s' }} onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} onMouseOver={(e) => e.currentTarget.style.color = '#F9FAFB'} onMouseOut={(e) => e.currentTarget.style.color = '#D1D5DB'}>Home</a></li>
-                                <li><a href="#about" style={{ color: '#D1D5DB', textDecoration: 'none', transition: 'color 0.2s' }} onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} onMouseOver={(e) => e.currentTarget.style.color = '#F9FAFB'} onMouseOut={(e) => e.currentTarget.style.color = '#D1D5DB'}>About Us</a></li>
-                                <li><a href="#industries" style={{ color: '#D1D5DB', textDecoration: 'none', transition: 'color 0.2s' }} onClick={(e) => { e.preventDefault(); scrollToSection('industries'); }} onMouseOver={(e) => e.currentTarget.style.color = '#F9FAFB'} onMouseOut={(e) => e.currentTarget.style.color = '#D1D5DB'}>Initiatives</a></li>
-                                <li><a href="#gallery" style={{ color: '#D1D5DB', textDecoration: 'none', transition: 'color 0.2s' }} onClick={(e) => { e.preventDefault(); scrollToSection('gallery'); }} onMouseOver={(e) => e.currentTarget.style.color = '#F9FAFB'} onMouseOut={(e) => e.currentTarget.style.color = '#D1D5DB'}>Events</a></li>
-                                <li><a href="#" style={{ color: '#D1D5DB', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#F9FAFB'} onMouseOut={(e) => e.currentTarget.style.color = '#D1D5DB'}>Leadership Awards</a></li>
+                            <h3 className="text-xl font-semibold text-[var(--soft-white)] mb-4">Quick Links</h3>
+                            <ul className="space-y-2">
+                                <li>
+                                    <a href="#home" className="text-gray-300 hover:text-[var(--soft-white)] transition-colors duration-200" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#about" className="text-gray-300 hover:text-[var(--soft-white)] transition-colors duration-200" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#industries" className="text-gray-300 hover:text-[var(--soft-white)] transition-colors duration-200" onClick={(e) => { e.preventDefault(); scrollToSection('industries'); }}>
+                                        Initiatives
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#gallery" className="text-gray-300 hover:text-[var(--soft-white)] transition-colors duration-200" onClick={(e) => { e.preventDefault(); scrollToSection('gallery'); }}>
+                                        Events
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="text-gray-300 hover:text-[var(--soft-white)] transition-colors duration-200">
+                                        Leadership Awards
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <div>
-                            <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#F9FAFB', marginBottom: '16px' }}>Connect With Us</h3>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                    <Mail style={{ width: '20px', height: '20px', color: '#06B6D4' }} />
-                                    <span style={{ color: '#D1D5DB' }}>info@bharateconomicforum.org</span>
+                            <h3 className="text-xl font-semibold text-[var(--soft-white)] mb-4">Connect With Us</h3>
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-3">
+                                    <Mail className="w-5 h-5 text-accent-cyan" />
+                                    <span className="text-gray-300">info@bharateconomicforum.org</span>
                                 </div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                    <Phone style={{ width: '20px', height: '20px', color: '#06B6D4' }} />
-                                    <span style={{ color: '#D1D5DB' }}>+91 98765 43210</span>
+                                <div className="flex items-center gap-3">
+                                    <Phone className="w-5 h-5 text-accent-cyan" />
+                                    <span className="text-gray-300">+91 98765 43210</span>
                                 </div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                    <MapPin style={{ width: '20px', height: '20px', color: '#06B6D4' }} />
-                                    <span style={{ color: '#D1D5DB' }}>New Delhi, India</span>
+                                <div className="flex items-center gap-3">
+                                    <MapPin className="w-5 h-5 text-accent-cyan" />
+                                    <span className="text-gray-300">New Delhi, India</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div style={{ borderTop: '1px solid #374151', marginTop: '48px', paddingTop: '32px' }}>
-                        <div style={{ maxWidth: '448px', margin: '0 auto', textAlign: 'center' }}>
-                            <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#F9FAFB', marginBottom: '16px' }}>Join Our Movement</h3>
-                            <p style={{ color: '#D1D5DB', marginBottom: '24px' }}>Subscribe to our newsletter for the latest updates on BEF initiatives and be part of India's historic journey.</p>
-                            <div style={{ display: 'flex', gap: '8px' }}>
+                    <div className="border-t border-gray-700 mt-12 pt-8">
+                        <div className="max-w-md mx-auto text-center">
+                            <h3 className="text-xl font-semibold text-[var(--soft-white)] mb-4">Join Our Movement</h3>
+                            <p className="text-gray-300 mb-6">Subscribe to our newsletter for the latest updates on BEF initiatives and be part of India's historic journey.</p>
+                            <div className="flex gap-2">
                                 <input
                                     type="email"
                                     placeholder="Enter your email"
-                                    style={{ flex: 1, padding: '8px 16px', borderRadius: '9999px', backgroundColor: '#1F2937', border: '1px solid #374151', color: '#F9FAFB', outline: 'none', transition: 'border-color 0.3s' }}
-                                    onFocus={(e) => e.currentTarget.style.borderColor = '#06B6D4'}
-                                    onBlur={(e) => e.currentTarget.style.borderColor = '#374151'}
+                                    className="flex-1 px-4 py-2 rounded-full bg-gray-800 border border-gray-700 text-[var(--soft-white)] placeholder:text-neutral-gray focus:outline-none focus:border-[var(--accent-cyan)]"
                                 />
-                                <button style={{ background: 'linear-gradient(to right, #1E3A8A, #06B6D4)', color: '#F9FAFB', padding: '8px 24px', borderRadius: '9999px', transition: 'box-shadow 0.2s, transform 0.2s' }} onMouseOver={(e) => { e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)'; e.currentTarget.style.transform = 'scale(1.05)'; }} onMouseOut={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'scale(1)'; }}>Subscribe</button>
+                                <button className="bg-[linear-gradient(to_right,var(--primary-blue),var(--accent-cyan))] text-[var(--soft-white)] px-6 py-2 rounded-full hover:shadow-[0_4px_6px_rgba(0,0,0,0.2)] transition-all duration-200 transform hover:scale-105">
+                                    Subscribe
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div style={{ borderTop: '1px solid #374151', marginTop: '32px', paddingTop: '32px', textAlign: 'center' }}>
-                        <p style={{ color: '#D1D5DB' }}>
+                    <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+                        <p className="text-gray-400">
                             © 2025 Bharat Economic Forum. All rights reserved. | Building a legacy of strength, unity, and sustainable progress
                         </p>
                     </div>
