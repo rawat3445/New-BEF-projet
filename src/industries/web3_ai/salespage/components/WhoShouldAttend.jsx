@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import 'keen-slider/keen-slider.min.css';
 import { FaUserTie, FaUniversity, FaRocket, FaBalanceScale } from 'react-icons/fa';
 
-
 const cards = [
   { icon: <FaUserTie size={32} />, title: 'For Founders', desc: 'Build strategic partnerships' },
   { icon: <FaRocket size={32} />, title: 'For Investors', desc: 'Spot future unicorns' },
@@ -52,7 +51,7 @@ const WhoShouldAttend = () => {
 
   return (
     <div className="py-10 px-6 bg-gray-100">
-      <h2 className="text-3xl font-bold text-center mb-6"> Who Should Attend</h2>
+      <h2 className="text-3xl font-bold text-center mb-6">🧭 Who Should Attend</h2>
       <div ref={sliderRef} className="keen-slider">
         {cards.map((card, index) => (
           <motion.div

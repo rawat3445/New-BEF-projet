@@ -14,8 +14,8 @@ const HeroSection = () => {
         {/* Left Content */}
         <div className="text-center md:text-left space-y-6">
           <h4 className="text-yellow-400 font-semibold text-lg">Theme</h4>
-          <h1 className="text-4xl font-bold leading-tight bg-gradient-to-tl from-white via-cyan-300 to-zinc-400 bg-clip-text text-transparent">
-            Viksit Bharat by <span className="via-cyan-300">2047</span>
+          <h1 className="text-4xl font-bold leading-tight">
+            Viksit Bharat by <span className="text-white">2047</span>
           </h1>
           <p className="text-gray-300">
             A Conclave for Visionaries — Join top industry leaders, policymakers,
@@ -39,7 +39,6 @@ const HeroSection = () => {
          borderRadius: 2,
          overflow: 'hidden',
          height: { xs: 300, md: 400 },
-         width: { xs: 300, md: 500 },
          boxShadow: 3,
        }}
      >

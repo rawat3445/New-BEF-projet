@@ -26,7 +26,7 @@ const PastConclaves = () => {
       id="past"
     >
       <div className="flex justify-center items-center mb-4 space-x-3">
-        {/* <span className="text-4xl">🎞️</span> */}
+        <span className="text-4xl">🎞️</span>
         <h2 className="text-3xl font-semibold text-green-900 tracking-wide border-b-4 border-green-400 pb-1">
           Glimpse from Past Conclaves
         </h2>
