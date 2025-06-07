@@ -1,6 +1,6 @@
 import {ArrowRight } from 'lucide-react';
 
-const Industrycards = ({industryCards})=>{
+const Industrycards = ({industryCards,handleCardClick})=>{
     return (
         <>
          <section id="industries" className="py-20 bg-white">
