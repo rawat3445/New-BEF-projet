@@ -1,3 +1,6 @@
+// Developer: Utibe Patrick - Food and Agriculture - Feature: Worked on the contact page
+// Developer: Manasa - Food and Agriculture - Feature: Worked on the responsiveness
+
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -383,3 +386,6 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// Developer: Utibe Patrick - Food and Agriculture - Feature: Worked on the contact page
+// Developer: Manasa - Food and Agriculture - Feature: Worked on the responsiveness
