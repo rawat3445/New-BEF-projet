@@ -13,83 +13,84 @@ const AboutPage = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Dr. Neha Verma",
-      position: "Agritech Innovations Lead",
-      experience: "10+ years",
+      name: "Sarah Johnson",
+      position: "Creative Director",
+      experience: "8+ years",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
-      bio: "Expert in sustainable agricultural practices and the application of IoT and AI in precision farming."
+      bio: "Expert in brand strategy and creative campaign development with a passion for innovative design solutions."
     },
     {
       id: 2,
-      name: "Ravi Deshmukh",
-      position: "Agro-Ecosystem Analyst",
-      experience: "7+ years",
+      name: "Michael Chen",
+      position: "Digital Marketing Manager",
+      experience: "6+ years",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-      bio: "Focuses on optimizing agricultural yield through data-driven insights and crop behavior modeling."
+      bio: "Specializes in data-driven marketing strategies and performance optimization across digital platforms."
     },
     {
       id: 3,
-      name: "Meera Iyer",
-      position: "Rural Outreach Coordinator",
-      experience: "6+ years",
+      name: "Emily Rodriguez",
+      position: "Brand Strategist",
+      experience: "7+ years",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-      bio: "Connects small-scale farmers with modern agritech tools, ensuring accessibility and inclusion in rural areas."
+      bio: "Helps brands find their unique voice and position in the market through comprehensive strategic planning."
     },
     {
       id: 4,
-      name: "Arjun Patel",
-      position: "Farm Data Specialist",
+      name: "David Thompson",
+      position: "Analytics Specialist",
       experience: "5+ years",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-      bio: "Converts on-ground sensor data into real-time insights for better farm decision-making and resource planning."
+      bio: "Transforms complex data into actionable insights that drive marketing performance and business growth."
     }
   ];
 
   const testimonials = [
     {
       id: 1,
-      name: "Priya Kulkarni",
-      company: "GreenRoots Farms",
-      position: "Founder",
-      content: "Thanks to this platform, our farm has improved water usage by 40% and yields have never been better.",
+      name: "Jessica Martinez",
+      company: "Tech Startup Inc.",
+      position: "CEO",
+      content: "AdVantage transformed our brand presence completely. Their strategic approach and creative execution exceeded all our expectations.",
       rating: 5
     },
     {
       id: 2,
-      name: "Amit Singh",
-      company: "HarvestTech India",
-      position: "Operations Head",
-      content: "The insights we receive help us proactively respond to crop stress and market demand.",
+      name: "Robert Kim",
+      company: "Fashion Forward",
+      position: "Marketing Director",
+      content: "Working with AdVantage has been a game-changer. Our ROI improved by 300% within the first quarter of our partnership.",
       rating: 5
     },
     {
       id: 3,
-      name: "Sneha Reddy",
-      company: "AgroNova Cooperative",
-      position: "Managing Partner",
-      content: "With their data solutions, even our smallest member farmers have seen meaningful growth.",
+      name: "Amanda Foster",
+      company: "Local Restaurant Chain",
+      position: "Owner",
+      content: "The team's dedication and expertise helped us reach new customers and grow our business significantly. Highly recommended!",
       rating: 5
     }
   ];
 
   const milestones = [
-    { year: "2012", event: "Founded in AgriTech", description: "Started with a mission to transform agriculture with modern technology." },
-    { year: "2015", event: "Pilot Projects Launched", description: "Implemented precision farming techniques across 10+ test farms." },
-    { year: "2018", event: "Connected 1000+ Farmers", description: "Scaled rural outreach and introduced mobile-based advisory tools." },
-    { year: "2021", event: "AI-Powered Insights", description: "Rolled out AI-driven crop health monitoring and yield prediction systems." },
-    { year: "2024", event: "National AgriTech Recognition", description: "Honored for innovation in sustainable and scalable agri solutions." }
+    { year: "2012", event: "AdVantage Founded", description: "Started with a vision to revolutionize advertising" },
+    { year: "2015", event: "First Major Award", description: "Won 'Best Creative Campaign' at Industry Awards" },
+    { year: "2018", event: "100+ Clients Milestone", description: "Reached over 100 satisfied clients across various industries" },
+    { year: "2021", event: "Digital Transformation", description: "Expanded services to include comprehensive digital solutions" },
+    { year: "2024", event: "Industry Leadership", description: "Recognized as top advertising agency in the region" }
   ];
 
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-700 via-lime-600 to-teal-600 text-white py-20">
+      <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            About AgriNova
+            About AdVantage
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
-            We're not just transforming agriculture—we're cultivating the future through innovation, sustainability, and farmer-first solutions.
+            We're more than an advertising agency—we're your partners in growth, 
+            creativity, and success in the digital age.
           </p>
         </div>
       </section>
@@ -99,34 +100,39 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Roots</h2>
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Story</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Founded in 2012, AgriNova began as a research-driven initiative to bridge the gap between traditional farming and modern technology. Our vision: to empower farmers with tools that increase productivity while preserving the environment.
+                Founded in 2012, AdVantage began as a small creative studio with a big vision: 
+                to help businesses connect with their audiences in meaningful ways. Over the years, 
+                we've evolved into a full-service advertising agency that combines traditional 
+                marketing wisdom with cutting-edge digital innovation.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Over the years, we’ve grown into a trusted partner for agribusinesses, cooperatives, and rural innovators looking to thrive in an increasingly climate-aware and tech-forward world.
+                Today, we're proud to have helped hundreds of businesses across various industries 
+                achieve their marketing goals and build strong brand presence in an increasingly 
+                competitive marketplace.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">1200+</div>
-                  <div className="text-gray-600">Farms Digitized</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
+                  <div className="text-gray-600">Projects Completed</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-blue-600 mb-2">12+</div>
-                  <div className="text-gray-600">Years of Impact</div>
+                  <div className="text-gray-600">Years of Excellence</div>
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">Our Mission & Vision</h3>
               <div className="space-y-6">
                 <div>
                   <h4 className="text-xl font-semibold mb-2">Mission</h4>
-                  <p>To revolutionize agriculture by integrating data, science, and sustainability into everyday farming practices.</p>
+                  <p>To empower businesses with innovative advertising solutions that create meaningful connections and drive sustainable growth.</p>
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold mb-2">Vision</h4>
-                  <p>To be the most trusted agritech partner for farmers globally, driving food security through smart agriculture.</p>
+                  <p>To be the leading advertising agency that shapes the future of marketing through creativity, technology, and strategic thinking.</p>
                 </div>
               </div>
             </div>
@@ -138,9 +144,9 @@ const AboutPage = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Growth Story</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Journey</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Milestones that mark our journey in reshaping agriculture with technology.
+              Key milestones that have shaped our growth and success over the years.
             </p>
           </div>
           
@@ -156,7 +162,7 @@ const AboutPage = () => {
                       <div className="text-gray-600">{milestone.description}</div>
                     </div>
                   </div>
-                  <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-green-600 rounded-full">
+                  <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full">
                     <div className="w-4 h-4 bg-white rounded-full"></div>
                   </div>
                   <div className="w-1/2"></div>
@@ -171,9 +177,9 @@ const AboutPage = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Meet Our Experts</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Meet Our Team</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A multidisciplinary team working at the intersection of agriculture, technology, and impact.
+              Our talented team of professionals brings diverse expertise and passion to every project.
             </p>
           </div>
 
@@ -203,9 +209,9 @@ const AboutPage = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Farmer & Partner Voices</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Hear how AgriNova has helped transform operations for farms and cooperatives.
+              Don't just take our word for it—hear from some of our satisfied clients.
             </p>
           </div>
 
@@ -231,14 +237,14 @@ const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-500 to-teal-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Let’s Grow Together</h2>
+          <h2 className="text-4xl font-bold mb-6">Ready to Work Together?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Ready to elevate your agricultural practices with smart technology? Let’s make it happen.
+            Let's discuss how we can help your business grow and achieve its marketing goals.
           </p>
           <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-            Get in Touch
+            Start Your Project
           </button>
         </div>
       </section>
