@@ -7,7 +7,7 @@ import {
   Award,
   TrendingUp,
 } from "lucide-react";
-import "./salesPages.css";
+import "./SalesPages.css";
 
 const SalesPage = () => {
   const [selectedPlan, setSelectedPlan] = useState("pro");
