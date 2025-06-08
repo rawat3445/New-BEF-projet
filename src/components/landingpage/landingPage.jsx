@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronDown, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Star, Tractor, ChevronsLeftRightEllipsis, UserCheck, Sprout, ShoppingCart, HeartPulse } from 'lucide-react';
 import './landingPage.css';
+import Hero from './Herobanner';
 
 import { useNavigate } from 'react-router-dom';
 import './landingPage.css';
@@ -570,7 +571,8 @@ const LandingPage = () => {
       </nav>
 
       {/* Hero Banner Section */}
-      <section id="home" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <Hero />
+      {/* <section id="home" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 animate-fadeInUp">
@@ -593,7 +595,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Section */}
       <section className="py-20 bg-gray-50">
@@ -860,6 +862,7 @@ const LandingPage = () => {
           </div>
         </div>
       </footer>
+      
     </div>
   );
 };
