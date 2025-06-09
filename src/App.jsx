@@ -21,7 +21,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Event from './pages/Event';
 
-
+import Feedback from './pages/Feedback/index';
 
 
 
@@ -56,6 +56,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/event" element={<Event />} />
+        <Route path="/feedback" element={<Feedback />} />
 
 
 
