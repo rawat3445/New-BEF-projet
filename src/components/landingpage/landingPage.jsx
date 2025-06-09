@@ -126,6 +126,11 @@ const LandingPage = () => {
       title: "Health & Pharma",
       path: "/health-pharma",
       description: "Healthcare innovation"
+    },
+    {
+      title: "Policy & Governance",
+      path: "/policy-and-governance",
+      description: "Strategic policy development"
     }
   ];
 
@@ -279,6 +284,14 @@ const LandingPage = () => {
       gradient: "from-green-500 to-blue-600",
       path: `/industries/health-pharma`
     },
+    {
+      id: 'policy-and-governance',
+      title: "Policy & Governance",
+      description: "Strategic policy development and governance solutions for a prosperous Bharat.",
+      icon: <Trophy className="w-8 h-8" />,
+      gradient: "from-blue-600 to-purple-600",
+      path: `/policyandgovernance`
+    }
   ];
 
   // Auto-slide carousel
@@ -362,6 +375,9 @@ const LandingPage = () => {
         break;
       case 'rural':
         navigate(`/rural-development`);
+        break;
+        case 'policy-and-governance':
+        navigate('/policy-and-governance');
         break;
       default:
         console.log(`Clicked on ${card.title} card`);
