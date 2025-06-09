@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, MapPin, Users, Filter, Search, Award, Utensils } from 'lucide-react';
-
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 const EventsPage = () => {
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const industries = [
-    'Food & Foodtech', 'Agriculture & AgriTech', 'Education & EdTech', 'Advertisement & Adtech',
-    'Health & MedTech', 'Environment & Climate Tech', 'Finance & FinTech', 'Manufacturing & MSMEs',
-    'Tourism & Hospitality', 'Energy & CleanTech', 'Women Entrepreneurship', 'Web3, AI & Emerging Tech',
-    'Disability & Inclusion', 'Rural Development', 'Policy & Governance', 'Real Estate & Urban Planning'
-  ];
+  // const industries = [
+  //   'Food & Foodtech', 'Agriculture & AgriTech', 'Education & EdTech', 'Advertisement & Adtech',
+  //   'Health & MedTech', 'Environment & Climate Tech', 'Finance & FinTech', 'Manufacturing & MSMEs',
+  //   'Tourism & Hospitality', 'Energy & CleanTech', 'Women Entrepreneurship', 'Web3, AI & Emerging Tech',
+  //   'Disability & Inclusion', 'Rural Development', 'Policy & Governance', 'Real Estate & Urban Planning'
+  // ];
 
   const upcomingEvents = [
     {
@@ -78,6 +79,7 @@ const EventsPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 font-inter">
       {/* Header */}
+      <Header/>
       <div className="bg-gradient-to-r from-blue-800 to-cyan-500 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -301,123 +303,8 @@ const EventsPage = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid md:grid-cols-4 gap-8">
-            {/* Company Info */}
-            <div className="md:col-span-1">
-              <h3 className="text-2xl font-bold text-blue-400 mb-4 font-poppins">
-                Bharat Economic Forum
-              </h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                An Independent Think Tank for accelerating the vision of achieving Viksit Bharat by 2047. We facilitate funding, collaboration, and innovation for self-economic development of individuals to collectively drive India's development.
-              </p>
-              <div className="flex gap-4 mt-6">
-                <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
-                  <span className="text-sm">f</span>
-                </div>
-                <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
-                  <span className="text-sm">t</span>
-                </div>
-                <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
-                  <span className="text-sm">in</span>
-                </div>
-                <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
-                  <span className="text-sm">ig</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-lg font-bold text-white mb-4">Quick Links</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Home</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">About Us</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Initiatives</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Events</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Leadership Awards</a></li>
-              </ul>
-            </div>
-
-            {/* Connect With Us */}
-            <div>
-              <h4 className="text-lg font-bold text-white mb-4">Connect With Us</h4>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-5 h-5 bg-blue-500 rounded flex items-center justify-center">
-                    <span className="text-xs">@</span>
-                  </div>
-                  <span className="text-gray-300 text-sm">info@bharateconomicforum.org</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-5 h-5 bg-blue-500 rounded flex items-center justify-center">
-                    <span className="text-xs">📞</span>
-                  </div>
-                  <span className="text-gray-300 text-sm">+91 98765 43210</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-5 h-5 bg-blue-500 rounded flex items-center justify-center">
-                    <span className="text-xs">📍</span>
-                  </div>
-                  <span className="text-gray-300 text-sm">New Delhi, India</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Newsletter Signup */}
-            <div>
-              <h4 className="text-lg font-bold text-white mb-4">Stay Updated</h4>
-              <p className="text-gray-300 text-sm mb-4">
-                Register your email to be notified about upcoming events and BEF initiatives.
-              </p>
-              <div className="flex flex-col gap-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Newsletter Section */}
-        <div className="border-t border-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-white mb-4 font-poppins">
-                Join Our Movement
-              </h3>
-              <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-                Subscribe to our newsletter for the latest updates on BEF initiatives and be part of India's historic journey.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-6 py-4 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition-colors">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="border-t border-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <p className="text-center text-gray-400 text-sm">
-              © 2025 Bharat Economic Forum. All rights reserved. | Building a legacy of strength, unity, and sustainable progress
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
+     
     </div>
   );
 };

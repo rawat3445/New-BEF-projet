@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
+
+/* Now your other styles can come after this */
+input {
+  padding: 10px;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #4A90E2; /* Or any color you prefer */
+  border-color: #4A90E2;
+  box-shadow: 0 0 4px #4A90E2;
+}
