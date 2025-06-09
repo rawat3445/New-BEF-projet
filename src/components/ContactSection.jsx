@@ -88,7 +88,7 @@ const ContactSection = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-dark-charcoal">Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-dark-charcoal">Msg</label>
                   <textarea
                     name="message"
                     value={formData.message}
@@ -168,3 +168,12 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
+
+
+
+
+
+
+
+

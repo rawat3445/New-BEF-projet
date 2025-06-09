@@ -3,15 +3,18 @@ import { ChevronLeft, ChevronDown, ChevronRight, Menu, X, Mail, Phone, MapPin, F
 import './landingPage.css';
 
 import '../AboutSection';
-import '../ContactSection';
-
+// import '../ContactSection';
+// done by utibe patrick and manasa
+import './ContactSection2';
+// done by Athulkrishna
 import Hero from './Herobanner';
 
 
 import { useNavigate } from 'react-router-dom';
 import './landingPage.css';
 import AboutSection from '../AboutSection';
-import ContactSection from '../ContactSection';
+// import ContactSection from '../ContactSection';
+import ContactSection from './ContactSection2';
 const LandingPage = () => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
