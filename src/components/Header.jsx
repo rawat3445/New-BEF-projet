@@ -153,7 +153,7 @@ const Header = ()=>{
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate('/');
+                  scrollToSection('home');
                 }}
               >
                 Home
@@ -176,7 +176,10 @@ const Header = ()=>{
             {/* Industries Dropdown */}
             {/* Industries Dropdown */}
             <li className="navbar-item dropdown">
-              <a href="#industries" className="navbar-link">
+              <a href="#industries" className="navbar-link"  onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('industries');
+                }}>
                 Initiatives
                 <ChevronDown className="dropdown-chevron w-4 h-4" />
               </a>
