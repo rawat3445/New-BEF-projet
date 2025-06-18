@@ -16,11 +16,12 @@ import AutomobileIndustry from './industries/Automobile & mobility/automobile';
 import Finance from './industries/finance-investment/finance';
 import Healthnpharma from './industries/healthnpharma/Healthnpharma';
 import RealEstateIndustry from './industries/real-estate-and-urban-planning';
+import Policyandgovernance from './industries/policyandgovernance';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Event from './pages/Event';
 
-
+import Feedback from './pages/Feedback/index';
 
 
 
@@ -48,10 +49,14 @@ function App() {
         <Route path="/health-pharma/*" element={<Navigate to="/healthnpharma" replace />} />
         <Route path="/healthnpharma/*" element={<Healthnpharma />} />
         <Route path="/rural-development" element={<RuralDevelopmentIndustry />} />
+        <Route path="/policy-and-governance" element={<Policyandgovernance />} />
+        
+        {/* Redirects for old paths */}
 
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/event" element={<Event />} />
+        <Route path="/feedback" element={<Feedback />} />
 
 
 

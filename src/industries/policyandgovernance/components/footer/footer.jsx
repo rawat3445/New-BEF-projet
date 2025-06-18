@@ -1,0 +1,191 @@
+import React from 'react';
+import { 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Facebook, 
+  Twitter, 
+  Instagram, 
+  Linkedin, 
+  ArrowUp,
+  Send
+} from 'lucide-react';
+
+const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const currentYear = new Date().getFullYear();
+
+ const quickLinks = [
+  { name: 'About Us', href: '#about' },
+  { name: 'Our Services', href: '#services' },
+  { name: 'Resources', href: '#resources' },
+  { name: 'Contact', href: '#contact' },
+  { name: 'Insights', href: '#blog' },
+  { name: 'Request Consultation', href: '#consultation' }
+];
+
+ const services = [
+  { name: 'Policy Development', href: '#policy-development' },
+  { name: 'Governance Training', href: '#governance-training' },
+  { name: 'Stakeholder Engagement', href: '#stakeholder-engagement' },
+  { name: 'Regulatory Compliance', href: '#regulatory-compliance' },
+  { name: 'Community Programs', href: '#community-programs' },
+  { name: 'Impact Assessments', href: '#impact-assessments' }
+];
+
+  const socialLinks = [
+    { icon: <Facebook className="h-5 w-5" />, href: '#', name: 'Facebook' },
+    { icon: <Twitter className="h-5 w-5" />, href: '#', name: 'Twitter' },
+    { icon: <Instagram className="h-5 w-5" />, href: '#', name: 'Instagram' },
+    { icon: <Linkedin className="h-5 w-5" />, href: '#', name: 'LinkedIn' }
+  ];
+
+  return (
+    <footer className="bg-slate-900 text-white relative">
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="lg:col-span-1">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent mb-4">
+              BEF Policy and Governance
+            </h3>
+            <p className="text-slate-300 mb-6 leading-relaxed">
+              Advancing effective governance and community well-being through tailored strategies and dedicated support.
+            </p>
+            
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <div className="flex items-center">
+                <MapPin className="h-5 w-5 text-amber-600 mr-3" />
+                <span className="text-slate-300">456 Policy Blvd, Governance City, CA 90210</span>
+              </div>
+              <div className="flex items-center">
+                <Phone className="h-5 w-5 text-amber-600 mr-3" />
+                <span className="text-slate-300">+1 (555) 987-6543</span>
+              </div>
+              <div className="flex items-center">
+                <Mail className="h-5 w-5 text-amber-600 mr-3" />
+                <span className="text-slate-300">contact@policy&governance.com</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-xl font-semibold mb-6">Quick Links</h4>
+            <ul className="space-y-3">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <a 
+                    href={link.href} 
+                    className="text-slate-300 hover:text-amber-600 transition-colors duration-300"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-xl font-semibold mb-6">Services</h4>
+            <ul className="space-y-3">
+              {services.map((service, index) => (
+                <li key={index}>
+                  <a 
+                    href={service.href} 
+                    className="text-slate-300 hover:text-amber-600 transition-colors duration-300"
+                  >
+                    {service.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="text-xl font-semibold mb-6">Stay Connected</h4>
+            <p className="text-slate-300 mb-4">
+              Subscribe to our newsletter for governance insights, policy updates, and exclusive opportunities to engage with our community.
+            </p>
+            
+            {/* Newsletter Form */}
+            <div className="flex mb-6">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 bg-slate-800 border border-slate-700 rounded-l-lg focus:outline-none focus:border-amber-600 text-white"
+              />
+              <button className="bg-gradient-to-r from-slate-700 to-slate-800 px-4 py-3 rounded-r-lg hover:from-slate-800 hover:to-slate-900 transition-all duration-300 border border-amber-600">
+                <Send className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Social Links */}
+            <div>
+              <p className="text-slate-300 mb-4">Follow us on social media</p>
+              <div className="flex space-x-4">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className="bg-slate-800 hover:bg-gradient-to-r hover:from-slate-700 hover:to-slate-800 p-3 rounded-lg transition-all duration-300 transform hover:scale-110 border border-amber-600"
+                    aria-label={social.name}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-slate-800">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-slate-400 text-sm mb-4 md:mb-0">
+              © {currentYear} BEF Policy and Governance. All rights reserved.
+            </div>
+            
+            <div className="flex items-center space-x-6">
+              <a href="#privacy" className="text-slate-400 hover:text-amber-600 text-sm transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#terms" className="text-slate-400 hover:text-amber-600 text-sm transition-colors">
+                Terms of Service
+              </a>
+              <a href="#cookies" className="text-slate-400 hover:text-amber-600 text-sm transition-colors">
+                Cookie Policy
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className="absolute bottom-6 right-6 bg-gradient-to-r from-slate-700 to-slate-800 text-white p-3 rounded-full shadow-lg hover:from-slate-800 hover:to-slate-900 transition-all duration-300 transform hover:scale-110 border border-amber-600"
+        aria-label="Scroll to top"
+      >
+        <ArrowUp className="h-5 w-5" />
+      </button>
+
+      {/* Background Decorations */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-10 right-10 w-32 h-32 border border-slate-700 rounded-full opacity-20"></div>
+        <div className="absolute bottom-20 left-10 w-24 h-24 border border-slate-700 rounded-full opacity-20"></div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
