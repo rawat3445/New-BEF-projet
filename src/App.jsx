@@ -10,7 +10,7 @@ import RuralDevelopmentIndustry from './industries/ruraldevelopment/RuralDevelop
 import EnvironmentIndustry from './industries/environment/environment';
 import RetailIndustry from './industries/retail/retail';
 import WomenEntrepreneurship from './industries/women-entrepreneurship';
-import Web3AI from './industries/web3_ai/landingpage/LandingPage'
+import Web3AI from '../src/industries/web3_ai/landingpage/LandingPage';
 import Web3AISales from './industries/web3_ai/salespage/components/homepage';
 import AutomobileIndustry from './industries/Automobile & mobility/automobile';
 import Finance from './industries/finance-investment/finance';

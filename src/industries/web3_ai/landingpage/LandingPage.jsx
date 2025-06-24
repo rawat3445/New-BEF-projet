@@ -59,7 +59,7 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-gray-950" />
         <div className="relative w-[600px] aspect-square rounded-full overflow-hidden">
           <video
-            src="/assets/25550-350507943.mp4"
+            src="src/industries/web3_ai/landingpage/assets/Globe.mp4"
             autoPlay
             muted
             loop

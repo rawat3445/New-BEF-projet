@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Navigate, Route, BrowserRouter as Router, Routes,Link } from 'react-router-dom';
 
 import Logo from "../assets/beflogo.jpeg"
 export default function Navbar() {
