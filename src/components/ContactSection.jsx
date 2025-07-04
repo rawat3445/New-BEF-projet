@@ -6,7 +6,9 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
+    phone: '',
     email: '',
     subject: '',
     message: ''
@@ -20,11 +22,26 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.subject && formData.message) {
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setIsSubmitted(false), 3000);
-    }
+    if (
+  formData.firstName &&
+  formData.lastName &&
+  formData.phone &&
+  formData.email &&
+  formData.subject &&
+  formData.message
+) {
+  setIsSubmitted(true);
+  setFormData({
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  setTimeout(() => setIsSubmitted(false), 3000);
+}
+
   };
 
   return (
@@ -52,14 +69,38 @@ const ContactSection = () => {
               <h2 className="text-3xl font-bold text-dark-charcoal mb-6">Send Us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-dark-charcoal">Full Name</label>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-dark-charcoal">First Name</label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleInputChange}
                     className="mt-1 block w-full px-4 py-3 rounded-full border-neutral-gray focus:outline-none focus:border-[var(--accent-cyan)] bg-soft-white text-dark-charcoal placeholder:text-neutral-gray"
-                    placeholder="Your Name"
+                    placeholder="First Name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-dark-charcoal">Last Name</label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    className="mt-1 block w-full px-4 py-3 rounded-full border-neutral-gray focus:outline-none focus:border-[var(--accent-cyan)] bg-soft-white text-dark-charcoal placeholder:text-neutral-gray"
+                    placeholder="Last Name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-dark-charcoal">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="mt-1 block w-full px-4 py-3 rounded-full border-neutral-gray focus:outline-none focus:border-[var(--accent-cyan)] bg-soft-white text-dark-charcoal placeholder:text-neutral-gray"
+                    placeholder="Your phone number"
                     required
                   />
                 </div>
