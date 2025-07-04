@@ -149,7 +149,7 @@ const Header = ()=>{
           <ul className="navbar-menu">
             <li className="navbar-item">
               <a
-                href="#home"
+                href= '#'
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();
