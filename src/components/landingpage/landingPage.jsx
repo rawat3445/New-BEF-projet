@@ -2,16 +2,11 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronDown, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Star, Tractor, ChevronsLeftRightEllipsis, UserCheck, Sprout, ShoppingCart, HeartPulse } from 'lucide-react';
 import './landingPage.css';
 
-import FeaturedSection from '../FeaturedSection';
 
-import Hero from '../Herobanner';
-import Industry from '../Industry';
-import Footer from '../Footer';
-import Header from '../Header';
-// import { useNavigate } from 'react-router-dom';
 import './landingPage.css';
 import AboutSection from '../AboutSection';
-import ContactSection from '../ContactSection';
+// import ContactSection from '../ContactSection';
+import ContactSection from './ContactSection2';
 const LandingPage = () => {
   // const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
