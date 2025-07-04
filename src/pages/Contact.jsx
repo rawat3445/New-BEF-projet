@@ -1,3 +1,4 @@
+
 // Developer: Utibe Patrick - Food and Agriculture - Feature: Worked on the contact page
 // Developer: Manasa - Environment and Sustainability - Feature: Worked on the responsiveness
 
@@ -125,3 +126,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
