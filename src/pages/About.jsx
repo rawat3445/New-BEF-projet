@@ -6,7 +6,7 @@ import {
     ArrowRight, Menu, X
 } from 'lucide-react';
 
-import AboutSection from '../components/AboutSection';
+import AboutFullSection from '../components/AboutSection/AboutFullSection';
 
 const About = () => {
 
@@ -17,7 +17,7 @@ const About = () => {
             <Header/>
 
             {/* About Content */}
-            <AboutSection />
+            <AboutFullSection />
 
             {/* Footer */}
             {/* <footer className="bg-[var(--dark-charcoal)] text-[var(--soft-white)]">
