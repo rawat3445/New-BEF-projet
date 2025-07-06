@@ -283,7 +283,7 @@ const LandingPage = () => {
     setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
   };
 
- 
+
 
 
   // const handleCardClick = (card) => {
@@ -339,10 +339,10 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <Navbar/>
+      <Navbar />
 
       {/* Hero Banner Section */}
-      <Hero/>
+      <Hero />
 
 
 
@@ -382,10 +382,10 @@ const LandingPage = () => {
       </section> */}
 
       {/* Featured Section */}
-        <FeaturedSection/>
+      <FeaturedSection />
       {/* Industries Cards Section */}
-      <Industry/>
-    
+      <Industry />
+
       {/* Carousel Section */}
       <section id="gallery" className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -448,8 +448,8 @@ const LandingPage = () => {
       <ContactSection />
 
       {/* Footer */}
-      <Footer/>
-  
+      <Footer />
+
     </div>
   );
 };
