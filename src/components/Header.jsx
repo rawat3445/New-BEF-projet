@@ -10,21 +10,7 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-  // const [email, setEmail] = useState('');
-
-  // const [isSubscribed, setIsSubscribed] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  //       const handleSubscription = () => {
-  //     if (email) {
-  //       setIsSubscribed(true);
-  //       setEmail('');
-  //       setTimeout(() => setIsSubscribed(false), 3000);
-  //     }
-  //   };
-
-
-
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -178,7 +164,6 @@ const Navbar = () => {
             </li>
 
             {/* Industries Dropdown */}
-            {/* Industries Dropdown */}
             <li className="navbar-item dropdown">
               <a href="#industries" className="navbar-link" onClick={(e) => {
                 e.preventDefault();
@@ -259,7 +244,6 @@ const Navbar = () => {
                   </div>
                 </div>
               </li>
-                            
 
             <li className="navbar-item">
               <a
