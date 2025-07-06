@@ -22,6 +22,7 @@ import About from './pages/About';
 import Event from './pages/Event';
 
 import Feedback from './pages/Feedback/index';
+import EventList from './components/Event';
 
 
 
@@ -57,6 +58,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/event" element={<Event />} />
         <Route path="/feedback" element={<Feedback />} />
+        <Route path="/eventlist" element={<EventList />} />
 
 
 
