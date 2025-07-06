@@ -175,16 +175,16 @@ const ContactSection = () => {
               <div>
                 <h3 className="text-xl font-semibold text-dark-charcoal mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-neutral-gray hover:text-accent-cyan transition-colors duration-200">
+                  <a href="https://www.facebook.com/bharateconomicforum" className="text-neutral-gray hover:text-accent-cyan transition-colors duration-200">
                     <Facebook className="w-6 h-6" />
                   </a>
                   <a href="#" className="text-neutral-gray hover:text-accent-cyan transition-colors duration-200">
                     <Twitter className="w-6 h-6" />
                   </a>
-                  <a href="#" className="text-neutral-gray hover:text-accent-cyan transition-colors duration-200">
+                  <a href="https://www.linkedin.com/company/bharateconomicforum/posts/?feedView=all" className="text-neutral-gray hover:text-accent-cyan transition-colors duration-200">
                     <Linkedin className="w-6 h-6" />
                   </a>
-                  <a href="#" className="text-neutral-gray hover:text-accent-cyan transition-colors duration-200">
+                  <a href="https://www.instagram.com/bharateconomicforum/" className="text-neutral-gray hover:text-accent-cyan transition-colors duration-200">
                     <Instagram className="w-6 h-6" />
                   </a>
                 </div>
