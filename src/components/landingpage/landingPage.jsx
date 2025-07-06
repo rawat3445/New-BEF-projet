@@ -10,7 +10,7 @@ import Footer from '../Footer';
 import Header from '../Header';
 // import { useNavigate } from 'react-router-dom';
 import './landingPage.css';
-import AboutSection from '../AboutSection';
+import AboutSection from '../AboutSection/AboutSection';
 import ContactSection from '../ContactSection';
 const LandingPage = () => {
   // const navigate = useNavigate();

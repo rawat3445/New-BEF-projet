@@ -1,159 +1,153 @@
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import { ChevronDown, Menu, X } from 'lucide-react';
-import Logo from '../assets/beflogo.png'
-const Header = ()=>{
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import Logo from "../assets/beflogo.png";
+const Header = () => {
+  const navigate = useNavigate();
 
-      const navigate = useNavigate();
+  // const [email, setEmail] = useState('');
 
-        // const [email, setEmail] = useState('');
+  // const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-        // const [isSubscribed, setIsSubscribed] = useState(false);
-     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  //       const handleSubscription = () => {
+  //     if (email) {
+  //       setIsSubscribed(true);
+  //       setEmail('');
+  //       setTimeout(() => setIsSubscribed(false), 3000);
+  //     }
+  //   };
 
-//       const handleSubscription = () => {
-//     if (email) {
-//       setIsSubscribed(true);
-//       setEmail('');
-//       setTimeout(() => setIsSubscribed(false), 3000);
-//     }
-//   };
-
-
-
-
-      const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
   };
 
-
-      const handleNavigation = (path) => {
-        navigate(path);
+  const handleNavigation = (path) => {
+    navigate(path);
     setIsMobileMenuOpen(false);
   };
 
-
-
-      const eventItems = [
+  const eventItems = [
     {
       title: "Industry Innovation Summit",
       path: "/events/innovation-summit",
-      description: "Annual technology and innovation conference"
+      description: "Annual technology and innovation conference",
     },
     {
       title: "Policy Makers Dialogue",
       path: "/events/policy-dialogue",
-      description: "Strategic policy discussions"
+      description: "Strategic policy discussions",
     },
     {
       title: "Technology Integration Forum",
       path: "/events/tech-forum",
-      description: "Tech integration workshops"
+      description: "Tech integration workshops",
     },
     {
       title: "Leadership Excellence",
       path: "/events/leadership",
-      description: "Leadership development programs"
+      description: "Leadership development programs",
     },
     {
       title: "Startup Pitch Competition",
       path: "/events/startup-pitch",
-      description: "Showcase innovative startups"
+      description: "Showcase innovative startups",
     },
     {
       title: "Women in Business Conference",
       path: "/events/women-business",
-      description: "Empowering women entrepreneurs"
-    }
+      description: "Empowering women entrepreneurs",
+    },
   ];
 
-
-
-      const industryItems = [
-        {
-          title: "Advertisement & Marketing",
-          path: "/advertisement",
-          description: "Shape the future of brand communication"
-        },
-        {
-          title: "Beauty & Wellness",
-          path: "/beauty-wellness",
-          description: "Innovative beauty and wellness solutions"
-        },
-        {
-          title: "Women Entrepreneurship",
-          path: "/women-entrepreneurship",
-          description: "Empowering women-led businesses"
-        },
-        {
-          title: "Real Estate & Urban Planning",
-          path: "/real-estate",
-          description: "Urban development and planning"
-        },
-        {
-          title: "Media & Entertainment",
-          path: "/media-entertainment",
-          description: "Content creation and distribution"
-        },
-        {
-          title: "Rural Development",
-          path: "/rural-development",
-          description: "Building sustainable villages"
-        },
-        {
-          title: "Environment & Sustainability",
-          path: "/environment",
-          description: "Green technology solutions"
-        },
-        {
-          title: "Agriculture & Agritech",
-          path: "/agriculture",
-          description: "Smart farming solutions"
-        },
-        {
-          title: "Retail & E-Commerce",
-          path: "/retail",
-          description: "Digital commerce innovation"
-        },
-        {
-          title: "Web 3.0, AI & DeepTech",
-          path: "/web_ai",
-          description: "Next-generation technologies"
-        },
-        {
-          title: "Automobile & Mobility",
-          path: "/automobile",
-          description: "Future of transportation"
-        },
-        {
-          title: "Health & Pharma",
-          path: "/health-pharma",
-          description: "Healthcare innovation"
-        }
-      ];
-    return(
-        <>
-
-          <nav className="navbar">
+  const industryItems = [
+    {
+      title: "Advertisement & Marketing",
+      path: "/advertisement",
+      description: "Shape the future of brand communication",
+    },
+    {
+      title: "Beauty & Wellness",
+      path: "/beauty-wellness",
+      description: "Innovative beauty and wellness solutions",
+    },
+    {
+      title: "Women Entrepreneurship",
+      path: "/women-entrepreneurship",
+      description: "Empowering women-led businesses",
+    },
+    {
+      title: "Real Estate & Urban Planning",
+      path: "/real-estate",
+      description: "Urban development and planning",
+    },
+    {
+      title: "Media & Entertainment",
+      path: "/media-entertainment",
+      description: "Content creation and distribution",
+    },
+    {
+      title: "Rural Development",
+      path: "/rural-development",
+      description: "Building sustainable villages",
+    },
+    {
+      title: "Environment & Sustainability",
+      path: "/environment",
+      description: "Green technology solutions",
+    },
+    {
+      title: "Agriculture & Agritech",
+      path: "/agriculture",
+      description: "Smart farming solutions",
+    },
+    {
+      title: "Retail & E-Commerce",
+      path: "/retail",
+      description: "Digital commerce innovation",
+    },
+    {
+      title: "Web 3.0, AI & DeepTech",
+      path: "/web_ai",
+      description: "Next-generation technologies",
+    },
+    {
+      title: "Automobile & Mobility",
+      path: "/automobile",
+      description: "Future of transportation",
+    },
+    {
+      title: "Health & Pharma",
+      path: "/health-pharma",
+      description: "Healthcare innovation",
+    },
+  ];
+  return (
+    <>
+      <nav className="navbar">
         <div className="navbar-container">
           {/* Logo */}
           <div className="navbar-logo">
-            <img src={Logo} className='object-contain h-28' alt="BEF" />
+            <img src={Logo} className="object-contain h-28" alt="BEF" />
           </div>
 
           {/* Desktop Menu */}
           <ul className="navbar-menu">
             <li className="navbar-item">
               <a
-                href="#home"
+                href="/"
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('home');
+                  if (window.location.pathname === "/") {
+                    scrollToSection("home");
+                  } else {
+                    navigate("/");
+                  }
                 }}
               >
                 Home
@@ -166,7 +160,10 @@ const Header = ()=>{
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('about');
+                  const el = document.getElementById("about");
+                  if (el) {
+                    el.scrollIntoView({ behavior: "smooth" });
+                  }
                 }}
               >
                 About
@@ -176,10 +173,14 @@ const Header = ()=>{
             {/* Industries Dropdown */}
             {/* Industries Dropdown */}
             <li className="navbar-item dropdown">
-              <a href="#industries" className="navbar-link"  onClick={(e) => {
+              <a
+                href="#industries"
+                className="navbar-link"
+                onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('industries');
-                }}>
+                  scrollToSection("industries");
+                }}
+              >
                 Initiatives
                 <ChevronDown className="dropdown-chevron w-4 h-4" />
               </a>
@@ -197,7 +198,9 @@ const Header = ()=>{
                       }}
                     >
                       <div className="dropdown-item-title">{item.title}</div>
-                      <div className="dropdown-item-description">{item.description}</div>
+                      <div className="dropdown-item-description">
+                        {item.description}
+                      </div>
                     </a>
                   ))}
                 </div>
@@ -224,7 +227,9 @@ const Header = ()=>{
                       }}
                     >
                       <div className="dropdown-item-title">{item.title}</div>
-                      <div className="dropdown-item-description">{item.description}</div>
+                      <div className="dropdown-item-description">
+                        {item.description}
+                      </div>
                     </a>
                   ))}
                 </div>
@@ -237,7 +242,7 @@ const Header = ()=>{
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('contact');
+                  scrollToSection("contact");
                 }}
               >
                 Contact
@@ -268,7 +273,7 @@ const Header = ()=>{
               className="mobile-menu-item"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('home');
+                scrollToSection("home");
               }}
             >
               Home
@@ -278,15 +283,22 @@ const Header = ()=>{
               className="mobile-menu-item"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('about');
+                scrollToSection("about");
               }}
             >
               About
             </a>
 
             {/* Mobile Industries */}
-            <div style={{ borderBottom: '1px solid rgba(156, 163, 175, 0.1)' }}>
-              <div style={{ padding: '0.5rem 2rem', fontSize: '0.9rem', fontWeight: '600', color: '#9ca3af' }}>
+            <div style={{ borderBottom: "1px solid rgba(156, 163, 175, 0.1)" }}>
+              <div
+                style={{
+                  padding: "0.5rem 2rem",
+                  fontSize: "0.9rem",
+                  fontWeight: "600",
+                  color: "#9ca3af",
+                }}
+              >
                 INITIATIVES
               </div>
               {industryItems.slice(0, 6).map((item, index) => (
@@ -294,7 +306,7 @@ const Header = ()=>{
                   key={index}
                   href="#"
                   className="mobile-menu-item"
-                  style={{ paddingLeft: '3rem' }}
+                  style={{ paddingLeft: "3rem" }}
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavigation(item.path);
@@ -306,8 +318,15 @@ const Header = ()=>{
             </div>
 
             {/* Mobile Events */}
-            <div style={{ borderBottom: '1px solid rgba(156, 163, 175, 0.1)' }}>
-              <div style={{ padding: '0.5rem 2rem', fontSize: '0.9rem', fontWeight: '600', color: '#9ca3af' }}>
+            <div style={{ borderBottom: "1px solid rgba(156, 163, 175, 0.1)" }}>
+              <div
+                style={{
+                  padding: "0.5rem 2rem",
+                  fontSize: "0.9rem",
+                  fontWeight: "600",
+                  color: "#9ca3af",
+                }}
+              >
                 EVENTS
               </div>
               {eventItems.slice(0, 4).map((item, index) => (
@@ -315,7 +334,7 @@ const Header = ()=>{
                   key={index}
                   href="#"
                   className="mobile-menu-item"
-                  style={{ paddingLeft: '3rem' }}
+                  style={{ paddingLeft: "3rem" }}
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavigation(item.path);
@@ -331,20 +350,17 @@ const Header = ()=>{
               className="mobile-menu-item"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('contact');
+                scrollToSection("contact");
               }}
             >
               Contact
             </a>
-            <button className="mobile-menu-cta">
-              Join Our Movement
-            </button>
+            <button className="mobile-menu-cta">Join Our Movement</button>
           </div>
         )}
       </nav>
-        
-        </>
-    );
-}
+    </>
+  );
+};
 
 export default Header;
