@@ -20,7 +20,7 @@ import Policyandgovernance from './industries/policyandgovernance';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Event from './pages/Event';
-
+import LeadershipAwards from './pages/LeadershipAwards';
 import Feedback from './pages/Feedback/index';
 
 
@@ -52,7 +52,7 @@ function App() {
         <Route path="/policy-and-governance" element={<Policyandgovernance />} />
         <Route path='/home' element={<LandingPage/>}/>
         {/* Redirects for old paths */}
-
+        <Route path="/leadership-awards" element={<LeadershipAwards />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/event" element={<Event />} />
