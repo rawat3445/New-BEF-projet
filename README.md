@@ -2,7 +2,7 @@
 
 <div align="center">
   
-  ![BEF Logo](https://via.placeholder.com/200x80/1e3a8a/ffffff?text=BEF+LOGO)
+  ![BEF Logo](https://static.wixstatic.com/media/ac71e9_3f066eb2122e468db1a15f2c08cb7a76~mv2.png/v1/crop/x_0,y_39,w_500,h_422/fill/w_118,h_101,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/BEF-logo.png)
   
   ### *Empowering India's Economic Future Through Technology*
   
@@ -337,22 +337,25 @@ graph TB
 <div align="center">
 
 ```mermaid
-gitgraph
-    commit id: "Initial Setup"
-    branch feature/homepage
-    checkout feature/homepage
-    commit id: "Add Hero Section"
-    commit id: "Add Navigation"
-    checkout main
-    merge feature/homepage
-    branch feature/industries
-    checkout feature/industries
-    commit id: "Add Industry Cards"
-    commit id: "Add Routing"
-    checkout main
-    merge feature/industries
-    commit id: "Production Build"
-    commit id: "Deploy to GitHub Pages"
+graph TD
+    A[🚀 Initial Setup] --> B[🌟 Main Branch]
+    B --> C[🏠 Feature: Homepage]
+    C --> D[🎯 Add Hero Section]
+    D --> E[🧭 Add Navigation]
+    E --> F[🔀 Merge to Main]
+    
+    F --> G[🏭 Feature: Industries]
+    G --> H[🎴 Add Industry Cards]
+    H --> I[🛣️ Add Routing]
+    I --> J[🔀 Merge to Main]
+    
+    J --> K[🏗️ Production Build]
+    K --> L[🚀 Deploy to GitHub Pages]
+    
+    style A fill:#e1f5fe
+    style F fill:#c8e6c9
+    style J fill:#c8e6c9
+    style L fill:#ffccbc
 ```
 
 ### 🔄 Git Workflow
