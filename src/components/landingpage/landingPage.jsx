@@ -31,24 +31,11 @@ import Navbar from "../Header";
 
 import AboutSection from "../AboutSection";
 // import ContactSection from '../ContactSection';
-
-import ContactSection from './ContactSection2';
-import Hero from '../Herobanner';
-import FeaturedSection from '../FeaturedSection';
-import Industry from '../Industry';
-import Footer from '../Footer';
-import Header from '../Header';
-// import { useNavigate } from 'react-router-dom';
-import './landingPage.css';
-import AboutSection from '../AboutSection/AboutSection';
-import ContactSection from '../ContactSection';
-
 import ContactSection from "./ContactSection2";
 import Hero from "../Herobanner";
 import FeaturedSection from "../FeaturedSection";
 import Industry from "../Industry";
 import Footer from "../Footer";
-
 const LandingPage = () => {
   // const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
