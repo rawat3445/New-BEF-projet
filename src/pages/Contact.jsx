@@ -1,3 +1,4 @@
+
 // Developer: Utibe Patrick - Food and Agriculture - Feature: Worked on the contact page
 // Developer: Manasa - Environment and Sustainability - Feature: Worked on the responsiveness
 
@@ -8,8 +9,8 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight
 import ContactSection from '../components/ContactSection';
 
 const Contact = () => {
- 
-    
+
+
 
     return (
         <div className="min-h-screen bg-soft-white">
@@ -113,15 +114,16 @@ const Contact = () => {
                 )}
             </nav> */}
 
-            <Header/>
+            <Header />
 
             {/* Contact Content */}
             <ContactSection />
 
             {/* Footer */}
-         <Footer/>
+            <Footer />
         </div>
     );
 };
 
 export default Contact;
+

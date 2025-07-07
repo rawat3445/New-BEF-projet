@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { ArrowRight, ArrowLeft, ArrowRightCircle } from "lucide-react";
 
 const bgImages = [
-  "/hero1.png",
-  "/hero2.png",
-  "/hero3.png",
-    "/hero4.png",
-    "/hero5.png",
-    "/hero6.png",
-  
+  "dist/hero1.png",
+  "dist/hero2.png",
+  "dist/hero3.png",
+  "dist/hero4.png",
+  "dist/hero5.png",
+  "dist/hero6.png"
+
+
 ];
 
 const Hero = () => {
@@ -35,9 +36,8 @@ const Hero = () => {
       {bgImages.map((img, idx) => (
         <div
           key={idx}
-          className={`absolute inset-0 transition-opacity duration-4000 ease-in-out ${
-            idx === currentBg ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-4000 ease-in-out ${idx === currentBg ? "opacity-100" : "opacity-0"
+            }`}
         >
           <img
             src={img}
@@ -53,11 +53,11 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-20 h-full w-full flex flex-col justify-center items-center text-center px-4">
         <h1 className="text-5xl md:text-7xl  text-white mb-6 animate-fadeInUp">
-              Independent Think Tank for{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold">
-                Viksit Bharat 2047
-              </span>
-            </h1>
+          Independent Think Tank for{' '}
+          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold">
+            Viksit Bharat 2047
+          </span>
+        </h1>
         <p className="text-lg md:text-xl text-white mb-8 max-w-3xl transform transition-all duration-700 ease-out delay-200">
           Standing as a beacon of innovation and national pride, The Bharat
           Economic Forum is a movement that embodies the spirit of a resilient
@@ -101,11 +101,10 @@ const Hero = () => {
             <button
               key={idx}
               onClick={() => setCurrentBg(idx)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                idx === currentBg
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentBg
                   ? "bg-blue-600 scale-125"
                   : "bg-white bg-opacity-60 hover:bg-opacity-80"
-              }`}
+                }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}

@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronDown, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Star, Tractor, ChevronsLeftRightEllipsis, UserCheck, Sprout, ShoppingCart, HeartPulse } from 'lucide-react';
 import './landingPage.css';
+import Navbar from '../Header';
 
-import FeaturedSection from '../FeaturedSection';
-
+import AboutSection from '../AboutSection';
+// import ContactSection from '../ContactSection';
+import ContactSection from './ContactSection2';
 import Hero from '../Herobanner';
+import FeaturedSection from '../FeaturedSection';
 import Industry from '../Industry';
 import Footer from '../Footer';
 import Header from '../Header';
@@ -285,7 +288,7 @@ const LandingPage = () => {
     setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
   };
 
- 
+
 
 
   // const handleCardClick = (card) => {
@@ -341,10 +344,23 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <Header/>
+      <Navbar />
 
       {/* Hero Banner Section */}
       <Hero />
+
+
+
+
+
+
+
+
+
+
+
+
+
       {/* <section id="home" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
@@ -371,10 +387,10 @@ const LandingPage = () => {
       </section> */}
 
       {/* Featured Section */}
-        <FeaturedSection/>
+      <FeaturedSection />
       {/* Industries Cards Section */}
-      <Industry/>
-    
+      <Industry />
+
       {/* Carousel Section */}
       <section id="gallery" className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -437,8 +453,8 @@ const LandingPage = () => {
       <ContactSection />
 
       {/* Footer */}
-      <Footer/>
-  
+      <Footer />
+
     </div>
   );
 };

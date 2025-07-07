@@ -27,7 +27,7 @@ import Feedback from './pages/Feedback/index';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/bef-web-deploy">
       <Routes>
 
         <Route path="/" element={<LandingPage />} />
@@ -50,7 +50,7 @@ function App() {
         <Route path="/healthnpharma/*" element={<Healthnpharma />} />
         <Route path="/rural-development" element={<RuralDevelopmentIndustry />} />
         <Route path="/policy-and-governance" element={<Policyandgovernance />} />
-        
+        <Route path='/home' element={<LandingPage/>}/>
         {/* Redirects for old paths */}
 
         <Route path="/contact" element={<Contact />} />

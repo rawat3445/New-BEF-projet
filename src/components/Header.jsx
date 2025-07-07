@@ -18,6 +18,7 @@ const Header = () => {
   //     }
   //   };
 
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -30,6 +31,7 @@ const Header = () => {
     navigate(path);
     setIsMobileMenuOpen(false);
   };
+
 
   const eventItems = [
     {
@@ -68,66 +70,67 @@ const Header = () => {
     {
       title: "Advertisement & Marketing",
       path: "/advertisement",
-      description: "Shape the future of brand communication",
+      description: "Shape the future of brand communication"
     },
     {
       title: "Beauty & Wellness",
       path: "/beauty-wellness",
-      description: "Innovative beauty and wellness solutions",
+      description: "Innovative beauty and wellness solutions"
     },
     {
       title: "Women Entrepreneurship",
       path: "/women-entrepreneurship",
-      description: "Empowering women-led businesses",
+      description: "Empowering women-led businesses"
     },
     {
       title: "Real Estate & Urban Planning",
       path: "/real-estate",
-      description: "Urban development and planning",
+      description: "Urban development and planning"
     },
     {
       title: "Media & Entertainment",
       path: "/media-entertainment",
-      description: "Content creation and distribution",
+      description: "Content creation and distribution"
     },
     {
       title: "Rural Development",
       path: "/rural-development",
-      description: "Building sustainable villages",
+      description: "Building sustainable villages"
     },
     {
       title: "Environment & Sustainability",
       path: "/environment",
-      description: "Green technology solutions",
+      description: "Green technology solutions"
     },
     {
       title: "Agriculture & Agritech",
       path: "/agriculture",
-      description: "Smart farming solutions",
+      description: "Smart farming solutions"
     },
     {
       title: "Retail & E-Commerce",
       path: "/retail",
-      description: "Digital commerce innovation",
+      description: "Digital commerce innovation"
     },
     {
       title: "Web 3.0, AI & DeepTech",
       path: "/web_ai",
-      description: "Next-generation technologies",
+      description: "Next-generation technologies"
     },
     {
       title: "Automobile & Mobility",
       path: "/automobile",
-      description: "Future of transportation",
+      description: "Future of transportation"
     },
     {
       title: "Health & Pharma",
       path: "/health-pharma",
-      description: "Healthcare innovation",
-    },
+      description: "Healthcare innovation"
+    }
   ];
   return (
     <>
+
       <nav className="navbar">
         <div className="navbar-container">
           {/* Logo */}
