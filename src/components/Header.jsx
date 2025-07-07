@@ -222,7 +222,7 @@ const Navbar = () => {
                         className="dropdown-item"
                         onClick={(e) => {
                           e.preventDefault();
-                          handleNavigation(item.path); // This will navigate to specific event pages
+                          handleNavigation('/events');
                         }}
                       >
                         <div className="dropdown-item-title">{item.title}</div>
