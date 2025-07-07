@@ -1,25 +1,25 @@
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import { ChevronDown, Menu, X } from 'lucide-react';
-import Logo from '../assets/beflogo.png'
-
-
-
-const Navbar = () => {
-
-
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import Logo from "../assets/beflogo.png";
+const Header = () => {
   const navigate = useNavigate();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  //       const handleSubscription = () => {
+  //     if (email) {
+  //       setIsSubscribed(true);
+  //       setEmail('');
+  //       setTimeout(() => setIsSubscribed(false), 3000);
+  //     }
+  //   };
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
   };
-
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -27,41 +27,38 @@ const Navbar = () => {
   };
 
 
-
   const eventItems = [
     {
       title: "Industry Innovation Summit",
       path: "/events/innovation-summit",
-      description: "Annual technology and innovation conference"
+      description: "Annual technology and innovation conference",
     },
     {
       title: "Policy Makers Dialogue",
       path: "/events/policy-dialogue",
-      description: "Strategic policy discussions"
+      description: "Strategic policy discussions",
     },
     {
       title: "Technology Integration Forum",
       path: "/events/tech-forum",
-      description: "Tech integration workshops"
+      description: "Tech integration workshops",
     },
     {
       title: "Leadership Excellence",
       path: "/events/leadership",
-      description: "Leadership development programs"
+      description: "Leadership development programs",
     },
     {
       title: "Startup Pitch Competition",
       path: "/events/startup-pitch",
-      description: "Showcase innovative startups"
+      description: "Showcase innovative startups",
     },
     {
       title: "Women in Business Conference",
       path: "/events/women-business",
-      description: "Empowering women entrepreneurs"
-    }
+      description: "Empowering women entrepreneurs",
+    },
   ];
-
-
 
   const industryItems = [
     {
@@ -132,18 +129,22 @@ const Navbar = () => {
         <div className="navbar-container">
           {/* Logo */}
           <div className="navbar-logo">
-            <img src={Logo} className='object-contain h-28' alt="BEF" />
+            <img src={Logo} className="object-contain h-28" alt="BEF" />
           </div>
 
           {/* Desktop Menu */}
           <ul className="navbar-menu">
             <li className="navbar-item">
               <a
-                href='#'
+                href="/"
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('home');
+                  if (window.location.pathname === "/") {
+                    scrollToSection("home");
+                  } else {
+                    navigate("/");
+                  }
                 }}
               >
                 Home
@@ -156,7 +157,10 @@ const Navbar = () => {
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('about');
+                  const el = document.getElementById("about");
+                  if (el) {
+                    el.scrollIntoView({ behavior: "smooth" });
+                  }
                 }}
               >
                 About
@@ -165,10 +169,14 @@ const Navbar = () => {
 
             {/* Industries Dropdown */}
             <li className="navbar-item dropdown">
-              <a href="#industries" className="navbar-link" onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('industries');
-              }}>
+              <a
+                href="#industries"
+                className="navbar-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("industries");
+                }}
+              >
                 Initiatives
                 <ChevronDown className="dropdown-chevron w-4 h-4" />
               </a>
@@ -186,7 +194,9 @@ const Navbar = () => {
                       }}
                     >
                       <div className="dropdown-item-title">{item.title}</div>
-                      <div className="dropdown-item-description">{item.description}</div>
+                      <div className="dropdown-item-description">
+                        {item.description}
+                      </div>
                     </a>
                   ))}
                 </div>
@@ -239,8 +249,15 @@ const Navbar = () => {
                         handleNavigation('/events');
                       }}
                     >
+
+                      <div className="dropdown-item-title">{item.title}</div>
+                      <div className="dropdown-item-description">
+                        {item.description}
+                      </div>
+
                       <div className="dropdown-item-title">View All Events</div>
                       <div className="dropdown-item-description">See all upcoming events</div>
+
                     </a>
                   </div>
                 </div>
@@ -252,7 +269,7 @@ const Navbar = () => {
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('contact');
+                  scrollToSection("contact");
                 }}
               >
                 Contact
@@ -283,7 +300,7 @@ const Navbar = () => {
               className="mobile-menu-item"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('home');
+                scrollToSection("home");
               }}
             >
               Home
@@ -293,15 +310,22 @@ const Navbar = () => {
               className="mobile-menu-item"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('about');
+                scrollToSection("about");
               }}
             >
               About
             </a>
 
             {/* Mobile Industries */}
-            <div style={{ borderBottom: '1px solid rgba(156, 163, 175, 0.1)' }}>
-              <div style={{ padding: '0.5rem 2rem', fontSize: '0.9rem', fontWeight: '600', color: '#9ca3af' }}>
+            <div style={{ borderBottom: "1px solid rgba(156, 163, 175, 0.1)" }}>
+              <div
+                style={{
+                  padding: "0.5rem 2rem",
+                  fontSize: "0.9rem",
+                  fontWeight: "600",
+                  color: "#9ca3af",
+                }}
+              >
                 INITIATIVES
               </div>
               {industryItems.slice(0, 6).map((item, index) => (
@@ -309,7 +333,7 @@ const Navbar = () => {
                   key={index}
                   href="#"
                   className="mobile-menu-item"
-                  style={{ paddingLeft: '3rem' }}
+                  style={{ paddingLeft: "3rem" }}
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavigation(item.path);
@@ -321,8 +345,15 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Events */}
-            <div style={{ borderBottom: '1px solid rgba(156, 163, 175, 0.1)' }}>
-              <div style={{ padding: '0.5rem 2rem', fontSize: '0.9rem', fontWeight: '600', color: '#9ca3af' }}>
+            <div style={{ borderBottom: "1px solid rgba(156, 163, 175, 0.1)" }}>
+              <div
+                style={{
+                  padding: "0.5rem 2rem",
+                  fontSize: "0.9rem",
+                  fontWeight: "600",
+                  color: "#9ca3af",
+                }}
+              >
                 EVENTS
               </div>
               {eventItems.slice(0, 4).map((item, index) => (
@@ -330,7 +361,7 @@ const Navbar = () => {
                   key={index}
                   href="#"
                   className="mobile-menu-item"
-                  style={{ paddingLeft: '3rem' }}
+                  style={{ paddingLeft: "3rem" }}
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavigation(item.path);
@@ -346,20 +377,17 @@ const Navbar = () => {
               className="mobile-menu-item"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('contact');
+                scrollToSection("contact");
               }}
             >
               Contact
             </a>
-            <button className="mobile-menu-cta">
-              Join Our Movement
-            </button>
+            <button className="mobile-menu-cta">Join Our Movement</button>
           </div>
         )}
       </nav>
-
     </>
   );
-}
+};
 
-export default Navbar;
+export default Header;
