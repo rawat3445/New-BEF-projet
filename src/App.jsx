@@ -1,6 +1,7 @@
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import LandingPage from './components/landingpage/landingPage';
+import EventsPage from './components/eventspage/EventsPage';
 import AdvertisementIndustry from './industries/advertisement/advertisement';
 import AgricultureIndustry from './industries/agriculture/agriculture';
 import AgricultureSalesPage from './industries/agriculture/pages/salespage/SalesPage';
@@ -55,7 +56,8 @@ function App() {
         <Route path="/leadership-awards" element={<LeadershipAwards />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
-        <Route path="/event" element={<Event />} />
+        <Route path="/events" element={<EventsPage />} />
+        <Route path="/events/:eventSlug" element={<EventsPage />} />
         <Route path="/feedback" element={<Feedback />} />
 
 

@@ -10,21 +10,7 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-  // const [email, setEmail] = useState('');
-
-  // const [isSubscribed, setIsSubscribed] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  //       const handleSubscription = () => {
-  //     if (email) {
-  //       setIsSubscribed(true);
-  //       setEmail('');
-  //       setTimeout(() => setIsSubscribed(false), 3000);
-  //     }
-  //   };
-
-
-
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -178,7 +164,6 @@ const Navbar = () => {
             </li>
 
             {/* Industries Dropdown */}
-            {/* Industries Dropdown */}
             <li className="navbar-item dropdown">
               <a href="#industries" className="navbar-link" onClick={(e) => {
                 e.preventDefault();
@@ -208,32 +193,58 @@ const Navbar = () => {
               </div>
             </li>
 
-            {/* Events Dropdown */}
-            <li className="navbar-item dropdown">
-              <a href="#events" className="navbar-link">
-                Events
-                <ChevronDown className="dropdown-chevron w-4 h-4" />
-              </a>
-              <div className="dropdown-menu">
-                <div className="dropdown-header">Upcoming Events</div>
-                <div className="dropdown-content">
-                  {eventItems.map((item, index) => (
+            {/* Events Dropdown */} 
+              <li className="navbar-item dropdown">
+                <a 
+                                  href="#events" 
+                                  className="navbar-link"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    //handleNavigation('/events'); // This will navigate to the main Events page
+                                  }}
+                                >
+                                  Events
+                                  <ChevronDown 
+                                    className="dropdown-chevron w-4 h-4" 
+                                    onClick={(e) => {
+                                      e.stopPropagation(); 
+                                      
+                                    }}
+                                  />
+                                </a>
+
+                <div className="dropdown-menu">
+                  <div className="dropdown-header">Upcoming Events</div>
+                  <div className="dropdown-content">
+                    {eventItems.map((item, index) => (
+                      <a
+                        key={index}
+                        href="#"
+                        className="dropdown-item"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavigation(item.path);
+                        }}
+                      >
+                        <div className="dropdown-item-title">{item.title}</div>
+                        <div className="dropdown-item-description">{item.description}</div>
+                      </a>
+                    ))}
+                    {/* Add a link to view all events that goes to the EventsPage */}
                     <a
-                      key={index}
                       href="#"
-                      className="dropdown-item"
+                      className="dropdown-item view-all"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleNavigation(item.path);
+                        handleNavigation('/events');
                       }}
                     >
-                      <div className="dropdown-item-title">{item.title}</div>
-                      <div className="dropdown-item-description">{item.description}</div>
+                      <div className="dropdown-item-title">View All Events</div>
+                      <div className="dropdown-item-description">See all upcoming events</div>
                     </a>
-                  ))}
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li> 
 
             <li className="navbar-item">
               <a
