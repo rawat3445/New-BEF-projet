@@ -1,10 +1,10 @@
 // import React, { useState } from "react";
-import { Facebook, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 const Footer = ({ scrollToSection }) => {
     // const [setEmail] = useState("");
     // const [setIsSubscribed] = useState(false);
-      const navigate = useNavigate();
+    const navigate = useNavigate();
     // const handleSubscription = () => {
     //     // Add your subscription logic here (API call, etc.)
     //     setIsSubscribed(true);
@@ -78,7 +78,7 @@ const Footer = ({ scrollToSection }) => {
                                 <a
                                     onClick={e => {
                                         e.preventDefault();
-                                    navigate('/about');
+                                        navigate('/about');
                                     }}
                                     href="#about"
                                     className="text-gray-300 hover:text-white transition-colors duration-200"
@@ -114,7 +114,7 @@ const Footer = ({ scrollToSection }) => {
                                 <a
                                     onClick={e => {
                                         e.preventDefault();
-                                        scrollToSection && scrollToSection("leadership");
+                                        navigate('/leadership-awards');
                                     }}
                                     href="#"
                                     className="text-gray-300 hover:text-white transition-colors duration-200"
@@ -122,7 +122,7 @@ const Footer = ({ scrollToSection }) => {
                                     Leadership Awards
                                 </a>
                             </li>
-                              <li>
+                            <li>
                                 <a
                                     onClick={e => {
                                         e.preventDefault();
@@ -200,4 +200,3 @@ const Footer = ({ scrollToSection }) => {
 
 export default Footer;
 
-    
