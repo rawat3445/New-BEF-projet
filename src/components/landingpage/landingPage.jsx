@@ -1,23 +1,57 @@
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronDown, ChevronRight, Menu, X, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Users, Target, Zap, Trophy, TrendingUp, Star, Tractor, ChevronsLeftRightEllipsis, UserCheck, Sprout, ShoppingCart, HeartPulse } from 'lucide-react';
-import './landingPage.css';
-import Navbar from '../Header';
+import { useState, useEffect } from "react";
+import {
+  ChevronLeft,
+  ChevronDown,
+  ChevronRight,
+  Menu,
+  X,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  ArrowRight,
+  Users,
+  Target,
+  Zap,
+  Trophy,
+  TrendingUp,
+  Star,
+  Tractor,
+  ChevronsLeftRightEllipsis,
+  UserCheck,
+  Sprout,
+  ShoppingCart,
+  HeartPulse,
+} from "lucide-react";
+import "./landingPage.css";
+import Navbar from "../Header";
 
-import AboutSection from '../AboutSection';
+import AboutSection from "../AboutSection";
 // import ContactSection from '../ContactSection';
-import ContactSection from './ContactSection2';
-import Hero from '../Herobanner';
-import FeaturedSection from '../FeaturedSection';
-import Industry from '../Industry';
-import Footer from '../Footer';
+import ContactSection from "./ContactSection2";
+import Hero from "../Herobanner";
+import FeaturedSection from "../FeaturedSection";
+import Industry from "../Industry";
+import Footer from "../Footer";
 const LandingPage = () => {
   // const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
 
+    handleResize(); // Check on first render
+    window.addEventListener("resize", handleResize); // Update on resize
 
-
+    return () => window.removeEventListener("resize", handleResize); // Cleanup
+  }, []);
 
   // const industryItems = [
   //   {
@@ -87,33 +121,28 @@ const LandingPage = () => {
   //   }
   // ];
 
-
-
-
-
   const carouselImages = [
     {
       id: 1,
       url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      title: "Industry Innovation Summit"
+      title: "Industry Innovation Summit",
     },
     {
       id: 2,
       url: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      title: "Policy Makers Dialogue"
+      title: "Policy Makers Dialogue",
     },
     {
       id: 3,
       url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      title: "Technology Integration Forum"
+      title: "Technology Integration Forum",
     },
     {
       id: 4,
       url: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      title: "Leadership Excellence"
-    }
+      title: "Leadership Excellence",
+    },
   ];
-
 
   // Industry cards data
   // const industryCards = [
@@ -262,14 +291,14 @@ const LandingPage = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
+            entry.target.classList.add("animate-in");
           }
         });
       },
       { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll('.scroll-animate');
+    const elements = document.querySelectorAll(".scroll-animate");
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
@@ -280,10 +309,10 @@ const LandingPage = () => {
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+    setCurrentSlide(
+      (prev) => (prev - 1 + carouselImages.length) % carouselImages.length
+    );
   };
-
-
 
 
   // const handleCardClick = (card) => {
@@ -334,8 +363,6 @@ const LandingPage = () => {
   //   }
   // };
 
-
-
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -343,17 +370,6 @@ const LandingPage = () => {
 
       {/* Hero Banner Section */}
       <Hero />
-
-
-
-
-
-
-
-
-
-
-
 
 
       {/* <section id="home" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -390,12 +406,20 @@ const LandingPage = () => {
       <section id="gallery" className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-animate">
-            <h2 className="text-4xl font-bold text-white mb-4">Celebrating Milestones of Success</h2>
-            <p className="text-xl text-gray-300">Past events that have inspired change and brought together visionaries</p>
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Celebrating Milestones of Success
+            </h2>
+            <p className="text-xl text-gray-300">
+              Past events that have inspired change and brought together
+              visionaries
+            </p>
           </div>
 
           <div className="relative overflow-hidden rounded-2xl">
-            <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
               {carouselImages.map((image) => (
                 <div key={image.id} className="w-full  flex-shrink-0 relative">
                   <img
@@ -413,18 +437,23 @@ const LandingPage = () => {
             </div>
 
             {/* Carousel Controls */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-200"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-200"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
+            {!isMobile && (
+              <>
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-200"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-200"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </>
+            )}
 
             {/* Carousel Indicators */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
@@ -432,8 +461,9 @@ const LandingPage = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-200 ${currentSlide === index ? 'bg-white' : 'bg-white/50'
-                    }`}
+                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                    currentSlide === index ? "bg-white" : "bg-white/50"
+                  }`}
                 />
               ))}
             </div>
