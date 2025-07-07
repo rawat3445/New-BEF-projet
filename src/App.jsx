@@ -1,6 +1,7 @@
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import LandingPage from './components/landingpage/landingPage';
+import EventsPage from './components/eventspage/EventsPage';
 import AdvertisementIndustry from './industries/advertisement/advertisement';
 import AgricultureIndustry from './industries/agriculture/agriculture';
 import AgricultureSalesPage from './industries/agriculture/pages/salespage/SalesPage';
@@ -20,7 +21,7 @@ import Policyandgovernance from './industries/policyandgovernance';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Event from './pages/Event';
-
+import LeadershipAwards from './pages/LeadershipAwards';
 import Feedback from './pages/Feedback/index';
 
 
@@ -52,10 +53,11 @@ function App() {
         <Route path="/policy-and-governance" element={<Policyandgovernance />} />
         <Route path='/home' element={<LandingPage/>}/>
         {/* Redirects for old paths */}
-
+        <Route path="/leadership-awards" element={<LeadershipAwards />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
-        <Route path="/event" element={<Event />} />
+        <Route path="/events" element={<EventsPage />} />
+        <Route path="/events/:eventSlug" element={<EventsPage />} />
         <Route path="/feedback" element={<Feedback />} />
 
 
