@@ -21,7 +21,7 @@ const FeedbackForm = () => {
   return (
   
 
-    <div  className="max-w-md mx-auto p-6 bg-[#F9FAFB] rounded shadow-md">
+    <div className="max-w-md mx-auto p-6 bg-[#F9FAFB] rounded shadow-md">
       <h2 className="text-xl font-bold text-[#1E3A8A] mb-4">Feedback Form</h2>
 
       <form onSubmit={handleSubmit}>
