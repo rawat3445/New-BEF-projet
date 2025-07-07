@@ -200,7 +200,7 @@ const Navbar = () => {
                                   className="navbar-link"
                                   onClick={(e) => {
                                     e.preventDefault();
-                                    handleNavigation('/events'); // This will navigate to the main Events page
+                                    //handleNavigation('/events'); // This will navigate to the main Events page
                                   }}
                                 >
                                   Events
