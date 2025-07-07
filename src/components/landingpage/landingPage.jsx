@@ -314,6 +314,7 @@ const LandingPage = () => {
     );
   };
 
+
   // const handleCardClick = (card) => {
   //   switch (card.id) {
   //     case 'advertisement':
@@ -369,6 +370,7 @@ const LandingPage = () => {
 
       {/* Hero Banner Section */}
       <Hero />
+
 
       {/* <section id="home" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -477,6 +479,7 @@ const LandingPage = () => {
 
       {/* Footer */}
       <Footer />
+
     </div>
   );
 };

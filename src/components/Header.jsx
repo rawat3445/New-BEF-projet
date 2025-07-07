@@ -257,10 +257,10 @@ const Navbar = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="mobile-menu-toggle"
+            className="mobile-menu-toggle md:mr-2 mr-4"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
+            {isMobileMenuOpen ? <X color='blue' /> : <Menu color='blue' />}
           </button>
         </div>
 
