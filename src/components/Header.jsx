@@ -193,25 +193,26 @@ const Navbar = () => {
               </div>
             </li>
 
-            {/* Events Dropdown */}
+            {/* Events Dropdown */} 
               <li className="navbar-item dropdown">
                 <a 
-                  href="#events" 
-                  className="navbar-link"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigation('/events'); // This will navigate to the main Events page
-                  }}
-                >
-                  Events
-                  <ChevronDown 
-                    className="dropdown-chevron w-4 h-4" 
-                    onClick={(e) => {
-                      e.stopPropagation(); // Prevent triggering the parent anchor click
-                      // You might want to add dropdown toggle logic here if needed
-                    }}
-                  />
-                </a>
+                                  href="#events" 
+                                  className="navbar-link"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    handleNavigation('/events'); // This will navigate to the main Events page
+                                  }}
+                                >
+                                  Events
+                                  <ChevronDown 
+                                    className="dropdown-chevron w-4 h-4" 
+                                    onClick={(e) => {
+                                      e.stopPropagation(); 
+                                      
+                                    }}
+                                  />
+                                </a>
+
                 <div className="dropdown-menu">
                   <div className="dropdown-header">Upcoming Events</div>
                   <div className="dropdown-content">
@@ -222,7 +223,7 @@ const Navbar = () => {
                         className="dropdown-item"
                         onClick={(e) => {
                           e.preventDefault();
-                          handleNavigation('/events');
+                          handleNavigation(item.path);
                         }}
                       >
                         <div className="dropdown-item-title">{item.title}</div>
@@ -243,7 +244,7 @@ const Navbar = () => {
                     </a>
                   </div>
                 </div>
-              </li>
+              </li> 
 
             <li className="navbar-item">
               <a

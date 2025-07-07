@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import './Eventspage.css';
 
 const EventsPage = () => {
+  const { eventSlug } = useParams(); 
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedEvent, setSelectedEvent] = useState(null);
 
   const events = [
     {
@@ -44,11 +46,11 @@ const EventsPage = () => {
   );
 
   const handleEventClick = (path) => {
-    setSelectedEvent(path);
+    navigate(`/events/${path}`);
   };
 
   const handleBack = () => {
-    setSelectedEvent(null);
+    navigate('/events');
   };
 
   const EventTemplate = ({ title, date, location, description, agenda, speakers, link }) => (
@@ -57,30 +59,33 @@ const EventsPage = () => {
       <h2 className="section-title">{title}</h2>
       <p className="event-meta">{date} | {location}</p>
       <p className="event-description detailed">{description}</p>
+
       <h3 className="featured-title">Agenda</h3>
       <ul className="agenda-list">
         {agenda.map((item, idx) => (
           <li key={idx}><strong>{item.time}:</strong> {item.topic}</li>
         ))}
       </ul>
+
       <h3 className="featured-title">Key Speakers</h3>
       <div className="speakers-grid">
         {speakers.map((spk, idx) => (
-          <div key={idx} className="speaker-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div key={idx} className="speaker-card">
             <img src={spk.img} alt={spk.name} className="speaker-img" />
-            <p className="speaker-name" style={{ fontSize: '1.2rem', fontWeight: '700', marginTop: '0.5rem' }}>{spk.name}</p>
+            <p className="speaker-name">{spk.name}</p>
             <p className="speaker-title">{spk.title}</p>
             <p className="speaker-detail">{spk.detail}</p>
           </div>
         ))}
       </div>
+
       <div className="register-btn-container">
         <a href={link.url} className="register-btn">Register Now</a>
       </div>
+
       <button onClick={handleBack} className="back-btn">← Back to Events</button>
     </div>
   );
-
 
   const contentMap = {
     'innovation-summit': <EventTemplate
@@ -181,8 +186,9 @@ const EventsPage = () => {
         <h1 className="events-title">Bharat Economic</h1>
         <p className="events-subtitle">Join India's most influential economic discussions by 2047</p>
       </div>
+
       <div className="events-container">
-        {!selectedEvent ? (
+        {!eventSlug ? (
           <>
             <h2 className="section-title">UPCOMING EVENTS</h2>
             <div className="events-search">
@@ -208,7 +214,7 @@ const EventsPage = () => {
             </div>
           </>
         ) : (
-          contentMap[selectedEvent] || <div className="event-card">Event Not Found</div>
+          contentMap[eventSlug] || <div className="event-card">Event Not Found</div>
         )}
       </div>
     </div>
@@ -216,4 +222,3 @@ const EventsPage = () => {
 };
 
 export default EventsPage;
-

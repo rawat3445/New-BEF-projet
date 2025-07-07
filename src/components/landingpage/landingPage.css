@@ -235,7 +235,7 @@ body {
   display: none;
   background: none;
   border: none;
-  color: #374151;
+  color: #414243;
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -252,7 +252,7 @@ body {
   top: 100%;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(247, 246, 246, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
