@@ -1,60 +1,59 @@
 import React from 'react';
 import { Box, Grid, Typography, Stack } from '@mui/material';
-// import LocationOnIcon from '@mui/icons-material/LocationOn';
-// import EmailIcon from '@mui/icons-material/Email';
-import { Mail, MapPin, Phone, Megaphone } from 'lucide-react';
-// import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
-import runnerImage from '../assets/img/logo.png'; // <-- Replace with your actual image path
+import { Mail, MapPin, Phone } from 'lucide-react';
+import runnerImage from '../assets/img/contactus.png'; // <-- Replace with your actual image path
 
 const ContactSection = () => {
   return (
-    <Box sx={{ backgroundColor: '#eaeaea', py: 4, px: 2 }}>
-      <Grid container spacing={4} alignItems="center">
+    <Box sx={{ backgroundColor: '#eaeaea', py: 2, px: 4 }}>
+      {/* Wrapper div with flexbox */}
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
         {/* Left Image */}
-        <Grid item xs={12} md={6}>
+        <Box sx={{ display: 'flex',flex:1 ,alignItems:"center" }}>
           <img
             src={runnerImage}
             alt="Runners"
-            style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+            style={{ width: '60%', height: 'auto', objectFit: 'cover' }}
           />
-        </Grid>
+        </Box>
 
         {/* Right Contact Info */}
-        <Grid item xs={12} md={6}>
+        <Box sx={{ flex: '1' }}>
           <Typography variant="h4" fontWeight="bold" color="primary" gutterBottom>
             GOT QUESTIONS?
           </Typography>
 
           <Stack spacing={4} mt={4}>
             {/* Address */}
-            <Stack direction="row" spacing={2} alignItems="flex-start">
-              <Phone color="primary" />
+            <Stack direction="row" spacing={2} alignItems="center">
+              <MapPin className="text-blue-500 w-6 h-6" />
               <Box>
                 <Typography fontWeight="bold">WRITE US</Typography>
-                <Typography>123 Anywhere St., Any City, State 12345</Typography>
+                <Typography>812, ABC Tower, Sec-135, Noida</Typography>
               </Box>
             </Stack>
 
+
             {/* Email */}
-            <Stack direction="row" spacing={2} alignItems="flex-start">
-              <Mail color="primary" />
+            <Stack direction="row" spacing={2} alignItems="center">
+              <Mail className="text-blue-500 w-6 h-6" />
               <Box>
                 <Typography fontWeight="bold">SEND AN EMAIL</Typography>
-                <Typography>hello@reallygreatsite.com</Typography>
+                <Typography>contact@bharateconomicforum.org</Typography>
               </Box>
             </Stack>
 
             {/* Phone */}
-            <Stack direction="row" spacing={2} alignItems="flex-start">
-              <Phone color="primary" />
+            <Stack direction="row" spacing={2} alignItems="center">
+              <Phone className="text-blue-500 w-6 h-6" />
               <Box>
                 <Typography fontWeight="bold">CALL US</Typography>
-                <Typography>123-456-7890</Typography>
+                <Typography>+91 9266114256, +91 8744089014</Typography>
               </Box>
             </Stack>
           </Stack>
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
     </Box>
   );
 };
