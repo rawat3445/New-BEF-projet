@@ -338,22 +338,25 @@ graph TB
 <div align="center">
 
 ```mermaid
-gitgraph
-    commit id: "Initial Setup"
-    branch feature/homepage
-    checkout feature/homepage
-    commit id: "Add Hero Section"
-    commit id: "Add Navigation"
-    checkout main
-    merge feature/homepage
-    branch feature/industries
-    checkout feature/industries
-    commit id: "Add Industry Cards"
-    commit id: "Add Routing"
-    checkout main
-    merge feature/industries
-    commit id: "Production Build"
-    commit id: "Deploy to GitHub Pages"
+graph TD
+    A[🚀 Initial Setup] --> B[🌟 Main Branch]
+    B --> C[🏠 Feature: Homepage]
+    C --> D[🎯 Add Hero Section]
+    D --> E[🧭 Add Navigation]
+    E --> F[🔀 Merge to Main]
+    
+    F --> G[🏭 Feature: Industries]
+    G --> H[🎴 Add Industry Cards]
+    H --> I[🛣️ Add Routing]
+    I --> J[🔀 Merge to Main]
+    
+    J --> K[🏗️ Production Build]
+    K --> L[🚀 Deploy to GitHub Pages]
+    
+    style A fill:#e1f5fe
+    style F fill:#c8e6c9
+    style J fill:#c8e6c9
+    style L fill:#ffccbc
 ```
 
 ### 🔄 Git Workflow
