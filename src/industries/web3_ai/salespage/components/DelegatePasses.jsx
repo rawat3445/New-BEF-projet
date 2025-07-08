@@ -86,159 +86,153 @@ const DelegatePasses = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            
-            <div className="group relative">
-              <div className="relative h-full backdrop-blur-xl bg-white/70 rounded-2xl border border-white/40 shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 opacity-0 group-hover:opacity-15 transition-all duration-500 blur-xl rounded-2xl"></div>
-                
-                <div className="relative z-10 p-6">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-center gap-4">
-                      <div className="relative p-3 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 rounded-xl text-white shadow-lg group-hover:shadow-xl transition-all duration-500">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-black text-slate-900 mb-1">Executive</h3>
-                        <p className="text-slate-600 font-medium text-sm uppercase">Essential Access</p>
-                      </div>
-                    </div>
-                    <div className="text-2xl opacity-20">✨</div>
-                  </div>
-
-                  <p className="text-slate-700 text-base leading-relaxed mb-6 font-light">
-                    Comprehensive access to all sessions with luxury amenities
-                  </p>
-
-                  <div className="mb-6">
-                    <div className="flex items-end gap-3 mb-1">
-                      <span className="text-3xl font-black bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 bg-clip-text text-transparent">
-                        ₹35,000
-                      </span>
-                      <span className="text-slate-400 text-sm line-through mb-1">₹42,000</span>
-                    </div>
-                    <p className="text-slate-500 text-xs font-medium">Early bird pricing • Limited time offer</p>
-                  </div>
-
-                  <div className="space-y-3 mb-6">
-                    <h4 className="text-sm font-bold text-slate-800 mb-3 tracking-wide">INCLUDED BENEFITS</h4>
-                    {[
-                      'Full conference access',
-                      'Premium networking sessions',
-                      'Michelin-inspired dining experience',
-                      'Executive resource library',
-                      'Digital credentials & certificates',
-                      'Priority customer support'
-                    ].map((feature, index) => (
-                      <div key={index} className="flex items-center gap-3">
-                        <div className="p-1 bg-blue-50 rounded-lg">
-                          <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <span className="text-slate-700 text-sm font-medium leading-relaxed">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <button className="w-full bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 text-white py-3 px-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 group/btn overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-                    <span className="relative z-10 flex items-center justify-center gap-2 tracking-wide">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                      SECURE YOUR ACCESS
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative">
-            
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-red-500 blur-md opacity-60 rounded-full"></div>
-                  <div className="relative bg-gradient-to-r from-amber-500 to-red-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg flex items-center gap-2 border border-white/20">
-                    <svg className="w-3 h-3 text-yellow-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3l14 9-14 9V3z" />
-                    </svg>
-                    <span className="tracking-wide">MOST EXCLUSIVE</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="relative h-full backdrop-blur-xl bg-white/70 rounded-2xl border border-white/40 shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 opacity-0 group-hover:opacity-20 transition-all duration-500 blur-xl rounded-2xl"></div>
-                
-                <div className="relative z-10 p-6">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-center gap-4">
-                      <div className="relative p-3 bg-gradient-to-br from-amber-600 via-orange-600 to-red-600 rounded-xl text-white shadow-lg group-hover:shadow-xl transition-all duration-500">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3l14 9-14 9V3z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-black text-slate-900 mb-1">Presidential</h3>
-                        <p className="text-slate-600 font-medium text-sm uppercase">Ultimate Experience</p>
-                      </div>
-                    </div>
-                    <div className="text-2xl opacity-20">👑</div>
-                  </div>
-
-                  <p className="text-slate-700 text-base leading-relaxed mb-6 font-light">
-                    Exclusive all-access experience with VIP privileges
-                  </p>
-
-                  <div className="mb-6">
-                    <div className="flex items-end gap-3 mb-1">
-                      <span className="text-3xl font-black bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
-                        ₹55,000
-                      </span>
-                      <span className="text-slate-400 text-sm line-through mb-1">₹68,000</span>
-                    </div>
-                    <p className="text-slate-500 text-xs font-medium">Early bird pricing • Limited time offer</p>
-                  </div>
-
-                  <div className="space-y-3 mb-6">
-                    <h4 className="text-sm font-bold text-slate-800 mb-3 tracking-wide">INCLUDED BENEFITS</h4>
-                    {[
-                      'Everything in Executive tier',
-                      'Private VIP lounge with concierge',
-                      'Front-row reserved seating',
-                      'Exclusive C-level networking',
-                      'Professional media coverage',
-                      'Personal brand consultation',
-                      'Luxury welcome package',
-                      'Post-event digital assets'
-                    ].map((feature, index) => (
-                      <div key={index} className="flex items-center gap-3">
-                        <div className="p-1 bg-amber-50 rounded-lg">
-                          <svg className="w-3 h-3 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <span className="text-slate-700 text-sm font-medium leading-relaxed">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <button className="w-full bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 text-white py-3 px-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 group/btn overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-                    <span className="relative z-10 flex items-center justify-center gap-2 tracking-wide">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                      SECURE YOUR ACCESS
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+  <div className="group relative">
+    <div className="relative h-full backdrop-blur-xl bg-white/70 rounded-2xl border border-white/40 shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 opacity-0 group-hover:opacity-15 transition-all duration-500 blur-xl rounded-2xl"></div>
+      <div className="relative z-10 p-6">
+        <div className="flex items-start justify-between mb-6">
+          <div>
+            <h3 className="text-2xl font-black text-slate-900 mb-1">Standard Pass</h3>
+            <p className="text-slate-600 font-medium text-sm uppercase">For 1 Person</p>
           </div>
+          <div className="text-2xl opacity-20">✨</div>
+        </div>
+        <p className="text-slate-700 text-base leading-relaxed mb-6 font-light">
+          Comprehensive access to all sessions with luxury amenities
+        </p>
+        <div className="mb-6">
+          <span className="text-3xl font-black bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 bg-clip-text text-transparent">
+            ₹35,000
+          </span>
+        </div>
+        <div className="space-y-3 mb-6">
+          <h4 className="text-sm font-bold text-slate-800 mb-3 tracking-wide">INCLUDED BENEFITS</h4>
+          {[
+            'Full conference access',
+            'Premium networking sessions',
+            'Michelin-inspired dining experience',
+            'Executive resource library',
+            'Digital credentials & certificates',
+            'Priority customer support'
+          ].map((feature, index) => (
+            <div key={index} className="flex items-center gap-3">
+              <div className="p-1 bg-blue-50 rounded-lg">
+                <svg className="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-slate-700 text-sm font-medium leading-relaxed">{feature}</span>
+            </div>
+          ))}
+        </div>
+        <button className="w-full bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 text-white py-3 px-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 group/btn overflow-hidden relative">
+          <span className="relative z-10 flex items-center justify-center gap-2 tracking-wide">
+            SECURE YOUR ACCESS
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div className="group relative">
+    <div className="relative h-full backdrop-blur-xl bg-white/70 rounded-2xl border border-white/40 shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 opacity-0 group-hover:opacity-20 transition-all duration-500 blur-xl rounded-2xl"></div>
+      <div className="relative z-10 p-6">
+        <div className="flex items-start justify-between mb-6">
+          <div>
+            <h3 className="text-2xl font-black text-slate-900 mb-1">Dual Pass</h3>
+            <p className="text-slate-600 font-medium text-sm uppercase">For 2 People</p>
+            <p className="text-xs text-slate-400">(Spouse or Co-founder)</p>
+          </div>
+          <div className="text-2xl opacity-20">👥</div>
+        </div>
+        <p className="text-slate-700 text-base leading-relaxed mb-6 font-light">
+          All Standard Pass benefits for two, plus partner access to networking
+        </p>
+        <div className="mb-6">
+          <span className="text-3xl font-black bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
+            ₹55,000
+          </span>
+        </div>
+        <div className="space-y-3 mb-6">
+          <h4 className="text-sm font-bold text-slate-800 mb-3 tracking-wide">INCLUDED BENEFITS</h4>
+          {[
+            'All Standard Pass benefits for two',
+            'Partner access to all networking sessions',
+            'Shared premium amenities',
+            'Joint digital credentials'
+          ].map((feature, index) => (
+            <div key={index} className="flex items-center gap-3">
+              <div className="p-1 bg-amber-50 rounded-lg">
+                <svg className="w-3 h-3 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-slate-700 text-sm font-medium leading-relaxed">{feature}</span>
+            </div>
+          ))}
+        </div>
+        <button className="w-full bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 text-white py-3 px-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 group/btn overflow-hidden relative">
+          <span className="relative z-10 flex items-center justify-center gap-2 tracking-wide">
+            SECURE YOUR ACCESS
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div className="group relative">
+    <div className="relative h-full backdrop-blur-xl bg-white/70 rounded-2xl border border-white/40 shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-700 via-fuchsia-600 to-pink-500 opacity-0 group-hover:opacity-20 transition-all duration-500 blur-xl rounded-2xl"></div>
+      <div className="relative z-10 p-6">
+        <div className="flex items-start justify-between mb-6">
+          <div>
+            <h3 className="text-2xl font-black text-slate-900 mb-1">Group Pass</h3>
+            <p className="text-slate-600 font-medium text-sm uppercase">For 5 People</p>
+            <p className="text-xs text-slate-400">(Family or Company Personnel)</p>
+          </div>
+          <div className="text-2xl opacity-20">👨‍👩‍👧‍👦</div>
+        </div>
+        <p className="text-slate-700 text-base leading-relaxed mb-6 font-light">
+          All Dual Pass benefits for up to five, with group recognition and reserved seating
+        </p>
+        <div className="mb-6">
+          <span className="text-3xl font-black bg-gradient-to-r from-purple-700 via-fuchsia-600 to-pink-500 bg-clip-text text-transparent">
+            ₹1,00,000
+          </span>
+        </div>
+        <div className="space-y-3 mb-6">
+          <h4 className="text-sm font-bold text-slate-800 mb-3 tracking-wide">INCLUDED BENEFITS</h4>
+          {[
+            'All Dual Pass benefits for five',
+            'Group recognition at event',
+            'Reserved group seating',
+            'Company/family branding opportunities'
+          ].map((feature, index) => (
+            <div key={index} className="flex items-center gap-3">
+              <div className="p-1 bg-pink-50 rounded-lg">
+                <svg className="w-3 h-3 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-slate-700 text-sm font-medium leading-relaxed">{feature}</span>
+            </div>
+          ))}
+        </div>
+        <button className="w-full bg-gradient-to-r from-purple-700 via-fuchsia-600 to-pink-500 text-white py-3 px-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all duration-300 group/btn overflow-hidden relative">
+          <span className="relative z-10 flex items-center justify-center gap-2 tracking-wide">
+            SECURE YOUR ACCESS
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
           <div className="text-center">
             <div className="backdrop-blur-lg bg-white/60 rounded-2xl p-6 border border-white/40 max-w-3xl mx-auto shadow-lg">

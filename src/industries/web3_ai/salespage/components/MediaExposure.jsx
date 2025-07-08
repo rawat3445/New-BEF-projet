@@ -4,25 +4,25 @@ import { Box, Grid, Card, Typography, CardContent } from '@mui/material';
 // import NewspaperIcon from '@mui/icons-material/Article';
 // import TvIcon from '@mui/icons-material/Tv';
 // import SocialIcon from '@mui/icons-material/Public';
-import { Mail, MapPin, Phone, Megaphone } from 'lucide-react';
+import { Newspaper, BookOpen, Tv, Twitter } from 'lucide-react';
 const mediaData = [
   {
-    icon: <Mail fontSize="large" color="primary" />,
+    icon: <Newspaper  className="w-12 h-12 text-shadow-slate-400" />,
     title: 'National Newspapers',
     description: 'Published insights & award features in top national dailies.',
   },
   {
-    icon: <Mail fontSize="large" color="secondary" />,
+    icon: <BookOpen  className="w-12 h-12 text-rose-500" />,
     title: 'Magazines',
     description: 'Profiles of attendees & thought leaders.',
   },
   {
-    icon: <Mail fontSize="large" color="success" />,
+    icon: <Tv  className="w-12 h-12 text-pink-500" />,
     title: 'TV & Podcasts',
     description: 'Exclusive interviews & event coverage across media.',
   },
   {
-    icon: <Mail fontSize="large" color="error" />,
+    icon: <Twitter className='w-12 h-12 text-blue-600/100 dark:text-sky-400/100'/>,
     title: 'Social Media Buzz',
     description: 'Viral engagement with #BEFConclave2025.',
   },
@@ -32,10 +32,10 @@ const MediaExposure = () => {
   return (
     <Box sx={{ py: 8, px: { xs: 2, md: 4 }, backgroundColor: '#f5f5f5' }}>
       <Typography variant="h4" fontWeight="bold" align="center" gutterBottom>
-        🔊 Media & PR Exposure
+         Media & PR Exposure
       </Typography>
       <Typography variant="subtitle1" align="center" color="textSecondary" gutterBottom>
-        ✴️ Your Name in Headlines!
+         Your Name in Headlines!
       </Typography>
 
       <Grid
@@ -62,7 +62,7 @@ const MediaExposure = () => {
               elevation={4}
             >
               <CardContent sx={{ flexGrow: 1 }}>
-                <Box mb={2}>{item.icon}</Box>
+                <Box >{item.icon}</Box>
                 <Typography variant="h6" fontWeight="bold" fontSize="1.25rem" gutterBottom>
                   {item.title}
                 </Typography>

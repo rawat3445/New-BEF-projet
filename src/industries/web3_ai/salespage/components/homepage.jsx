@@ -38,20 +38,20 @@ const Homepage = () => {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4 }}
-            className="text-6xl font-bold text-white text-center p-8"
+            className="text-6xl font-bold text-white text-center p-8 "
           >
-            Join the Bharat Economic Forum Industry Conclave 2025
+            Join the Viksit Bharat Economic Forum Industry Conclave 2025
           </motion.h1>
         </VantaBackground>
       </section>
 
       {/* Existing Components */}
-      <CustomizedTimeline />
+      {/* <CustomizedTimeline /> */}
       <MediaExposure />
       <HeroSection />
       <MultiActionAreaCard />
 
-      <FeaturedSpeakers />
+      {/* <FeaturedSpeakers /> */}
       <PastConclaves />
       <Testimonials />
       <WhyAttend />
@@ -63,7 +63,7 @@ const Homepage = () => {
       <section id="event">
         <VenueInfo />
       </section>
-      <Partners />
+      {/* <Partners /> */}
       
       {/* Scroll to Top Button */}
       <section id="contact">

@@ -8,7 +8,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import { Mail, MapPin, Phone, Megaphone } from 'lucide-react';
+import {ChevronDown}from 'lucide-react';
 
 const cards = [
   {
@@ -46,7 +46,7 @@ function Eventvenue() {
         {cards.map((card, index) => (
           <Paper key={index}>
             <StyledAccordion sx={{ minHeight: 50 }}>
-              <AccordionSummary expandIcon={<Mail />}>
+              <AccordionSummary expandIcon={<ChevronDown />}>
                 <Typography component="span">{card.title}</Typography>
               </AccordionSummary>
               <AccordionDetails>{card.description}</AccordionDetails>
