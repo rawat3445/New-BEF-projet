@@ -23,6 +23,8 @@ import About from './pages/About';
 import Event from './pages/Event';
 import LeadershipAwards from './pages/LeadershipAwards';
 import Feedback from './pages/Feedback/index';
+import AboutFullSection from './components/AboutSection/AboutFullSection';
+
 
 
 
@@ -32,7 +34,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<LandingPage />} />
-
+        <Route path="/about-full" element={<AboutFullSection />} />
 
         <Route path="/advertisement" element={<AdvertisementIndustry />} />
         <Route path="/agriculture" element={<AgricultureIndustry />} />
@@ -74,6 +76,7 @@ function App() {
 
 
       </Routes>
+    
     </Router>
   );
 }

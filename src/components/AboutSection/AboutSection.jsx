@@ -5,7 +5,7 @@ const AboutSection = () => {
     const navigate = useNavigate();
 
     return (
-        <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+        <section id= "/about" className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
             {/* Background decorative elements */}
             <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-purple-100 to-pink-100 rounded-full translate-x-1/2 translate-y-1/2 opacity-50"></div>
@@ -38,7 +38,7 @@ const AboutSection = () => {
                     {/* CTA Button */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <button
-                            onClick={() => navigate('/about')}
+                            onClick={() => navigate('/about-full')}
                             className="group relative bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] transition-all duration-500 transform hover:scale-105 flex items-center gap-3 overflow-hidden"
                         >
                             <span className="relative z-10">Learn More About Us</span>

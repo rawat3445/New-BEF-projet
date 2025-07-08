@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './Eventspage.css';
+import Header from '../Header'
+import Footer from '../Footer'
 
 const EventsPage = () => {
   const { eventSlug } = useParams(); 
@@ -181,6 +183,8 @@ const EventsPage = () => {
   };
 
   return (
+    <>
+    <Header />
     <div className="events-page">
       <div className="events-hero">
         <h1 className="events-title">Bharat Economic</h1>
@@ -216,8 +220,10 @@ const EventsPage = () => {
         ) : (
           contentMap[eventSlug] || <div className="event-card">Event Not Found</div>
         )}
-      </div>
+      </div> 
     </div>
+    <Footer />
+    </>
   );
 };
 

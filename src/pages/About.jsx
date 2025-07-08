@@ -14,7 +14,6 @@ const About = () => {
     return (
         <div className="min-h-screen bg-soft-white">
             {/* Navigation */}
-            <Header/>
 
             {/* About Content */}
             <AboutFullSection />
@@ -33,7 +32,7 @@ const About = () => {
                 </div>
             </footer> */}
 
-            <Footer/>
+
         </div>
     );
 };

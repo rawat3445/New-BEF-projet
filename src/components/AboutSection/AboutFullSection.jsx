@@ -5,18 +5,17 @@ import {
     Shield, Network, Briefcase, GraduationCap, HandHeart, Compass
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-
+import { useLayoutEffect } from 'react'; 
+import Header from '../Header';
+import Footer from '../Footer'
 const AboutFullSection = () => {
+    useLayoutEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+    
     const navigate = useNavigate();
 
-    // Add smooth scroll behavior
-    useEffect(() => {
-        document.documentElement.style.scrollBehavior = 'smooth';
-        return () => {
-            document.documentElement.style.scrollBehavior = 'auto';
-        };
-    }, []);
+
 
     // Enhanced Timeline data with more visual elements
     const timelineData = [
@@ -154,9 +153,11 @@ const AboutFullSection = () => {
 
 
     return (
-        <div className="bg-soft-white">
+        <>
+        <Header />
+        <div id="about-full" className="bg-soft-white">
             {/* Hero Section with Enhanced Visual Design */}
-            <section id="about" className="relative h-screen flex items-center justify-center overflow-hidden">
+            <section  className="relative h-screen flex items-center justify-center overflow-hidden">
                 {/* Background with multiple layers */}
                 <div className="absolute inset-0">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900"></div>
@@ -188,9 +189,9 @@ const AboutFullSection = () => {
                         <div className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mb-2 md:mb-3 shadow-2xl">
                             <Quote className="w-6 h-6 md:w-7 md:h-7 text-white" />
                         </div>
-                        <p className="text-sm md:text-base lg:text-lg font-light italic max-w-3xl mx-auto mb-3 md:mb-4 leading-relaxed text-gray-100 px-4">
-                            "Every Indian's effort contributes to a bright, united future. Here, tradition meets modern excellence—a call to every citizen to be part of India's historic journey."
-                        </p>
+                        <p className="text-base md:text-lg lg:text-xl font-medium italic max-w-4xl mx-auto mb-6 text-center text-blue-100 px-4 tracking-wide">
+  “Every Indian's effort contributes to a bright, united future. Here, tradition meets modern excellence — a call to every citizen to be part of India's historic journey.”
+</p>
                     </div>
                     
                     <div className="mb-4 md:mb-6">
@@ -203,19 +204,12 @@ const AboutFullSection = () => {
                         <div className="w-16 md:w-20 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto mb-3 md:mb-4"></div>
                     </div>
                     
-                    <p className="text-sm md:text-base lg:text-lg text-gray-200 max-w-3xl mx-auto mb-4 md:mb-6 leading-relaxed font-light px-4">
-                        An Independent Think Tank for accelerating the vision of achieving <span className="text-cyan-400 font-semibold">Viksit Bharat by 2047</span>. We facilitate funding, collaboration, and innovation for self-economic development of individuals to collectively drive India's transformation.
-                    </p>
+                    <p className="text-base md:text-lg lg:text-xl text-center text-gray-200 max-w-4xl mx-auto mb-6 px-4 font-light leading-loose">
+  An <span className="text-cyan-400 font-semibold mb-8">Independent Think Tank</span> for accelerating the vision of achieving <span className="text-cyan-300 font-semibold">Viksit Bharat by 2047</span>. We facilitate <span className="text-white mb-2">funding, collaboration, and innovation</span> for self-economic development of individuals to collectively drive India's transformation.
+</p>
                     
                     <div className="flex flex-col sm:flex-row gap-3 justify-center items-center px-4 mb-6 md:mb-8">
-                        <button
-                            onClick={() => navigate('/about')}
-                            className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 md:px-7 py-3 rounded-full text-sm md:text-base font-semibold hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] transition-all duration-500 transform hover:scale-105 flex items-center gap-2 overflow-hidden w-full sm:w-auto justify-center max-w-xs"
-                        >
-                            <span className="relative z-10">Discover Our Vision</span>
-                            <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        </button>
+                        
                         <button
                             onClick={() => navigate('/contact')}
                             className="group relative border-2 border-cyan-400 text-cyan-400 px-6 md:px-7 py-3 rounded-full text-sm md:text-base font-semibold hover:bg-cyan-400 hover:text-gray-900 transition-all duration-500 transform hover:scale-105 flex items-center gap-2 backdrop-blur-sm w-full sm:w-auto justify-center max-w-xs"
@@ -231,7 +225,7 @@ const AboutFullSection = () => {
                     className="absolute bottom-20 left-1/2 transform -translate-x-1/2 cursor-pointer group"
                     onClick={() => {
                         const nextSection = document.querySelector('#about').nextElementSibling;
-                        if (nextSection) {
+                        if (nextSection) {ccccs
                             nextSection.scrollIntoView({ behavior: 'smooth' });
                         }
                     }}
@@ -941,8 +935,11 @@ const AboutFullSection = () => {
                     </div>
                 </div>
             </section>
+            <Footer/>
         </div>
+        </>
     );
+    
 };
 
 export default AboutFullSection;

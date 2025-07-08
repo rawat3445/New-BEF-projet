@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import {
   ChevronLeft,
   ChevronDown,
@@ -28,15 +29,34 @@ import {
 } from "lucide-react";
 import "./landingPage.css";
 import Navbar from "../Header";
-
+import ContactSection from "./ContactSection2";
 import Hero from '../Herobanner';
+import FeaturedSection from "../FeaturedSection";
 import Industry from '../Industry';
 import Footer from '../Footer';
 //import Header from '../Header';
 // import { useNavigate } from 'react-router-dom';
 import AboutSection from '../AboutSection/AboutSection';
-import ContactSection from '../ContactSection';
 const LandingPage = () => {
+ const location = useLocation();
+
+  useEffect(() => {
+    const sectionId = location.state?.scrollTo;
+
+    if (sectionId && sectionId !== 'home') {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 200);
+      }
+    }
+
+    // Optional: clear scroll state after scroll (prevent repeated scrolls)
+    window.history.replaceState({}, document.title);
+  }, [location]);
+
+
   // const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
 
