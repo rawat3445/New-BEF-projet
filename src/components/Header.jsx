@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import Logo from '../assets/beflogo.png'
@@ -7,18 +7,32 @@ import Logo from '../assets/beflogo.png'
 
 const Navbar = () => {
 
-
+  const location = useLocation();
   const navigate = useNavigate();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMobileMenuOpen(false);
-  };
+  const scrollToSection = (id) => {
+  if (location.pathname !== '/home') {
+    navigate('/home', { state: { scrollTo: id } });
+  } else {
+    setTimeout(() => {
+      if (id === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, 100); // Give time for section to be mounted
+  }
+
+  setIsMobileMenuOpen(false);
+};
+
+
+
 
 
   const handleNavigation = (path) => {
@@ -128,7 +142,7 @@ const Navbar = () => {
   return (
     <>
 
-      <nav className="navbar">
+      <nav className="navbar" id="home">
         <div className="navbar-container">
           {/* Logo */}
           <div className="navbar-logo">
@@ -152,7 +166,7 @@ const Navbar = () => {
 
             <li className="navbar-item">
               <a
-                href="#about"
+                href="/about"
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();

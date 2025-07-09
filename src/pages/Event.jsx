@@ -5,14 +5,18 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, ArrowRight, Menu, X } from 'lucide-react';
 
 import ContactSection from '../components/ContactSection';
+import Header from '../components/Header'
 import EventsPage from './events';
 const Event = () => {
 
 
     return (
+        <>
+        <Header />
         <div className="min-h-screen bg-soft-white">
            <EventsPage/>
         </div>
+        </>
     );
 };
 
