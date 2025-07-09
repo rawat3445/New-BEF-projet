@@ -14,22 +14,23 @@ const Navbar = () => {
 
   const scrollToSection = (id) => {
   if (location.pathname !== '/home') {
-    // ✅ If not on landing page, navigate to /home and pass section to scroll
     navigate('/home', { state: { scrollTo: id } });
   } else {
-    if (id === 'home') {
-      // ✅ If already on /home and Home clicked, scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      if (id === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
-    }
+    }, 100); // Give time for section to be mounted
   }
 
   setIsMobileMenuOpen(false);
 };
+
 
 
 
@@ -156,7 +157,7 @@ const Navbar = () => {
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('/home');
+                  scrollToSection('home');
                 }}
               >
                 Home
@@ -169,7 +170,7 @@ const Navbar = () => {
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('/about');
+                  scrollToSection('about');
                 }}
               >
                 About
