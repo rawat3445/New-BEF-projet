@@ -66,7 +66,8 @@ const Footer = ({ scrollToSection }) => {
                                 <a
                                     onClick={e => {
                                         e.preventDefault();
-                                        scrollToSection && scrollToSection("home");
+                                        navigate('/home');
+                                        window.scrollTo(0, 0);
                                     }}
                                     href="#home"
                                     className="text-gray-300 hover:text-white transition-colors duration-200"
@@ -90,7 +91,7 @@ const Footer = ({ scrollToSection }) => {
                                 <a
                                     onClick={e => {
                                         e.preventDefault();
-                                        scrollToSection && scrollToSection("industries");
+                                        navigate('/home',{ state : {scrollTo: 'industries'}});
                                     }}
                                     href="#industries"
                                     className="text-gray-300 hover:text-white transition-colors duration-200"
@@ -102,7 +103,8 @@ const Footer = ({ scrollToSection }) => {
                                 <a
                                     onClick={e => {
                                         e.preventDefault();
-                                        navigate('/event');
+                                        navigate('/events');
+                                        window.scrollTo(0, 0);
                                     }}
                                     href="#gallery"
                                     className="text-gray-300 hover:text-white transition-colors duration-200"
@@ -115,6 +117,7 @@ const Footer = ({ scrollToSection }) => {
                                     onClick={e => {
                                         e.preventDefault();
                                         navigate('/leadership-awards');
+                                        window.scrollTo(0, 0);
                                     }}
                                     href="#"
                                     className="text-gray-300 hover:text-white transition-colors duration-200"
@@ -127,6 +130,7 @@ const Footer = ({ scrollToSection }) => {
                                     onClick={e => {
                                         e.preventDefault();
                                         navigate('/feedback');
+                                        window.scrollTo(0, 0);
                                     }}
                                     href="#"
                                     className="text-gray-300 hover:text-white transition-colors duration-200"
