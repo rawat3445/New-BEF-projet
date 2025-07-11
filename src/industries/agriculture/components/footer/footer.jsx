@@ -1,8 +1,11 @@
 // src/industries/agriculture/components/footer/footer.jsx
 import React from 'react';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, ArrowUp, Send } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
 const Footer = () => {
+  const navigate = useNavigate();
+
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -60,22 +63,88 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
-            <h4 className="text-xl font-semibold mb-6">
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-green-500 transition-all duration-300">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Quick Links */}
+          <div className="text-center md:text-left">
+                        <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+                        <ul className="space-y-2">
+                            <li>
+                                <a
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        navigate('/home');
+                                        window.scrollTo(0, 0);
+                                    }}
+                                    href="#home"
+                                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                                >
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        navigate('/about');
+                                    }}
+                                    href="#about"
+                                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                                >
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        navigate('/home',{ state : {scrollTo: 'industries'}});
+                                    }}
+                                    href="#industries"
+                                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                                >
+                                    Initiatives
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        navigate('/events');
+                                        window.scrollTo(0, 0);
+                                    }}
+                                    href="#gallery"
+                                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                                >
+                                    Events
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        navigate('/leadership-awards');
+                                        window.scrollTo(0, 0);
+                                    }}
+                                    href="#"
+                                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                                >
+                                    Leadership Awards
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        navigate('/feedback');
+                                        window.scrollTo(0, 0);
+                                    }}
+                                    href="#"
+                                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                                >
+                                    Feedback Form
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
           <div>
             <h4 className="text-xl font-semibold mb-6">Services</h4>
