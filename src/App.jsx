@@ -25,7 +25,6 @@ import LeadershipAwards from './pages/LeadershipAwards';
 import Feedback from './pages/Feedback/index';
 import AboutFullSection from './components/AboutSection/AboutFullSection';
 
-import EventList from './components/Event';
 
 
 
@@ -62,7 +61,6 @@ function App() {
         <Route path="/events" element={<EventsPage />} />
         <Route path="/events/:eventSlug" element={<EventsPage />} />
         <Route path="/feedback" element={<Feedback />} />
-        <Route path="/eventlist" element={<EventList />} />
 
 
 
