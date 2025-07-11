@@ -33,10 +33,9 @@ const AutomobileIndustry = () => {
       default:
         return (
           <>
-            <AutoMobilityHero />
-            <AboutSection />
-            <ServiceCards />
-            <SalesPage />
+          <AutoMobilityHero />
+          <ServiceCards />
+          <AboutSection />
           </>
         );
     }
