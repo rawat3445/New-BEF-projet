@@ -335,6 +335,8 @@ const LandingPage = () => {
   };
 
 
+
+
   // const handleCardClick = (card) => {
   //   switch (card.id) {
   //     case 'advertisement':
@@ -390,6 +392,17 @@ const LandingPage = () => {
 
       {/* Hero Banner Section */}
       <Hero />
+
+
+
+
+
+
+
+
+
+
+
 
 
       {/* <section id="home" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50">
