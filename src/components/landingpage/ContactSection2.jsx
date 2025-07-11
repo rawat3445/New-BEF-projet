@@ -2,7 +2,7 @@
 
 import { Mail, Phone, HelpCircle, ArrowRight, MapPin } from 'lucide-react';
 
-const ContactSection2= () => {
+const ContactSection2 = () => {
   return (
     <div className="bg-soft-white">
       {/* Hero Section */}
@@ -58,50 +58,50 @@ const ContactSection2= () => {
 
       {/* Send Message + Connect Section */}
 
-    <section className="bg-[#f2f8ff] py-16">
-  <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-10">
-    
-    {/* Contact Info (nudged right using padding) */}
-    <div className="md:col-span-6 pl-6 md:pl-10 space-y-6">
-      <h2 className="text-2xl font-bold mb-6">Connect With Us</h2>
+      <section className="bg-[#f2f8ff] py-16">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-10">
 
-      <div className="space-y-4 text-neutral-dark text-sm">
-        <div className="flex items-center space-x-3">
-          <Mail className="text-primary-blue w-5 h-5" />
-          <span>info@bharateconomicforum.org</span>
-        </div>
-        <div className="flex items-center space-x-3">
-          <Phone className="text-primary-blue w-5 h-5" />
-          <span>+91 98765 43210</span>
-        </div>
-        <div className="flex items-center space-x-3">
-          <MapPin className="text-primary-blue w-5 h-5" />
-          <span>New Delhi, India</span>
-        </div>
-      </div>
+          {/* Contact Info (nudged right using padding) */}
+          <div className="md:col-span-6 pl-6 md:pl-10 space-y-6">
+            <h2 className="text-2xl font-bold mb-6">Connect With Us</h2>
 
-      <div>
-        <h3 className="font-semibold mt-6 mb-2">Follow Us</h3>
-        <div className="flex space-x-4 text-primary-blue text-xl">
-          <i className="fab fa-facebook-f"></i>
-          <i className="fab fa-twitter"></i>
-          <i className="fab fa-linkedin-in"></i>
-          <i className="fab fa-instagram"></i>
-        </div>
-      </div>
-    </div>
+            <div className="space-y-4 text-neutral-dark text-sm">
+              <div className="flex items-center space-x-3">
+                <Mail className="text-primary-blue w-5 h-5" />
+                <span>info@bharateconomicforum.org</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="text-primary-blue w-5 h-5" />
+                <span>+91 98765 43210</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin className="text-primary-blue w-5 h-5" />
+                <span>New Delhi, India</span>
+              </div>
+            </div>
 
-    {/* Map */}
-    <div className="md:col-span-6 rounded overflow-hidden">
-      <iframe
-        className="w-full h-64 md:h-full rounded-lg border"
-        src="https://www.google.com/maps?q=New+Delhi,+India&output=embed"
-        allowFullScreen
-        loading="lazy"
-      ></iframe>
-    </div>
-  </div>
-</section>
+            <div>
+              <h3 className="font-semibold mt-6 mb-2">Follow Us</h3>
+              <div className="flex space-x-4 text-primary-blue text-xl">
+                <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-twitter"></i>
+                <i className="fab fa-linkedin-in"></i>
+                <i className="fab fa-instagram"></i>
+              </div>
+            </div>
+          </div>
+
+          {/* Map */}
+          <div className="md:col-span-6 rounded overflow-hidden">
+            <iframe
+              className="w-full h-64 md:h-full rounded-lg border"
+              src="https://www.google.com/maps?q=New+Delhi,+India&output=embed"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
 
     </div>
   );
