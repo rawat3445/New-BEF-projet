@@ -334,11 +334,8 @@ const LandingPage = () => {
     );
   };
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 3bc6e9bc3b12b95783d432bfde9b8b1d89cbab29
 
   // const handleCardClick = (card) => {
   //   switch (card.id) {
@@ -395,7 +392,6 @@ const LandingPage = () => {
 
       {/* Hero Banner Section */}
       <Hero />
-<<<<<<< HEAD
 
 
 
@@ -407,8 +403,6 @@ const LandingPage = () => {
 
 
 
-=======
->>>>>>> 3bc6e9bc3b12b95783d432bfde9b8b1d89cbab29
 
 
       {/* <section id="home" className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50">
