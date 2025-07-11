@@ -24,6 +24,10 @@ import Event from './pages/Event';
 import LeadershipAwards from './pages/LeadershipAwards';
 import Feedback from './pages/Feedback/index';
 import AboutFullSection from './components/AboutSection/AboutFullSection';
+import Login from './components/Auth/Login';
+import Signup from './components/Auth/Signup';
+
+
 
 
 
@@ -61,12 +65,10 @@ function App() {
         <Route path="/events" element={<EventsPage />} />
         <Route path="/events/:eventSlug" element={<EventsPage />} />
         <Route path="/feedback" element={<Feedback />} />
-
-
-
-
-
-
+        
+        {/* Auth Pages - Full Page Routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
 
         {/* Example Placeholder for future industries */}
         {/*DO NOT TOUCH THIS CODE BELOW IT'S JUST AN EXAMPLE!*/}

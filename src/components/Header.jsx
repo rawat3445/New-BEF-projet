@@ -1,7 +1,7 @@
 import { useNavigate,useLocation } from 'react-router-dom';
-import { useState } from 'react';
-import { ChevronDown, Menu, X } from 'lucide-react';
-import Logo from '../assets/beflogo.png'
+import { useState, useEffect } from 'react';
+import { ChevronDown, Menu, X, User, LogOut } from 'lucide-react';
+import Logo from '../assets/beflogo.png';
 
 
 
@@ -11,6 +11,58 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
+  const [showUserDropdown, setShowUserDropdown] = useState(false);
+
+  // Check authentication status on component mount and when localStorage changes
+  useEffect(() => {
+    const checkAuthStatus = () => {
+      const authStatus = localStorage.getItem('isAuthenticated');
+      const userData = localStorage.getItem('user');
+      
+      if (authStatus === 'true' && userData) {
+        setIsAuthenticated(true);
+        setUser(JSON.parse(userData));
+      } else {
+        setIsAuthenticated(false);
+        setUser(null);
+      }
+    };
+
+    checkAuthStatus();
+
+    // Listen for storage changes (when user logs in/out in another tab)
+    window.addEventListener('storage', checkAuthStatus);
+    
+    return () => {
+      window.removeEventListener('storage', checkAuthStatus);
+    };
+  }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showUserDropdown && !event.target.closest('.relative')) {
+        setShowUserDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showUserDropdown]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('user');
+    localStorage.removeItem('loginMethod');
+    setIsAuthenticated(false);
+    setUser(null);
+    setShowUserDropdown(false);
+    alert('You have been logged out successfully.');
+  };
 
   const scrollToSection = (id) => {
   if (location.pathname !== '/home') {
@@ -274,9 +326,66 @@ const Navbar = () => {
             </li>
 
             <li className="navbar-item">
-              {/* <button className="navbar-cta">
-                Join Our Movement
-              </button> */}
+              {isAuthenticated && user ? (
+                <div className="relative">
+                  <button 
+                    onClick={() => setShowUserDropdown(!showUserDropdown)}
+                    className="flex items-center gap-2 bg-[linear-gradient(to_right,var(--primary-blue),var(--accent-cyan))] text-soft-white px-6 py-2 rounded-full font-semibold hover:shadow-[0_10px_15px_rgba(0,0,0,0.2)] transition-all duration-300 transform hover:scale-105"
+                  >
+                    {user.image ? (
+                      <img 
+                        src={user.image} 
+                        alt={user.name}
+                        className="w-6 h-6 rounded-full object-cover border-2 border-white"
+                      />
+                    ) : (
+                      <User className="w-4 h-4" />
+                    )}
+                    <span className="max-w-[120px] truncate">{user.name}</span>
+                    <ChevronDown className="w-4 h-4" />
+                  </button>
+                  
+                  {/* User Dropdown */}
+                  {showUserDropdown && (
+                    <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                      <div className="px-4 py-3 border-b border-gray-100">
+                        <div className="flex items-center gap-3">
+                          {user.image ? (
+                            <img 
+                              src={user.image} 
+                              alt={user.name}
+                              className="w-10 h-10 rounded-full object-cover"
+                            />
+                          ) : (
+                            <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                              <User className="w-5 h-5 text-gray-500" />
+                            </div>
+                          )}
+                          <div>
+                            <p className="font-semibold text-dark-charcoal">{user.name}</p>
+                            <p className="text-sm text-neutral-gray">{user.email}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        onClick={handleLogout}
+                        className="w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors duration-200"
+                      >
+                        <LogOut className="w-4 h-4" />
+                        Logout
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <button 
+                  onClick={() => navigate('/login')}
+                  className="flex items-center gap-2 bg-[linear-gradient(to_right,var(--primary-blue),var(--accent-cyan))] text-soft-white px-6 py-2 rounded-full font-semibold hover:shadow-[0_10px_15px_rgba(0,0,0,0.2)] transition-all duration-300 transform hover:scale-105"
+                >
+                  <User className="w-4 h-4" />
+                  Login
+                </button>
+              )}
             </li>
           </ul>
 
@@ -365,13 +474,51 @@ const Navbar = () => {
             >
               Contact
             </a>
-            <button className="mobile-menu-cta">
-              Join Our Movement
-            </button>
+            {isAuthenticated && user ? (
+              <div className="px-6 py-4 border-t border-gray-100">
+                <div className="flex items-center gap-3 mb-3">
+                  {user.image ? (
+                    <img 
+                      src={user.image} 
+                      alt={user.name}
+                      className="w-10 h-10 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                      <User className="w-5 h-5 text-gray-500" />
+                    </div>
+                  )}
+                  <div>
+                    <p className="font-semibold text-dark-charcoal">{user.name}</p>
+                    <p className="text-sm text-neutral-gray">{user.email}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => {
+                    handleLogout();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="w-full bg-red-50 text-red-600 px-4 py-2 rounded-full font-medium hover:bg-red-100 transition-colors duration-200 flex items-center justify-center gap-2"
+                >
+                  <LogOut className="w-4 h-4" />
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <button 
+                onClick={() => {
+                  navigate('/login');
+                  setIsMobileMenuOpen(false);
+                }}
+                className="mobile-menu-cta flex items-center justify-center gap-2"
+              >
+                <User className="w-4 h-4" />
+                Login
+              </button>
+            )}
           </div>
         )}
       </nav>
-
     </>
   );
 }
