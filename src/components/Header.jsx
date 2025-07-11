@@ -32,15 +32,14 @@ const Navbar = () => {
 
     checkAuthStatus();
 
-    // Listen for storage changes (when user logs in/out in another tab)
+
     window.addEventListener('storage', checkAuthStatus);
     
     return () => {
       window.removeEventListener('storage', checkAuthStatus);
     };
   }, []);
-
-  // Close dropdown when clicking outside
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (showUserDropdown && !event.target.closest('.relative')) {
@@ -61,7 +60,7 @@ const Navbar = () => {
     setIsAuthenticated(false);
     setUser(null);
     setShowUserDropdown(false);
-    alert('You have been logged out successfully.');
+    alert('You have logged out successfully.');
   };
 
   const scrollToSection = (id) => {
@@ -77,7 +76,7 @@ const Navbar = () => {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       }
-    }, 100); // Give time for section to be mounted
+    }, 100); 
   }
 
   setIsMobileMenuOpen(false);
