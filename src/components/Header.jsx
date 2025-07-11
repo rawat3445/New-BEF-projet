@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import Logo from '../assets/beflogo.png'
@@ -7,32 +7,32 @@ import Logo from '../assets/beflogo.png'
 
 const Navbar = () => {
 
-
+  const location = useLocation();
   const navigate = useNavigate();
 
-  // const [email, setEmail] = useState('');
-
-  // const [isSubscribed, setIsSubscribed] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  //       const handleSubscription = () => {
-  //     if (email) {
-  //       setIsSubscribed(true);
-  //       setEmail('');
-  //       setTimeout(() => setIsSubscribed(false), 3000);
-  //     }
-  //   };
+  const scrollToSection = (id) => {
+  if (location.pathname !== '/home') {
+    navigate('/home', { state: { scrollTo: id } });
+  } else {
+    setTimeout(() => {
+      if (id === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, 100); // Give time for section to be mounted
+  }
+
+  setIsMobileMenuOpen(false);
+};
 
 
 
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMobileMenuOpen(false);
-  };
 
 
   const handleNavigation = (path) => {
@@ -142,7 +142,7 @@ const Navbar = () => {
   return (
     <>
 
-      <nav className="navbar">
+      <nav className="navbar" id="home">
         <div className="navbar-container">
           {/* Logo */}
           <div className="navbar-logo">
@@ -166,7 +166,7 @@ const Navbar = () => {
 
             <li className="navbar-item">
               <a
-                href="#about"
+                href="/about"
                 className="navbar-link"
                 onClick={(e) => {
                   e.preventDefault();
@@ -177,7 +177,6 @@ const Navbar = () => {
               </a>
             </li>
 
-            {/* Industries Dropdown */}
             {/* Industries Dropdown */}
             <li className="navbar-item dropdown">
               <a href="#industries" className="navbar-link" onClick={(e) => {
@@ -208,32 +207,58 @@ const Navbar = () => {
               </div>
             </li>
 
-            {/* Events Dropdown */}
-            <li className="navbar-item dropdown">
-              <a href="#events" className="navbar-link">
-                Events
-                <ChevronDown className="dropdown-chevron w-4 h-4" />
-              </a>
-              <div className="dropdown-menu">
-                <div className="dropdown-header">Upcoming Events</div>
-                <div className="dropdown-content">
-                  {eventItems.map((item, index) => (
+            {/* Events Dropdown */} 
+              <li className="navbar-item dropdown">
+                <a 
+                                  href="#events" 
+                                  className="navbar-link"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    //handleNavigation('/events'); // This will navigate to the main Events page
+                                  }}
+                                >
+                                  Events
+                                  <ChevronDown 
+                                    className="dropdown-chevron w-4 h-4" 
+                                    onClick={(e) => {
+                                      e.stopPropagation(); 
+                                      
+                                    }}
+                                  />
+                                </a>
+
+                <div className="dropdown-menu">
+                  <div className="dropdown-header">Upcoming Events</div>
+                  <div className="dropdown-content">
+                    {eventItems.map((item, index) => (
+                      <a
+                        key={index}
+                        href="#"
+                        className="dropdown-item"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavigation(item.path);
+                        }}
+                      >
+                        <div className="dropdown-item-title">{item.title}</div>
+                        <div className="dropdown-item-description">{item.description}</div>
+                      </a>
+                    ))}
+                    {/* Add a link to view all events that goes to the EventsPage */}
                     <a
-                      key={index}
                       href="#"
-                      className="dropdown-item"
+                      className="dropdown-item view-all"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleNavigation(item.path);
+                        handleNavigation('/events');
                       }}
                     >
-                      <div className="dropdown-item-title">{item.title}</div>
-                      <div className="dropdown-item-description">{item.description}</div>
+                      <div className="dropdown-item-title">View All Events</div>
+                      <div className="dropdown-item-description">See all upcoming events</div>
                     </a>
-                  ))}
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li> 
 
             <li className="navbar-item">
               <a
@@ -257,10 +282,10 @@ const Navbar = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="mobile-menu-toggle"
+            className="mobile-menu-toggle md:mr-2 mr-4"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
+            {isMobileMenuOpen ? <X color='blue' /> : <Menu color='blue' />}
           </button>
         </div>
 

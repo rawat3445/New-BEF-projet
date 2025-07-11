@@ -5,7 +5,6 @@ export default function Home() {
   return (
     <div>
       {/* Other sections like header, about, etc. */}
-      <Header/>
 
       {/* Feedback section */}
       <section id="feedback" className="py-10 bg-white">

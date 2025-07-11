@@ -1,6 +1,7 @@
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import LandingPage from './components/landingpage/landingPage';
+import EventsPage from './components/eventspage/EventsPage';
 import AdvertisementIndustry from './industries/advertisement/advertisement';
 import AgricultureIndustry from './industries/agriculture/agriculture';
 import AgricultureSalesPage from './industries/agriculture/pages/salespage/SalesPage';
@@ -10,7 +11,7 @@ import RuralDevelopmentIndustry from './industries/ruraldevelopment/RuralDevelop
 import EnvironmentIndustry from './industries/environment/environment';
 import RetailIndustry from './industries/retail/retail';
 import WomenEntrepreneurship from './industries/women-entrepreneurship';
-import Web3AI from './industries/web3_ai/landingpage/LandingPage'
+import Web3AI from '../src/industries/web3_ai/landingpage/LandingPage';
 import Web3AISales from './industries/web3_ai/salespage/components/homepage';
 import AutomobileIndustry from './industries/Automobile & mobility/automobile';
 import Finance from './industries/finance-investment/finance';
@@ -20,8 +21,10 @@ import Policyandgovernance from './industries/policyandgovernance';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Event from './pages/Event';
-
+import LeadershipAwards from './pages/LeadershipAwards';
 import Feedback from './pages/Feedback/index';
+import AboutFullSection from './components/AboutSection/AboutFullSection';
+
 import EventList from './components/Event';
 
 
@@ -32,7 +35,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<LandingPage />} />
-
+        <Route path="/about-full" element={<AboutFullSection />} />
 
         <Route path="/advertisement" element={<AdvertisementIndustry />} />
         <Route path="/agriculture" element={<AgricultureIndustry />} />
@@ -53,10 +56,11 @@ function App() {
         <Route path="/policy-and-governance" element={<Policyandgovernance />} />
         <Route path='/home' element={<LandingPage/>}/>
         {/* Redirects for old paths */}
-
+        <Route path="/leadership-awards" element={<LeadershipAwards />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
-        <Route path="/event" element={<Event />} />
+        <Route path="/events" element={<EventsPage />} />
+        <Route path="/events/:eventSlug" element={<EventsPage />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/eventlist" element={<EventList />} />
 
@@ -74,6 +78,7 @@ function App() {
 
 
       </Routes>
+    
     </Router>
   );
 }

@@ -13,6 +13,8 @@ const Contact = () => {
 
 
     return (
+        <>
+        <Header/>
         <div className="min-h-screen bg-soft-white">
             {/* Navigation */}
             {/* <nav className="bg-soft-white shadow-[0_4px_6px_rgba(0,0,0,0.1)] fixed top-0 w-full z-50">
@@ -114,7 +116,7 @@ const Contact = () => {
                 )}
             </nav> */}
 
-            <Header />
+            
 
             {/* Contact Content */}
             <ContactSection />
@@ -122,6 +124,7 @@ const Contact = () => {
             {/* Footer */}
             <Footer />
         </div>
+        </>
     );
 };
 

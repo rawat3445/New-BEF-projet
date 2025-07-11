@@ -1,5 +1,5 @@
 // import React, { useState } from "react";
-import { Facebook, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 const Footer = ({ scrollToSection }) => {
     // const [setEmail] = useState("");
@@ -114,7 +114,7 @@ const Footer = ({ scrollToSection }) => {
                                 <a
                                     onClick={e => {
                                         e.preventDefault();
-                                        scrollToSection && scrollToSection("leadership");
+                                        navigate('/leadership-awards');
                                     }}
                                     href="#"
                                     className="text-gray-300 hover:text-white transition-colors duration-200"

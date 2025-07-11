@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "host": "vite --host"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -26,7 +27,7 @@
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.511.0",
     "react": "^19.1.0",
-    "react-boxicons": "^0.0.28",
+    "react-boxicons": "^0.0.26",
     "react-countdown": "^2.3.6",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",

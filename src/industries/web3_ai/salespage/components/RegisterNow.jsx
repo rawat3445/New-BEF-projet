@@ -40,7 +40,7 @@ const RegisterNow = () => (
       <div className="space-y-3 text-center mb-8">
         <p className="text-base md:text-lg text-slate-700 font-medium">🔗 Website: <span className="font-semibold text-blue-700">bharateconomicforum.org</span></p>
         <p className="text-base md:text-lg text-slate-700 font-medium">📧 Email: <span className="font-semibold text-blue-700">connect@bharateconomicforum.org</span></p>
-        <p className="text-base md:text-lg text-slate-700 font-medium">💬 Live Chat Support | 📞 <span className="font-semibold text-blue-700">+91-XXXX-XXXX</span></p>
+        <p className="text-base md:text-lg text-slate-700 font-medium">💬 Live Chat Support | 📞 <span className="font-semibold text-blue-700">+91-9266114256</span></p>
       </div>
       <div className="flex justify-center">
         <button className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-slate-700 via-blue-700 to-purple-700 text-white px-8 py-4 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 overflow-hidden">
