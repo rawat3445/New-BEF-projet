@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Play, ArrowRight, Pause } from 'lucide-react';
 import './carousel.css'
+import { useNavigate } from 'react-router-dom';
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const navigate = useNavigate();
 
   const slides = [
     {
@@ -13,7 +15,7 @@ const HeroCarousel = () => {
       title: "Radiate Confidence",
       subtitle: "Natural Beauty Solutions",
       description: "Discover skincare and wellness products crafted to enhance your natural glow and nourish your body.",
-      buttonText: "Explore Now",
+      buttonText: "Explore More",
       background: "from-pink-500 via-rose-500 to-red-500",
       accent: "from-pink-300 to-rose-300"
     },
@@ -22,7 +24,7 @@ const HeroCarousel = () => {
       title: "Holistic Wellness",
       subtitle: "Mind & Body Harmony",
       description: "Experience our curated range of wellness therapies and mindful practices that rejuvenate your spirit.",
-      buttonText: "Learn More",
+      buttonText: "Explore More",
       background: "from-purple-600 via-indigo-600 to-blue-600",
       accent: "from-purple-400 to-indigo-400"
     },
@@ -31,7 +33,7 @@ const HeroCarousel = () => {
       title: "Spa & Relaxation",
       subtitle: "Tranquility Awaits",
       description: "Indulge in luxurious spa treatments and products designed to melt away stress and restore balance.",
-      buttonText: "Book Appointment",
+      buttonText: "Explore More",
       background: "from-emerald-600 via-teal-600 to-cyan-600",
       accent: "from-emerald-400 to-teal-400"
     }
@@ -116,13 +118,12 @@ const HeroCarousel = () => {
                 {currentSlideData.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-right opacity-0 delay-300">
-                <button className="group bg-white text-gray-900 hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl">
+                <button
+                  onClick={() => navigate('/about')}
+                  className="group bg-white text-gray-900 hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl"
+                >
                   {currentSlideData.buttonText}
                   <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-                <button className="group glass-effect text-white hover:bg-white hover:bg-opacity-20 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl">
-                  <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
-                  Watch Demo
                 </button>
               </div>
             </div>
@@ -139,7 +140,7 @@ const HeroCarousel = () => {
       >
         <ChevronLeft className="h-8 w-8 group-hover:-translate-x-1 transition-transform duration-300" />
       </button>
-      
+
       <button
         onClick={nextSlide}
         disabled={isTransitioning}
@@ -160,9 +161,9 @@ const HeroCarousel = () => {
 
       {/* Progress bar */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-black bg-opacity-30 z-20">
-        <div 
+        <div
           className={`h-full bg-gradient-to-r ${currentSlideData.accent} transition-all duration-1000 ease-linear`}
-          style={{ 
+          style={{
             width: isAutoPlaying ? '100%' : '0%',
             animation: isAutoPlaying ? 'progress 6s linear infinite' : 'none'
           }}
@@ -176,11 +177,10 @@ const HeroCarousel = () => {
             key={index}
             onClick={() => goToSlide(index)}
             disabled={isTransitioning}
-            className={`relative overflow-hidden rounded-full transition-all duration-500 hover:scale-125 disabled:cursor-not-allowed ${
-              index === currentSlide 
-                ? 'w-12 h-4 bg-white' 
+            className={`relative overflow-hidden rounded-full transition-all duration-500 hover:scale-125 disabled:cursor-not-allowed ${index === currentSlide
+                ? 'w-12 h-4 bg-white'
                 : 'w-4 h-4 bg-white bg-opacity-50 hover:bg-opacity-75'
-            }`}
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           >
             {index === currentSlide && (

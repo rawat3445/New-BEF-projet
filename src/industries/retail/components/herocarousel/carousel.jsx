@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Play, ArrowRight, Pause } from 'lucide-react';
 import './carousel.css'
+import { useNavigate } from 'react-router-dom';
+
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const navigate = useNavigate();
 
   const slides = [
     {
@@ -12,7 +15,7 @@ const HeroCarousel = () => {
       title: "Revolutionize Retail",
       subtitle: "Seamless omnichannel solutions",
       description: "Empower your brand with unified online and offline experiences that build loyalty, increase engagement, and boost customer satisfaction across every touchpoint.",
-      buttonText: "Get Started",
+      buttonText: "Explore More",
       background: "from-blue-600 via-purple-600 to-indigo-700",
       accent: "from-blue-400 to-purple-400"
     },
@@ -21,7 +24,7 @@ const HeroCarousel = () => {
       title: "Bring Local to Global",
       subtitle: "Digital visibility for every store",
       description: "From neighborhood retailers to niche D2C brands, our solutions ensure your business gets discovered, sells smarter, and scales faster in the digital marketplace.",
-      buttonText: "Learn More",
+      buttonText: "Explore More",
       background: "from-purple-600 via-pink-600 to-red-600",
       accent: "from-purple-400 to-pink-400"
     },
@@ -30,7 +33,7 @@ const HeroCarousel = () => {
       title: "Fulfillment That Delivers",
       subtitle: "Smart logistics for growing demand",
       description: "Cut delays, reduce costs, and delight your customers with real-time inventory sync, fast delivery, and optimized last-mile operations tailored for retail.",
-      buttonText: "Learn More",
+      buttonText: "Explore More",
       background: "from-emerald-600 via-teal-600 to-cyan-600",
       accent: "from-emerald-400 to-teal-400"
     },
@@ -39,7 +42,7 @@ const HeroCarousel = () => {
       title: "AI-powered personalization",
       subtitle: "Sell Smarter with Data",
       description: "Turn every customer interaction into insight. Use real-time analytics and behavior-driven targeting to increase conversions, boost AOV, and win loyal buyers.",
-      buttonText: "Get Started",
+      buttonText: "Explore More",
       background: "from-yellow-600 via-orange-600 to-red-600",
       accent: "from-emerald-400 to-teal-400"
     }
@@ -89,14 +92,14 @@ const HeroCarousel = () => {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nextSlide, prevSlide]);
 
   const currentSlideData = slides[currentSlide];
 
   return (
     <section className="relative h-screen overflow-hidden bg-gray-900">
-     
+
 
       {/* Background with smooth transition */}
       <div className={`absolute inset-0 bg-gradient-to-br ${currentSlideData.background} transition-all duration-1000 ease-in-out`}>
@@ -109,7 +112,7 @@ const HeroCarousel = () => {
           <div className="absolute top-1/2 left-10 w-12 h-12 bg-white rounded-full opacity-30 animate-float delay-400"></div>
           <div className="absolute top-1/3 right-20 w-8 h-8 bg-white rounded-full opacity-40 animate-pulse-slow delay-500"></div>
         </div>
-        
+
         {/* Gradient overlay */}
         <div className="absolute inset-0  bg-opacity-20"></div>
       </div>
@@ -130,13 +133,12 @@ const HeroCarousel = () => {
                 {currentSlideData.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-right opacity-0 delay-300">
-                <button className="group bg-white text-gray-900 hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl">
+                <button
+                  onClick={() => navigate('/about')}
+                  className="group bg-white text-gray-900 hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl"
+                >
                   {currentSlideData.buttonText}
                   <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-                <button className="group glass-effect text-white hover:bg-white hover:bg-opacity-20 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl">
-                  <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
-                  Watch Demo
                 </button>
               </div>
             </div>
@@ -153,7 +155,7 @@ const HeroCarousel = () => {
       >
         <ChevronLeft className="h-8 w-8 group-hover:-translate-x-1 transition-transform duration-300" />
       </button>
-      
+
       <button
         onClick={nextSlide}
         disabled={isTransitioning}
@@ -174,9 +176,9 @@ const HeroCarousel = () => {
 
       {/* Progress bar */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-black bg-opacity-30 z-20">
-        <div 
+        <div
           className={`h-full bg-gradient-to-r ${currentSlideData.accent} transition-all duration-1000 ease-linear`}
-          style={{ 
+          style={{
             width: isAutoPlaying ? '100%' : '0%',
             animation: isAutoPlaying ? 'progress 6s linear infinite' : 'none'
           }}
@@ -190,11 +192,10 @@ const HeroCarousel = () => {
             key={index}
             onClick={() => goToSlide(index)}
             disabled={isTransitioning}
-            className={`relative overflow-hidden rounded-full transition-all duration-500 hover:scale-125 disabled:cursor-not-allowed ${
-              index === currentSlide 
-                ? 'w-12 h-4 bg-white' 
+            className={`relative overflow-hidden rounded-full transition-all duration-500 hover:scale-125 disabled:cursor-not-allowed ${index === currentSlide
+                ? 'w-12 h-4 bg-white'
                 : 'w-4 h-4 bg-white bg-opacity-50 hover:bg-opacity-75'
-            }`}
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           >
             {index === currentSlide && (
@@ -209,7 +210,7 @@ const HeroCarousel = () => {
         {currentSlide + 1} / {slides.length}
       </div>
 
-      
+
     </section>
   );
 };

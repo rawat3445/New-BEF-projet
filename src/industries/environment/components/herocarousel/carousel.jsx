@@ -1,40 +1,43 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Play, ArrowRight, Pause } from 'lucide-react';
 import './carousel.css'
+import { useNavigate } from 'react-router-dom';
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  const navigate = useNavigate();
+
   const slides = [
-  {
-    id: 1,
-    title: "Protect Our Planet",
-    subtitle: "Sustainable Living for a Better Tomorrow",
-    description: "Join hands to promote eco-friendly practices that reduce waste, conserve resources, and build a greener future.",
-    buttonText: "Take Action",
-    background: "from-green-600 via-lime-600 to-emerald-700",
-    accent: "from-green-400 to-lime-400"
-  },
-  {
-    id: 2,
-    title: "Clean Energy Revolution",
-    subtitle: "Powering Progress Responsibly",
-    description: "Support the shift to renewable energy solutions that minimize carbon footprints and ensure long-term environmental health.",
-    buttonText: "Explore Solutions",
-    background: "from-yellow-600 via-orange-500 to-rose-500",
-    accent: "from-yellow-300 to-orange-300"
-  },
-  {
-    id: 3,
-    title: "Nature in Balance",
-    subtitle: "Conservation & Biodiversity",
-    description: "Preserve wildlife, protect ecosystems, and embrace biodiversity to maintain the delicate balance of nature.",
-    buttonText: "Learn More",
-    background: "from-sky-600 via-blue-600 to-teal-600",
-    accent: "from-sky-400 to-blue-400"
-  }
-];
+    {
+      id: 1,
+      title: "Protect Our Planet",
+      subtitle: "Sustainable Living for a Better Tomorrow",
+      description: "Join hands to promote eco-friendly practices that reduce waste, conserve resources, and build a greener future.",
+      buttonText: "Explore More",
+      background: "from-green-600 via-lime-600 to-emerald-700",
+      accent: "from-green-400 to-lime-400"
+    },
+    {
+      id: 2,
+      title: "Clean Energy Revolution",
+      subtitle: "Powering Progress Responsibly",
+      description: "Support the shift to renewable energy solutions that minimize carbon footprints and ensure long-term environmental health.",
+      buttonText: "Explore More",
+      background: "from-yellow-600 via-orange-500 to-rose-500",
+      accent: "from-yellow-300 to-orange-300"
+    },
+    {
+      id: 3,
+      title: "Nature in Balance",
+      subtitle: "Conservation & Biodiversity",
+      description: "Preserve wildlife, protect ecosystems, and embrace biodiversity to maintain the delicate balance of nature.",
+      buttonText: "Explore More",
+      background: "from-sky-600 via-blue-600 to-teal-600",
+      accent: "from-sky-400 to-blue-400"
+    }
+  ];
 
 
   const nextSlide = useCallback(() => {
@@ -81,14 +84,14 @@ const HeroCarousel = () => {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nextSlide, prevSlide]);
 
   const currentSlideData = slides[currentSlide];
 
   return (
     <section className="relative h-screen overflow-hidden bg-gray-900">
-     
+
 
       {/* Background with smooth transition */}
       <div className={`absolute inset-0 bg-gradient-to-br ${currentSlideData.background} transition-all duration-1000 ease-in-out`}>
@@ -101,7 +104,7 @@ const HeroCarousel = () => {
           <div className="absolute top-1/2 left-10 w-12 h-12 bg-white rounded-full opacity-30 animate-float delay-400"></div>
           <div className="absolute top-1/3 right-20 w-8 h-8 bg-white rounded-full opacity-40 animate-pulse-slow delay-500"></div>
         </div>
-        
+
         {/* Gradient overlay */}
         <div className="absolute inset-0  bg-opacity-20"></div>
       </div>
@@ -122,13 +125,12 @@ const HeroCarousel = () => {
                 {currentSlideData.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-right opacity-0 delay-300">
-                <button className="group bg-white text-gray-900 hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl">
+                <button
+                  onClick={() => navigate('/about')}
+                  className="group bg-white text-gray-900 hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl"
+                >
                   {currentSlideData.buttonText}
                   <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-                <button className="group glass-effect text-white hover:bg-white hover:bg-opacity-20 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl">
-                  <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
-                  Watch Demo
                 </button>
               </div>
             </div>
@@ -145,7 +147,7 @@ const HeroCarousel = () => {
       >
         <ChevronLeft className="h-8 w-8 group-hover:-translate-x-1 transition-transform duration-300" />
       </button>
-      
+
       <button
         onClick={nextSlide}
         disabled={isTransitioning}
@@ -166,9 +168,9 @@ const HeroCarousel = () => {
 
       {/* Progress bar */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-black bg-opacity-30 z-20">
-        <div 
+        <div
           className={`h-full bg-gradient-to-r ${currentSlideData.accent} transition-all duration-1000 ease-linear`}
-          style={{ 
+          style={{
             width: isAutoPlaying ? '100%' : '0%',
             animation: isAutoPlaying ? 'progress 6s linear infinite' : 'none'
           }}
@@ -182,11 +184,10 @@ const HeroCarousel = () => {
             key={index}
             onClick={() => goToSlide(index)}
             disabled={isTransitioning}
-            className={`relative overflow-hidden rounded-full transition-all duration-500 hover:scale-125 disabled:cursor-not-allowed ${
-              index === currentSlide 
-                ? 'w-12 h-4 bg-white' 
+            className={`relative overflow-hidden rounded-full transition-all duration-500 hover:scale-125 disabled:cursor-not-allowed ${index === currentSlide
+                ? 'w-12 h-4 bg-white'
                 : 'w-4 h-4 bg-white bg-opacity-50 hover:bg-opacity-75'
-            }`}
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           >
             {index === currentSlide && (
@@ -201,7 +202,7 @@ const HeroCarousel = () => {
         {currentSlide + 1} / {slides.length}
       </div>
 
-      
+
     </section>
   );
 };
