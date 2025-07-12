@@ -1,6 +1,8 @@
 import './Footer.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Footer() {
+    const navigate = useNavigate();
   return (
     <footer className="footer">
       <div className="footer-main">
@@ -18,12 +20,77 @@ export default function Footer() {
         {/* Quick Links */}
         <div className="footer-col">
           <h3>Quick Links</h3>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/details">Event Details</a></li>
-            
-            <li><a href="/pricing">Pricing</a></li>
+          <ul className="space-y-2">
+            <li>
+              <a
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/home');
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/about');
+                }}
+              >
+                About Us
+              </a>
+            </li>
+            <li>
+              <a
+                href="#industries"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/home', { state: { scrollTo: 'industries' } });
+                }}
+              >
+                Initiatives
+              </a>
+            </li>
+            <li>
+              <a
+                href="#gallery"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/events');
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Events
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/leadership-awards');
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Leadership Awards
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/feedback');
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Feedback Form
+              </a>
+            </li>
           </ul>
         </div>
         {/* Stay Connected */}
