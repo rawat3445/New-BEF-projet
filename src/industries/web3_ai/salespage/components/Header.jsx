@@ -33,6 +33,7 @@ const Header = () => {
               Home
             </RouterLink>
 
+            {/* 
             <ScrollLink
               to="event"
               spy={true}
@@ -42,7 +43,8 @@ const Header = () => {
               className="nav-item text-white hover:text-yellow-200 font-medium cursor-pointer"
             >
               Event
-            </ScrollLink>
+            </ScrollLink> 
+            */}
 
             <ScrollLink
               to="delegate"
@@ -57,9 +59,6 @@ const Header = () => {
           </nav>
         </div>
       </div>
-
-      {/*Removed: Spacer that was pushing content down */}
-      {/* <div className="h-[76px]" /> */}
     </>
   );
 };
