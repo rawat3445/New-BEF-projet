@@ -5,6 +5,7 @@ import Navbar from './Components/Navbar';
 import HeroSection from './Components/HeroSection';
 import ContentSections from './Components/ContentSections';
 import Footer from './Components/Footer';
+import ContactUs from './Components/contactus/contactus';
 import "./styles.css"
 
 gsap.registerPlugin(ScrollTrigger);
@@ -72,6 +73,7 @@ export default function LandingPage() {
       {/* Sections */}
       <HeroSection />
       <ContentSections />
+      <ContactUs />
       <Footer />
     </div>
   );

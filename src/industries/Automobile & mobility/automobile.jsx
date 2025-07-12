@@ -7,7 +7,7 @@ import Navbar from './components/navbar/Navbar';
 import ServiceCards from './servicesCard/Card';
 import AboutSection from './components/aboutsection/About';
 import Footer from './components/footer/Footer';
-
+import ContactUs from './components/contactus/ContactUs';
 // Import pages
 import AboutPage from './pages/Aboutpage';
 import SalesPage from './pages/SalesPage';
@@ -141,7 +141,7 @@ const AutomobileIndustry = () => {
         {/* Render appropriate content */}
         {renderContent()}
       </main>
-
+<ContactUs />
       {/* Footer */}
       <Footer />
 

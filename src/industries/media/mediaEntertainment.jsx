@@ -6,7 +6,7 @@ import HeroCarousel from './components/herocarousel/carousel';
 import ServiceCards from './components/serviceCards/cards';
 import AboutSection from './components/aboutSection/aboutSection';
 import Footer from './components/footer/footer';
-
+import ContactUs from './components/contactus/contactus';
 const MediaEntertainmentIndustry = () => {
   const [currentView, setCurrentView] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -445,7 +445,7 @@ const MediaEntertainmentIndustry = () => {
       <main className="min-h-screen">
         {renderContent()}
       </main>
-
+<ContactUs />
       <Footer />
     </div>
   );
