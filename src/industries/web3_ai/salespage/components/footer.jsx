@@ -1,32 +1,41 @@
 export default function Footer() {
   return (
-    <footer className="bg-blue-900 text-gray-400 text-sm py-6 px-4 mt-12 text-center">
+    <footer className="bg-gradient-to-r from-indigo-900 via-purple-900 to-rose-800 text-gray-200 text-sm py-10 px-4 mt-12 text-center">
       <div className="max-w-4xl mx-auto">
         {/* Newsletter */}
-        <div className="md:col-span-2 mb-8">
-          <h4 className="text-xl font-semibold mb-4 text-white">Stay Connected</h4>
-          <p className="text-gray-300 mb-4">
-            Get monthly updates on rural transformation initiatives across India.
+        <div className="md:col-span-2 mb-10">
+          <h4 className="text-2xl font-semibold mb-3 text-white">
+            Stay Connected
+          </h4>
+          <p className="mb-5 text-gray-300">
+            Get monthly updates on rural transformation initiatives across
+            India.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center mb-6">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 mb-6">
             <input
               type="email"
               placeholder="Your email address"
-              className="w-full sm:w-auto flex-1 px-4 py-3 bg-blue-800 border border-blue-700 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none focus:outline-none focus:border-green-400 text-white"
+              className="w-full sm:w-auto flex-1 px-4 py-3 bg-white/10 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 text-white placeholder:text-gray-300"
             />
-            <button className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-teal-500 px-4 py-3 rounded-b-lg sm:rounded-r-lg sm:rounded-bl-none hover:from-green-600 hover:to-teal-600 transition-all duration-300">
+            <button className="w-full sm:w-auto bg-white text-indigo-900 font-semibold px-6 py-3 rounded-lg hover:bg-yellow-400 hover:text-black transition-all duration-300">
               Subscribe
             </button>
           </div>
         </div>
 
         {/* Footer Bottom Text and Links */}
-        <div>
+        <div className="text-sm text-gray-300">
           © 2025 Bharath Economic Forum | All Rights Reserved
           <div className="mt-2 space-x-4">
-            <a href="#" className="hover:underline">Privacy Policy</a>
-            <a href="#" className="hover:underline">Terms & Conditions</a>
-            <a href="#" className="hover:underline">Social Media</a>
+            <a href="#" className="hover:text-white transition">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-white transition">
+              Terms & Conditions
+            </a>
+            <a href="#" className="hover:text-white transition">
+              Social Media
+            </a>
           </div>
         </div>
       </div>
