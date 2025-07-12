@@ -95,7 +95,7 @@ const Login = () => {
         }}
       />
       <Header />
-      <div className="min-h-screen bg-gradient-to-br from-[#eef2f3] to-[#8e9eab] flex items-center justify-center py-10">
+      <div className="min-h-screen bg-gradient-to-br from-[#eef2f3] to-[#75a6cd] flex items-center justify-center py-10">
         <div className="w-full max-w-md px-6">
           <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-200 backdrop-blur-md transition-all">
             <div className="text-center mb-6">
