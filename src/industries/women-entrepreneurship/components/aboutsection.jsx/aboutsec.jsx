@@ -1,45 +1,67 @@
-import React from 'react';
-import { 
-  Award, 
-  Users, 
-  TrendingUp, 
+import React from "react";
+import {
+  Award,
+  Users,
+  TrendingUp,
   Clock,
   CheckCircle,
   Lightbulb,
   Target,
-  Heart
-} from 'lucide-react';
+  Heart,
+} from "lucide-react";
 
 const AboutSection = () => {
   const stats = [
-    { icon: <Users className="h-8 w-8" />, number: "5,000+", label: "Women Entrepreneurs Empowered" },
-    { icon: <Award className="h-8 w-8" />, number: "10+", label: "Years of Impact" },
-    { icon: <TrendingUp className="h-8 w-8" />, number: "85%", label: "Business Growth Rate" },
-    { icon: <Clock className="h-8 w-8" />, number: "24/7", label: "Ongoing Support" }
+    {
+      icon: <Users className="h-8 w-8" />,
+      number: "5,000+",
+      label: "Women Entrepreneurs Empowered",
+    },
+    {
+      icon: <Award className="h-8 w-8" />,
+      number: "10+",
+      label: "Years of Impact",
+    },
+    {
+      icon: <TrendingUp className="h-8 w-8" />,
+      number: "85%",
+      label: "Business Growth Rate",
+    },
+    {
+      icon: <Clock className="h-8 w-8" />,
+      number: "24/7",
+      label: "Ongoing Support",
+    },
   ];
 
-  const values = [
+  {
+    /*const values = [
     {
       icon: <Lightbulb className="h-6 w-6" />,
       title: "Innovation",
-      description: "We empower women to develop innovative business ideas and solutions that transform communities."
+      description:
+        "We empower women to develop innovative business ideas and solutions that transform communities.",
     },
     {
       icon: <Target className="h-6 w-6" />,
       title: "Personalized Mentorship",
-      description: "Tailored guidance to meet the unique challenges and goals of every woman entrepreneur."
+      description:
+        "Tailored guidance to meet the unique challenges and goals of every woman entrepreneur.",
     },
     {
       icon: <Heart className="h-6 w-6" />,
       title: "Community Driven",
-      description: "Building a supportive network that fosters collaboration, learning, and growth."
+      description:
+        "Building a supportive network that fosters collaboration, learning, and growth.",
     },
     {
       icon: <CheckCircle className="h-6 w-6" />,
       title: "Quality Commitment",
-      description: "Dedicated to delivering impactful programs and resources that drive sustainable success."
-    }
-  ];
+      description:
+        "Dedicated to delivering impactful programs and resources that drive sustainable success.",
+    },
+  ]; */
+  }
 
   return (
     <section id="about" className="py-20 bg-white">
@@ -52,34 +74,46 @@ const AboutSection = () => {
               About Women Entrepreneurship
             </h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Our Women Entrepreneurship Initiative is dedicated to empowering women through education, resources, and mentorship to build thriving businesses and create economic independence.
+              Our Women Entrepreneurship Initiative is dedicated to empowering
+              women through education, resources, and mentorship to build
+              thriving businesses and create economic independence.
             </p>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              For over a decade, we have been supporting women entrepreneurs with tools and networks that help them overcome challenges and unlock their full potential.
+              For over a decade, we have been supporting women entrepreneurs
+              with tools and networks that help them overcome challenges and
+              unlock their full potential.
             </p>
-            
+
             {/* Key Points */}
             <div className="space-y-4 mb-8">
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-cyan-600 mr-3" />
-                <span className="text-gray-800">Access to funding and resources</span>
+                <span className="text-gray-800">
+                  Access to funding and resources
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-cyan-600 mr-3" />
-                <span className="text-gray-800">Personalized business mentoring</span>
+                <span className="text-gray-800">
+                  Personalized business mentoring
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-cyan-600 mr-3" />
-                <span className="text-gray-800">Skill-building workshops and training</span>
+                <span className="text-gray-800">
+                  Skill-building workshops and training
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-cyan-600 mr-3" />
-                <span className="text-gray-800">Strong, supportive community networks</span>
+                <span className="text-gray-800">
+                  Strong, supportive community networks
+                </span>
               </div>
             </div>
 
             <button className="bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-cyan-600 hover:via-blue-700 hover:to-indigo-800 transition-all duration-300 transform hover:scale-105">
-                Learn More About Our Impact
+              Learn More About Our Impact
             </button>
           </div>
 
@@ -88,7 +122,9 @@ const AboutSection = () => {
             <div className="bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-700 rounded-3xl p-8 text-white shadow-lg">
               <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
               <p className="text-lg leading-relaxed mb-6">
-                To inspire and equip women entrepreneurs with the tools, mentorship, and community support needed to build sustainable businesses and lead economic change.
+                To inspire and equip women entrepreneurs with the tools,
+                mentorship, and community support needed to build sustainable
+                businesses and lead economic change.
               </p>
               <div className="bg-white bg-opacity-20 rounded-2xl p-6">
                 <h4 className="text-xl font-semibold mb-3">Why Join Us?</h4>
@@ -112,7 +148,7 @@ const AboutSection = () => {
                 </ul>
               </div>
             </div>
-            
+
             {/* Decorative Elements */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-cyan-300 rounded-full opacity-20"></div>
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-indigo-300 rounded-full opacity-20"></div>
@@ -129,14 +165,12 @@ const AboutSection = () => {
               <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-700 font-medium">
-                {stat.label}
-              </div>
+              <div className="text-gray-700 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
 
-        {/* Values Section */}
+        {/* Values Section 
         <div>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -162,7 +196,7 @@ const AboutSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );
