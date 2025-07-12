@@ -34,7 +34,7 @@ const AboutSection = () => {
       label: "Agri Support",
     },
   ];
-
+/*
   const values = [
     {
       icon: <Cpu className="h-6 w-6" />,
@@ -61,7 +61,7 @@ const AboutSection = () => {
         "We nurture growth — of crops, communities, and agricultural businesses alike.",
     },
   ];
-
+*/
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -166,7 +166,7 @@ const AboutSection = () => {
           ))}
         </div>
 
-        {/* Values Section */}
+        {/* Values Section 
         <div>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -197,7 +197,7 @@ const AboutSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );

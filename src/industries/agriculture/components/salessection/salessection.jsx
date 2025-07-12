@@ -56,13 +56,13 @@ const SalesSection = () => {
   return (
     <section id="sales" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+       <div className="text-center mb-16">
+          {/*<h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             Choose Your AgriNxt Plan
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Unlock the power of smart agriculture with our tailored pricing plans. From small farms to large agribusinesses, we have a solution for you.
-          </p>
+          </p>*/}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pricingPlans.map((plan, index) => (
