@@ -4,10 +4,8 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { ChevronRight, Zap, Shield, Gauge, Navigation } from "lucide-react";
 import Car from "../../../../assets/car-img.png";
 import { motion } from "framer-motion";
-import { useNavigate } from 'react-router-dom';
 
 const AutoMobilityHero = () => {
-  const navigate = useNavigate();
   const mountRef = useRef(null);
   const sceneRef = useRef(null);
   const rendererRef = useRef(null);
@@ -311,9 +309,13 @@ const AutoMobilityHero = () => {
                     : "opacity-0 translate-y-10"
                 }`}
               >
-                <button onClick={() => navigate('/about')} className="group flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition duration-300 shadow-md hover:scale-105">
+                <button className="group flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition duration-300 shadow-md hover:scale-105">
                   Explore More
                   <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </button>
+
+                <button className="px-6 py-3 text-white font-medium rounded-full border border-white/30 hover:border-white hover:bg-white/10 backdrop-blur-sm transition duration-300">
+                  Watch Demo
                 </button>
               </div>
             </div>
