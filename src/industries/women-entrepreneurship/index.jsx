@@ -13,6 +13,9 @@ import Footer from './components/footer/footer';
 import AboutPage from './pages/aboutPage/aboutPage';
 import SalesPage from './pages/salesPage/salesPage';
 
+
+
+
 import "./index.css";
 
 const WomenEntrepreneurship = () => {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Menu, X, Home, Info, DollarSign } from 'lucide-react';
-import { Link } from 'react-router-dom';
 // Import all components
 import Navbar from './components/navbar/navbar';
 import HeroCarousel from './components/herocarousel/carousel';
@@ -11,6 +10,8 @@ import Footer from './components/footer/footer';
 // Import pages
 import AboutPage from './pages/aboutPage/aboutPage';
 import SalesPage from './pages/salesPage/salesPage';
+
+
 
 import "./index.css";
 

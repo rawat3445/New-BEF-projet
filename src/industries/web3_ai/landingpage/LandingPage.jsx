@@ -7,6 +7,8 @@ import ContentSections from './Components/ContentSections';
 import Footer from './Components/Footer';
 import "./styles.css"
 
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LandingPage() {

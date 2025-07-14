@@ -12,7 +12,10 @@ import Footer from './components/footer/footer';
 import AboutPage from './pages/aboutPage/aboutPage';
 import SalesPage from './pages/salesPage/salesPage';
 
-import './environment.css';
+
+
+
+import "./environment.css";
 
 const EnvironmentIndustry = () => {
   const [currentView, setCurrentView] = useState('home');

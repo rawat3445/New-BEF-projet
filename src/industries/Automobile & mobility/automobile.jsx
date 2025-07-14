@@ -7,6 +7,10 @@ import Navbar from './components/navbar/Navbar';
 import ServiceCards from './servicesCard/Card';
 import AboutSection from './components/aboutsection/About';
 import Footer from './components/footer/Footer';
+import ContactUs from './components/contactus/ContactUs';
+
+import AutoMobilityHero from "./components/herosection/Hero";
+
 
 // Import pages
 import AboutPage from './pages/Aboutpage';

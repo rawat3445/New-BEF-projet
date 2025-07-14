@@ -7,6 +7,9 @@ import HeroCarousel from './components/herocarousel/herocarousel';
 import SalesSection from './components/salessection/salessection';
 import AboutSection from './components/aboutsection/aboutsection';
 import Footer from './components/footer/footer';
+import ContactUs from './components/contactus/contactus';
+
+
 
 // Import pages
 import AboutPage from './pages/aboutpage/aboutPage';
