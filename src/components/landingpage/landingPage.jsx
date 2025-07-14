@@ -191,7 +191,10 @@ const LandingPage = () => {
 
       
       <FeaturedSection />
+
+      <section id="industries">
       <Industry />
+      </section>
 
       {/* Carousel Section */}
       <section id="gallery" className="py-20 bg-gray-900">
