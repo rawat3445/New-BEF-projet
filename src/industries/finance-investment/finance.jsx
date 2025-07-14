@@ -7,7 +7,7 @@ import HeroCarousel from './components/herocarousel/carousel';
 import ServiceCards from './components/servicecards/cards';
 import AboutSection from './components/aboutsection/aboutsec';
 import Footer from './components/footer/footer';
-
+import ContactUs from './components/contactus/contactus';
 // Import pages
 import AboutPage from './pages/aboutPage/aboutPage';
 import InvestmentPlansPage from './pages/salesPage/salesPage';
@@ -155,7 +155,7 @@ const Finance = () => {
         {/* Render appropriate content */}
         {renderContent()}
       </main>
-
+<ContactUs />
       {/* Footer */}
       <Footer />
 

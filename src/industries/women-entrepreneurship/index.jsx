@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { ArrowLeft, Menu, X, Home, Info, DollarSign } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { ArrowLeft, DollarSign, Info } from "lucide-react";
+
 
 // Import all components
 import Navbar from './components/navbar/navbar';
@@ -8,35 +8,26 @@ import HeroCarousel from './components/herocarousel/carousel';
 import ServiceCards from './components/servicecards/cards';
 import AboutSection from './components/aboutsection.jsx/aboutsec';
 import Footer from './components/footer/footer';
-
+import ContactUs from './components/contactus/contactus';
 // Import pages
 import AboutPage from './pages/aboutPage/aboutPage';
 import SalesPage from './pages/salesPage/salesPage';
 
+
+
+
 import "./index.css";
 
 const WomenEntrepreneurship = () => {
-  const [currentView, setCurrentView] = useState('home');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navigationItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'about', label: 'About', icon: Info },
-    { id: 'sales', label: 'Pricing', icon: DollarSign }
-  ];
-
-  const handleNavigation = (view) => {
-    setCurrentView(view);
-    setIsMobileMenuOpen(false);
-  };
+  const [currentView, setCurrentView] = useState("home");
 
   const renderContent = () => {
     switch (currentView) {
-      case 'about':
-        return <AboutPage onBack={() => setCurrentView('home')} />;
-      case 'sales':
+      case "about":
+        return <AboutPage onBack={() => setCurrentView("home")} />;
+      case "sales":
         return <SalesPage />;
-      case 'home':
+      case "home":
       default:
         return (
           <>
@@ -50,76 +41,12 @@ const WomenEntrepreneurship = () => {
 
   return (
     <div className="women-entrepreneurship">
-      {/* Navigation Header */}
-      <div className="industry-nav">
-        <div className="nav-container">
-          <div className="nav-brand">
-            <Link to={'/'}>
-              <div className="brand-logo">
-                <div className="logo-icon">W</div>
-                <div className="brand-text">
-                  <h1>Bharat Economic Forum</h1>
-                  <span className="brand-tagline">Empowering Women Entrepreneurs Nationwide</span>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="desktop-nav">
-            {navigationItems.map((item) => {
-              const IconComponent = item.icon;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavigation(item.id)}
-                  className={`nav-item ${currentView === item.id ? 'active' : ''}`}
-                >
-                  <IconComponent size={18} className="nav-icon" />
-                  <span className="nav-label">{item.label}</span>
-                </button>
-              );
-            })}
-          </nav>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            className="mobile-menu-toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="mobile-nav">
-            <div className="mobile-nav-overlay" onClick={() => setIsMobileMenuOpen(false)} />
-            <div className="mobile-nav-content">
-              {navigationItems.map((item) => {
-                const IconComponent = item.icon;
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => handleNavigation(item.id)}
-                    className={`mobile-nav-item ${currentView === item.id ? 'active' : ''}`}
-                  >
-                    <IconComponent size={20} className="nav-icon" />
-                    <span className="nav-label">{item.label}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        )}
-      </div>
-
       {/* Breadcrumb */}
-      {currentView !== 'home' && (
+      {currentView !== "home" && (
         <div className="breadcrumb">
           <div className="breadcrumb-container">
             <button
-              onClick={() => setCurrentView('home')}
+              onClick={() => setCurrentView("home")}
               className="breadcrumb-back"
             >
               <ArrowLeft size={16} />
@@ -127,7 +54,11 @@ const WomenEntrepreneurship = () => {
             </button>
             <div className="breadcrumb-separator">/</div>
             <div className="breadcrumb-current">
-              {navigationItems.find(item => item.id === currentView)?.label}
+              {currentView === "about"
+                ? "About"
+                : currentView === "sales"
+                ? "Pricing"
+                : ""}
             </div>
           </div>
         </div>
@@ -135,25 +66,26 @@ const WomenEntrepreneurship = () => {
 
       {/* Main Content */}
       <main className="main-content">
-        {currentView === 'home' && <Navbar />}
+        {currentView === "home" && <Navbar />}
         {renderContent()}
       </main>
 
       {/* Footer */}
+      <ContactUs />
       <Footer />
 
       {/* Floating Action Button */}
-      {currentView === 'home' && (
+      {currentView === "home" && (
         <div className="floating-actions">
           <button
-            onClick={() => setCurrentView('sales')}
+            onClick={() => setCurrentView("sales")}
             className="fab-primary"
             title="Explore Opportunities"
           >
             <DollarSign size={20} />
           </button>
           <button
-            onClick={() => setCurrentView('about')}
+            onClick={() => setCurrentView("about")}
             className="fab-secondary"
             title="Learn More"
           >
