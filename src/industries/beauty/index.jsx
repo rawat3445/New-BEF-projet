@@ -1,3 +1,18 @@
+
+import React, { useState } from 'react';
+import { ArrowLeft, Menu, X, Home, Info, DollarSign } from 'lucide-react';
+import { Link } from 'react-router-dom';
+// Import all components
+import Navbar from './components/navbar/navbar';
+import HeroCarousel from './components/herocarousel/carousel';
+import ServiceCards from './components/servicecards/cards';
+import AboutSection from './components/aboutsection.jsx/aboutsec';
+import Footer from './components/footer/footer';
+import ContactUs from './components/contactus/contactus.jsx';
+// Import pages
+import AboutPage from './pages/aboutPage/aboutPage';
+import SalesPage from './pages/salesPage/salesPage';
+
 import React, { useState } from "react";
 import { ArrowLeft, Home, Info, DollarSign } from "lucide-react";
 import Navbar from "./components/navbar/navbar";
@@ -7,6 +22,7 @@ import AboutSection from "./components/aboutsection.jsx/aboutsec";
 import Footer from "./components/footer/footer";
 import AboutPage from "./pages/aboutPage/aboutPage";
 import SalesPage from "./pages/salesPage/salesPage";
+
 
 import "./index.css";
 
@@ -62,7 +78,7 @@ const BeautyWellnessIndustry = () => {
         {currentView === "home" && <Navbar setCurrentView={setCurrentView} />}
         {renderContent()}
       </main>
-
+<ContactUs />
       {/* Footer */}
       <Footer />
 

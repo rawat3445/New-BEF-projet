@@ -1,3 +1,14 @@
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Navbar from './Components/Navbar';
+import HeroSection from './Components/HeroSection';
+import ContentSections from './Components/ContentSections';
+import Footer from './Components/Footer';
+import ContactUs from './Components/contactus/contactus';
+import "./styles.css"
+
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -6,6 +17,7 @@ import HeroSection from "./Components/HeroSection";
 import ContentSections from "./Components/ContentSections";
 import Footer from "./Components/Footer";
 import "./styles.css";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,6 +65,13 @@ export default function LandingPage() {
         </div>
       </div>
 
+
+      {/* Sections */}
+      <HeroSection />
+      <ContentSections />
+      <ContactUs />
+      <Footer />
+
       {/* Main Content */}
       <div className="pt-[80px]">
         {" "}
@@ -61,6 +80,7 @@ export default function LandingPage() {
         <ContentSections />
         <Footer />
       </div>
+
     </div>
   );
 }

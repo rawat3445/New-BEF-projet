@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import { ArrowLeft, Home, Info, DollarSign } from "lucide-react";
 
 // Import all components
+
+import Navbar from './components/navbar/Navbar';
+// import HeroCarousel from './components/herosection/HeroSection';
+import ServiceCards from './servicesCard/Card';
+import AboutSection from './components/aboutsection/About';
+import Footer from './components/footer/Footer';
+import ContactUs from './components/contactus/ContactUs';
+
 import Navbar from "./components/navbar/Navbar";
 import ServiceCards from "./servicesCard/Card";
 import AboutSection from "./components/aboutsection/About";
 import Footer from "./components/footer/Footer";
 import AutoMobilityHero from "./components/herosection/Hero";
+
 
 // Import pages
 import AboutPage from "./pages/Aboutpage";
@@ -70,7 +79,7 @@ const AutomobileIndustry = () => {
         {/* Render appropriate content */}
         {renderContent()}
       </main>
-
+<ContactUs />
       {/* Footer */}
       <Footer />
 

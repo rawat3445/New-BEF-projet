@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import { ArrowLeft, DollarSign, Info } from "lucide-react";
 
+
+// Import all components
+import Navbar from './components/navbar/navbar';
+import HeroCarousel from './components/herocarousel/carousel';
+import ServiceCards from './components/servicecards/cards';
+import AboutSection from './components/aboutSection/aboutSection';
+import Footer from './components/footer/footer';
+import ContactUs from './components/contactus/contactus';
+// Import pages
+import AboutPage from './pages/aboutPage/aboutPage';
+import SalesPage from './pages/salesPage/salesPage';
+
 // Components
 import Navbar from "./components/navbar/navbar";
 import HeroCarousel from "./components/herocarousel/carousel";
@@ -11,6 +23,7 @@ import Footer from "./components/footer/footer";
 // Pages
 import AboutPage from "./pages/aboutPage/aboutPage";
 import SalesPage from "./pages/salesPage/salesPage";
+
 
 import "./environment.css";
 
@@ -66,7 +79,7 @@ const EnvironmentIndustry = () => {
         {currentView === "home" && <Navbar setCurrentView={setCurrentView} />}
         {renderContent()}
       </main>
-
+<ContactUs />
       {/* Footer */}
       <Footer />
 
