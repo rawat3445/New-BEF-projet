@@ -7,7 +7,6 @@ import HeroCarousel from './components/herocarousel/carousel';
 import ServiceCards from './components/servicecards/cards';
 import AboutSection from './components/aboutsection/aboutsec';
 import Footer from './components/footer/footer';
-import ContactUs from './components/contactus/contactus';
 
 
 

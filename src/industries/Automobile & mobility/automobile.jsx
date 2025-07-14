@@ -7,7 +7,6 @@ import Navbar from './components/navbar/Navbar';
 import ServiceCards from './servicesCard/Card';
 import AboutSection from './components/aboutsection/About';
 import Footer from './components/footer/Footer';
-import ContactUs from './components/contactus/ContactUs';
 
 import AutoMobilityHero from "./components/herosection/Hero";
 
@@ -17,7 +16,6 @@ import AboutPage from './pages/Aboutpage';
 import SalesPage from './pages/SalesPage';
 
 import './automobile.css';
-import AutoMobilityHero from './components/herosection/Hero';
 
 const AutomobileIndustry = () => {
   const [currentView, setCurrentView] = useState('home');

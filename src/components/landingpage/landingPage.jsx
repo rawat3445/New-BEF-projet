@@ -419,7 +419,7 @@ const LandingPage = () => {
 
       {/* Featured Section */}
       <FeaturedSection />
-      {/* Industries Cards Section */}
+
       <section id="industries">
       <Industry />
       </section>
