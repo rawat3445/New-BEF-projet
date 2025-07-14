@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -8,47 +9,41 @@ import Footer from './Components/Footer';
 import ContactUs from './Components/contactus/contactus';
 import "./styles.css"
 
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Navbar from "./Components/Navbar";
+import HeroSection from "./Components/HeroSection";
+import ContentSections from "./Components/ContentSections";
+import Footer from "./Components/Footer";
+import "./styles.css";
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LandingPage() {
   const globeRef = useRef();
-  const navbarRef = useRef();
 
   useEffect(() => {
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: document.body,
-        start: 'top top',
-        end: '70% top',
-        scrub: 2,
-      },
-    }).to(globeRef.current, {
-      scale: 0.3,
-      ease: 'power2.inOut',
-    });
-
-    let lastScrollY = window.scrollY;
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY) {
-        gsap.to(navbarRef.current, { y: 0, duration: 0.3 });
-      } else {
-        gsap.to(navbarRef.current, { y: -200, duration: 0.3 });
-      }
-      lastScrollY = currentScrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: document.body,
+          start: "top top",
+          end: "70% top",
+          scrub: 2,
+        },
+      })
+      .to(globeRef.current, {
+        scale: 0.3,
+        ease: "power2.inOut",
+      });
   }, []);
 
   return (
     <div className="relative min-h-[200vh] bg-gray-950 text-white overflow-hidden">
-      {/* Navbar */}
-      <div
-        ref={navbarRef}
-        className="fixed top-0 left-0 w-full z-30 bg-gray-900 bg-opacity-90 shadow-md transform -translate-y-full"
-      >
+      {/* ✅ Navbar: gradient background + sticky */}
+      <div className="fixed top-0 left-0 w-full z-50 shadow-md bg-gradient-to-r from-indigo-900 via-purple-900 to-rose-800">
         <Navbar />
       </div>
 
@@ -70,11 +65,22 @@ export default function LandingPage() {
         </div>
       </div>
 
+
       {/* Sections */}
       <HeroSection />
       <ContentSections />
       <ContactUs />
       <Footer />
+
+      {/* Main Content */}
+      <div className="pt-[80px]">
+        {" "}
+        {/* To push content below navbar height */}
+        <HeroSection />
+        <ContentSections />
+        <Footer />
+      </div>
+
     </div>
   );
 }

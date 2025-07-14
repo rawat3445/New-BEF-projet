@@ -17,7 +17,7 @@ const RuralAboutSection = () => {
     { icon: <Wifi className="h-8 w-8" />, number: "2,400+", label: "Digital Villages" },
     { icon: <BookOpen className="h-8 w-8" />, number: "1M+", label: "Trained Individuals" }
   ];
-
+/*
   const values = [
     {
       icon: <Lightbulb className="h-6 w-6" />,
@@ -40,7 +40,7 @@ const RuralAboutSection = () => {
       description: "Award-winning projects recognized by NITI Aayog"
     }
   ];
-
+*/
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -126,7 +126,7 @@ const RuralAboutSection = () => {
           ))}
         </div>
 
-        {/* Values Section */}
+        {/* Values Section 
         <div>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -152,7 +152,7 @@ const RuralAboutSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );

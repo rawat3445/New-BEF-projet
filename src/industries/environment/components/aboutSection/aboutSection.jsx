@@ -1,24 +1,41 @@
-import React from 'react';
-import { 
-  Award, 
-  Users, 
-  TrendingUp, 
+import React from "react";
+import {
+  Award,
+  Users,
+  TrendingUp,
   Clock,
   CheckCircle,
   Lightbulb,
   Target,
-  Heart
-} from 'lucide-react';
+  Heart,
+} from "lucide-react";
 
 const AboutSection = () => {
   const stats = [
-    { icon: <Users className="h-8 w-8" />, number: "1000+", label: "Community Members" },
-    { icon: <Award className="h-8 w-8" />, number: "10+", label: "Years of Impact" },
-    { icon: <TrendingUp className="h-8 w-8" />, number: "80%", label: "Carbon Footprint Reduced" },
-    { icon: <Clock className="h-8 w-8" />, number: "24/7", label: "Volunteer Support" }
+    {
+      icon: <Users className="h-8 w-8" />,
+      number: "1000+",
+      label: "Community Members",
+    },
+    {
+      icon: <Award className="h-8 w-8" />,
+      number: "10+",
+      label: "Years of Impact",
+    },
+    {
+      icon: <TrendingUp className="h-8 w-8" />,
+      number: "80%",
+      label: "Carbon Footprint Reduced",
+    },
+    {
+      icon: <Clock className="h-8 w-8" />,
+      number: "24/7",
+      label: "Volunteer Support",
+    },
   ];
 
-  const values = [
+  {
+    /* const values = [
     {
       icon: <Lightbulb className="h-6 w-6" />,
       title: "Sustainability",
@@ -39,7 +56,8 @@ const AboutSection = () => {
       title: "Transparency",
       description: "We maintain open, honest communication and report our environmental progress clearly."
     }
-  ];
+  ]; */
+  }
 
   return (
     <section id="about" className="py-20 bg-white">
@@ -52,29 +70,42 @@ const AboutSection = () => {
               About Environment and Sustainability
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Environment and Sustainability is a dedicated environmental organization working towards a greener, cleaner, and more sustainable world. We believe that small actions, when multiplied, can lead to powerful results.
+              Environment and Sustainability is a dedicated environmental
+              organization working towards a greener, cleaner, and more
+              sustainable world. We believe that small actions, when multiplied,
+              can lead to powerful results.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Through awareness programs, eco-projects, and collaborative initiatives, we aim to drive meaningful environmental impact and nurture a culture of sustainability across communities.
+              Through awareness programs, eco-projects, and collaborative
+              initiatives, we aim to drive meaningful environmental impact and
+              nurture a culture of sustainability across communities.
             </p>
-            
+
             {/* Key Points */}
             <div className="space-y-4 mb-8">
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Grassroots environmental initiatives</span>
+                <span className="text-gray-700">
+                  Grassroots environmental initiatives
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Eco-awareness and education programs</span>
+                <span className="text-gray-700">
+                  Eco-awareness and education programs
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Tree planting & clean-up drives</span>
+                <span className="text-gray-700">
+                  Tree planting & clean-up drives
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Global collaboration for climate action</span>
+                <span className="text-gray-700">
+                  Global collaboration for climate action
+                </span>
               </div>
             </div>
 
@@ -88,7 +119,9 @@ const AboutSection = () => {
             <div className="bg-gradient-to-br from-lime-500 to-green-600 rounded-3xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
               <p className="text-lg leading-relaxed mb-6">
-                To inspire, educate, and mobilize people worldwide to protect nature and combat climate change through sustainable practices and collective action.
+                To inspire, educate, and mobilize people worldwide to protect
+                nature and combat climate change through sustainable practices
+                and collective action.
               </p>
               <div className="bg-white bg-opacity-20 rounded-2xl p-6 text-gray-600">
                 <h4 className="text-xl font-semibold mb-3">Why Support Us?</h4>
@@ -129,14 +162,12 @@ const AboutSection = () => {
               <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 font-medium">
-                {stat.label}
-              </div>
+              <div className="text-gray-600 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
 
-        {/* Values Section */}
+        {/* Values Section 
         <div>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -162,7 +193,7 @@ const AboutSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );
