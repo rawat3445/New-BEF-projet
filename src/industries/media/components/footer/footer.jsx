@@ -108,7 +108,7 @@ const Footer = () => {
 
           {/* Newsletter and Socials */}
           <div>
-            <h4 className="text-xl font-semibold mb-6">Join Our Universe</h4>
+            <h4 className="text-xl font-semibold mb-6">Stay Connected</h4>
             <p className="text-gray-300 mb-4">
               Subscribe for behind-the-scenes content, exclusive trailers, and the latest entertainment buzz.
             </p>

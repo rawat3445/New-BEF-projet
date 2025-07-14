@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Film,
   Music,
@@ -7,18 +7,35 @@ import {
   CheckCircle,
   Lightbulb,
   Heart,
-  Star
-} from 'lucide-react';
+  Star,
+} from "lucide-react";
 
 const AboutSection = () => {
   const stats = [
-    { icon: <Users className="h-8 w-8" />, number: "10M+", label: "Viewers Reached" },
-    { icon: <Film className="h-8 w-8" />, number: "1,200+", label: "Projects Delivered" },
-    { icon: <Music className="h-8 w-8" />, number: "500+", label: "Artists Collaborated" },
-    { icon: <Calendar className="h-8 w-8" />, number: "24/7", label: "Live Support" }
+    {
+      icon: <Users className="h-8 w-8" />,
+      number: "10M+",
+      label: "Viewers Reached",
+    },
+    {
+      icon: <Film className="h-8 w-8" />,
+      number: "1,200+",
+      label: "Projects Delivered",
+    },
+    {
+      icon: <Music className="h-8 w-8" />,
+      number: "500+",
+      label: "Artists Collaborated",
+    },
+    {
+      icon: <Calendar className="h-8 w-8" />,
+      number: "24/7",
+      label: "Live Support",
+    },
   ];
 
-  const values = [
+  {
+    /*const values = [
     {
       icon: <Lightbulb className="h-6 w-6" />,
       title: "Creative Excellence",
@@ -39,7 +56,8 @@ const AboutSection = () => {
       title: "Quality Production",
       description: "From script to screen, we ensure the highest standards of production and storytelling."
     }
-  ];
+  ]; */
+  }
 
   return (
     <section id="about" className="py-20 bg-white">
@@ -52,29 +70,41 @@ const AboutSection = () => {
               About MediaVerse
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              MediaVerse is a dynamic media & entertainment agency delivering engaging content, cinematic productions, and next-gen storytelling experiences. We bridge creativity and technology to entertain, inform, and inspire.
+              MediaVerse is a dynamic media & entertainment agency delivering
+              engaging content, cinematic productions, and next-gen storytelling
+              experiences. We bridge creativity and technology to entertain,
+              inform, and inspire.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              From digital films and ad campaigns to live shows and streaming content — we help brands and creators shine across all screens.
+              From digital films and ad campaigns to live shows and streaming
+              content — we help brands and creators shine across all screens.
             </p>
 
             {/* Key Points */}
             <div className="space-y-4 mb-8">
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-indigo-500 mr-3" />
-                <span className="text-gray-700">Award-winning productions & series</span>
+                <span className="text-gray-700">
+                  Award-winning productions & series
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-indigo-500 mr-3" />
-                <span className="text-gray-700">Multi-platform content expertise</span>
+                <span className="text-gray-700">
+                  Multi-platform content expertise
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-indigo-500 mr-3" />
-                <span className="text-gray-700">Top-tier artist collaborations</span>
+                <span className="text-gray-700">
+                  Top-tier artist collaborations
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-indigo-500 mr-3" />
-                <span className="text-gray-700">Interactive & immersive storytelling</span>
+                <span className="text-gray-700">
+                  Interactive & immersive storytelling
+                </span>
               </div>
             </div>
 
@@ -88,10 +118,13 @@ const AboutSection = () => {
             <div className="bg-gradient-to-br from-indigo-500 to-pink-600 rounded-3xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">Our Vision</h3>
               <p className="text-lg leading-relaxed mb-6">
-                To redefine entertainment through powerful stories and unforgettable media experiences that leave lasting impressions.
+                To redefine entertainment through powerful stories and
+                unforgettable media experiences that leave lasting impressions.
               </p>
               <div className="bg-white bg-opacity-20 rounded-2xl p-6">
-                <h4 className="text-xl font-semibold mb-3">Why Work With Us?</h4>
+                <h4 className="text-xl font-semibold mb-3">
+                  Why Work With Us?
+                </h4>
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
@@ -129,14 +162,12 @@ const AboutSection = () => {
               <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 font-medium">
-                {stat.label}
-              </div>
+              <div className="text-gray-600 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
 
-        {/* Values Section */}
+        {/* Values Section 
         <div>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -162,7 +193,7 @@ const AboutSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
