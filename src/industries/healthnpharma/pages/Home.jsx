@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import useInView from '../hooks/useInView';
 import './Home.css';
+import { useNavigate } from 'react-router-dom';
 
 // Import your local images from assets
 import benefit1 from '../assets/media.png';
@@ -87,6 +88,7 @@ const benefits = [
 ];
 
 const HealthSponsorship = () => {
+	const navigate = useNavigate();
 	return (
 		<section className="sponsorship-page">
 			<div className="intro-section">
@@ -95,8 +97,9 @@ const HealthSponsorship = () => {
 					Join us in shaping India’s healthcare revolution. Showcase your brand, build partnerships, and align with the national vision for a healthier, more innovative Bharat.
 				</p>
 				<div className="cta-buttons fade-in delay-2">
-					<button className="primary-btn">Partner With Us</button>
-					<button className="secondary-btn">Explore Delegate Options</button>
+					<button
+					onClick={() => navigate('/about')}
+					 className="primary-btn">Explore More</button>
 				</div>
 			</div>
 
