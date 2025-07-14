@@ -81,7 +81,7 @@ const RuralFooter = () => {
 
           {/* Newsletter */}
           <div className="md:col-span-2">
-            <h4 className="text-xl font-semibold mb-6">Subscribe to Our Newsletter</h4>
+            <h4 className="text-xl font-semibold mb-6">Stay Connected</h4>
             <p className="text-gray-300 mb-4">
               Get monthly updates on rural transformation initiatives across India.
             </p>

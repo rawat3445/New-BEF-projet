@@ -17,7 +17,7 @@ const AboutSection = () => {
     { icon: <TrendingUp className="h-8 w-8" />, number: "95%", label: "Project Success Rate" },
     { icon: <Clock className="h-8 w-8" />, number: "24/7", label: "Customer Support" }
   ];
-
+/*
   const values = [
     {
       icon: <Lightbulb className="h-6 w-6" />,
@@ -40,7 +40,7 @@ const AboutSection = () => {
       description: "We uphold the highest standards in construction, materials, and service delivery."
     }
   ];
-
+*/
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -136,7 +136,7 @@ const AboutSection = () => {
           ))}
         </div>
 
-        {/* Values Section */}
+        {/* Values Section 
         <div>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -162,7 +162,7 @@ const AboutSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );

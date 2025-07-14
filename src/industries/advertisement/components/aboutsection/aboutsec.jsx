@@ -1,23 +1,36 @@
-import React from 'react';
-import { 
-  Award, 
-  Users, 
-  TrendingUp, 
+import React from "react";
+import {
+  Award,
+  Users,
+  TrendingUp,
   Clock,
   CheckCircle,
   Lightbulb,
   Target,
-  Heart
-} from 'lucide-react';
+  Heart,
+} from "lucide-react";
 
 const AboutSection = () => {
   const stats = [
-    { icon: <Users className="h-8 w-8" />, number: "500+", label: "Happy Clients" },
-    { icon: <Award className="h-8 w-8" />, number: "12+", label: "Years Experience" },
-    { icon: <TrendingUp className="h-8 w-8" />, number: "95%", label: "Success Rate" },
-    { icon: <Clock className="h-8 w-8" />, number: "24/7", label: "Support" }
+    {
+      icon: <Users className="h-8 w-8" />,
+      number: "500+",
+      label: "Happy Clients",
+    },
+    {
+      icon: <Award className="h-8 w-8" />,
+      number: "12+",
+      label: "Years Experience",
+    },
+    {
+      icon: <TrendingUp className="h-8 w-8" />,
+      number: "95%",
+      label: "Success Rate",
+    },
+    { icon: <Clock className="h-8 w-8" />, number: "24/7", label: "Support" },
   ];
 
+  /*
   const values = [
     {
       icon: <Lightbulb className="h-6 w-6" />,
@@ -40,6 +53,7 @@ const AboutSection = () => {
       description: "We maintain the highest standards of quality in every project, ensuring excellence in every detail."
     }
   ];
+  */
 
   return (
     <section id="about" className="py-20 bg-white">
@@ -52,29 +66,43 @@ const AboutSection = () => {
               About AdVantage
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              We are a premier advertising agency dedicated to helping businesses grow through innovative marketing strategies and creative solutions. Our team of experts combines creativity with data-driven insights to deliver campaigns that resonate with your audience and drive real results.
+              We are a premier advertising agency dedicated to helping
+              businesses grow through innovative marketing strategies and
+              creative solutions. Our team of experts combines creativity with
+              data-driven insights to deliver campaigns that resonate with your
+              audience and drive real results.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Since our founding, we've helped hundreds of businesses across various industries achieve their marketing goals and establish strong brand presence in the digital landscape.
+              Since our founding, we've helped hundreds of businesses across
+              various industries achieve their marketing goals and establish
+              strong brand presence in the digital landscape.
             </p>
-            
+
             {/* Key Points */}
             <div className="space-y-4 mb-8">
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Award-winning creative campaigns</span>
+                <span className="text-gray-700">
+                  Award-winning creative campaigns
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Data-driven marketing strategies</span>
+                <span className="text-gray-700">
+                  Data-driven marketing strategies
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Full-service advertising solutions</span>
+                <span className="text-gray-700">
+                  Full-service advertising solutions
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Dedicated account management</span>
+                <span className="text-gray-700">
+                  Dedicated account management
+                </span>
               </div>
             </div>
 
@@ -88,7 +116,9 @@ const AboutSection = () => {
             <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
               <p className="text-lg leading-relaxed mb-6">
-                To empower businesses with innovative advertising solutions that create meaningful connections between brands and their audiences, driving sustainable growth and success.
+                To empower businesses with innovative advertising solutions that
+                create meaningful connections between brands and their
+                audiences, driving sustainable growth and success.
               </p>
               <div className="bg-white bg-opacity-20 rounded-2xl p-6">
                 <h4 className="text-xl font-semibold mb-3">Why Choose Us?</h4>
@@ -112,7 +142,7 @@ const AboutSection = () => {
                 </ul>
               </div>
             </div>
-            
+
             {/* Decorative Elements */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full opacity-20"></div>
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-pink-400 rounded-full opacity-20"></div>
@@ -129,14 +159,13 @@ const AboutSection = () => {
               <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 font-medium">
-                {stat.label}
-              </div>
+              <div className="text-gray-600 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
 
-        {/* Values Section */}
+        {/* Core Values Section - Commented as per request */}
+        {/*
         <div>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -163,6 +192,7 @@ const AboutSection = () => {
             ))}
           </div>
         </div>
+        */}
       </div>
     </section>
   );

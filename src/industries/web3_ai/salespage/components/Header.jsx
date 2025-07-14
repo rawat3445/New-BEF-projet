@@ -1,78 +1,63 @@
-import React from 'react';
-import { Link } from 'react-scroll';
-import logo_path from '../assets/img/logo.png'; // adjust path as needed
-import {Mail} from 'lucide-react';
-import {Link as Link1  } from 'react-router-dom';
+import React from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
+import logo_path from "../assets/img/beflogo.png";
+
 const Header = () => {
   return (
     <>
+      {/* Sticky Navbar */}
+      <div className="industry-nav fixed top-0 w-full z-50 bg-gradient-to-r from-indigo-900 via-purple-900 to-rose-800 shadow-md">
+        <div className="nav-container px-4 py-3 flex flex-col md:flex-row justify-between items-center w-full">
+          {/* Brand */}
+          <div className="nav-brand">
+            <div className="brand-logo flex items-center">
+              <img src={logo_path} alt="BEF Logo" className="w-24 h-auto" />
+              <div className="brand-text ml-3">
+                <h1 className="text-xl font-bold text-white">
+                  Bharat Economic Forum
+                </h1>
+                <span className="text-sm text-gray-200">
+                  Empowering Innovation
+                </span>
+              </div>
+            </div>
+          </div>
 
-   
-      {/* Top Banner */}
-      <div className="contactheader flex flex-col md:flex-row items-center justify-between h-auto md:h-10 w-full bg-purple-950 px-4 py-2 md:py-0">
-        <p className="text-lime-50 text-center md:text-left">
-          <span className="text-base font-semibold">Viksit Bharat by 2047 </span>
-          <span className="text-sm font-normal">Innovate , Collaborate , Celebrate </span>
-        </p>
+          {/* Navigation */}
+          <nav className="desktop-nav flex gap-4 mt-4 md:mt-0">
+            <RouterLink
+              to="/web_ai"
+              className="nav-item text-white hover:text-yellow-200 font-medium"
+            >
+              Home
+            </RouterLink>
 
-        <div className="contact-us flex items-center mt-2 md:mt-0">
-          {/* <i className="bx bx-envelope text-white mr-2"></i> */}
-          <Mail className='text-white mr-2' />
-          <Link
-            className="text-lime-50 text-sm md:text-base"
-            activeClass="active"
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
-            Contact Us
-          </Link>
+            {/* 
+            <ScrollLink
+              to="event"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="nav-item text-white hover:text-yellow-200 font-medium cursor-pointer"
+            >
+              Event
+            </ScrollLink> 
+            */}
+
+            <ScrollLink
+              to="delegate"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="nav-item text-white hover:text-yellow-200 font-medium cursor-pointer"
+            >
+              Delegate
+            </ScrollLink>
+          </nav>
         </div>
-      </div>
-
-      {/* Main Header with Logo and Menu */}
-      <div id="header-div" className="flex flex-col md:flex-row justify-between items-center w-full bg-white px-4 py-3 shadow-md">
-        {/* Logo */}
-        <div className="logo w-28 h-auto mb-2 md:mb-0">
-          <img src={logo_path} alt="BEF Logo" className="w-full h-auto" />
-        </div>
-
-        {/* Navigation */}
-        <nav className="menu flex flex-col md:flex-row items-center gap-3 md:gap-6">
-            <Link1
-            className="cursor-pointer text-gray-800 hover:text-purple-700 font-medium"
-            activeClass="active"
-            to="/web_ai"
-          >
-            Home
-          </Link1>
-            
-          <Link
-            className="cursor-pointer text-gray-800 hover:text-purple-700 font-medium"
-            activeClass="active"
-            to="event"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
-            Event
-          </Link>
-          <Link
-            className="cursor-pointer text-gray-800 hover:text-purple-700 font-medium"
-            activeClass="active"
-            to="delegate"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
-            Delegate
-          </Link>
-        
-        </nav>
       </div>
     </>
   );
