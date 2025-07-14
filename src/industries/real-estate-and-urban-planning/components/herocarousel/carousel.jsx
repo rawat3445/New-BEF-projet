@@ -1,9 +1,3 @@
-
-import React, { useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Play, ArrowRight, Pause } from 'lucide-react';
-import './carousel.css'
-import { useNavigate } from 'react-router-dom';
-
 import React, { useState, useEffect, useCallback } from "react";
 import {
   ChevronLeft,
@@ -14,27 +8,19 @@ import {
 } from "lucide-react";
 import "./carousel.css";
 
-
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const navigate = useNavigate();
-
 
   const slides = [
     {
       id: 1,
       title: "Build Your Future",
       subtitle: "Modern Urban Living",
-
-      description: "Explore premium residential and commercial spaces designed for sustainable urban lifestyles.",
-      buttonText: "Explore More",
-
       description:
         "Explore premium residential and commercial spaces designed for sustainable urban lifestyles.",
       buttonText: "View Properties",
-
       background: "from-blue-700 via-teal-600 to-green-600",
       accent: "from-blue-400 to-teal-400",
     },
@@ -42,14 +28,9 @@ const HeroCarousel = () => {
       id: 2,
       title: "Smart City Planning",
       subtitle: "Innovative Urban Solutions",
-
-      description: "Discover how smart planning and technology are transforming cities into vibrant, livable spaces.",
-      buttonText: "Explore More",
-
       description:
         "Discover how smart planning and technology are transforming cities into vibrant, livable spaces.",
       buttonText: "Learn More",
-
       background: "from-gray-800 via-indigo-700 to-blue-800",
       accent: "from-indigo-500 to-blue-500",
     },
@@ -57,14 +38,9 @@ const HeroCarousel = () => {
       id: 3,
       title: "Sustainable Development",
       subtitle: "Green Spaces & Infrastructure",
-
-      description: "Committed to eco-friendly designs and sustainable urban growth for a better tomorrow.",
-      buttonText: "Explore More",
-
       description:
         "Committed to eco-friendly designs and sustainable urban growth for a better tomorrow.",
       buttonText: "Get Involved",
-
       background: "from-green-700 via-emerald-600 to-lime-600",
       accent: "from-green-400 to-emerald-400",
     },
@@ -156,12 +132,13 @@ const HeroCarousel = () => {
                 {currentSlideData.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-right opacity-0 delay-300">
-                <button
-                  onClick={() => navigate('/about')}
-                  className="group bg-white text-gray-900 hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl"
-                >
+                <button className="group bg-white text-gray-900 hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl">
                   {currentSlideData.buttonText}
                   <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
+                </button>
+                <button className="group glass-effect text-white hover:bg-white hover:bg-opacity-20 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl">
+                  <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                  Watch Demo
                 </button>
               </div>
             </div>
@@ -206,13 +183,8 @@ const HeroCarousel = () => {
         <div
           className={`h-full bg-gradient-to-r ${currentSlideData.accent} transition-all duration-1000 ease-linear`}
           style={{
-
-            width: isAutoPlaying ? '100%' : '0%',
-            animation: isAutoPlaying ? 'progress 6s linear infinite' : 'none'
-
             width: isAutoPlaying ? "100%" : "0%",
             animation: isAutoPlaying ? "progress 6s linear infinite" : "none",
-
           }}
         ></div>
       </div>
@@ -224,18 +196,11 @@ const HeroCarousel = () => {
             key={index}
             onClick={() => goToSlide(index)}
             disabled={isTransitioning}
-
-            className={`relative overflow-hidden rounded-full transition-all duration-500 hover:scale-125 disabled:cursor-not-allowed ${index === currentSlide
-                ? 'w-12 h-4 bg-white'
-                : 'w-4 h-4 bg-white bg-opacity-50 hover:bg-opacity-75'
-              }`}
-
             className={`relative overflow-hidden rounded-full transition-all duration-500 hover:scale-125 disabled:cursor-not-allowed ${
               index === currentSlide
                 ? "w-12 h-4 bg-white"
                 : "w-4 h-4 bg-white bg-opacity-50 hover:bg-opacity-75"
             }`}
-
             aria-label={`Go to slide ${index + 1}`}
           >
             {index === currentSlide && (
