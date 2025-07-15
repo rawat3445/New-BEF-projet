@@ -38,8 +38,10 @@ const Hero = () => {
           <span className="gradient-text">Viksit Bharat 2047</span>
         </h1>
         <p className="text-lg sm:text-xl text-gray-200">
-          We are building a visionary and resilient India through innovation,
-          collaboration, and a human-centric development model.
+          The Bharat Economic Forum (BEF) is an Independent Think Tank For
+          Viksit Bharat@2047 . Its a global platform for discussing, debating,
+          and shaping India’s economic policies, business strategies, and
+          development initiatives.
         </p>
         <div className="flex gap-4 mt-6">
           <button
