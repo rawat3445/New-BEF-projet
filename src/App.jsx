@@ -24,7 +24,8 @@ import LeadershipAwards from './pages/LeadershipAwards';
 import Feedback from './pages/Feedback/index';
 import AboutFullSection from './components/AboutSection/AboutFullSection';
 
-
+import Login from './components/Auth/Login';
+import Signup from './components/Auth/Signup';
 
 
 function App() {
@@ -60,6 +61,10 @@ function App() {
         <Route path="/events" element={<EventsPage />} />
         <Route path="/events/:eventSlug" element={<EventsPage />} />
         <Route path="/feedback" element={<Feedback />} />
+
+        {/*added routing for login/signup*/}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} /> 
 
 
 

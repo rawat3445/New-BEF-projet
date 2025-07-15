@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import './Eventspage.css';
+import './EventsPage.css';//fixed typo //Riddhi
 import Header from '../Header'
 import Footer from '../Footer'
 
