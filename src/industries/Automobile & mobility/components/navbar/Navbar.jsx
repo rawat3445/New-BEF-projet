@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Phone, Mail, MapPin, CarFront } from 'lucide-react';
+import { Menu, X, ChevronDown, CarFront, Phone, Mail, MapPin, User, LogOut } from 'lucide-react';
+import LoginForm from '../../../../components/Auth/LoginForm';
+import './navbar.css';
 
 import './Navbar.css'
 const Navbar = () => {
@@ -7,6 +9,47 @@ const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [showLogin, setShowLogin] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
+  const [showUserDropdown, setShowUserDropdown] = useState(false);
+
+  const checkAuthStatus = () => {
+    const authStatus = localStorage.getItem('isAuthenticated');
+    const userData = localStorage.getItem('user');
+
+    if (authStatus === 'true' && userData) {
+      setIsAuthenticated(true);
+      setUser(JSON.parse(userData));
+    } else {
+      setIsAuthenticated(false);
+      setUser(null);
+    }
+  };
+
+  useEffect(() => {
+    checkAuthStatus();
+    window.addEventListener('storage', checkAuthStatus);
+
+    return () => {
+      window.removeEventListener('storage', checkAuthStatus);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('user');
+    localStorage.removeItem('loginMethod');
+    setIsAuthenticated(false);
+    setUser(null);
+    setShowUserDropdown(false);
+    alert('You have logged out successfully.');
+  };
+
+  const handleLoginSuccess = () => {
+    setShowLogin(false);
+    checkAuthStatus();
+  };
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -47,12 +90,13 @@ const Navbar = () => {
   ];
 
   return (
- 
+    <>
+
 
 
       <nav className={`sticky top-0 z-50 transition-all duration-500 ${scrolled
-          ? 'glass-effect shadow-xl'
-          : ' backdrop-blur-lg shadow-lg'
+        ? 'glass-effect shadow-xl'
+        : ' backdrop-blur-lg shadow-lg'
         }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -72,8 +116,8 @@ const Navbar = () => {
                     key={item.id}
                     href={item.href}
                     className={`relative px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:scale-105 ${activeSection === item.id
-                        ? 'text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50 nav-item-active'
-                        : 'text-gray-700 hover:text-blue-600'
+                      ? 'text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50 nav-item-active'
+                      : 'text-gray-700 hover:text-blue-600'
                       }`}
                   >
                     {item.name}
@@ -140,6 +184,64 @@ const Navbar = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </a>
                 </div>
+                <div className="hidden lg:flex items-center space-x-4 ml-6">
+                  {isAuthenticated && user ? (
+                    <div className="relative">
+                      <button
+                        onClick={() => setShowUserDropdown(!showUserDropdown)}
+                        className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-soft-white px-6 py-2 rounded-full font-semibold hover:shadow-[0_10px_15px_rgba(0,0,0,0.2)] transition-all duration-300 transform hover:scale-105"
+                      >
+                        {user.image ? (
+                          <img
+                            src={user.image}
+                            alt={user.name}
+                            className="w-6 h-6 rounded-full object-cover border-2 border-white"
+                          />
+                        ) : (
+                          <User className="w-4 h-4" />
+                        )}
+                        <span className="max-w-[120px] truncate">{user.name}</span>
+                        <ChevronDown className="w-4 h-4" />
+                      </button>
+
+                      {/* User Dropdown */}
+                      {showUserDropdown && (
+                        <div className="themed-user-dropdown">
+                          <div className="dropdown-header">
+                            <div className="user-info-container">
+                              {user.image ? (
+                                <img
+                                  src={user.image}
+                                  alt={user.name}
+                                  className="w-10 h-10 rounded-full object-cover"
+                                />
+                              ) : (
+                                <div className="user-avatar-placeholder">
+                                  <User className="user-avatar-icon" />
+                                </div>
+                              )}
+                              <div>
+                                <p className="user-name text-black">{user.name}</p>
+                                <p className="user-email text-black">{user.email}</p>
+                              </div>
+                            </div>
+                          </div>
+                          <button
+                            onClick={handleLogout}
+                            className="logout-button"
+                          >
+                            <LogOut className="w-4 h-4" />
+                            Logout
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <button onClick={() => setShowLogin(true)} className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full text-sm font-bold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25">
+                      Login
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -167,8 +269,8 @@ const Navbar = () => {
                     href={item.href}
                     onClick={() => setIsOpen(false)}
                     className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:scale-105 ${activeSection === item.id
-                        ? 'text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50'
-                        : 'text-gray-700 hover:text-blue-600'
+                      ? 'text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50'
+                      : 'text-gray-700 hover:text-blue-600'
                       }`}
                   >
                     {item.name}
@@ -230,6 +332,19 @@ const Navbar = () => {
           )}
         </div>
       </nav>
+      {
+        showLogin && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="relative">
+              <button onClick={() => setShowLogin(false)} className="absolute z-20 top-4 right-9 text-white">
+                <X size={24} color='blue' />
+              </button>
+              <LoginForm onLoginSuccess={handleLoginSuccess} />
+            </div>
+          </div>
+        )
+      }
+    </>
   );
 };
 
