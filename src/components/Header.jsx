@@ -365,7 +365,7 @@ const Navbar = () => {
                           )}
                           <div>
                             <p className="font-semibold text-dark-charcoal">{user.name}</p>
-                            <p className="text-sm text-neutral-gray">{user.email}</p>
+                            <p className="text-sm text-neutral-gray truncate">{user.email}</p>
                           </div>
                         </div>
                       </div>
