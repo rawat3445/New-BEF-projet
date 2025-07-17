@@ -13,7 +13,6 @@ const navigate = useNavigate();
 const [formData, setFormData] = useState({
 name: '',
 email: '',
-profilePhoto: '',
 password: '',
 confirmPassword: ''
 });
@@ -25,17 +24,6 @@ const [isGoogleLoading, setIsGoogleLoading] = useState(false);
 const handleInputChange = (e) => {
 const { name, value } = e.target;
 setFormData(prev => ({ ...prev, [name]: value }));
-};
-
-const handleFileChange = (e) => {
-const file = e.target.files[0];
-if (file) {
-const reader = new FileReader();
-reader.onload = (e) => {
-setFormData(prev => ({ ...prev, profilePhoto: e.target.result }));
-};
-reader.readAsDataURL(file);
-}
 };
 
 const handleSubmit = async (e) => {
@@ -67,14 +55,14 @@ setTimeout(() => {
   const userData = {
     name: formData.name,
     email: formData.email,
-    image: formData.profilePhoto || "/dummy.png"
+    image: null
   };
   localStorage.setItem('user', JSON.stringify(userData));
   localStorage.setItem('isAuthenticated', 'true');
   localStorage.setItem('loginMethod', 'email');
   toast.success(`Welcome ${userData.name}! Account created successfully.`);
   setIsLoading(false);
-  setFormData({ name: '', email: '', profilePhoto: '', password: '', confirmPassword: '' });
+  setFormData({ name: '', email: '', password: '', confirmPassword: '' });
   navigate('/home');
 }, 2000);
 };
@@ -101,7 +89,7 @@ return (
 <Toaster position="bottom-right" toastOptions={{ duration: 3000 }} />
 <Header />
 <div className="min-h-screen bg-gradient-to-br from-[#eef2f3] to-[#8e9eab] flex items-center justify-center py-10">
-<div className="w-full max-w-xl px-6">
+<div className="w-full max-w-md px-6">
 <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-200">
 <div className="text-center mb-6">
 <h1 className="text-3xl font-extrabold bg-gradient-to-r from-[#4facfe] to-[#150258] text-transparent bg-clip-text">
@@ -142,12 +130,6 @@ Continue with Google
 <div className="relative">
 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-neutral-gray" />
 <input type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full pl-10 pr-3 py-2.5 rounded-full border border-neutral-gray focus:ring-2 focus:ring-[#4facfe] bg-gray-50 text-sm" placeholder="Email Address" />
-</div>
-<div className="relative">
-<input type="url" name="profilePhoto" value={formData.profilePhoto} onChange={handleInputChange} className="w-full pl-3 pr-3 py-2.5 rounded-full border border-neutral-gray focus:ring-2 focus:ring-[#4facfe] bg-gray-50 text-sm" placeholder="Profile photo URL (optional)" />
-</div>
-<div className="relative">
-<input type="file" accept="image/*" onChange={handleFileChange} className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
 </div>
 <div className="relative">
 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-neutral-gray" />
