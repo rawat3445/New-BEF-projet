@@ -7,7 +7,7 @@ import HeroCarousel from './components/herocarousel/carousel';
 import ServiceCards from './components/servicecards/cards';
 import AboutSection from './components/aboutsection.jsx/aboutsec';
 import Footer from './components/footer/footer';
-import ContactUs from './components/contactus/contactus';
+
 // Import pages
 import AboutPage from './pages/aboutPage/aboutPage';
 import SalesPage from './pages/salesPage/salesPage';
@@ -226,7 +226,7 @@ const RealEstateIndustry = () => {
         {/* Render appropriate content */}
         {renderContent()}
       </main>
-<ContactUs />
+
       {/* Footer */}
       <Footer />
 

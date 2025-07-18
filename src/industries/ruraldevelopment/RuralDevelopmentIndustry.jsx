@@ -5,7 +5,7 @@ import HeroCarousel from './components/herocarousel/HeroCarousel';
 import ServiceCards from './components/serviceCards/cards';
 import AboutSection from './components/aboutSection/AboutSection';
 import Footer from './components/footer/Footer';
-import ContactUs from './components/contactus/ContactUs';
+
 const RuralDevelopmentIndustry = () => {
   const [currentView, setCurrentView] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -351,7 +351,7 @@ const RuralDevelopmentIndustry = () => {
       <main className="min-h-screen">
         {renderContent()}
       </main>
-     <ContactUs />
+
       <Footer />
     </div>
   );

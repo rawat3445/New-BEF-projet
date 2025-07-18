@@ -20,6 +20,7 @@ import RealEstateIndustry from './industries/real-estate-and-urban-planning';
 import Policyandgovernance from './industries/policyandgovernance';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Event from './pages/Event';
 import LeadershipAwards from './pages/LeadershipAwards';
 import Feedback from './pages/Feedback/index';
 import AboutFullSection from './components/AboutSection/AboutFullSection';
