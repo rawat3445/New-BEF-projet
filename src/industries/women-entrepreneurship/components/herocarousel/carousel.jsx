@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Play, ArrowRight, Pause } from 'lucide-react';
 import './carousel.css';
 
@@ -7,13 +8,15 @@ const HeroCarousel = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
- const slides = [
+  const navigate = useNavigate();
+
+  const slides = [
     {
       id: 1,
       title: "Empower Her Dreams",
       subtitle: "Startup Support for Women",
       description: "Unlock resources, mentorship, and funding tailored for ambitious women-led startups.",
-      buttonText: "Join the Network",
+      buttonText: "Explore More",
       background: "from-rose-900 via-pink-800 to-rose-700",
       accent: "from-rose-400 to-pink-400"
     },
@@ -22,7 +25,7 @@ const HeroCarousel = () => {
       title: "Innovate Boldly",
       subtitle: "Women Shaping the Future",
       description: "Discover stories and opportunities driving women to lead tech, business, and social ventures.",
-      buttonText: "Discover More",
+      buttonText: "Explore More",
       background: "from-sky-900 via-indigo-800 to-blue-700",
       accent: "from-sky-400 to-indigo-400"
     },
@@ -31,7 +34,7 @@ const HeroCarousel = () => {
       title: "Lead with Confidence",
       subtitle: "Financial & Leadership Skills",
       description: "Learn essential business, finance, and leadership tools for your entrepreneurial journey.",
-      buttonText: "Start Learning",
+      buttonText: "Explore More",
       background: "from-fuchsia-900 via-purple-800 to-violet-700",
       accent: "from-fuchsia-400 to-purple-400"
     }
@@ -111,13 +114,12 @@ const HeroCarousel = () => {
                 {currentSlideData.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-right opacity-0 delay-300">
-                <button className="group bg-white text-gray-900 hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl">
+                <button
+                  onClick={() => navigate('/about')}
+                  className="group bg-white text-gray-900 hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl"
+                >
                   {currentSlideData.buttonText}
                   <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-                <button className="group glass-effect text-white hover:bg-white hover:bg-opacity-20 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl">
-                  <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
-                  Watch Demo
                 </button>
               </div>
             </div>

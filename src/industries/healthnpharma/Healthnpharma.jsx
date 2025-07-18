@@ -8,7 +8,6 @@ import About from './pages/About';
 import EventDetails from './pages/EventDetails';
 import Home from './pages/Home';
 import Pricing from './pages/Pricing';
-import ContactUs from './components/contactus/contactus';
 // import SalesPage from './pages/SalesPage';
 
 function Healthnpharma() {
@@ -26,7 +25,6 @@ function Healthnpharma() {
         </Routes>
         <ScrollToTopButton />
       </main>
-      <ContactUs />
       <Footer />
     </>
   );

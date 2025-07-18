@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Play, ArrowRight, Pause, Home, Wifi, School, HeartPulse, Sun } from 'lucide-react';
 import './carousel.css';
+import { useNavigate } from 'react-router-dom';
 
 const RuralDevelopmentCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const navigate = useNavigate();
 
   const slides = [
     {
@@ -13,7 +16,7 @@ const RuralDevelopmentCarousel = () => {
       title: "Bridging the Urban-Rural Divide",
       subtitle: "Infrastructure & Opportunities",
       description: "Join the discussion on developing sustainable infrastructure and creating equal opportunities across rural India as part of Viksit Bharat 2047 vision.",
-      buttonText: "Join the Dialogue",
+      buttonText: "Explore More",
       icon: <Home className="h-16 w-16" />,
       background: "from-green-700 via-emerald-600 to-green-600",
       accent: "from-emerald-400 to-green-400",
@@ -23,7 +26,7 @@ const RuralDevelopmentCarousel = () => {
       title: "Digital Empowerment",
       subtitle: "Connecting Rural India",
       description: "Explore how digital technologies and connectivity can transform rural economies and improve quality of life.",
-      buttonText: "Learn More",
+      buttonText: "Explore More",
       icon: <Wifi className="h-16 w-16" />,
       background: "from-amber-700 via-yellow-600 to-amber-600",
       accent: "from-yellow-400 to-amber-400",
@@ -33,7 +36,7 @@ const RuralDevelopmentCarousel = () => {
       title: "Education & Skill Development",
       subtitle: "Building Future-Ready Villages",
       description: "Discover innovative approaches to rural education and vocational training that align with India's development goals.",
-      buttonText: "Explore Programs",
+      buttonText: "Explore More",
       icon: <School className="h-16 w-16" />,
       background: "from-blue-700 via-indigo-600 to-blue-600",
       accent: "from-indigo-400 to-blue-400",
@@ -43,7 +46,7 @@ const RuralDevelopmentCarousel = () => {
       title: "Sustainable Rural Healthcare",
       subtitle: "Wellness for All",
       description: "Learn about initiatives bringing quality healthcare to remote areas through technology and community programs.",
-      buttonText: "See Initiatives",
+      buttonText: "Explore More",
       icon: <HeartPulse className="h-16 w-16" />,
       background: "from-red-700 via-pink-600 to-red-600",
       accent: "from-pink-400 to-red-400",
@@ -53,7 +56,7 @@ const RuralDevelopmentCarousel = () => {
       title: "Renewable Energy Solutions",
       subtitle: "Powering Rural Progress",
       description: "Explore clean energy innovations that are electrifying rural India while creating sustainable livelihoods.",
-      buttonText: "Discover Solutions",
+      buttonText: "Explore More",
       icon: <Sun className="h-16 w-16" />,
       background: "from-purple-700 via-violet-600 to-purple-600",
       accent: "from-violet-400 to-purple-400",
@@ -120,7 +123,7 @@ const RuralDevelopmentCarousel = () => {
           <div className="absolute top-1/2 left-10 w-12 h-12 bg-white rounded-full opacity-30 animate-float delay-400"></div>
           <div className="absolute top-1/3 right-20 w-8 h-8 bg-white rounded-full opacity-40 animate-pulse-slow delay-500"></div>
         </div>
-        
+
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bg-opacity-20"></div>
       </div>
@@ -134,7 +137,7 @@ const RuralDevelopmentCarousel = () => {
               <div className={`bg-gradient-to-br ${currentSlideData.accent} text-white p-4 rounded-2xl w-fit mx-auto mb-8 shadow-lg animate-fade-in opacity-0`}>
                 {currentSlideData.icon}
               </div>
-              
+
               <h1 className="text-5xl md:text-7xl font-black mb-6 text-shadow animate-slide-up opacity-0">
                 {currentSlideData.title}
               </h1>
@@ -146,13 +149,12 @@ const RuralDevelopmentCarousel = () => {
                 {currentSlideData.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-right opacity-0 delay-300">
-                <button className="group bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl">
+                <button
+                  onClick={() => navigate('/about')}
+                  className="group bg-white text-gray-900 hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl"
+                >
                   {currentSlideData.buttonText}
-                  <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-                <button className="group glass-effect text-white hover:bg-white hover:bg-opacity-20 px-8 py-4 rounded-full font-bold text-lg transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 flex items-center justify-center shadow-2xl">
-                  <Play className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                  Watch Highlights
+                  <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
               </div>
             </div>
@@ -169,7 +171,7 @@ const RuralDevelopmentCarousel = () => {
       >
         <ChevronLeft className="h-8 w-8 group-hover:-translate-x-1 transition-transform duration-300" />
       </button>
-      
+
       <button
         onClick={nextSlide}
         disabled={isTransitioning}
@@ -190,9 +192,9 @@ const RuralDevelopmentCarousel = () => {
 
       {/* Progress bar */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-black bg-opacity-30 z-20">
-        <div 
+        <div
           className={`h-full bg-gradient-to-r ${currentSlideData.accent} transition-all duration-1000 ease-linear`}
-          style={{ 
+          style={{
             width: isAutoPlaying ? '100%' : '0%',
             animation: isAutoPlaying ? 'progress 6s linear infinite' : 'none'
           }}
@@ -206,11 +208,10 @@ const RuralDevelopmentCarousel = () => {
             key={index}
             onClick={() => goToSlide(index)}
             disabled={isTransitioning}
-            className={`relative overflow-hidden rounded-full transition-all duration-500 hover:scale-125 disabled:cursor-not-allowed ${
-              index === currentSlide 
-                ? 'w-12 h-4 bg-white' 
+            className={`relative overflow-hidden rounded-full transition-all duration-500 hover:scale-125 disabled:cursor-not-allowed ${index === currentSlide
+                ? 'w-12 h-4 bg-white'
                 : 'w-4 h-4 bg-white bg-opacity-50 hover:bg-opacity-75'
-            }`}
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           >
             {index === currentSlide && (

@@ -6,9 +6,9 @@ import {
   TrendingUp,
   Clock,
   CheckCircle,
-  // Lightbulb,
-  // Target,
-  // Heart,
+  Lightbulb,
+  Target,
+  Heart,
 } from "lucide-react";
 
 const AboutSection = () => {
@@ -39,7 +39,6 @@ const AboutSection = () => {
     { icon: <Clock className="h-8 w-8" />, number: "24/7", label: "Support" },
   ];
 
-  /*
   const values = [
     {
       icon: <Lightbulb className="h-6 w-6" />,
@@ -62,7 +61,6 @@ const AboutSection = () => {
       description: "Promoting top-tier safety and product standards.",
     },
   ];
-  */
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -180,9 +178,7 @@ const AboutSection = () => {
           ))}
         </motion.div>
 
-        {/*
-        // Our Core Values Section (commented out as requested)
-
+        {/* Values */}
         <motion.div variants={containerVariants}>
           <motion.div className="text-center mb-12" variants={itemVariants}>
             <h3 className="text-3xl font-bold text-indigo-800">
@@ -211,7 +207,6 @@ const AboutSection = () => {
             ))}
           </div>
         </motion.div>
-        */}
       </motion.div>
     </section>
   );
