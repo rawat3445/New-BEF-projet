@@ -78,67 +78,24 @@ const Navbar = () => {
 
 
   const industryItems = [
-    {
-      title: "Advertisement & Marketing",
-      path: "/advertisement",
-      description: "Shape the future of brand communication"
-    },
-    {
-      title: "Beauty & Wellness",
-      path: "/beauty-wellness",
-      description: "Innovative beauty and wellness solutions"
-    },
-    {
-      title: "Women Entrepreneurship",
-      path: "/women-entrepreneurship",
-      description: "Empowering women-led businesses"
-    },
-    {
-      title: "Real Estate & Urban Planning",
-      path: "/real-estate",
-      description: "Urban development and planning"
-    },
-    {
-      title: "Media & Entertainment",
-      path: "/media-entertainment",
-      description: "Content creation and distribution"
-    },
-    {
-      title: "Rural Development",
-      path: "/rural-development",
-      description: "Building sustainable villages"
-    },
-    {
-      title: "Environment & Sustainability",
-      path: "/environment",
-      description: "Green technology solutions"
-    },
-    {
-      title: "Agriculture & Agritech",
-      path: "/agriculture",
-      description: "Smart farming solutions"
-    },
-    {
-      title: "Retail & E-Commerce",
-      path: "/retail",
-      description: "Digital commerce innovation"
-    },
-    {
-      title: "Web 3.0, AI & DeepTech",
-      path: "/web_ai",
-      description: "Next-generation technologies"
-    },
-    {
-      title: "Automobile & Mobility",
-      path: "/automobile",
-      description: "Future of transportation"
-    },
-    {
-      title: "Health & Pharma",
-      path: "/health-pharma",
-      description: "Healthcare innovation"
-    }
-  ];
+  { title: "Advertisement & Marketing", path: "/advertisement", description: "Shape the future of brand communication" },
+  { title: "Beauty And Wellness", path: "/beauty-wellness", description: "Innovative beauty and wellness solutions" },
+  { title: "Empowering Women Entrepreneurs", path: "/women-entrepreneurship", description: "Supporting women-led businesses" },
+  { title: "Real Estate and Urban Planning", path: "/real-estate", description: "Urban development and planning" },
+  { title: "Public Relations", path: "/public-relations", description: "Managing brand reputation and outreach" },
+  { title: "Digital Innovation", path: "/digital-innovation", description: "Cutting-edge tech solutions" },
+  { title: "Media & Entertainment", path: "/media-entertainment", description: "Content creation and distribution" },
+  { title: "Rural Development", path: "/rural-development", description: "Building sustainable villages" },
+  { title: "Environment & Sustainability Tech", path: "/environment", description: "Green technology solutions" },
+  { title: "Brand Strategy", path: "/brand-strategy", description: "Creating impactful brand identities" },
+  { title: "Agriculture and Agritech", path: "/agriculture", description: "Smart farming solutions" },
+  { title: "Retail & E-commerce", path: "/retail", description: "Digital commerce innovation" },
+  { title: "Web 3.0, AI and DeepTech", path: "/web3_ai", description: "Next-generation technologies" },
+  { title: "Automobile & Mobility", path: "/automobile", description: "Future of transportation" },
+  { title: "Health & Pharma", path: "/healthnpharma", description: "Healthcare innovation" }
+];
+
+  
   return (
     <>
 
@@ -290,86 +247,92 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="mobile-menu active">
-            <a
-              href="#home"
-              className="mobile-menu-item"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('home');
-              }}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="mobile-menu-item"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('about');
-              }}
-            >
-              About
-            </a>
+        {/* Overlay */}
+{isMobileMenuOpen && (
+  <div
+    className="menu-overlay"
+    onClick={() => setIsMobileMenuOpen(false)}
+  />
+)}
 
-            {/* Mobile Industries */}
-            <div style={{ borderBottom: '1px solid rgba(156, 163, 175, 0.1)' }}>
-              <div style={{ padding: '0.5rem 2rem', fontSize: '0.9rem', fontWeight: '600', color: '#9ca3af' }}>
-                INITIATIVES
-              </div>
-              {industryItems.slice(0, 6).map((item, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="mobile-menu-item"
-                  style={{ paddingLeft: '3rem' }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigation(item.path);
-                  }}
-                >
-                  {item.title}
-                </a>
-              ))}
-            </div>
+{/* Sliding Mobile Menu */}
+<div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+  <a
+    href="#home"
+    className="mobile-menu-item block px-6 py-3 text-dark-charcoal hover:bg-gray-100"
+    onClick={(e) => {
+      e.preventDefault();
+      scrollToSection('home');
+    }}
+  >
+    Home
+  </a>
 
-            {/* Mobile Events */}
-            <div style={{ borderBottom: '1px solid rgba(156, 163, 175, 0.1)' }}>
-              <div style={{ padding: '0.5rem 2rem', fontSize: '0.9rem', fontWeight: '600', color: '#9ca3af' }}>
-                EVENTS
-              </div>
-              {eventItems.slice(0, 4).map((item, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="mobile-menu-item"
-                  style={{ paddingLeft: '3rem' }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigation(item.path);
-                  }}
-                >
-                  {item.title}
-                </a>
-              ))}
-            </div>
+  <a
+    href="#about"
+    className="mobile-menu-item block px-6 py-3 text-dark-charcoal hover:bg-gray-100"
+    onClick={(e) => {
+      e.preventDefault();
+      scrollToSection('about');
+    }}
+  >
+    About
+  </a>
 
-            <a
-              href="#contact"
-              className="mobile-menu-item"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('contact');
-              }}
-            >
-              Contact
-            </a>
-            <button className="mobile-menu-cta">
-              Join Our Movement
-            </button>
-          </div>
-        )}
+  <div className="border-b border-neutral-gray mb-2">
+    <div className="px-6 py-2 text-sm font-semibold text-neutral-gray">
+      INITIATIVES
+    </div>
+    {industryItems.slice(0, 15).map((item, index) => (
+      <a
+        key={index}
+        href="#"
+        className="block px-12 py-2 text-dark-charcoal hover:bg-gray-100"
+        onClick={(e) => {
+          e.preventDefault();
+          handleNavigation(item.path);
+        }}
+      >
+        {item.title}
+      </a>
+    ))}
+  </div>
+
+  <div className="border-b border-neutral-gray mb-2">
+    <div className="px-6 py-2 text-sm font-semibold text-neutral-gray">
+      EVENTS
+    </div>
+    {eventItems.slice(0, 6).map((item, index) => (
+      <a
+        key={index}
+        href="#"
+        className="block px-12 py-2 text-dark-charcoal hover:bg-gray-100"
+        onClick={(e) => {
+          e.preventDefault();
+          handleNavigation(item.path);
+        }}
+      >
+        {item.title}
+      </a>
+    ))}
+  </div>
+
+  <a
+    href="#contact"
+    className="mobile-menu-item block px-6 py-3 text-dark-charcoal hover:bg-gray-100"
+    onClick={(e) => {
+      e.preventDefault();
+      scrollToSection('contact');
+    }}
+  >
+    Contact
+  </a>
+
+  <button className="mobile-menu-cta block w-full px-6 py-3 bg-primary-blue text-white font-semibold hover:bg-blue-700 mt-4">
+    Join Our Movement
+  </button>
+</div>
+
       </nav>
 
     </>

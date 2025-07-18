@@ -1,4 +1,21 @@
 @import "tailwindcss";
+/* Sliding menu base */
+.mobile-menu {
+  @apply fixed top-0 left-0 h-full w-72 bg-white shadow-lg z-50 overflow-y-auto pt-16; /* Tailwind utilities */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Slide in when active */
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+/* Overlay behind menu */
+.menu-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-40 z-40;
+}
+
 
 :root {
     --primary-blue: #1E3A8A;
@@ -55,3 +72,4 @@
         opacity: 0.5;
     }
 }
+
