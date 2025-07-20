@@ -1,41 +1,43 @@
-import React, { useState } from 'react';
-import { ArrowLeft, Menu, X, Home, Info, DollarSign } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { ArrowLeft, Menu, X, Home, Info, DollarSign } from "lucide-react";
+import { Link } from "react-router-dom";
 // Import all components
-import Navbar from './components/navbar/navbar';
-import HeroCarousel from './components/herocarousel/carousel';
-import ServiceCards from './components/servicecards/cards';
-import AboutSection from './components/aboutsection.jsx/aboutsec';
-import Footer from './components/footer/footer';
+import Navbar from "./components/navbar/navbar";
+import HeroCarousel from "./components/herocarousel/carousel";
+import ServiceCards from "./components/servicecards/cards";
+import AboutSection from "./components/aboutsection.jsx/aboutsec";
+import Footer from "./components/footer/footer";
 
 // Import pages
-import AboutPage from './pages/aboutPage/aboutPage';
-import SalesPage from './pages/salesPage/salesPage';
+import AboutPage from "./pages/aboutPage/aboutPage";
+import SalesPage from "./pages/salesPage/salesPage";
 
 import "./index.css";
 
 const RealEstateIndustry = () => {
-  const [currentView, setCurrentView] = useState('home');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [currentView, setCurrentView] = useState("home");
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'about', label: 'About Urban Planning', icon: Info },
-    { id: 'sales', label: 'Development Plans', icon: DollarSign }
+    { id: "home", label: "Home", icon: Home },
+    { id: "about", label: "About Urban Planning", icon: Info },
+    { id: "sales", label: "Development Plans", icon: DollarSign },
   ];
 
-  const handleNavigation = (view) => {
+  {
+    /* const handleNavigation = (view) => {
     setCurrentView(view);
     setIsMobileMenuOpen(false);
-  };
+  }; */
+  }
 
   const renderContent = () => {
     switch (currentView) {
-      case 'about':
-        return <AboutPage onBack={() => setCurrentView('home')} />;
-      case 'sales':
+      case "about":
+        return <AboutPage onBack={() => setCurrentView("home")} />;
+      case "sales":
         return <SalesPage />;
-      case 'home':
+      case "home":
       default:
         return (
           <>
@@ -48,12 +50,15 @@ const RealEstateIndustry = () => {
   };
 
   return (
-    <div className="realestate-industry" style={{ 
-      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif", 
-      color: '#2C3E50', 
-      backgroundColor: '#F5F7FA' 
-    }}>
-      {/* Navigation Header */}
+    <div
+      className="realestate-industry"
+      style={{
+        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        color: "#2C3E50",
+        backgroundColor: "#F5F7FA",
+      }}
+    >
+      {/* Navigation Header
       <div className="industry-nav" style={{ backgroundColor: '#34495E', color: '#ECF0F1' }}>
         <div className="nav-container" style={{ maxWidth: 1200, margin: '0 auto', padding: '0.75rem 1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div className="nav-brand" >
@@ -80,9 +85,9 @@ const RealEstateIndustry = () => {
                 </div>
               </div>
             </Link>
-          </div>
+          </div>  */}
 
-          {/* Desktop Navigation */}
+      {/* Desktop Navigation 
           <nav className="desktop-nav" style={{ display: 'flex', gap: 20 }}>
             {navigationItems.map((item) => {
               const IconComponent = item.icon;
@@ -111,9 +116,9 @@ const RealEstateIndustry = () => {
                 </button>
               );
             })}
-          </nav>
+          </nav> */}
 
-          {/* Mobile Menu Toggle */}
+      {/* Mobile Menu Toggle 
           <button
             className="mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -122,14 +127,9 @@ const RealEstateIndustry = () => {
               border: 'none',
               color: '#ECF0F1',
               cursor: 'pointer',
-              display: 'none' /* Show with media query in CSS */
-            }}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+              display: 'none'  */}
 
-        {/* Mobile Navigation */}
+      {/* Mobile Navigation 
         {isMobileMenuOpen && (
           <div className="mobile-nav" style={{
             position: 'fixed',
@@ -182,46 +182,61 @@ const RealEstateIndustry = () => {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
 
       {/* Breadcrumb for non-home views */}
-      {currentView !== 'home' && (
-        <div className="breadcrumb" style={{
-          backgroundColor: '#E0F2F1',
-          padding: '0.75rem 1rem',
-          fontSize: 14,
-          color: '#00796B'
-        }}>
-          <div className="breadcrumb-container" style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8 }}>
+      {currentView !== "home" && (
+        <div
+          className="breadcrumb"
+          style={{
+            backgroundColor: "#E0F2F1",
+            padding: "0.75rem 1rem",
+            fontSize: 14,
+            color: "#00796B",
+          }}
+        >
+          <div
+            className="breadcrumb-container"
+            style={{
+              maxWidth: 1200,
+              margin: "0 auto",
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+            }}
+          >
             <button
-              onClick={() => setCurrentView('home')}
+              onClick={() => setCurrentView("home")}
               className="breadcrumb-back"
               style={{
-                display: 'flex',
-                alignItems: 'center',
+                display: "flex",
+                alignItems: "center",
                 gap: 4,
-                backgroundColor: 'transparent',
-                border: 'none',
-                color: '#00796B',
-                cursor: 'pointer',
-                fontWeight: 600
+                backgroundColor: "transparent",
+                border: "none",
+                color: "#00796B",
+                cursor: "pointer",
+                fontWeight: 600,
               }}
             >
               <ArrowLeft size={16} />
               <span>Back to Home</span>
             </button>
             <div className="breadcrumb-separator">/</div>
-            <div className="breadcrumb-current" style={{ fontWeight: '700' }}>
-              {navigationItems.find(item => item.id === currentView)?.label}
+            <div className="breadcrumb-current" style={{ fontWeight: "700" }}>
+              {navigationItems.find((item) => item.id === currentView)?.label}
             </div>
           </div>
         </div>
       )}
 
       {/* Main Content */}
-      <main className="main-content" style={{ maxWidth: 1200, margin: '2rem auto', padding: '0 1rem' }}>
+      <main
+        className="main-content"
+        style={{ maxWidth: 1200, margin: "2rem auto", padding: "0 1rem" }}
+      >
         {/* Render Navbar only on home page */}
-        {currentView === 'home' && <Navbar />}
+        {currentView === "home" && <Navbar />}
 
         {/* Render appropriate content */}
         {renderContent()}
@@ -231,54 +246,57 @@ const RealEstateIndustry = () => {
       <Footer />
 
       {/* Floating Action Button for Quick Access */}
-      {currentView === 'home' && (
-        <div className="floating-actions" style={{
-          position: 'fixed',
-          bottom: 24,
-          right: 24,
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 12,
-          zIndex: 100
-        }}>
+      {currentView === "home" && (
+        <div
+          className="floating-actions"
+          style={{
+            position: "fixed",
+            bottom: 24,
+            right: 24,
+            display: "flex",
+            flexDirection: "column",
+            gap: 12,
+            zIndex: 100,
+          }}
+        >
           <button
-            onClick={() => setCurrentView('sales')}
+            onClick={() => setCurrentView("sales")}
             className="fab-primary"
             title="View Development Plans"
             style={{
-              backgroundColor: '#1ABC9C',
-              border: 'none',
-              borderRadius: '50%',
+              backgroundColor: "#1ABC9C",
+              border: "none",
+              borderRadius: "50%",
               width: 48,
               height: 48,
-              color: 'white',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 4px 8px rgba(26,188,156,0.3)',
-              transition: 'background-color 0.3s'
+              color: "white",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 4px 8px rgba(26,188,156,0.3)",
+              transition: "background-color 0.3s",
             }}
           >
             <DollarSign size={20} />
           </button>
           <button
-            onClick={() => setCurrentView('about')}
+            onClick={() => setCurrentView("about")}
             className="fab-secondary"
             title="Learn More About Urban Planning"
             style={{
-              backgroundColor: '#00796B',
-              border: 'none',
-              borderRadius: '50%',
+              backgroundColor: "#00796B",
+              border: "none",
+              borderRadius: "50%",
               width: 48,
               height: 48,
-              color: 'white',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 4px 8px rgba(0,121,107,0.3)',
-              transition: 'background-color 0.3s'
+              color: "white",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 4px 8px rgba(0,121,107,0.3)",
+              transition: "background-color 0.3s",
             }}
           >
             <Info size={20} />

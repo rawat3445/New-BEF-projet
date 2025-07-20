@@ -1,24 +1,35 @@
-import React, { useState } from 'react';
-import { ArrowLeft, Menu, X, Home, Info, Film, Music, Tv, DollarSign, Users } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  ArrowLeft,
+  Menu,
+  X,
+  Home,
+  Info,
+  Film,
+  Music,
+  Tv,
+  DollarSign,
+  Users,
+} from "lucide-react";
 
-import Navbar from './components/navbar/navbar';
-import HeroCarousel from './components/herocarousel/carousel';
-import ServiceCards from './components/serviceCards/cards';
-import AboutSection from './components/aboutSection/aboutSection';
-import Footer from './components/footer/footer';
+import Navbar from "./components/navbar/navbar";
+import HeroCarousel from "./components/herocarousel/carousel";
+import ServiceCards from "./components/serviceCards/cards";
+import AboutSection from "./components/aboutSection/aboutSection";
+import Footer from "./components/footer/footer";
 
 const MediaEntertainmentIndustry = () => {
-  const [currentView, setCurrentView] = useState('home');
+  const [currentView, setCurrentView] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'shows', label: 'Shows', icon: Tv },
-    { id: 'music', label: 'Music', icon: Music },
-    { id: 'subscription', label: 'Subscription', icon: Film },
-    { id: 'media', label: 'Media', icon: Users },
-    { id: 'sales', label: 'Sales', icon: DollarSign },
-    { id: 'about', label: 'About', icon: Info },
+    { id: "home", label: "Home", icon: Home },
+    { id: "shows", label: "Shows", icon: Tv },
+    { id: "music", label: "Music", icon: Music },
+    { id: "subscription", label: "Subscription", icon: Film },
+    { id: "media", label: "Media", icon: Users },
+    { id: "sales", label: "Sales", icon: DollarSign },
+    { id: "about", label: "About", icon: Info },
   ];
 
   const handleNavigation = (view) => {
@@ -40,7 +51,9 @@ const MediaEntertainmentIndustry = () => {
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-white rounded-lg p-4 shadow-sm">
             <p className="text-sm text-gray-600 mb-1">Event Name</p>
-            <p className="font-semibold text-gray-800">BEF Annual Media Gala 2025</p>
+            <p className="font-semibold text-gray-800">
+              BEF Annual Media Gala 2025
+            </p>
           </div>
           <div className="bg-white rounded-lg p-4 shadow-sm">
             <p className="text-sm text-gray-600 mb-1">Date</p>
@@ -48,7 +61,9 @@ const MediaEntertainmentIndustry = () => {
           </div>
           <div className="bg-white rounded-lg p-4 shadow-sm">
             <p className="text-sm text-gray-600 mb-1">Venue</p>
-            <p className="font-semibold text-gray-800">Grand Convention Center, Cityville</p>
+            <p className="font-semibold text-gray-800">
+              Grand Convention Center, Cityville
+            </p>
           </div>
         </div>
       </section>
@@ -64,15 +79,24 @@ const MediaEntertainmentIndustry = () => {
         <div className="space-y-4 text-gray-700 leading-relaxed">
           <div className="bg-white rounded-lg p-6 shadow-sm">
             <h3 className="font-semibold text-gray-800 mb-2">Description</h3>
-            <p>A grand celebration highlighting innovation and excellence in media and entertainment.</p>
+            <p>
+              A grand celebration highlighting innovation and excellence in
+              media and entertainment.
+            </p>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-sm">
             <h3 className="font-semibold text-gray-800 mb-2">Purpose</h3>
-            <p>To connect industry leaders, foster collaboration, and showcase groundbreaking projects.</p>
+            <p>
+              To connect industry leaders, foster collaboration, and showcase
+              groundbreaking projects.
+            </p>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-sm">
             <h3 className="font-semibold text-gray-800 mb-2">Agenda</h3>
-            <p>Keynote speeches, panel discussions, workshops, networking sessions.</p>
+            <p>
+              Keynote speeches, panel discussions, workshops, networking
+              sessions.
+            </p>
           </div>
         </div>
       </section>
@@ -87,12 +111,15 @@ const MediaEntertainmentIndustry = () => {
         </h2>
         <div className="grid md:grid-cols-2 gap-4">
           {[
-            'Gain insights from top industry experts',
-            'Discover new trends and technologies',
-            'Network with professionals and partners',
-            'Exclusive media coverage and exposure'
+            "Gain insights from top industry experts",
+            "Discover new trends and technologies",
+            "Network with professionals and partners",
+            "Exclusive media coverage and exposure",
           ].map((item, index) => (
-            <div key={index} className="bg-white rounded-lg p-4 shadow-sm flex items-center">
+            <div
+              key={index}
+              className="bg-white rounded-lg p-4 shadow-sm flex items-center"
+            >
               <div className="bg-green-100 rounded-full p-2 mr-3">
                 <div className="w-2 h-2 bg-green-600 rounded-full"></div>
               </div>
@@ -114,21 +141,33 @@ const MediaEntertainmentIndustry = () => {
           <div className="bg-white rounded-lg p-6 shadow-sm">
             <h3 className="font-semibold text-gray-800 mb-3">Featured In</h3>
             <div className="flex flex-wrap gap-2">
-              {['MediaDaily', 'Entertainment Weekly', 'Cityville News'].map((outlet, index) => (
-                <span key={index} className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
-                  {outlet}
-                </span>
-              ))}
+              {["MediaDaily", "Entertainment Weekly", "Cityville News"].map(
+                (outlet, index) => (
+                  <span
+                    key={index}
+                    className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium"
+                  >
+                    {outlet}
+                  </span>
+                )
+              )}
             </div>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-sm">
-            <h3 className="font-semibold text-gray-800 mb-3">Official Partners</h3>
+            <h3 className="font-semibold text-gray-800 mb-3">
+              Official Partners
+            </h3>
             <div className="flex flex-wrap gap-2">
-              {['MediaCorp', 'StarEvents', 'Visionary Studios'].map((partner, index) => (
-                <span key={index} className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
-                  {partner}
-                </span>
-              ))}
+              {["MediaCorp", "StarEvents", "Visionary Studios"].map(
+                (partner, index) => (
+                  <span
+                    key={index}
+                    className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium"
+                  >
+                    {partner}
+                  </span>
+                )
+              )}
             </div>
           </div>
         </div>
@@ -143,7 +182,10 @@ const MediaEntertainmentIndustry = () => {
           Who Should Attend
         </h2>
         <div className="bg-white rounded-lg p-6 shadow-sm">
-          <p className="text-gray-700 text-lg leading-relaxed">Media professionals, content creators, sponsors, advertisers, and enthusiasts.</p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            Media professionals, content creators, sponsors, advertisers, and
+            enthusiasts.
+          </p>
         </div>
       </section>
 
@@ -176,7 +218,10 @@ const MediaEntertainmentIndustry = () => {
           About BEF
         </h2>
         <div className="bg-white rounded-lg p-6 shadow-sm">
-          <p className="text-gray-700 text-lg leading-relaxed">The Broadcast Excellence Foundation (BEF) is committed to advancing media quality and fostering industry collaboration worldwide.</p>
+          <p className="text-gray-700 text-lg leading-relaxed">
+            The Broadcast Excellence Foundation (BEF) is committed to advancing
+            media quality and fostering industry collaboration worldwide.
+          </p>
         </div>
       </section>
     </div>
@@ -198,14 +243,18 @@ const MediaEntertainmentIndustry = () => {
             <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
               <DollarSign className="text-white" size={24} />
             </div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Platinum Sponsor</h3>
-            <div className="text-3xl font-bold text-purple-600 mb-6">$25,000</div>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              Platinum Sponsor
+            </h3>
+            <div className="text-3xl font-bold text-purple-600 mb-6">
+              $25,000
+            </div>
             <ul className="space-y-3 text-gray-700">
               {[
-                'Premium booth space',
-                'Logo on all event materials',
-                'Speaking opportunity',
-                '10 delegate passes'
+                "Premium booth space",
+                "Logo on all event materials",
+                "Speaking opportunity",
+                "10 delegate passes",
               ].map((item, index) => (
                 <li key={index} className="flex items-center">
                   <div className="bg-purple-100 rounded-full p-1 mr-3">
@@ -220,13 +269,15 @@ const MediaEntertainmentIndustry = () => {
             <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
               <Users className="text-white" size={24} />
             </div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Delegate Package</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              Delegate Package
+            </h3>
             <div className="text-3xl font-bold text-blue-600 mb-6">$500</div>
             <ul className="space-y-3 text-gray-700">
               {[
-                'Access to all sessions',
-                'Networking events',
-                'Event materials'
+                "Access to all sessions",
+                "Networking events",
+                "Event materials",
               ].map((item, index) => (
                 <li key={index} className="flex items-center">
                   <div className="bg-blue-100 rounded-full p-1 mr-3">
@@ -242,7 +293,9 @@ const MediaEntertainmentIndustry = () => {
 
       {/* 2. Registration Links */}
       <section className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl p-8 shadow-lg border border-emerald-200">
-        <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">Register Now</h2>
+        <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">
+          Register Now
+        </h2>
         <div className="flex flex-wrap justify-center gap-6">
           <a
             href="#"
@@ -271,12 +324,15 @@ const MediaEntertainmentIndustry = () => {
         </h2>
         <div className="grid md:grid-cols-2 gap-4">
           {[
-            'Enhanced brand visibility',
-            'Exclusive networking opportunities',
-            'Access to industry insights',
-            'Participation in workshops and panels'
+            "Enhanced brand visibility",
+            "Exclusive networking opportunities",
+            "Access to industry insights",
+            "Participation in workshops and panels",
           ].map((item, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 shadow-sm flex items-center hover:shadow-md transition-shadow">
+            <div
+              key={index}
+              className="bg-white rounded-lg p-6 shadow-sm flex items-center hover:shadow-md transition-shadow"
+            >
               <div className="bg-orange-100 rounded-full p-3 mr-4">
                 <div className="w-3 h-3 bg-orange-600 rounded-full"></div>
               </div>
@@ -288,30 +344,38 @@ const MediaEntertainmentIndustry = () => {
 
       {/* 4. Visual Tiles for Sponsor and Delegate Kits */}
       <section className="bg-gradient-to-br from-slate-50 to-gray-100 rounded-2xl p-8 shadow-lg border border-slate-200">
-        <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">Sponsor & Delegate Kits</h2>
+        <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">
+          Sponsor & Delegate Kits
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div
             className="cursor-pointer rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 text-white flex flex-col items-center justify-center min-h-64"
-            onClick={() => alert('Sponsor Kit Registration')}
+            onClick={() => alert("Sponsor Kit Registration")}
           >
             <div className="bg-white/20 rounded-full p-4 mb-6">
               <DollarSign className="text-white" size={32} />
             </div>
             <h3 className="text-2xl font-bold mb-4 text-center">Sponsor Kit</h3>
-            <p className="text-center text-purple-100 mb-6 leading-relaxed">Includes detailed sponsorship benefits and guidelines.</p>
+            <p className="text-center text-purple-100 mb-6 leading-relaxed">
+              Includes detailed sponsorship benefits and guidelines.
+            </p>
             <button className="bg-white text-purple-600 font-bold px-6 py-3 rounded-lg hover:bg-purple-50 transition-colors shadow-lg">
               Register as Sponsor
             </button>
           </div>
           <div
             className="cursor-pointer rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-800 text-white flex flex-col items-center justify-center min-h-64"
-            onClick={() => alert('Delegate Kit Registration')}
+            onClick={() => alert("Delegate Kit Registration")}
           >
             <div className="bg-white/20 rounded-full p-4 mb-6">
               <Users className="text-white" size={32} />
             </div>
-            <h3 className="text-2xl font-bold mb-4 text-center">Delegate Kit</h3>
-            <p className="text-center text-blue-100 mb-6 leading-relaxed">Access to sessions, networking, and event materials.</p>
+            <h3 className="text-2xl font-bold mb-4 text-center">
+              Delegate Kit
+            </h3>
+            <p className="text-center text-blue-100 mb-6 leading-relaxed">
+              Access to sessions, networking, and event materials.
+            </p>
             <button className="bg-white text-blue-600 font-bold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors shadow-lg">
               Register as Delegate
             </button>
@@ -323,29 +387,37 @@ const MediaEntertainmentIndustry = () => {
 
   const renderContent = () => {
     switch (currentView) {
-      case 'about':
+      case "about":
         return <AboutSection />;
-      case 'subscription':
+      case "subscription":
         return (
           <div className="max-w-4xl mx-auto py-12">
             <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-12 shadow-lg text-center">
               <Film className="mx-auto mb-6 text-blue-600" size={48} />
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Subscription Page</h2>
-              <p className="text-gray-600">Coming Soon - Premium subscription features</p>
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                Subscription Page
+              </h2>
+              <p className="text-gray-600">
+                Coming Soon - Premium subscription features
+              </p>
             </div>
           </div>
         );
-      case 'shows':
+      case "shows":
         return (
           <div className="max-w-4xl mx-auto py-12">
             <div className="bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl p-12 shadow-lg text-center">
               <Tv className="mx-auto mb-6 text-purple-600" size={48} />
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Shows Page</h2>
-              <p className="text-gray-600">Discover amazing shows and entertainment content</p>
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                Shows Page
+              </h2>
+              <p className="text-gray-600">
+                Discover amazing shows and entertainment content
+              </p>
             </div>
           </div>
         );
-      case 'music':
+      case "music":
         return (
           <div className="py-8 bg-gradient-to-br from-white via-purple-50 to-pink-50">
             <div className="max-w-6xl mx-auto px-6">
@@ -353,18 +425,22 @@ const MediaEntertainmentIndustry = () => {
                 <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                   <Music className="text-white" size={32} />
                 </div>
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">Explore Our Music Collection</h2>
-                <p className="text-gray-600 text-lg">Discover the best in music entertainment</p>
+                <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                  Explore Our Music Collection
+                </h2>
+                <p className="text-gray-600 text-lg">
+                  Discover the best in music entertainment
+                </p>
               </div>
               <ServiceCards category="music" />
             </div>
           </div>
         );
-      case 'media':
+      case "media":
         return <MediaPage />;
-      case 'sales':
+      case "sales":
         return <SalesPage />;
-      case 'home':
+      case "home":
       default:
         return (
           <div className="space-y-0">
@@ -385,10 +461,16 @@ const MediaEntertainmentIndustry = () => {
         <div className="flex items-center justify-between p-4 max-w-7xl mx-auto">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <div className="text-xl font-bold bg-white text-purple-600 rounded-full w-12 h-12 flex items-center justify-center shadow-lg">M</div>
+            <div className="text-xl font-bold bg-white text-purple-600 rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+              M
+            </div>
             <div>
-              <h1 className="text-xl font-bold text-white">Media & Entertainment Hub</h1>
-              <p className="text-sm text-purple-100">Experience the Best in Media</p>
+              <h1 className="text-xl font-bold text-white">
+                Media & Entertainment Hub
+              </h1>
+              <p className="text-sm text-purple-100">
+                Experience the Best in Media
+              </p>
             </div>
           </div>
 
@@ -399,9 +481,11 @@ const MediaEntertainmentIndustry = () => {
                 key={id}
                 onClick={() => handleNavigation(id)}
                 className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105
-                  ${currentView === id 
-                    ? 'bg-white text-purple-600 shadow-lg' 
-                    : 'text-white hover:bg-white/20 hover:backdrop-blur-sm'}`}
+                  ${
+                    currentView === id
+                      ? "bg-white text-purple-600 shadow-lg"
+                      : "text-white hover:bg-white/20 hover:backdrop-blur-sm"
+                  }`}
                 aria-label={`Navigate to ${label}`}
               >
                 <Icon size={18} />
@@ -428,9 +512,11 @@ const MediaEntertainmentIndustry = () => {
                 key={id}
                 onClick={() => handleNavigation(id)}
                 className={`flex items-center space-x-3 px-6 py-4 w-full text-left transition-all duration-200
-                  ${currentView === id 
-                    ? 'bg-purple-600 text-white shadow-lg' 
-                    : 'text-gray-700 hover:bg-purple-50 hover:text-purple-600'}`}
+                  ${
+                    currentView === id
+                      ? "bg-purple-600 text-white shadow-lg"
+                      : "text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+                  }`}
                 aria-label={`Navigate to ${label}`}
               >
                 <Icon size={20} />
@@ -442,9 +528,7 @@ const MediaEntertainmentIndustry = () => {
       </div>
 
       {/* Main Content */}
-      <main className="min-h-screen">
-        {renderContent()}
-      </main>
+      <main className="min-h-screen">{renderContent()}</main>
 
       <Footer />
     </div>

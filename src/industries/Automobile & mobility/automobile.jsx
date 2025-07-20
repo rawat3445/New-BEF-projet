@@ -1,51 +1,52 @@
-import React, { useState } from 'react';
-import { ArrowLeft, Menu, X, Home, Info, DollarSign } from 'lucide-react';
+import React, { useState } from "react";
+import { ArrowLeft, Menu, X, Home, Info, DollarSign } from "lucide-react";
 
 // Import all components
-import Navbar from './components/navbar/Navbar';
+import Navbar from "./components/navbar/Navbar";
 // import HeroCarousel from './components/herosection/HeroSection';
-import ServiceCards from './servicesCard/Card';
-import AboutSection from './components/aboutsection/About';
-import Footer from './components/footer/Footer';
+import ServiceCards from "./servicesCard/Card";
+import AboutSection from "./components/aboutsection/About";
+import Footer from "./components/footer/Footer";
 
 import AutoMobilityHero from "./components/herosection/Hero";
 
-
 // Import pages
-import AboutPage from './pages/Aboutpage';
-import SalesPage from './pages/SalesPage';
+import AboutPage from "./pages/Aboutpage";
+import SalesPage from "./pages/SalesPage";
 
-import './automobile.css';
+import "./automobile.css";
 
 const AutomobileIndustry = () => {
-  const [currentView, setCurrentView] = useState('home');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [currentView, setCurrentView] = useState("home");
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'about', label: 'About', icon: Info },
-    { id: 'sales', label: 'Pricing', icon: DollarSign }
+    { id: "home", label: "Home", icon: Home },
+    { id: "about", label: "About", icon: Info },
+    { id: "sales", label: "Pricing", icon: DollarSign },
   ];
 
-  const handleNavigation = (view) => {
+  {
+    /* const handleNavigation = (view) => {
     setCurrentView(view);
     setIsMobileMenuOpen(false);
-  };
+  }; */
+  }
 
   const renderContent = () => {
     switch (currentView) {
-      case 'about':
-        return <AboutPage onBack={() => setCurrentView('home')} />;
-      case 'sales':
+      case "about":
+        return <AboutPage onBack={() => setCurrentView("home")} />;
+      case "sales":
         return <SalesPage />;
-      case 'home':
+      case "home":
       default:
         return (
           <>
             {/* <HeroCarousel /> */}
-            <AutoMobilityHero/>
+            <AutoMobilityHero />
             <AboutSection />
-             <ServiceCards />
+            <ServiceCards />
             <SalesPage />
           </>
         );
@@ -54,7 +55,7 @@ const AutomobileIndustry = () => {
 
   return (
     <div className="advertisement-industry">
-      {/* Navigation Header */}
+      {/* Navigation Header 
       <div className="industry-nav">
         <div className="nav-container">
           <div className="nav-brand">
@@ -65,9 +66,9 @@ const AutomobileIndustry = () => {
                 <span className="brand-tagline">Transform Your Innovation</span>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          {/* Desktop Navigation */}
+      {/* Desktop Navigation
           <nav className="desktop-nav">
             {navigationItems.map((item) => {
               const IconComponent = item.icon;
@@ -82,18 +83,18 @@ const AutomobileIndustry = () => {
                 </button>
               );
             })}
-          </nav>
+          </nav>  */}
 
-          {/* Mobile Menu Toggle */}
+      {/* Mobile Menu Toggle 
           <button
             className="mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
+        </div> */}
 
-        {/* Mobile Navigation */}
+      {/* Mobile Navigation 
         {isMobileMenuOpen && (
           <div className="mobile-nav">
             <div className="mobile-nav-overlay" onClick={() => setIsMobileMenuOpen(false)} />
@@ -114,14 +115,14 @@ const AutomobileIndustry = () => {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
 
       {/* Breadcrumb for non-home views */}
-      {currentView !== 'home' && (
+      {currentView !== "home" && (
         <div className="breadcrumb">
           <div className="breadcrumb-container">
             <button
-              onClick={() => setCurrentView('home')}
+              onClick={() => setCurrentView("home")}
               className="breadcrumb-back"
             >
               <ArrowLeft size={16} />
@@ -129,7 +130,7 @@ const AutomobileIndustry = () => {
             </button>
             <div className="breadcrumb-separator">/</div>
             <div className="breadcrumb-current">
-              {navigationItems.find(item => item.id === currentView)?.label}
+              {navigationItems.find((item) => item.id === currentView)?.label}
             </div>
           </div>
         </div>
@@ -138,8 +139,8 @@ const AutomobileIndustry = () => {
       {/* Main Content */}
       <main className="main-content">
         {/* Render Navbar only on home page */}
-        {currentView === 'home' && <Navbar />}
-        
+        {currentView === "home" && <Navbar />}
+
         {/* Render appropriate content */}
         {renderContent()}
       </main>
@@ -148,17 +149,17 @@ const AutomobileIndustry = () => {
       <Footer />
 
       {/* Floating Action Button for Quick Access */}
-      {currentView === 'home' && (
+      {currentView === "home" && (
         <div className="floating-actions">
           <button
-            onClick={() => setCurrentView('sales')}
+            onClick={() => setCurrentView("sales")}
             className="fab-primary"
             title="View Pricing"
           >
             <DollarSign size={20} />
           </button>
           <button
-            onClick={() => setCurrentView('about')}
+            onClick={() => setCurrentView("about")}
             className="fab-secondary"
             title="Learn More"
           >
@@ -166,8 +167,6 @@ const AutomobileIndustry = () => {
           </button>
         </div>
       )}
-
-     
     </div>
   );
 };

@@ -1,58 +1,70 @@
-import React, { useState } from 'react';
-import { ArrowLeft, Menu, X, Home, Info, BarChart2, PieChart, TrendingUp } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  ArrowLeft,
+  Menu,
+  X,
+  Home,
+  Info,
+  BarChart2,
+  PieChart,
+  TrendingUp,
+} from "lucide-react";
 
 // Import all components
-import Navbar from './components/navbar/navbar';
-import HeroCarousel from './components/herocarousel/carousel';
-import ServiceCards from './components/servicecards/cards';
-import AboutSection from './components/aboutsection/aboutsec';
-import Footer from './components/footer/footer';
+import Navbar from "./components/navbar/navbar";
+import HeroCarousel from "./components/herocarousel/carousel";
+import ServiceCards from "./components/servicecards/cards";
+import AboutSection from "./components/aboutsection/aboutsec";
+import Footer from "./components/footer/footer";
 
 // Import pages
-import AboutPage from './pages/aboutPage/aboutPage';
-import InvestmentPlansPage from './pages/salesPage/salesPage';
+import AboutPage from "./pages/aboutPage/aboutPage";
+import InvestmentPlansPage from "./pages/salesPage/salesPage";
 
-
-import './finance.css';
+import "./finance.css";
 
 const Finance = () => {
-  const [currentView, setCurrentView] = useState('home');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [currentView, setCurrentView] = useState("home");
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Navigation items with finance-appropriate icons and labels
   const navigationItems = [
-    { id: 'home', label: 'Dashboard', icon: Home },
-    { id: 'about', label: 'About Us', icon: Info },
-    { id: 'plans', label: 'Investment Plans', icon: BarChart2 },
+    { id: "home", label: "Dashboard", icon: Home },
+    { id: "about", label: "About Us", icon: Info },
+    { id: "plans", label: "Investment Plans", icon: BarChart2 },
   ];
 
-  const handleNavigation = (view) => {
+  {
+    /* const handleNavigation = (view) => {
     setCurrentView(view);
     setIsMobileMenuOpen(false);
-  };
+  }; */
+  }
 
   const renderContent = () => {
     switch (currentView) {
-      case 'about':
-        return <AboutPage onBack={() => setCurrentView('home')} />;
-      case 'plans':
+      case "about":
+        return <AboutPage onBack={() => setCurrentView("home")} />;
+      case "plans":
         return <InvestmentPlansPage />;
-      case 'market':
+      case "market":
         return (
           <div>
             {/* You can create a MarketInsightsPage or inline content here */}
             <h2>Market Insights</h2>
-            <p>Latest trends, analysis, and forecasts to help you invest wisely.</p>
+            <p>
+              Latest trends, analysis, and forecasts to help you invest wisely.
+            </p>
           </div>
         );
-      case 'performance':
+      case "performance":
         return (
           <div>
             <h2>Portfolio Performance</h2>
             <p>Track your investment growth and returns over time.</p>
           </div>
         );
-      case 'home':
+      case "home":
       default:
         return (
           <>
@@ -66,7 +78,7 @@ const Finance = () => {
 
   return (
     <div className="finance-industry">
-      {/* Navigation Header */}
+      {/* Navigation Header 
       <div className="industry-nav">
         <div className="nav-container">
           <div className="nav-brand">
@@ -77,9 +89,9 @@ const Finance = () => {
                 <span className="brand-tagline">Grow Your Wealth Intelligently</span>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          {/* Desktop Navigation */}
+      {/* Desktop Navigation
           <nav className="desktop-nav">
             {navigationItems.map((item) => {
               const IconComponent = item.icon;
@@ -94,18 +106,18 @@ const Finance = () => {
                 </button>
               );
             })}
-          </nav>
+          </nav>  */}
 
-          {/* Mobile Menu Toggle */}
+      {/* Mobile Menu Toggle 
           <button
             className="mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
+        </div> */}
 
-        {/* Mobile Navigation */}
+      {/* Mobile Navigation 
         {isMobileMenuOpen && (
           <div className="mobile-nav">
             <div className="mobile-nav-overlay" onClick={() => setIsMobileMenuOpen(false)} />
@@ -126,14 +138,14 @@ const Finance = () => {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
 
       {/* Breadcrumb for non-home views */}
-      {currentView !== 'home' && (
+      {currentView !== "home" && (
         <div className="breadcrumb">
           <div className="breadcrumb-container">
             <button
-              onClick={() => setCurrentView('home')}
+              onClick={() => setCurrentView("home")}
               className="breadcrumb-back"
             >
               <ArrowLeft size={16} />
@@ -141,7 +153,7 @@ const Finance = () => {
             </button>
             <div className="breadcrumb-separator">/</div>
             <div className="breadcrumb-current">
-              {navigationItems.find(item => item.id === currentView)?.label}
+              {navigationItems.find((item) => item.id === currentView)?.label}
             </div>
           </div>
         </div>
@@ -150,8 +162,8 @@ const Finance = () => {
       {/* Main Content */}
       <main className="main-content">
         {/* Render Navbar only on dashboard */}
-        {currentView === 'home' && <Navbar />}
-        
+        {currentView === "home" && <Navbar />}
+
         {/* Render appropriate content */}
         {renderContent()}
       </main>
@@ -160,17 +172,17 @@ const Finance = () => {
       <Footer />
 
       {/* Floating Action Button for Quick Access */}
-      {currentView === 'home' && (
+      {currentView === "home" && (
         <div className="floating-actions">
           <button
-            onClick={() => setCurrentView('plans')}
+            onClick={() => setCurrentView("plans")}
             className="fab-primary"
             title="View Investment Plans"
           >
             <BarChart2 size={20} />
           </button>
           <button
-            onClick={() => setCurrentView('about')}
+            onClick={() => setCurrentView("about")}
             className="fab-secondary"
             title="About Us"
           >
