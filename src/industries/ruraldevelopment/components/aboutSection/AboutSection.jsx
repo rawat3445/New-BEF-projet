@@ -1,24 +1,40 @@
-import React from 'react';
-import { 
-  Users, 
-  Droplet, 
-  Wifi, 
-  BookOpen, 
-  CheckCircle, 
+import React from "react";
+import {
+  Users,
+  Droplet,
+  Wifi,
+  BookOpen,
+  CheckCircle,
   Lightbulb,
   Heart,
-  Award 
-} from 'lucide-react';
+  Award,
+} from "lucide-react";
 
 const RuralAboutSection = () => {
   const stats = [
-    { icon: <Users className="h-8 w-8" />, number: "10,000+", label: "Villages Impacted" },
-    { icon: <Droplet className="h-8 w-8" />, number: "5,200+", label: "Water Projects" },
-    { icon: <Wifi className="h-8 w-8" />, number: "2,400+", label: "Digital Villages" },
-    { icon: <BookOpen className="h-8 w-8" />, number: "1M+", label: "Trained Individuals" }
+    {
+      icon: <Users className="h-8 w-8" />,
+      number: "10,000+",
+      label: "Villages Impacted",
+    },
+    {
+      icon: <Droplet className="h-8 w-8" />,
+      number: "5,200+",
+      label: "Water Projects",
+    },
+    {
+      icon: <Wifi className="h-8 w-8" />,
+      number: "2,400+",
+      label: "Digital Villages",
+    },
+    {
+      icon: <BookOpen className="h-8 w-8" />,
+      number: "1M+",
+      label: "Trained Individuals",
+    },
   ];
 
-  const values = [
+  /**  const values = [
     {
       icon: <Lightbulb className="h-6 w-6" />,
       title: "Grassroots Innovation",
@@ -39,23 +55,25 @@ const RuralAboutSection = () => {
       title: "Excellence in Implementation",
       description: "Award-winning projects recognized by NITI Aayog"
     }
-  ];
-
+  ]; */
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          
           {/* Text Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
               About Our Rural Mission
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              The Bharat Economic Forum's Rural Development Initiative is transforming India's villages through technology, sustainable practices, and community empowerment.
+              The Bharat Economic Forum's Rural Development Initiative is
+              transforming India's villages through technology, sustainable
+              practices, and community empowerment.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Since 2015, we've partnered with 200+ organizations to implement scalable solutions across 12 states, directly impacting 5 million lives.
+              Since 2015, we've partnered with 200+ organizations to implement
+              scalable solutions across 12 states, directly impacting 5 million
+              lives.
             </p>
 
             {/* Key Points */}
@@ -64,7 +82,7 @@ const RuralAboutSection = () => {
                 "Recognized by UN Sustainable Development Goals",
                 "Featured in NITI Aayog's Aspirational Districts Program",
                 "Awarded Best Rural NGO 2023",
-                "100% project completion rate"
+                "100% project completion rate",
               ].map((item, index) => (
                 <div key={index} className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
@@ -83,7 +101,8 @@ const RuralAboutSection = () => {
             <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-3xl p-8 text-white shadow-xl">
               <h3 className="text-2xl font-bold mb-6">Our 2047 Vision</h3>
               <p className="text-lg leading-relaxed mb-6">
-                To create self-reliant villages with urban-quality infrastructure, opportunities, and quality of life.
+                To create self-reliant villages with urban-quality
+                infrastructure, opportunities, and quality of life.
               </p>
               <div className="bg-white/20 rounded-2xl p-6 backdrop-blur-sm">
                 <h4 className="text-xl font-semibold mb-3">Core Principles</h4>
@@ -92,7 +111,7 @@ const RuralAboutSection = () => {
                     "Community-led development",
                     "Technology as an enabler",
                     "Environmental sustainability",
-                    "Women at the forefront"
+                    "Women at the forefront",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center">
                       <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
@@ -119,14 +138,12 @@ const RuralAboutSection = () => {
               <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 font-medium">
-                {stat.label}
-              </div>
+              <div className="text-gray-600 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
 
-        {/* Values Section */}
+        {/* Values Section 
         <div>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -139,7 +156,10 @@ const RuralAboutSection = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
+              <div
+                key={index}
+                className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300"
+              >
                 <div className="bg-gradient-to-br from-green-500 to-teal-600 text-white p-3 rounded-xl w-fit mb-4 shadow-md">
                   {value.icon}
                 </div>
@@ -152,7 +172,7 @@ const RuralAboutSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );

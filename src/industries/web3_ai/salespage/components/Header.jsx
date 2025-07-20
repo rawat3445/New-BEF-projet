@@ -23,7 +23,7 @@ const Header = () => {
               Home
             </RouterLink>
 
-            <ScrollLink
+            {/*  <ScrollLink
               to="event"
               spy={true}
               smooth={true}
@@ -31,10 +31,10 @@ const Header = () => {
               duration={500}
               className="nav-item text-white hover:text-yellow-200 font-medium cursor-pointer"
             >
-              Event
-            </ScrollLink>
+               Event 
+            </ScrollLink>*/}
 
-            <ScrollLink
+            {/*  <ScrollLink
               to="delegate"
               spy={true}
               smooth={true}
@@ -42,8 +42,8 @@ const Header = () => {
               duration={500}
               className="nav-item text-white hover:text-yellow-200 font-medium cursor-pointer"
             >
-              Delegate
-            </ScrollLink>
+               Delegate 
+            </ScrollLink>*/}
           </nav>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Award,
   Users,
@@ -8,40 +8,59 @@ import {
   Leaf,
   Cpu,
   ShieldCheck,
-  Sun
-} from 'lucide-react';
+  Sun,
+} from "lucide-react";
 
 const AboutSection = () => {
   const stats = [
-    { icon: <Users className="h-8 w-8" />, number: "1,000+", label: "Farmers Empowered" },
-    { icon: <Award className="h-8 w-8" />, number: "10+", label: "Years of Innovation" },
-    { icon: <TrendingUp className="h-8 w-8" />, number: "98%", label: "Satisfaction Rate" },
-    { icon: <Clock className="h-8 w-8" />, number: "24/7", label: "Agri Support" }
+    {
+      icon: <Users className="h-8 w-8" />,
+      number: "1,000+",
+      label: "Farmers Empowered",
+    },
+    {
+      icon: <Award className="h-8 w-8" />,
+      number: "10+",
+      label: "Years of Innovation",
+    },
+    {
+      icon: <TrendingUp className="h-8 w-8" />,
+      number: "98%",
+      label: "Satisfaction Rate",
+    },
+    {
+      icon: <Clock className="h-8 w-8" />,
+      number: "24/7",
+      label: "Agri Support",
+    },
   ];
 
-  const values = [
+  /**  const values = [
     {
       icon: <Cpu className="h-6 w-6" />,
       title: "Smart Farming",
-      description: "We integrate technology with tradition to maximize agricultural productivity efficiently."
+      description:
+        "We integrate technology with tradition to maximize agricultural productivity efficiently.",
     },
     {
       icon: <Sun className="h-6 w-6" />,
       title: "Sustainability",
-      description: "We promote eco-friendly practices that protect soil, water, and future food security."
+      description:
+        "We promote eco-friendly practices that protect soil, water, and future food security.",
     },
     {
       icon: <ShieldCheck className="h-6 w-6" />,
       title: "Reliability",
-      description: "Farmers trust us for timely, consistent solutions tailored to their local needs."
+      description:
+        "Farmers trust us for timely, consistent solutions tailored to their local needs.",
     },
     {
       icon: <Leaf className="h-6 w-6" />,
       title: "Growth-Focused",
-      description: "We nurture growth — of crops, communities, and agricultural businesses alike."
-    }
-  ];
-
+      description:
+        "We nurture growth — of crops, communities, and agricultural businesses alike.",
+    },
+  ]; */
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -53,10 +72,15 @@ const AboutSection = () => {
               About AgriNxt
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              We are on a mission to revolutionize Indian agriculture through cutting-edge technology and farmer-first solutions. Our platform bridges the gap between traditional farming wisdom and modern innovation to drive better yields, smarter decisions, and sustainable outcomes.
+              We are on a mission to revolutionize Indian agriculture through
+              cutting-edge technology and farmer-first solutions. Our platform
+              bridges the gap between traditional farming wisdom and modern
+              innovation to drive better yields, smarter decisions, and
+              sustainable outcomes.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              From precision tools to real-time analytics, we empower rural communities to thrive in a changing climate and dynamic market.
+              From precision tools to real-time analytics, we empower rural
+              communities to thrive in a changing climate and dynamic market.
             </p>
 
             {/* Key Points */}
@@ -71,11 +95,15 @@ const AboutSection = () => {
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Eco-friendly farming solutions</span>
+                <span className="text-gray-700">
+                  Eco-friendly farming solutions
+                </span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                <span className="text-gray-700">Farmer-first customer support</span>
+                <span className="text-gray-700">
+                  Farmer-first customer support
+                </span>
               </div>
             </div>
 
@@ -89,7 +117,9 @@ const AboutSection = () => {
             <div className="bg-gradient-to-br from-green-500 to-teal-600 rounded-3xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">Our Mission</h3>
               <p className="text-lg leading-relaxed mb-6">
-                To empower Indian agriculture through smart technologies, data-driven insights, and sustainable solutions that uplift farming communities and ensure food security.
+                To empower Indian agriculture through smart technologies,
+                data-driven insights, and sustainable solutions that uplift
+                farming communities and ensure food security.
               </p>
               <div className="bg-white bg-opacity-20 rounded-2xl p-6">
                 <h4 className="text-xl font-semibold mb-3">Why Choose Us?</h4>
@@ -130,14 +160,12 @@ const AboutSection = () => {
               <div className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 font-medium">
-                {stat.label}
-              </div>
+              <div className="text-gray-600 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
 
-        {/* Values Section */}
+        {/* Values Section 
         <div>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -163,7 +191,7 @@ const AboutSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );
