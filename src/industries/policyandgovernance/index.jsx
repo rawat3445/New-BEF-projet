@@ -1,41 +1,43 @@
-import React, { useState } from 'react';
-import { ArrowLeft, Menu, X, Home, Info, DollarSign } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { ArrowLeft, Menu, X, Home, Info, DollarSign } from "lucide-react";
+import { Link } from "react-router-dom";
 // Import all components
-import Navbar from './components/navbar/navbar';
-import HeroCarousel from './components/herocarousel/carousel';
-import ServiceCards from './components/servicecards/cards';
-import AboutSection from './components/aboutsection.jsx/aboutsec';
-import Footer from './components/footer/footer';
+import Navbar from "./components/navbar/navbar";
+import HeroCarousel from "./components/herocarousel/carousel";
+import ServiceCards from "./components/servicecards/cards";
+import AboutSection from "./components/aboutsection.jsx/aboutsec";
+import Footer from "./components/footer/footer";
 
 // Import pages
-import AboutPage from './pages/aboutPage/aboutPage';
-import SalesPage from './pages/salesPage/salesPage';
+import AboutPage from "./pages/aboutPage/aboutPage";
+import SalesPage from "./pages/salesPage/salesPage";
 
 import "./index.css";
 
 const Policyandgovernance = () => {
-  const [currentView, setCurrentView] = useState('home');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [currentView, setCurrentView] = useState("home");
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'about', label: 'About', icon: Info },
-    { id: 'sales', label: 'Pricing', icon: DollarSign }
+    { id: "home", label: "Home", icon: Home },
+    { id: "about", label: "About", icon: Info },
+    { id: "sales", label: "Pricing", icon: DollarSign },
   ];
 
-  const handleNavigation = (view) => {
+  {
+    /* const handleNavigation = (view) => {
     setCurrentView(view);
     setIsMobileMenuOpen(false);
-  };
+  }; */
+  }
 
   const renderContent = () => {
     switch (currentView) {
-      case 'about':
-        return <AboutPage onBack={() => setCurrentView('home')} />;
-      case 'sales':
+      case "about":
+        return <AboutPage onBack={() => setCurrentView("home")} />;
+      case "sales":
         return <SalesPage />;
-      case 'home':
+      case "home":
       default:
         return (
           <>
@@ -49,7 +51,7 @@ const Policyandgovernance = () => {
 
   return (
     <div className="policygovernance-industry">
-      {/* Navigation Header */}
+      {/* Navigation Header 
       <div className="industry-nav">
         <div className="nav-container">
           <div className="nav-brand">
@@ -62,9 +64,9 @@ const Policyandgovernance = () => {
               </div>
             </div>
            </Link>
-          </div>
+          </div> */}
 
-          {/* Desktop Navigation */}
+      {/* Desktop Navigation 
           <nav className="desktop-nav">
             {navigationItems.map((item) => {
               const IconComponent = item.icon;
@@ -80,17 +82,17 @@ const Policyandgovernance = () => {
               );
             })}
           </nav>
-
-          {/* Mobile Menu Toggle */}
+*/}
+      {/* Mobile Menu Toggle 
           <button
             className="mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
+        </div> */}
 
-        {/* Mobile Navigation */}
+      {/* Mobile Navigation 
         {isMobileMenuOpen && (
           <div className="mobile-nav">
             <div className="mobile-nav-overlay" onClick={() => setIsMobileMenuOpen(false)} />
@@ -111,14 +113,14 @@ const Policyandgovernance = () => {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
 
       {/* Breadcrumb for non-home views */}
-      {currentView !== 'home' && (
+      {currentView !== "home" && (
         <div className="breadcrumb">
           <div className="breadcrumb-container">
             <button
-              onClick={() => setCurrentView('home')}
+              onClick={() => setCurrentView("home")}
               className="breadcrumb-back"
             >
               <ArrowLeft size={16} />
@@ -126,7 +128,7 @@ const Policyandgovernance = () => {
             </button>
             <div className="breadcrumb-separator">/</div>
             <div className="breadcrumb-current">
-              {navigationItems.find(item => item.id === currentView)?.label}
+              {navigationItems.find((item) => item.id === currentView)?.label}
             </div>
           </div>
         </div>
@@ -135,8 +137,8 @@ const Policyandgovernance = () => {
       {/* Main Content */}
       <main className="main-content">
         {/* Render Navbar only on home page */}
-        {currentView === 'home' && <Navbar />}
-        
+        {currentView === "home" && <Navbar />}
+
         {/* Render appropriate content */}
         {renderContent()}
       </main>
@@ -145,17 +147,17 @@ const Policyandgovernance = () => {
       <Footer />
 
       {/* Floating Action Button for Quick Access */}
-      {currentView === 'home' && (
+      {currentView === "home" && (
         <div className="floating-actions">
           <button
-            onClick={() => setCurrentView('sales')}
+            onClick={() => setCurrentView("sales")}
             className="fab-primary"
             title="View Pricing"
           >
             <DollarSign size={20} />
           </button>
           <button
-            onClick={() => setCurrentView('about')}
+            onClick={() => setCurrentView("about")}
             className="fab-secondary"
             title="Learn More"
           >

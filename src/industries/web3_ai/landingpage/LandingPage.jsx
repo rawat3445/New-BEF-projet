@@ -1,13 +1,11 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Navbar from './Components/Navbar';
-import HeroSection from './Components/HeroSection';
-import ContentSections from './Components/ContentSections';
-import Footer from './Components/Footer';
-import "./styles.css"
-
-
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Navbar from "./Components/Navbar";
+import HeroSection from "./Components/HeroSection";
+import ContentSections from "./Components/ContentSections";
+import Footer from "./Components/Footer";
+import "./styles.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,17 +14,19 @@ export default function LandingPage() {
   const navbarRef = useRef();
 
   useEffect(() => {
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: document.body,
-        start: 'top top',
-        end: '70% top',
-        scrub: 2,
-      },
-    }).to(globeRef.current, {
-      scale: 0.3,
-      ease: 'power2.inOut',
-    });
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: document.body,
+          start: "top top",
+          end: "70% top",
+          scrub: 2,
+        },
+      })
+      .to(globeRef.current, {
+        scale: 0.3,
+        ease: "power2.inOut",
+      });
 
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
@@ -39,8 +39,8 @@ export default function LandingPage() {
       lastScrollY = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
