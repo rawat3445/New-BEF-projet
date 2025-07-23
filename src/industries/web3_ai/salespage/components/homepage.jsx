@@ -1,35 +1,30 @@
 import React from "react";
-import logo_path from "../assets/img/logo.png";
-import Button from "@mui/material/Button";
-// import Countdown from "./Countdown";
-// import { Link, animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion";
 
-import MediaExposure from "./MediaExposure";
+// Removed: import MediaExposure from "./MediaExposure";
+// Removed: import EventSchedule from "./EventSchedule";
+// Removed: import VenueInfo from "./VenueInfo";
+// Removed: import ContactSection from "./ContactSection";
+// Removed: import RegisterNow from "./RegisterNow";
+
 import CustomizedTimeline from "./CustomizedTimeline";
 import HeroSection from "./HeroSection";
 import MultiActionAreaCard from "./MultiActionAreaCard";
 import Footer from "./footer";
-
-import ContactSection from "./ContactSection";
-import VantaBackground from "./VantaBackground";
 
 import FeaturedSpeakers from "./FeaturedSpeakers";
 import PastConclaves from "./PastConclaves";
 import Testimonials from "./Testimonials";
 import WhyAttend from "./WhyAttend";
 import WhoShouldAttend from "./WhoShouldAttend";
-import EventSchedule from "./EventSchedule";
 import DelegatePasses from "./DelegatePasses";
-import VenueInfo from "./VenueInfo";
-import Partners from "./Partners";
-import RegisterNow from "./RegisterNow";
-import Header from "./Header";  // Removed this import
+import VantaBackground from "./VantaBackground";
+import Header from "./Header";
 
 const Homepage = () => {
   return (
     <>
-      <Header/>
+      <Header />
 
       {/* Animated Banner */}
       <section id="banner-object" className="mb-12">
@@ -47,29 +42,28 @@ const Homepage = () => {
 
       {/* Existing Components */}
       {/* <CustomizedTimeline /> */}
-      <MediaExposure />
+      {/* <MediaExposure /> - Removed */}
       <HeroSection />
       <MultiActionAreaCard />
-
       {/* <FeaturedSpeakers /> */}
       <PastConclaves />
       <Testimonials />
       <WhyAttend />
       <WhoShouldAttend />
-      <EventSchedule />
+      {/* <EventSchedule /> - Removed */}
       <section id="delegate">
         <DelegatePasses />
       </section>
-      <section id="event">
-        <VenueInfo />
-      </section>
-      {/* <Partners /> */}
-      
-      {/* Scroll to Top Button */}
-      <section id="contact">
-        <ContactSection />
-      </section>
-      <RegisterNow />
+      {/* <section id="event">
+        <VenueInfo /> - Removed
+      </section> */}
+
+      {/* <section id="contact">
+        <ContactSection /> - Removed
+      </section> */}
+
+      {/* <RegisterNow /> - Removed */}
+
       <Footer />
     </>
   );

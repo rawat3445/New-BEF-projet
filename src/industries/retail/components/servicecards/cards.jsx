@@ -1,9 +1,9 @@
-import React from 'react';
-import { 
-  Crown, 
-  Users, 
-  Mic, 
-  Camera, 
+import React from "react";
+import {
+  Crown,
+  Users,
+  Mic,
+  Camera,
   Trophy,
   Network,
   ArrowRight,
@@ -11,8 +11,8 @@ import {
   Target,
   Award,
   Briefcase,
-  Globe
-} from 'lucide-react';
+  Globe,
+} from "lucide-react";
 
 const SponsorshipBenefits = () => {
   const sponsorshipTiers = [
@@ -21,130 +21,143 @@ const SponsorshipBenefits = () => {
       icon: <Trophy className="h-8 w-8" />,
       title: "Title Sponsor",
       subtitle: "Platinum Partnership",
-      description: "Maximum visibility and exclusive branding opportunities at India's premier development conclave.",
+      description:
+        "Maximum visibility and exclusive branding opportunities at India's premier development conclave.",
       features: [
         "Logo on all official materials & banners",
         "Prime speaking slot (30 minutes)",
         "Dedicated exhibition booth (100 sq ft)",
         "VIP networking dinner access",
         "Media interview opportunities",
-        "LinkedIn & social media promotion"
+        "LinkedIn & social media promotion",
       ],
       price: "₹5,00,000",
       popular: true,
-      color: "from-yellow-400 to-orange-500"
+      color: "from-yellow-400 to-orange-500",
     },
     {
       id: 2,
       icon: <Crown className="h-8 w-8" />,
       title: "Keynote Sponsor",
       subtitle: "Gold Partnership",
-      description: "Establish thought leadership while connecting with key stakeholders and decision makers.",
+      description:
+        "Establish thought leadership while connecting with key stakeholders and decision makers.",
       features: [
         "Keynote speaking opportunity (20 minutes)",
         "Logo placement on stage backdrop",
         "Exhibition space (50 sq ft)",
         "Welcome reception access",
         "Digital marketing campaign inclusion",
-        "Post-event networking directory"
+        "Post-event networking directory",
       ],
       price: "₹3,50,000",
       popular: false,
-      color: "from-blue-500 to-purple-600"
+      color: "from-blue-500 to-purple-600",
     },
     {
       id: 3,
       icon: <Mic className="h-8 w-8" />,
       title: "Panel Sponsor",
       subtitle: "Silver Partnership",
-      description: "Engage in meaningful discussions and showcase expertise in specialized sessions.",
+      description:
+        "Engage in meaningful discussions and showcase expertise in specialized sessions.",
       features: [
         "Panel discussion participation",
         "Logo on session materials",
         "Booth space (25 sq ft)",
         "Lunch networking access",
         "Speaker bio in official program",
-        "Event photography rights"
+        "Event photography rights",
       ],
       price: "₹2,50,000",
       popular: false,
-      color: "from-green-500 to-teal-600"
+      color: "from-green-500 to-teal-600",
     },
     {
       id: 4,
       icon: <Network className="h-8 w-8" />,
       title: "Innovation Sponsor",
       subtitle: "Startup Catalyst",
-      description: "Support emerging entrepreneurs while showcasing your commitment to innovation.",
+      description:
+        "Support emerging entrepreneurs while showcasing your commitment to innovation.",
       features: [
         "Startup pitch session hosting",
         "Mentorship roundtable access",
         "Innovation zone branding",
         "Coffee break sponsorship",
         "Young entrepreneur networking",
-        "Tech showcase participation"
+        "Tech showcase participation",
       ],
       price: "₹2,00,000",
       popular: false,
-      color: "from-pink-500 to-rose-600"
+      color: "from-pink-500 to-rose-600",
     },
     {
       id: 5,
       icon: <Users className="h-8 w-8" />,
       title: "Networking Sponsor",
       subtitle: "Community Builder",
-      description: "Facilitate meaningful connections and build lasting business relationships.",
+      description:
+        "Facilitate meaningful connections and build lasting business relationships.",
       features: [
         "Networking session hosting",
         "Welcome desk branding",
         "Business card exchange app",
         "Evening reception access",
         "Delegate contact database",
-        "Follow-up meeting facilitation"
+        "Follow-up meeting facilitation",
       ],
       price: "₹1,50,000",
       popular: false,
-      color: "from-indigo-500 to-blue-600"
+      color: "from-indigo-500 to-blue-600",
     },
     {
       id: 6,
       icon: <Camera className="h-8 w-8" />,
       title: "Media Sponsor",
       subtitle: "Digital Amplifier",
-      description: "Maximize reach through comprehensive media coverage and digital presence.",
+      description:
+        "Maximize reach through comprehensive media coverage and digital presence.",
       features: [
         "Live streaming co-branding",
         "Social media content creation",
         "Press release mentions",
         "Event documentation rights",
         "Podcast episode sponsorship",
-        "Digital asset library access"
+        "Digital asset library access",
       ],
       price: "₹1,00,000",
       popular: false,
-      color: "from-cyan-500 to-blue-500"
-    }
+      color: "from-cyan-500 to-blue-500",
+    },
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <section
+      id="services"
+      className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50"
+    >
       <div className="container mx-auto px-4">
-        {/* Header */}
+        {/* Header 
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-200 mb-6">
             <Globe className="h-5 w-5 text-blue-600 mr-2" />
-            <span className="text-blue-700 font-semibold">Viksit Bharat Conclave 2025</span>
+            <span className="text-blue-700 font-semibold">
+              Viksit Bharat Conclave 2025
+            </span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-800 via-purple-700 to-blue-900 bg-clip-text text-transparent mb-6">
             Partnership Opportunities
           </h2>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            Join India's most influential gathering of visionaries, policymakers, and innovators. 
-            Showcase your commitment to building a developed India while unlocking unprecedented business opportunities.
+            Join India's most influential gathering of visionaries,
+            policymakers, and innovators. Showcase your commitment to building a
+            developed India while unlocking unprecedented business
+            opportunities.
           </p>
-        </div>
+        </div> */}
 
-        {/* Key Benefits Banner */}
+        {/* Key Benefits Banner 
         <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 mb-16 border border-white/20 shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
             <div className="space-y-2">
@@ -164,7 +177,7 @@ const SponsorshipBenefits = () => {
               <div className="text-gray-600">Digital Reach</div>
             </div>
           </div>
-        </div>
+        </div>*/}
 
         {/* Sponsorship Tiers Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -172,7 +185,7 @@ const SponsorshipBenefits = () => {
             <div
               key={tier.id}
               className={`relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden border border-white/20 ${
-                tier.popular ? 'ring-2 ring-yellow-400 scale-105' : ''
+                tier.popular ? "ring-2 ring-yellow-400 scale-105" : ""
               }`}
             >
               {tier.popular && (
@@ -183,10 +196,12 @@ const SponsorshipBenefits = () => {
                   </div>
                 </div>
               )}
-              
+
               <div className="p-8">
                 {/* Icon */}
-                <div className={`bg-gradient-to-br ${tier.color} text-white p-4 rounded-2xl w-fit mb-6 shadow-lg`}>
+                <div
+                  className={`bg-gradient-to-br ${tier.color} text-white p-4 rounded-2xl w-fit mb-6 shadow-lg`}
+                >
                   {tier.icon}
                 </div>
 
@@ -208,8 +223,13 @@ const SponsorshipBenefits = () => {
                 {/* Features */}
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature, index) => (
-                    <li key={index} className="flex items-start text-sm text-gray-700">
-                      <div className={`w-2 h-2 bg-gradient-to-r ${tier.color} rounded-full mr-3 mt-2 flex-shrink-0`}></div>
+                    <li
+                      key={index}
+                      className="flex items-start text-sm text-gray-700"
+                    >
+                      <div
+                        className={`w-2 h-2 bg-gradient-to-r ${tier.color} rounded-full mr-3 mt-2 flex-shrink-0`}
+                      ></div>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -218,24 +238,32 @@ const SponsorshipBenefits = () => {
                 {/* Price */}
                 <div className="text-3xl font-bold text-gray-800 mb-8 text-center">
                   {tier.price}
-                  <div className="text-sm font-normal text-gray-500 mt-1">Investment Amount</div>
+                  <div className="text-sm font-normal text-gray-500 mt-1">
+                    Investment Amount
+                  </div>
                 </div>
 
                 {/* CTA Button */}
-                <button className={`w-full bg-gradient-to-r ${tier.color} text-white py-4 px-6 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center group transform hover:scale-105`}>
+                <button
+                  className={`w-full bg-gradient-to-r ${tier.color} text-white py-4 px-6 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center group transform hover:scale-105`}
+                >
                   Become a Partner
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
 
               {/* Decorative Elements */}
-              <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${tier.color}`}></div>
-              <div className={`absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl ${tier.color} opacity-10 rounded-tl-full`}></div>
+              <div
+                className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${tier.color}`}
+              ></div>
+              <div
+                className={`absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl ${tier.color} opacity-10 rounded-tl-full`}
+              ></div>
             </div>
           ))}
         </div>
 
-        {/* Additional Benefits Section */}
+        {/* Additional Benefits Section 
         <div className="mt-20 bg-white/60 backdrop-blur-sm rounded-3xl p-12 border border-white/20 shadow-xl">
           <h3 className="text-3xl font-bold text-center text-gray-800 mb-8">
             Exclusive Partner Benefits
@@ -257,12 +285,13 @@ const SponsorshipBenefits = () => {
               <p className="text-gray-600">Position your brand at the forefront of India's development</p>
             </div>
           </div>
-        </div>
+        </div>*/}
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-            Ready to be part of India's transformation story? Let's discuss a custom partnership package tailored to your objectives.
+            Ready to be part of India's transformation story? Let's discuss a
+            custom partnership package tailored to your objectives.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
