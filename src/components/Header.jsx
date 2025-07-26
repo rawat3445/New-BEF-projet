@@ -228,7 +228,7 @@ const Navbar = () => {
                   scrollToSection("industries");
                 }}
               >
-                Initiatives
+                Industries
                 <ChevronDown className="dropdown-chevron w-4 h-4" />
               </a>
               <div className="dropdown-menu">
