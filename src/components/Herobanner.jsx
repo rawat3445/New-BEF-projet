@@ -3,12 +3,12 @@ import { ArrowRight, ArrowLeft, ArrowRightCircle } from "lucide-react";
 
 // Made carousel images responsive
 const bgImages = [
-  "/bef-web-deploy/hero/hero1.png",
-  "/bef-web-deploy/hero/hero2.png",
-  "/bef-web-deploy/hero/hero3.png",
-  "/bef-web-deploy/hero/hero4.png",
-  "/bef-web-deploy/hero/hero5.png",
-  "/bef-web-deploy/hero/hero6.png",
+  "/hero/hero1.png",
+  "/hero/hero2.png",
+  "/hero/hero3.png",
+  "/hero/hero4.png",
+  "/hero/hero5.png",
+  "/hero/hero6.png",
 ];
 
 const Hero = () => {
