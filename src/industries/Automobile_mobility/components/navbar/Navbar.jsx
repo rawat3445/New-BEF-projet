@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, CarFront, Phone, Mail, MapPin, User, LogOut } from 'lucide-react';
 import LoginForm from '../../../../components/Auth/LoginForm';
-import './navbar.css';
 
 import './Navbar.css'
 const Navbar = () => {

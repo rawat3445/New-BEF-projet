@@ -136,12 +136,12 @@ const industryCard = [
   },
   {
     id: "automobile",
-    title: "Automobile & Mobility",
+    title: "Automobile_Mobility",
     description:
       "Explore the world of smart vehicles, sustainable transport, and the future of mobility.",
     icon: <Target className="w-8 h-8" />,
     gradient: "from-blue-600 to-purple-600",
-    path: `/industries/Automobile & mobilty/automobile`,
+    path: `/industries/Automobile_mobilty/automobile`,
   },
   {
     id: "health-pharma",

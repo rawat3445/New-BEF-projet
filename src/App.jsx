@@ -13,7 +13,7 @@ import RetailIndustry from './industries/retail/retail';
 import WomenEntrepreneurship from './industries/women-entrepreneurship';
 import Web3AI from '../src/industries/web3_ai/landingpage/LandingPage';
 import Web3AISales from './industries/web3_ai/salespage/components/homepage';
-import AutomobileIndustry from './industries/Automobile & mobility/automobile';
+import AutomobileIndustry from './industries/Automobile_mobility/automobile';
 import Finance from './industries/finance-investment/finance';
 import Healthnpharma from './industries/healthnpharma/Healthnpharma';
 import RealEstateIndustry from './industries/real-estate-and-urban-planning';
