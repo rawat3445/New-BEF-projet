@@ -31,7 +31,7 @@ import Signup from './components/Auth/Signup';
 
 function App() {
   return (
-    <Router basename="/bef-web-deploy">
+    <Router>
       <Routes>
 
         <Route path="/" element={<LandingPage />} />
